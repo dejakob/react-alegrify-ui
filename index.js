@@ -7,6 +7,7 @@ import Button from './lib/button';
 import Checkbox from './lib/checkbox';
 import Dialog from './lib/dialog';
 import ErrorLabel from './lib/error';
+import Input from './lib/input';
 
 export {
     COLORS,
