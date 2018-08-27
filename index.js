@@ -6,6 +6,7 @@ import Alert from './lib/alert';
 import Button from './lib/button';
 import Checkbox from './lib/checkbox';
 import Dialog from './lib/dialog';
+import ErrorLabel from './lib/error';
 
 export {
     COLORS,
@@ -15,5 +16,6 @@ export {
     Alert,
     Button,
     Checkbox,
-    Dialog
+    Dialog,
+    ErrorLabel
 };
