@@ -8,6 +8,15 @@ const stories = storiesOf('Button', module);
 stories.addDecorator(withKnobs);
 
 stories
+  .addDecorator((story) => (
+    <main class="alegrify-main">
+      <article class="alegrify-article">
+        <div>
+            {story()}
+        </div>
+      </article>
+    </main>
+  ))
   .add('default', () => (
     <Button
         disabled={boolean('disabled', false)}
