@@ -9,6 +9,7 @@ import Dialog from './lib/dialog';
 import ErrorLabel from './lib/error';
 import Input from './lib/input';
 import Label from './lib/label';
+import Main from './lib/main';
 
 export {
     COLORS,
@@ -21,5 +22,6 @@ export {
     Dialog,
     ErrorLabel,
     Input,
-    Label
+    Label,
+    Main
 };
