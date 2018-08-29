@@ -5,5 +5,18 @@
   "main": "index.js",
   "repository": "git@github.com:dejakob/react-alegrify-ui.git",
   "author": "dejakob",
-  "license": "MPL"
+  "license": "MPL",
+  "devDependencies": {
+    "@storybook/addon-knobs": "^3.4.10",
+    "@storybook/react": "^3.4.10",
+    "babel-core": "^6.26.3"
+  },
+  "dependencies": {
+    "alegrify-ui": "dejakob/alegrify-ui",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook"
+  }
 }

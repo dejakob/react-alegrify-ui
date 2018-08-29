@@ -1,0 +1,13 @@
+<script>
+    var fonts = [
+        'https://fonts.googleapis.com/icon?family=Material+Icons'
+    ];
+
+    document.head.innerHTML = document.head.innerHTML + fonts.map(function (font) {
+        return '<link href="' + font + '" rel="stylesheet" />';
+    });
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        document.body.style.padding  = '16px';
+    });
+</script>
