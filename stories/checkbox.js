@@ -2,21 +2,14 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Checkbox from '../lib/checkbox';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import Decorator from './decorator';
 
 const stories = storiesOf('Checkbox', module);
 
 stories.addDecorator(withKnobs);
 
 stories
-  .addDecorator((story) => (
-    <main class="alegrify-main">
-      <article class="alegrify-article">
-        <div>
-            {story()}
-        </div>
-      </article>
-    </main>
-  ))
+  .addDecorator(Decorator)
   .add('default', () => (
     <Checkbox
         id="checkbox-1"
