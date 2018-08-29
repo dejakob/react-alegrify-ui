@@ -10,6 +10,8 @@ import ErrorLabel from './lib/error';
 import Input from './lib/input';
 import Label from './lib/label';
 import Main from './lib/main';
+import NumberInput from './lib/number-input';
+import Radio from './lib/radio';
 
 export {
     COLORS,
@@ -23,5 +25,7 @@ export {
     ErrorLabel,
     Input,
     Label,
-    Main
+    Main,
+    NumberInput,
+    Radio
 };
