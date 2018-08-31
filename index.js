@@ -6,7 +6,6 @@ import Alert from './lib/alert';
 import Button from './lib/button';
 import Checkbox from './lib/checkbox';
 import Dialog from './lib/dialog';
-import ErrorLabel from './lib/error-label';
 import Input from './lib/input';
 import Label from './lib/label';
 import Main from './lib/main';
@@ -22,7 +21,6 @@ export {
     Button,
     Checkbox,
     Dialog,
-    ErrorLabel,
     Input,
     Label,
     Main,

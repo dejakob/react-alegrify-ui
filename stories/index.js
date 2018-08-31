@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
+import { storiesOf, setAddon } from '@storybook/react';
 import * as Components from '../';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import Decorator from './decorator';
+import JSXAddon from 'storybook-addon-jsx';
+
+setAddon(JSXAddon);
 
 const BLACKLIST = ['COLORS', 'MEDIA', 'SPACING'];
 
@@ -17,7 +20,7 @@ Object
         stories.addDecorator(withKnobs);
         stories.addDecorator(Decorator);
 
-        stories.add('default', () => {
+        stories.addWithJSX('default', () => {
             const props = Component.propTypes;
             const options = {};
     
@@ -28,10 +31,7 @@ Object
                         options[propKey] = boolean(propKey, false);
                     }
                     else if (props[propKey] === PropTypes.string || props[propKey] === PropTypes.string.isRequired) {
-                        options[propKey] = text(propKey, 'value');
-                    }
-                    else if (props[propKey] === PropTypes.string || props[propKey] === PropTypes.string.isRequired) {
-                        options[propKey] = text(propKey, 'value');
+                        options[propKey] = text(propKey, propKey);
                     }
                 });
 

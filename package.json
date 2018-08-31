@@ -10,7 +10,8 @@
     "@storybook/addon-knobs": "^3.4.10",
     "@storybook/react": "^3.4.10",
     "babel-core": "^6.26.3",
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.6.2",
+    "storybook-addon-jsx": "^5.4.0"
   },
   "dependencies": {
     "alegrify-ui": "dejakob/alegrify-ui",
