@@ -25,6 +25,10 @@ function Label(props) {
         classNames.push(props.className);
     }
 
+    if (props.error) {
+        classNames.push('alegrify-error');
+    }
+
     return _react2.default.createElement(
         'label',
         {
