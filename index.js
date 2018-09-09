@@ -3,6 +3,8 @@ import MEDIA from './lib/media';
 import SPACING from './lib/spacing';
 
 import Alert from './lib/alert';
+import Article from './lib/article';
+import Aside from './lib/aside';
 import Button from './lib/button';
 import Card from './lib/card';
 import Checkbox from './lib/checkbox';
@@ -19,6 +21,8 @@ export {
     SPACING,
 
     Alert,
+    Article,
+    Aside,
     Button,
     Card,
     Checkbox,
