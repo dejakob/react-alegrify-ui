@@ -4,6 +4,7 @@ import SPACING from './lib/spacing';
 
 import Alert from './lib/alert';
 import Button from './lib/button';
+import Card from './lib/card';
 import Checkbox from './lib/checkbox';
 import Dialog from './lib/dialog';
 import Input from './lib/input';
@@ -19,6 +20,7 @@ export {
 
     Alert,
     Button,
+    Card,
     Checkbox,
     Dialog,
     Input,
