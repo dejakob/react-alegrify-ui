@@ -1,1 +1,1 @@
-Important: add alegrify-body to body
+Important: add alegrify-body and/or alegrify-body--reset to body

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf, setAddon } from '@storybook/react';
-import * as Components from '../';
+import * as Components from '../lib';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import Decorator from './decorator';
 import JSXAddon from 'storybook-addon-jsx';
