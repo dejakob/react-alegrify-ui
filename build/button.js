@@ -31,6 +31,10 @@ function Button(props) {
         classNames.push('alegrify-button--full');
     }
 
+    if (props.small) {
+        classNames.push('alegrify-button--small');
+    }
+
     return _react2.default.createElement(
         'button',
         {
@@ -47,6 +51,7 @@ Button.propTypes = {
     className: _propTypes2.default.string,
     primary: _propTypes2.default.bool,
     full: _propTypes2.default.bool,
+    small: _propTypes2.default.bool,
     type: _propTypes2.default.string,
     disabled: _propTypes2.default.bool
 };
