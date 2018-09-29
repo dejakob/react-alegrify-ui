@@ -38,7 +38,8 @@ function Checkbox(props) {
             name: props.name,
             'class': 'alegrify-checkbox__trigger',
             disabled: props.disabled,
-            checked: props.checked
+            checked: props.checked,
+            onChange: props.onChange
         }),
         _react2.default.createElement(
             'label',

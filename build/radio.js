@@ -40,7 +40,8 @@ function Radio(props) {
             name: props.name,
             className: 'alegrify-radio__trigger',
             disabled: props.disabled,
-            checked: props.checked
+            checked: props.checked,
+            onChange: props.onChange
         }),
         _react2.default.createElement(
             'label',
