@@ -13,10 +13,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -25,7 +21,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var INPUT_METHODS = ['onInput', 'onChange', 'onKeyup', 'onKeydown'];
+var INPUT_METHODS = ['changeValue', 'onInput'];
 
 /**
  * @abstract
@@ -60,6 +56,17 @@ var InputWithState = function (_Component) {
             }
         }
     }, {
+        key: 'changeValue',
+        value: function changeValue(value) {
+            if (value !== this.state.value) {
+                this.setState({ value: value });
+
+                if (typeof this.props.onValueChange === 'function') {
+                    this.props.onValueChange(value);
+                }
+            }
+        }
+    }, {
         key: 'onInput',
         value: function onInput(eventData) {
             var value = eventData.target.value;
@@ -67,62 +74,29 @@ var InputWithState = function (_Component) {
 
             if (value !== this.state.value) {
                 this.setState({ value: value });
-            }
 
-            if (typeof this.props.onInput === 'function') {
-                this.props.onInput(eventData);
-            }
-        }
-    }, {
-        key: 'onChange',
-        value: function onChange(eventData) {
-            var value = eventData.target.value;
-
-
-            if (value !== this.state.value) {
-                this.setState({ value: value });
-            }
-
-            if (typeof this.props.onInput === 'function') {
-                this.props.onChange(eventData);
-            }
-        }
-    }, {
-        key: 'onKeydown',
-        value: function onKeydown(eventData) {
-            if (typeof this.props.onKeydown === 'function') {
-                this.props.onKeydown(eventData);
-            }
-        }
-    }, {
-        key: 'onKeyup',
-        value: function onKeyup(eventData) {
-            if (typeof this.props.onKeyup === 'function') {
-                this.props.onKeyup(eventData);
+                if (typeof this.props.onValueChange === 'function') {
+                    this.props.onValueChange(value);
+                }
             }
         }
     }, {
         key: 'render',
         value: function render() {
-            return _react2.default.cloneElement(this.props.renderMethod(this.allProps), this.methods);
-        }
-    }, {
-        key: 'methods',
-        get: function get() {
-            var _this2 = this;
-
-            var collection = {};
-
-            INPUT_METHODS.forEach(function (methodName) {
-                collection[methodName] = _this2[methodName];
-            });
-
-            return collection;
+            return this.props.renderMethod(this.allProps);
         }
     }, {
         key: 'allProps',
         get: function get() {
-            return Object.assign({}, this.props, this.state);
+            var _this2 = this;
+
+            var methods = {};
+
+            INPUT_METHODS.forEach(function (inputMethod) {
+                methods[inputMethod] = _this2[inputMethod];
+            });
+
+            return Object.assign({}, this.props, this.state, methods);
         }
     }]);
 
@@ -137,10 +111,6 @@ var wrapWithInputState = function wrapWithInputState(renderMethod) {
     };
 
     var methodPropTypes = {};
-
-    INPUT_METHODS.forEach(function (inputMethod) {
-        methodPropTypes[inputMethod] = _propTypes2.default.func;
-    });
 
     component.propTypes = Object.assign({}, renderMethod.propTypes, methodPropTypes);
 

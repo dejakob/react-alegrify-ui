@@ -37,7 +37,13 @@ function Input(props) {
             {
                 id: props.id,
                 name: props.name,
-                className: classNames.join(' ')
+                className: classNames.join(' '),
+                onInput: props.onInput,
+                onChange: props.onChange,
+                onKeyUp: props.onKeyUp,
+                onKeydown: props.onKeydown,
+                onFocus: props.onFocus,
+                onBlur: props.onBlur
             },
             props.value
         );
@@ -49,8 +55,20 @@ function Input(props) {
         type: props.type || 'text',
         className: classNames.join(' '),
         placeholder: props.placeholder || '',
-        value: props.value
+        value: props.value,
+        onInput: onInput,
+        onKeyUp: props.onKeyUp,
+        onKeydown: props.onKeydown,
+        onFocus: props.onFocus,
+        onBlur: props.onBlur
     });
+
+    function onInput(eventData) {
+        var value = eventData.target.value;
+
+
+        props.changeValue(value);
+    }
 }
 
 Input.propTypes = {
@@ -61,7 +79,13 @@ Input.propTypes = {
     full: _propTypes2.default.bool,
     multiline: _propTypes2.default.bool,
     id: _propTypes2.default.string,
-    name: _propTypes2.default.string
+    name: _propTypes2.default.string,
+
+    onValueChange: _propTypes2.default.func,
+    onKeyUp: _propTypes2.default.func,
+    onKeydown: _propTypes2.default.func,
+    onFocus: _propTypes2.default.func,
+    onBlur: _propTypes2.default.func
 };
 
 exports.default = (0, _inputWithState.wrapWithInputState)(Input);
