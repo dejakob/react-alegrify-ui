@@ -12,6 +12,8 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _inputWithState = require('./abstract/input-with-state');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
@@ -37,7 +39,7 @@ function Input(props) {
                 name: props.name,
                 className: classNames.join(' ')
             },
-            props.children
+            props.value
         );
     }
 
@@ -47,12 +49,12 @@ function Input(props) {
         type: props.type || 'text',
         className: classNames.join(' '),
         placeholder: props.placeholder || '',
-        value: props.children
+        value: props.value
     });
 }
 
 Input.propTypes = {
-    children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+    value: _propTypes2.default.string.isRequired,
     className: _propTypes2.default.string,
     type: _propTypes2.default.string,
     placeholder: _propTypes2.default.string,
@@ -62,4 +64,4 @@ Input.propTypes = {
     name: _propTypes2.default.string
 };
 
-exports.default = Input;
+exports.default = (0, _inputWithState.wrapWithInputState)(Input);
