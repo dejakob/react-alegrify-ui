@@ -40,7 +40,7 @@ function Input(props) {
                 className: classNames.join(' '),
                 onInput: onInput,
                 onKeyUp: props.onKeyUp,
-                onKeydown: props.onKeydown,
+                onKeyDown: props.onKeyDown,
                 onFocus: props.onFocus,
                 onBlur: props.onBlur
             },
@@ -57,7 +57,7 @@ function Input(props) {
         value: props.value,
         onInput: onInput,
         onKeyUp: props.onKeyUp,
-        onKeydown: props.onKeydown,
+        onKeyDown: props.onKeyDown,
         onFocus: props.onFocus,
         onBlur: props.onBlur
     });
@@ -82,7 +82,7 @@ Input.propTypes = {
 
     onValueChange: _propTypes2.default.func,
     onKeyUp: _propTypes2.default.func,
-    onKeydown: _propTypes2.default.func,
+    onKeyDown: _propTypes2.default.func,
     onFocus: _propTypes2.default.func,
     onBlur: _propTypes2.default.func
 };
