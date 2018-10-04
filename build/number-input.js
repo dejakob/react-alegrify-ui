@@ -59,7 +59,7 @@ function NumberInput(props) {
         _react2.default.createElement('input', {
             type: 'text',
             id: props.id,
-            name: props.id,
+            name: props.name,
             className: 'alegrify-number-input__input',
             value: Number(props.value || 0),
             disabled: props.disabled,
