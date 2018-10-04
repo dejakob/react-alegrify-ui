@@ -68,7 +68,9 @@ function NumberInput(props) {
             onKeyDown: props.onKeyDown,
             onFocus: props.onFocus,
             onBlur: props.onBlur,
-            autoComplete: 'off'
+            autoComplete: 'off',
+            min: props.min || 0,
+            max: props.max || 10
         }),
         _react2.default.createElement(
             'button',
@@ -125,6 +127,8 @@ NumberInput.propTypes = {
     disabled: _propTypes2.default.bool,
     wide: _propTypes2.default.bool,
     full: _propTypes2.default.bool,
+    min: _propTypes2.default.number,
+    max: _propTypes2.default.number,
 
     onValueChange: _propTypes2.default.func
 };
