@@ -36,7 +36,12 @@ function RangeInput(props) {
         onChange: function onChange(e) {
             return props.changeValue(e.target.value);
         },
-        value: props.value
+        value: props.value,
+        'data-low-indicator': props.lowIndicator,
+        'data-high-indicator': props.highIndicator,
+        min: props.min || 1,
+        max: props.max || 10,
+        step: props.step || 1
     });
 }
 
@@ -46,6 +51,11 @@ RangeInput.propTypes = {
     name: _propTypes2.default.string.isRequired,
     value: _propTypes2.default.number,
     disabled: _propTypes2.default.bool,
+    lowIndicator: _propTypes2.default.string,
+    highIndicator: _propTypes2.default.string,
+    min: _propTypes2.default.number,
+    max: _propTypes2.default.number,
+    step: _propTypes2.default.number,
 
     onValueChange: _propTypes2.default.func
 };
