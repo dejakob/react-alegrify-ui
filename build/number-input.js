@@ -22,6 +22,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 function NumberInput(props) {
     var classNames = ['alegrify-number-input'];
+    var min = props.min || 0;
+    var max = props.max || 10;
 
     if (props.className) {
         classNames.push(props.className);
@@ -68,9 +70,7 @@ function NumberInput(props) {
             onKeyDown: props.onKeyDown,
             onFocus: props.onFocus,
             onBlur: props.onBlur,
-            autoComplete: 'off',
-            min: props.min || 0,
-            max: props.max || 10
+            autoComplete: 'off'
         }),
         _react2.default.createElement(
             'button',
@@ -92,11 +92,18 @@ function NumberInput(props) {
     function onInput(eventData) {
         var value = eventData.target.value;
 
+        var number = Number(value);
 
-        if (isNaN(Number(value))) {
+        console.log('on input', number, min, max);
+
+        if (isNaN(number)) {
             props.changeValue(0);
+        } else if (number < min) {
+            props.changeValue(min);
+        } else if (number > max) {
+            props.changeValue(max);
         } else {
-            props.changeValue(Number(value));
+            props.changeValue(number);
         }
     }
 
@@ -104,12 +111,12 @@ function NumberInput(props) {
         switch (eventData.keyCode) {
             case 38:
                 eventData.preventDefault();
-                props.changeValue((props.value || 0) + 1);
+                props.changeValue(Math.min(max, (props.value || 0) + 1));
                 break;
 
             case 40:
                 eventData.preventDefault();
-                props.changeValue((props.value || 0) - 1);
+                props.changeValue(Math.max(min, (props.value || 0) - 1));
                 break;
         }
 
