@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { storiesOf, setAddon } from '@storybook/react';
 import * as Components from '../lib';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
-import { action, configureActions } from '@storybook/addon-actions';
+import { action } from '@storybook/addon-actions';
+import { checkA11y } from '@storybook/addon-a11y';
 import Decorator from './decorator';
 import JSXAddon from 'storybook-addon-jsx';
 
@@ -19,6 +20,7 @@ Object
         const Component = Components[compName];
 
         stories.addDecorator(withKnobs);
+        stories.addDecorator(checkA11y);
         stories.addDecorator(Decorator);
 
         stories.addWithJSX('default', () => {
@@ -34,7 +36,7 @@ Object
                         options[propKey] = boolean(propKey, content || false);
                     }
                     else if (props[propKey] === PropTypes.string || props[propKey] === PropTypes.string.isRequired) {
-                        options[propKey] = text(propKey, content || propKey);
+                        options[propKey] = text(propKey, typeof content === 'string' ? content : propKey);
                     }
                     else if (props[propKey] === PropTypes.number || props[propKey] === PropTypes.number.isRequired) {
                         options[propKey] = number(propKey, content || 0);
