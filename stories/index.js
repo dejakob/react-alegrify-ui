@@ -42,6 +42,9 @@ Object
                     else if (props[propKey] === PropTypes.func || props[propKey] === PropTypes.func.isRequired) {
                         options[propKey] = action(propKey);
                     }
+                    else {
+                        options[propKey] = content || null;
+                    }
                 });
 
             const children = props[children] ?

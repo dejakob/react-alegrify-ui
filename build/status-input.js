@@ -110,7 +110,7 @@ function StatusInputView(props) {
         },
         _react2.default.createElement('textarea', {
             className: 'alegrify-status-input__textarea',
-            placeholder: 'How are you feeling?',
+            placeholder: props.placeholder,
             name: 'alegrify-status-input1',
             id: 'alegrify-status-input1',
             rows: amountOfLines,
@@ -179,19 +179,23 @@ function StatusInputAction(props) {
 }
 
 StatusInput.propTypes = {
-    children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
     className: _propTypes2.default.string,
+    placeholder: _propTypes2.default.string,
 
     onValueChange: _propTypes2.default.func,
     onFocus: _propTypes2.default.func,
     onBlur: _propTypes2.default.func,
-    charsLeftText: _propTypes2.default.func,
 
     actions: _propTypes2.default.arrayOf(_propTypes2.default.shape({
         icon: _propTypes2.default.string.isRequired,
         label: _propTypes2.default.string.isRequired,
         onClick: _propTypes2.default.func
     }))
+};
+StatusInput.propExamples = {
+    className: '',
+    placeholder: 'Share your thoughts',
+    actions: [{ label: 'picture', icon: 'camera_alt' }]
 };
 
 exports.default = StatusInput;

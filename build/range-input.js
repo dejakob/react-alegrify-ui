@@ -59,5 +59,17 @@ RangeInput.propTypes = {
 
     onValueChange: _propTypes2.default.func
 };
+RangeInput.propExamples = {
+    className: '',
+    id: 'rangeinput',
+    name: 'rangeinput',
+    value: 8,
+    disabled: false,
+    lowIndicator: '😥',
+    highIndicator: '😍',
+    min: 1,
+    max: 10,
+    step: 1
+};
 
 exports.default = (0, _inputWithState.wrapWithInputState)(RangeInput);

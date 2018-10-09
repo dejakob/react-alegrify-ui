@@ -68,5 +68,13 @@ Radio.propTypes = {
     checked: _propTypes2.default.bool,
     className: _propTypes2.default.string
 };
+Radio.propExamples = {
+    id: 'radio',
+    name: 'radio',
+    children: 'Radio label',
+    disabled: false,
+    checked: false,
+    className: ''
+};
 
 exports.default = Radio;
