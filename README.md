@@ -2,6 +2,8 @@
 
 React lib based on [Alegrify UI](https://github.com/dejakob/alegrify-ui).
 
+Check out the live preview / storybook [here](https://dejakob.github.io/react-alegrify-ui)
+
 ## Typography
 ```jsx
 <H1>Head 1</H1>
