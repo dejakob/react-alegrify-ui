@@ -29,6 +29,7 @@
     "deploy-storybook": "storybook-to-ghpages",
     "build": "babel lib -d build",
     "build:watch": "babel lib -w -d build",
-    "docs": "react-doc-generator ./lib -o COMPONENTS.md -i abstract -t 'Alegrify UI Components'"
+    "docs": "react-doc-generator ./lib -o COMPONENTS.md -i abstract -t 'Alegrify UI Components'",
+    "prepublish": "npm run docs && npm run build && npm run deploy-storybook"
   }
 }
