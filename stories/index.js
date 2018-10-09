@@ -47,7 +47,7 @@ Object
                     }
                 });
 
-            const children = props[children] ?
+            const children = props.children ?
                 text('children', Component.propExamples && Component.propExamples.children || 'random content'):
                 null;
 
