@@ -362,7 +362,13 @@ onValueChange|func|no||On value change, param: number
 
 ### 1. StatusInput
 
-<StatusInput />   
+<StatusInput />
+
+```jsx
+<StatusInput
+
+/>
+```   
 
 
 

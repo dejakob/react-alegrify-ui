@@ -28,6 +28,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 /**
  * <StatusInput />
+ * 
+ * ```jsx
+ * <StatusInput
+ * 
+ * />
+ * ```
  */
 var StatusInput = function (_Component) {
     _inherits(StatusInput, _Component);
