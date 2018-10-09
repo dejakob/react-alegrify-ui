@@ -1,4 +1,4 @@
-Components
+Alegrify UI Components
 ----------
 
 **lib/alert.js**

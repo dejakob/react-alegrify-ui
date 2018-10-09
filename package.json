@@ -27,6 +27,6 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build": "babel lib -d build",
     "build:watch": "babel lib -w -d build",
-    "docs": "react-doc-generator ./lib -o COMPONENTS.md -i abstract"
+    "docs": "react-doc-generator ./lib -o COMPONENTS.md -i abstract -t 'Alegrify UI Components'"
   }
 }
