@@ -41,6 +41,10 @@ function Article(props) {
 }
 
 Article.propTypes = {
+
+    /**
+     * Content of the article
+     */
     children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired
 };
 Article.propExamples = {

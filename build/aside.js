@@ -16,7 +16,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * <Aside />
- * @param {Object} props 
+ * 
+ * Simple HTML aside
+ * Small viewports: full width,
+ * Large viewports: 1/3 width
+ * 
+ * ```
+ * <Aside>
+ *  Some extra information on the side
+ * </Aside>
+ * ```
  */
 function Aside(props) {
     var classNames = ['alegrify-aside'];
@@ -33,6 +42,10 @@ function Aside(props) {
 }
 
 Aside.propTypes = {
+
+    /**
+     * Content of the aside
+     */
     children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired
 };
 Aside.propExamples = {

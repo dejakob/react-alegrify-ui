@@ -46,21 +46,30 @@ Full width on smaller viewports, 2/3 on larger viewports
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|union|yes||
+children|union|yes||Content of the article
 -----
 **lib/aside.js**
 
 ### 1. Aside
 
 <Aside />
-@param {Object} props   
+
+Simple HTML aside
+Small viewports: full width,
+Large viewports: 1/3 width
+
+```
+<Aside>
+ Some extra information on the side
+</Aside>
+```   
 
 
 
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|union|yes||
+children|union|yes||Content of the aside
 -----
 **lib/button.js**
 
