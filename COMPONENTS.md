@@ -6,7 +6,16 @@ Components
 ### 1. Alert
 
 <Alert />
-@param {Object} props   
+
+Show a short and temporary message
+
+```
+  <Alert
+    open={true}
+  >
+    Message sent
+  </Alert>
+```   
 
 
 
