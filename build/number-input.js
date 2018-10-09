@@ -24,6 +24,7 @@ function NumberInput(props) {
     var classNames = ['alegrify-number-input'];
     var min = props.min || 0;
     var max = props.max || 10;
+    var value = Math.max(Math.min(max, props.value), min);
 
     if (props.className) {
         classNames.push(props.className);
@@ -63,7 +64,7 @@ function NumberInput(props) {
             id: props.id,
             name: props.name,
             className: 'alegrify-number-input__input',
-            value: Number(props.value || 0),
+            value: value,
             disabled: props.disabled,
             onInput: onInput,
             onKeyUp: onKeyUp,
@@ -93,8 +94,6 @@ function NumberInput(props) {
         var value = eventData.target.value;
 
         var number = Number(value);
-
-        console.log('on input', number, min, max);
 
         if (isNaN(number)) {
             props.changeValue(0);

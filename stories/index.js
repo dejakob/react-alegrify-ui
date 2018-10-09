@@ -33,6 +33,9 @@ Object
                     else if (props[propKey] === PropTypes.string || props[propKey] === PropTypes.string.isRequired) {
                         options[propKey] = text(propKey, propKey);
                     }
+                    else if (props[propKey] === PropTypes.number || props[propKey] === PropTypes.number.isRequired) {
+                        options[propKey] = number(propKey, 0);
+                    }
                 });
 
             return (
