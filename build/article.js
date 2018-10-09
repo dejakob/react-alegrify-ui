@@ -35,5 +35,8 @@ function Article(props) {
 Article.propTypes = {
     children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired
 };
+Article.propExamples = {
+    children: 'Article content'
+};
 
 exports.default = Article;

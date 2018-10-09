@@ -38,5 +38,10 @@ Alert.propTypes = {
     className: _propTypes2.default.string,
     open: _propTypes2.default.bool
 };
+Alert.propExamples = {
+    children: 'Alert content',
+    className: '',
+    open: true
+};
 
 exports.default = Alert;

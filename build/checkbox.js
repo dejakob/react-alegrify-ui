@@ -66,5 +66,13 @@ Checkbox.propTypes = {
     checked: _propTypes2.default.bool,
     className: _propTypes2.default.string
 };
+Checkbox.propExamples = {
+    id: 'checkbox',
+    name: 'checkbox',
+    children: 'Look at this checkbox',
+    disabled: false,
+    checked: false,
+    className: ''
+};
 
 exports.default = Checkbox;

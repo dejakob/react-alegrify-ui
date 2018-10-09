@@ -110,9 +110,8 @@ var wrapWithInputState = function wrapWithInputState(renderMethod) {
         }));
     };
 
-    var methodPropTypes = {};
-
-    component.propTypes = Object.assign({}, renderMethod.propTypes, methodPropTypes);
+    component.propTypes = renderMethod.propTypes;
+    component.propExamples = renderMethod.propExamples;
 
     return component;
 };

@@ -71,5 +71,16 @@ Card.propTypes = {
     small: _propTypes2.default.bool,
     title: _propTypes2.default.string.isRequired
 };
+Card.propExamples = {
+    children: _react2.default.createElement(
+        'p',
+        { className: 'alegrify-p' },
+        'Here\'s some card content'
+    ),
+    footer: 'Footer content',
+    className: '',
+    small: false,
+    title: 'Card title'
+};
 
 exports.default = Card;

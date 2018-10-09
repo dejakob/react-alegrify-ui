@@ -49,9 +49,7 @@ function NumberInput(props) {
             {
                 className: 'alegrify-number-input__add',
                 tabIndex: '-1',
-                onClick: function onClick() {
-                    return props.changeValue((props.value || 0) + 1);
-                }
+                onClick: up
             },
             _react2.default.createElement(
                 'span',
@@ -78,9 +76,7 @@ function NumberInput(props) {
             {
                 className: 'alegrify-number-input__subtract',
                 tabIndex: '-1',
-                onClick: function onClick() {
-                    return props.changeValue((props.value || 0) - 1);
-                }
+                onClick: down
             },
             _react2.default.createElement(
                 'span',
@@ -110,18 +106,26 @@ function NumberInput(props) {
         switch (eventData.keyCode) {
             case 38:
                 eventData.preventDefault();
-                props.changeValue(Math.min(max, (props.value || 0) + 1));
+                up();
                 break;
 
             case 40:
                 eventData.preventDefault();
-                props.changeValue(Math.max(min, (props.value || 0) - 1));
+                down();
                 break;
         }
 
         if (typeof props.onKeyUp === 'function') {
             props.onKeyUp(eventData);
         }
+    }
+
+    function up() {
+        props.changeValue(Math.min(max, (props.value || 0) + 1));
+    }
+
+    function down() {
+        props.changeValue(Math.max(min, (props.value || 0) - 1));
     }
 }
 
@@ -137,6 +141,17 @@ NumberInput.propTypes = {
     max: _propTypes2.default.number,
 
     onValueChange: _propTypes2.default.func
+};
+NumberInput.propExamples = {
+    className: '',
+    id: 'number_input',
+    name: 'number_input',
+    value: 6,
+    disabled: false,
+    wide: false,
+    full: false,
+    min: 1,
+    max: 10
 };
 
 exports.default = (0, _inputWithState.wrapWithInputState)(NumberInput);

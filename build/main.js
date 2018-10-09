@@ -38,5 +38,9 @@ Main.propTypes = {
     children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
     className: _propTypes2.default.string
 };
+Main.propExamples = {
+    children: 'Main content',
+    className: ''
+};
 
 exports.default = Main;

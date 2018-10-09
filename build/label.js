@@ -45,5 +45,11 @@ Label.propTypes = {
     htmlFor: _propTypes2.default.string,
     error: _propTypes2.default.bool
 };
+Label.propExamples = {
+    children: 'Label content',
+    className: '',
+    htmlFor: 'input_id',
+    error: false
+};
 
 exports.default = Label;

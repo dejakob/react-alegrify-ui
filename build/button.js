@@ -55,5 +55,13 @@ Button.propTypes = {
     type: _propTypes2.default.string,
     disabled: _propTypes2.default.bool
 };
+Button.propExamples = {
+    children: 'Yaay, I\'m a button 👋',
+    primary: false,
+    full: false,
+    small: false,
+    type: 'submit',
+    disabled: false
+};
 
 exports.default = Button;

@@ -52,5 +52,10 @@ Dialog.propTypes = {
     className: _propTypes2.default.string,
     open: _propTypes2.default.bool
 };
+Dialog.propExamples = {
+    children: 'Add some content here',
+    className: '',
+    open: true
+};
 
 exports.default = Dialog;

@@ -86,5 +86,15 @@ Input.propTypes = {
     onFocus: _propTypes2.default.func,
     onBlur: _propTypes2.default.func
 };
+Input.propExamples = {
+    value: 'default value',
+    className: '',
+    type: 'text',
+    placeholder: 'Placeholder text',
+    full: false,
+    multiline: false,
+    id: 'input',
+    name: 'input'
+};
 
 exports.default = (0, _inputWithState.wrapWithInputState)(Input);

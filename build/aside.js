@@ -35,5 +35,8 @@ function Aside(props) {
 Aside.propTypes = {
     children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired
 };
+Aside.propExamples = {
+    children: 'Aside content'
+};
 
 exports.default = Aside;
