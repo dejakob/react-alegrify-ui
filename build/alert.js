@@ -43,8 +43,20 @@ function Alert(props) {
 }
 
 Alert.propTypes = {
+
+    /**
+     * Content of the alert
+     */
     children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+
+    /**
+     * Additional classnames
+     */
     className: _propTypes2.default.string,
+
+    /**
+     * Show the alert?
+     */
     open: _propTypes2.default.bool
 };
 Alert.propExamples = {

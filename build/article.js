@@ -16,7 +16,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * <Article />
- * @param {Object} props 
+ * 
+ * Simple HTML article.
+ * Full width on smaller viewports, 2/3 on larger viewports
+ * 
+ * ```
+ * <Article>
+ *   Amazing content
+ * </Article>
+ * ```
  */
 function Article(props) {
     var classNames = ['alegrify-article'];

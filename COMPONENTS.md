@@ -22,16 +22,24 @@ Show a short and temporary message
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|union|yes||
-className|string|no||
-open|bool|no||
+children|union|yes||Content of the alert
+className|string|no||Additional classnames
+open|bool|no||Show the alert?
 -----
 **lib/article.js**
 
 ### 1. Article
 
 <Article />
-@param {Object} props   
+
+Simple HTML article.
+Full width on smaller viewports, 2/3 on larger viewports
+
+```
+<Article>
+  Amazing content
+</Article>
+```   
 
 
 
