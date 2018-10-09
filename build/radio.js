@@ -16,7 +16,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * <Radio />
- * @param {Object} props
+ * 
+ * ```jsx
+ * <Radio
+ *   name="my_radio"
+ *   id="my_radio"
+ *   checked={true}
+ * >
+ *   Option value
+ * </Radio>
+ * ```
  */
 function Radio(props) {
     var classNames = ['alegrify-radio'];
@@ -61,11 +70,35 @@ function Radio(props) {
 }
 
 Radio.propTypes = {
+
+    /**
+     * Input id
+     */
     id: _propTypes2.default.string.isRequired,
+
+    /**
+     * Input value
+     */
     name: _propTypes2.default.string.isRequired,
+
+    /**
+     * Radio label content
+     */
     children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+
+    /**
+     * Is radio disabled?
+     */
     disabled: _propTypes2.default.bool,
+
+    /**
+     * Is radio checked?
+     */
     checked: _propTypes2.default.bool,
+
+    /**
+     * Additional classnames
+     */
     className: _propTypes2.default.string
 };
 Radio.propExamples = {

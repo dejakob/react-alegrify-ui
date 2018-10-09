@@ -302,43 +302,61 @@ onValueChange|func|no||On value change, param: number value
 ### 1. Radio
 
 <Radio />
-@param {Object} props   
+
+```jsx
+<Radio
+  name="my_radio"
+  id="my_radio"
+  checked={true}
+>
+  Option value
+</Radio>
+```   
 
 
 
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-id|string|yes||
-name|string|yes||
-children|union|yes||
-disabled|bool|no||
-checked|bool|no||
-className|string|no||
+id|string|yes||Input id
+name|string|yes||Input value
+children|union|yes||Radio label content
+disabled|bool|no||Is radio disabled?
+checked|bool|no||Is radio checked?
+className|string|no||Additional classnames
 -----
 **lib/range-input.js**
 
 ### 1. RangeInput
 
 <RangeInput />
-@param {Object} props   
+
+```jsx
+<RangeInput
+  id="my_range_input"
+  name="my_range_input"
+  min={1}
+  max={10}
+  value={6}
+/>
+```   
 
 
 
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-className|string|no||
-id|string|yes||
-name|string|yes||
-value|number|no||
-disabled|bool|no||
-lowIndicator|string|no||
-highIndicator|string|no||
-min|number|no||
-max|number|no||
-step|number|no||
-onValueChange|func|no||
+className|string|no||Additional classnames
+id|string|yes||Input id
+name|string|yes||Input name
+value|number|no||Input value
+disabled|bool|no||Is range input disabled?
+lowIndicator|string|no||Indicator at the start of the range input
+highIndicator|string|no||Indicator at the end of the range input
+min|number|no|1|Start of the range
+max|number|no|10|End of the range
+step|number|no|1|Range step
+onValueChange|func|no||On value change, param: number
 -----
 **lib/status-input.js**
 
