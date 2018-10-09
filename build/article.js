@@ -18,9 +18,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * <Article />
  * 
  * Simple HTML article.
+ * 
  * Full width on smaller viewports, 2/3 on larger viewports
  * 
- * ```
+ * ```jsx
  * <Article>
  *   Amazing content
  * </Article>

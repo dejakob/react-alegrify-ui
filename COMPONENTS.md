@@ -33,9 +33,10 @@ open|bool|no||Show the alert?
 <Article />
 
 Simple HTML article.
+
 Full width on smaller viewports, 2/3 on larger viewports
 
-```
+```jsx
 <Article>
   Amazing content
 </Article>
@@ -55,10 +56,12 @@ children|union|yes||Content of the article
 <Aside />
 
 Simple HTML aside
+
 Small viewports: full width,
+
 Large viewports: 1/3 width
 
-```
+```jsx
 <Aside>
  Some extra information on the side
 </Aside>
@@ -76,20 +79,29 @@ children|union|yes||Content of the aside
 ### 1. Button
 
 <Button />
-@param {Object} props   
+
+Regular HTML button
+
+```jsx
+<Button
+  primary
+>
+ Hi, I'm a primary button! 🎉
+</Button>
+```   
 
 
 
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|union|yes||
-className|string|no||
-primary|bool|no||
-full|bool|no||
-small|bool|no||
-type|string|no||
-disabled|bool|no||
+children|union|yes||Button text / button content
+className|string|no||Additional classnames
+primary|bool|no|false|Is this a primary button?
+full|bool|no|false|Is this a full width button?
+small|bool|no|false|Is this a small variant button?
+type|string|no|&lt;See the source code&gt;|button|submit
+disabled|bool|no|false|Disabled?
 -----
 **lib/card.js**
 

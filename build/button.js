@@ -16,7 +16,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * <Button />
- * @param {Object} props 
+ * 
+ * Regular HTML button
+ * 
+ * ```jsx
+ * <Button
+ *   primary
+ * >
+ *  Hi, I'm a primary button! 🎉
+ * </Button>
+ * ```
  */
 function Button(props) {
     var classNames = ['alegrify-button'];
@@ -47,13 +56,48 @@ function Button(props) {
 }
 
 Button.propTypes = {
+
+    /**
+     * Button text / button content
+     */
     children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+
+    /**
+     * Additional classnames
+     */
     className: _propTypes2.default.string,
+
+    /**
+     * Is this a primary button?
+     */
     primary: _propTypes2.default.bool,
+
+    /**
+     * Is this a full width button?
+     */
     full: _propTypes2.default.bool,
+
+    /**
+     * Is this a small variant button?
+     */
     small: _propTypes2.default.bool,
+
+    /**
+     * button|submit
+     */
     type: _propTypes2.default.string,
+
+    /**
+     * Disabled?
+     */
     disabled: _propTypes2.default.bool
+};
+Button.defaultProps = {
+    primary: false,
+    full: false,
+    small: false,
+    type: 'submit',
+    disabled: false
 };
 Button.propExamples = {
     children: 'Yaay, I\'m a button 👋',
