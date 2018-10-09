@@ -225,55 +225,77 @@ onBlur|func|no||Native onBlur event
 ### 1. Label
 
 <Label />
-@param {Object} props   
+
+```jsx
+<Label
+  htmlFor="input_id"
+  error
+>
+  Something went wrong
+</Label>
+```   
 
 
 
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|union|yes||
-className|string|no||
-htmlFor|string|no||
-error|bool|no||
+children|union|yes||Label content
+className|string|no||Additional classnames
+htmlFor|string|no||for attribute referring to a form element
+error|bool|no|false|Is this an error label?
 -----
 **lib/main.js**
 
 ### 1. Main
 
 <Main />
-@param {Object} props   
+
+```jsx
+<Main>
+  Page content...
+</Main>
+```   
 
 
 
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|union|yes||
-className|string|no||
+children|union|yes||Main content
+className|string|no||Additional classnames
 -----
 **lib/number-input.js**
 
 ### 1. NumberInput
 
 <NumberInput />
-@param {Object} props   
+
+```jsx
+<NumberInput
+  id="number_input"
+  name="number_input"
+  min={1}
+  value={6}
+  max={10}
+/>
+```   
 
 
 
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-className|string|no||
-id|string|yes||
-name|string|yes||
-value|number|no||
-disabled|bool|no||
-wide|bool|no||
-full|bool|no||
-min|number|no||
-max|number|no||
-onValueChange|func|no||
+className|string|no||Additional classnames
+id|string|yes||Input id
+name|string|yes||Input name
+value|number|no|0|Input value, must be a number
+disabled|bool|no|false|Is input disabled?
+wide|bool|no|false|Is this a wide variant?
+full|bool|no|false|100% width?
+min|number|no|0|Min value
+max|number|no|10|Max value
+onValueChange|func|no||On value change, param: number value
 -----
 **lib/radio.js**
 

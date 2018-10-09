@@ -18,7 +18,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * <NumberInput />
- * @param {Object} props
+ * 
+ * ```jsx
+ * <NumberInput
+ *   id="number_input"
+ *   name="number_input"
+ *   min={1}
+ *   value={6}
+ *   max={10}
+ * />
+ * ```
  */
 function NumberInput(props) {
     var classNames = ['alegrify-number-input'];
@@ -130,17 +139,64 @@ function NumberInput(props) {
 }
 
 NumberInput.propTypes = {
+
+    /**
+     * Additional classnames
+     */
     className: _propTypes2.default.string,
+
+    /**
+     * Input id
+     */
     id: _propTypes2.default.string.isRequired,
+
+    /**
+     * Input name
+     */
     name: _propTypes2.default.string.isRequired,
+
+    /**
+     * Input value, must be a number
+     */
     value: _propTypes2.default.number,
+
+    /**
+     * Is input disabled?
+     */
     disabled: _propTypes2.default.bool,
+
+    /**
+     * Is this a wide variant?
+     */
     wide: _propTypes2.default.bool,
+
+    /**
+     * 100% width?
+     */
     full: _propTypes2.default.bool,
+
+    /**
+     * Min value
+     */
     min: _propTypes2.default.number,
+
+    /**
+     * Max value
+     */
     max: _propTypes2.default.number,
 
+    /**
+     * On value change, param: number value
+     */
     onValueChange: _propTypes2.default.func
+};
+NumberInput.defaultProps = {
+    min: 0,
+    max: 10,
+    value: 0,
+    wide: false,
+    full: false,
+    disabled: false
 };
 NumberInput.propExamples = {
     className: '',

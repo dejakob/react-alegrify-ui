@@ -16,7 +16,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * <Label />
- * @param {Object} props
+ * 
+ * ```jsx
+ * <Label
+ *   htmlFor="input_id"
+ *   error
+ * >
+ *   Something went wrong
+ * </Label>
+ * ```
  */
 function Label(props) {
     var classNames = ['alegrify-label'];
@@ -32,7 +40,7 @@ function Label(props) {
     return _react2.default.createElement(
         'label',
         {
-            htmlFor: props.id,
+            htmlFor: props.htmlFor,
             className: classNames.join(' ')
         },
         props.children
@@ -40,10 +48,29 @@ function Label(props) {
 }
 
 Label.propTypes = {
+
+    /**
+     * Label content
+     */
     children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+
+    /**
+     * Additional classnames
+     */
     className: _propTypes2.default.string,
+
+    /**
+     * for attribute referring to a form element
+     */
     htmlFor: _propTypes2.default.string,
+
+    /**
+     * Is this an error label?
+     */
     error: _propTypes2.default.bool
+};
+Label.defaultProps = {
+    error: false
 };
 Label.propExamples = {
     children: 'Label content',

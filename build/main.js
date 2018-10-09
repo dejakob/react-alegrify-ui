@@ -16,7 +16,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * <Main />
- * @param {Object} props
+ * 
+ * ```jsx
+ * <Main>
+ *   Page content...
+ * </Main>
+ * ```
  */
 function Main(props) {
     var classNames = ['alegrify-main'];
@@ -35,7 +40,15 @@ function Main(props) {
 }
 
 Main.propTypes = {
+
+    /**
+     * Main content
+     */
     children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+
+    /**
+     * Additional classnames
+     */
     className: _propTypes2.default.string
 };
 Main.propExamples = {
