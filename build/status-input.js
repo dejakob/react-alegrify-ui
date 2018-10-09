@@ -195,7 +195,7 @@ StatusInput.propTypes = {
 StatusInput.propExamples = {
     className: '',
     placeholder: 'Share your thoughts',
-    actions: [{ label: 'picture', icon: 'camera_alt' }]
+    actions: [{ label: 'picture', icon: 'camera_alt' }, { label: 'music', icon: 'audiotrack' }, { label: 'file', icon: 'attach_file' }]
 };
 
 exports.default = StatusInput;
