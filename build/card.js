@@ -34,14 +34,42 @@ function Card(props) {
         {
             className: classNames.join(' ')
         },
-        props.children
+        _react2.default.createElement(
+            'div',
+            {
+                className: 'alegrify-card__header'
+            },
+            _react2.default.createElement(
+                'h2',
+                {
+                    className: 'alegrify-card__title'
+                },
+                props.title
+            )
+        ),
+        _react2.default.createElement(
+            'div',
+            {
+                className: 'alegrify-card__content'
+            },
+            props.children
+        ),
+        _react2.default.createElement(
+            'div',
+            {
+                className: 'alegrify-card__footer'
+            },
+            props.footer
+        )
     );
 }
 
 Card.propTypes = {
     children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+    footer: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
     className: _propTypes2.default.string,
-    small: _propTypes2.default.bool
+    small: _propTypes2.default.bool,
+    title: _propTypes2.default.string.isRequired
 };
 
 exports.default = Card;
