@@ -34,6 +34,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 function Card(props) {
     var classNames = ['alegrify-card'];
+    var headerClassNames = ['alegrify-card__header'];
+    var headerAdditionalStyle = {};
 
     if (typeof props.className === 'string') {
         classNames.push(props.className);
@@ -41,6 +43,11 @@ function Card(props) {
 
     if (props.small) {
         classNames.push('alegrify-card--small');
+    }
+
+    if (typeof props.headerImage === 'string' && props.headerImage.length > 0) {
+        headerClassNames.push('alegrify-card__header--background-image');
+        headerAdditionalStyle.backgroundImage = 'url(' + props.headerImage + ')';
     }
 
     return _react2.default.createElement(
@@ -51,7 +58,8 @@ function Card(props) {
         _react2.default.createElement(
             'div',
             {
-                className: 'alegrify-card__header'
+                className: headerClassNames.join(' '),
+                style: headerAdditionalStyle
             },
             _react2.default.createElement(
                 'h2',
@@ -103,7 +111,12 @@ Card.propTypes = {
     /**
      * Card title
      */
-    title: _propTypes2.default.string.isRequired
+    title: _propTypes2.default.string.isRequired,
+
+    /**
+     * Background image of the card header
+     */
+    headerImage: _propTypes2.default.string
 };
 Card.defaultProps = {
     small: false
@@ -117,7 +130,8 @@ Card.propExamples = {
     footer: 'Footer content',
     className: '',
     small: false,
-    title: 'Card title'
+    title: 'Card title',
+    headerImage: 'https://source.unsplash.com/800x200'
 };
 
 exports.default = Card;
