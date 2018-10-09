@@ -9,12 +9,12 @@ Components
 
 Show a short and temporary message
 
-```
-  <Alert
-    open={true}
-  >
-    Message sent
-  </Alert>
+```jsx
+<Alert
+  open={true}
+>
+  Message sent
+</Alert>
 ```   
 
 

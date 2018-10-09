@@ -19,12 +19,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * 
  * Show a short and temporary message
  * 
- * ```
- *   <Alert
- *     open={true}
- *   >
- *     Message sent
- *   </Alert>
+ * ```jsx
+ * <Alert
+ *   open={true}
+ * >
+ *   Message sent
+ * </Alert>
  * ```
  */
 function Alert(props) {
