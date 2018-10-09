@@ -1,5 +1,7 @@
 # React Alegrify UI
 
+React lib based on [Alegrify UI](https://github.com/dejakob/alegrify-ui).
+
 ## Typography
 ```jsx
 <H1>Head 1</H1>
