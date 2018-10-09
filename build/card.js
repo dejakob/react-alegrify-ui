@@ -16,7 +16,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * <Card />
- * @param {Object} props 
+ * 
+ * Card component
+ * 
+ * Consists out of a header, content and footer
+ * 
+ * ```jsx
+ * <Card
+ *  title="Card title"
+ *  footer={<FooterComponent />}
+ * >
+ *   <P>
+ *     Card content
+ *   </P>
+ * </Card>
+ * ```
  */
 function Card(props) {
     var classNames = ['alegrify-card'];
@@ -65,11 +79,34 @@ function Card(props) {
 }
 
 Card.propTypes = {
+
+    /**
+     * Card content
+     */
     children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+
+    /**
+     * Footer component
+     */
     footer: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+
+    /**
+     * Additional classnames
+     */
     className: _propTypes2.default.string,
+
+    /**
+     * Small card variant
+     */
     small: _propTypes2.default.bool,
+
+    /**
+     * Card title
+     */
     title: _propTypes2.default.string.isRequired
+};
+Card.defaultProps = {
+    small: false
 };
 Card.propExamples = {
     children: _react2.default.createElement(

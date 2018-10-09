@@ -16,7 +16,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * <Checkbox />
- * @param {Object} props 
+ * 
+ * ```jsx
+ * <Checkbox
+ *  id="my_checkbox"
+ *  name="my_checkbox"
+ *  checked={false}
+ * >
+ *   I agree to GDPR, cookie banners, my local law and the fact that bears have feelings
+ * </Checkbox>
+ * ```
  */
 function Checkbox(props) {
     var classNames = ['alegrify-checkbox'];
@@ -59,11 +68,35 @@ function Checkbox(props) {
 }
 
 Checkbox.propTypes = {
+
+    /**
+     * input id
+     */
     id: _propTypes2.default.string.isRequired,
+
+    /**
+     * input name
+     */
     name: _propTypes2.default.string.isRequired,
+
+    /**
+     * Label content checkbox
+     */
     children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+
+    /**
+     * Is checkbox disabled?
+     */
     disabled: _propTypes2.default.bool,
+
+    /**
+     * Is checkbox checked?
+     */
     checked: _propTypes2.default.bool,
+
+    /**
+     * Additional classnames
+     */
     className: _propTypes2.default.string
 };
 Checkbox.propExamples = {

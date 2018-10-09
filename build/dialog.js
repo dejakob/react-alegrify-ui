@@ -16,7 +16,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * <Dialog />
- * @param {Object} props 
+ * 
+ * ```jsx
+ * <Dialog
+ *   open={true}
+ * >
+ *   Some dialog content
+ * </Dialog>
+ * ```
  */
 function Dialog(props) {
     var classNames = ['alegrify-dialog'];
@@ -48,9 +55,24 @@ function Dialog(props) {
 }
 
 Dialog.propTypes = {
+
+    /**
+     * Content
+     */
     children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+
+    /**
+     * Additional classnames
+     */
     className: _propTypes2.default.string,
+
+    /**
+     * Should the dialog be shown?
+     */
     open: _propTypes2.default.bool
+};
+Dialog.defaultProps = {
+    open: false
 };
 Dialog.propExamples = {
     children: 'Add some content here',

@@ -108,79 +108,117 @@ disabled|bool|no|false|Disabled?
 ### 1. Card
 
 <Card />
-@param {Object} props   
+
+Card component
+
+Consists out of a header, content and footer
+
+```jsx
+<Card
+ title="Card title"
+ footer={<FooterComponent />}
+>
+  <P>
+    Card content
+  </P>
+</Card>
+```   
 
 
 
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|union|yes||
-footer|union|yes||
-className|string|no||
-small|bool|no||
-title|string|yes||
+children|union|yes||Card content
+footer|union|yes||Footer component
+className|string|no||Additional classnames
+small|bool|no|false|Small card variant
+title|string|yes||Card title
 -----
 **lib/checkbox.js**
 
 ### 1. Checkbox
 
 <Checkbox />
-@param {Object} props   
+
+```jsx
+<Checkbox
+ id="my_checkbox"
+ name="my_checkbox"
+ checked={false}
+>
+  I agree to GDPR, cookie banners, my local law and the fact that bears have feelings
+</Checkbox>
+```   
 
 
 
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-id|string|yes||
-name|string|yes||
-children|union|yes||
-disabled|bool|no||
-checked|bool|no||
-className|string|no||
+id|string|yes||input id
+name|string|yes||input name
+children|union|yes||Label content checkbox
+disabled|bool|no||Is checkbox disabled?
+checked|bool|no||Is checkbox checked?
+className|string|no||Additional classnames
 -----
 **lib/dialog.js**
 
 ### 1. Dialog
 
 <Dialog />
-@param {Object} props   
+
+```jsx
+<Dialog
+  open={true}
+>
+  Some dialog content
+</Dialog>
+```   
 
 
 
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|union|yes||
-className|string|no||
-open|bool|no||
+children|union|yes||Content
+className|string|no||Additional classnames
+open|bool|no|false|Should the dialog be shown?
 -----
 **lib/input.js**
 
 ### 1. Input
 
 <Input />
-@param {Object} props   
+
+```jsx
+<Input
+  id="my_input"
+  name="my_input"
+  multiline={true}
+  value="default value"
+/>
+```   
 
 
 
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-value|string|yes||
-className|string|no||
-type|string|no||
-placeholder|string|no||
-full|bool|no||
-multiline|bool|no||
-id|string|no||
-name|string|no||
-onValueChange|func|no||
-onKeyUp|func|no||
-onKeyDown|func|no||
-onFocus|func|no||
-onBlur|func|no||
+value|string|yes||Value to show in the input
+className|string|no||Additional classnames
+type|string|no|&lt;See the source code&gt;|Input type
+placeholder|string|no||Input placeholder
+full|bool|no||100% width?
+multiline|bool|no||Use textarea instead of input
+id|string|yes||Input id
+name|string|yes||Input name
+onValueChange|func|no||On value change method (passes value)
+onKeyUp|func|no||Native onKeyUp event
+onKeyDown|func|no||Native onKeyDown event
+onFocus|func|no||Native onFocus event
+onBlur|func|no||Native onBlur event
 -----
 **lib/label.js**
 
