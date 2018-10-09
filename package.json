@@ -16,6 +16,7 @@
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
+    "react-doc-generator": "^1.2.5",
     "react-dom": "^16.4.2",
     "storybook-addon-jsx": "^5.4.0"
   },
@@ -25,6 +26,7 @@
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build": "babel lib -d build",
-    "build:watch": "babel lib -w -d build"
+    "build:watch": "babel lib -w -d build",
+    "docs": "react-doc-generator ./lib -o COMPONENTS.md"
   }
 }
