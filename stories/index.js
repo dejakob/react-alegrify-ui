@@ -32,13 +32,13 @@ Object
                 .forEach(propKey => {
                     const content = Component.propExamples && Component.propExamples[propKey];
 
-                    if (props[propKey] === PropTypes.bool || props[propKey] === PropTypes.bool.isRequired) {
-                        options[propKey] = boolean(propKey, content || false);
+                    if (typeof content === 'boolean') {
+                        options[propKey] = boolean(propKey, content);
                     }
-                    else if (props[propKey] === PropTypes.string || props[propKey] === PropTypes.string.isRequired) {
-                        options[propKey] = text(propKey, typeof content === 'string' ? content : propKey);
+                    else if (typeof content === 'string') {
+                        options[propKey] = text(propKey, content);
                     }
-                    else if (props[propKey] === PropTypes.number || props[propKey] === PropTypes.number.isRequired) {
+                    else if (typeof content === 'number') {
                         options[propKey] = number(propKey, content || 0);
                     }
                     else if (props[propKey] === PropTypes.func || props[propKey] === PropTypes.func.isRequired) {

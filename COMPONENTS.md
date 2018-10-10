@@ -48,6 +48,7 @@ Full width on smaller viewports, 2/3 on larger viewports
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 children|union|yes||Content of the article
+className|string|no||Additional classnames
 -----
 **lib/aside.js**
 
@@ -73,6 +74,7 @@ Large viewports: 1/3 width
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 children|union|yes||Content of the aside
+className|string|no||Additional classnames
 -----
 **lib/button.js**
 
@@ -133,7 +135,7 @@ children|union|yes||Card content
 footer|union|yes||Footer component
 className|string|no||Additional classnames
 small|bool|no|false|Small card variant
-title|string|yes||Card title
+title|string|no||Card title
 headerImage|string|no||Background image of the card header
 -----
 **lib/checkbox.js**
