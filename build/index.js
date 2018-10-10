@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Strong = exports.Em = exports.P = exports.H3 = exports.H2 = exports.H1 = exports.StatusInput = exports.RangeInput = exports.Radio = exports.NumberInput = exports.Main = exports.Label = exports.Input = exports.Dialog = exports.Checkbox = exports.Card = exports.Button = exports.Aside = exports.Article = exports.Alert = exports.SPACING = exports.MEDIA = exports.COLORS = undefined;
+exports.Strong = exports.Em = exports.P = exports.H3 = exports.H2 = exports.H1 = exports.Section = exports.StatusInput = exports.RangeInput = exports.Radio = exports.NumberInput = exports.Main = exports.Label = exports.Input = exports.Dialog = exports.Checkbox = exports.Card = exports.Button = exports.Aside = exports.Article = exports.Alert = exports.SPACING = exports.MEDIA = exports.COLORS = undefined;
 
 var _colors = require('./colors');
 
@@ -73,6 +73,10 @@ var _statusInput = require('./status-input');
 
 var _statusInput2 = _interopRequireDefault(_statusInput);
 
+var _section = require('./section');
+
+var _section2 = _interopRequireDefault(_section);
+
 var _typography = require('./typography');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -94,6 +98,7 @@ exports.NumberInput = _numberInput2.default;
 exports.Radio = _radio2.default;
 exports.RangeInput = _rangeInput2.default;
 exports.StatusInput = _statusInput2.default;
+exports.Section = _section2.default;
 exports.H1 = _typography.H1;
 exports.H2 = _typography.H2;
 exports.H3 = _typography.H3;
