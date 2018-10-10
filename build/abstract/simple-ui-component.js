@@ -33,7 +33,7 @@ function SimpleUiComponent(el, className, props) {
         classNames.push(props.className);
     }
 
-    return _react2.default.cloneElement(el, Object.assign({}, { className: classNames.join(' ') }, props));
+    return _react2.default.cloneElement(el, Object.assign({}, props, { className: classNames.join(' ') }));
 }
 
 exports.default = SimpleUiComponent;
