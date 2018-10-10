@@ -55,7 +55,7 @@ function Card(props) {
         {
             className: classNames.join(' ')
         },
-        _react2.default.createElement(
+        typeof props.title === 'string' && props.title.trim().length > 0 ? _react2.default.createElement(
             'div',
             {
                 className: headerClassNames.join(' '),
@@ -68,7 +68,7 @@ function Card(props) {
                 },
                 props.title
             )
-        ),
+        ) : null,
         _react2.default.createElement(
             'div',
             {
@@ -111,7 +111,7 @@ Card.propTypes = {
     /**
      * Card title
      */
-    title: _propTypes2.default.string.isRequired,
+    title: _propTypes2.default.string,
 
     /**
      * Background image of the card header
