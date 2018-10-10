@@ -32,7 +32,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Aside(props) {
     var classNames = ['alegrify-aside'];
 
-    classNames.push(props.className);
+    if (typeof props.className === 'string') {
+        classNames.push(props.className);
+    }
 
     return _react2.default.createElement(
         'aside',
@@ -48,7 +50,12 @@ Aside.propTypes = {
     /**
      * Content of the aside
      */
-    children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired
+    children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+
+    /**
+     * Additional classnames
+     */
+    className: _propTypes2.default.string
 };
 Aside.propExamples = {
     children: 'Aside content'

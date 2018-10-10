@@ -134,6 +134,7 @@ footer|union|yes||Footer component
 className|string|no||Additional classnames
 small|bool|no|false|Small card variant
 title|string|yes||Card title
+headerImage|string|no||Background image of the card header
 -----
 **lib/checkbox.js**
 
