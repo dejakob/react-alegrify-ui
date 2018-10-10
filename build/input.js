@@ -46,6 +46,7 @@ function Input(props) {
         id: props.id,
         name: props.name,
         className: classNames.join(' '),
+        placeholder: props.placeholder || '',
         onInput: onInput,
         onKeyUp: props.onKeyUp,
         onKeyDown: props.onKeyDown,
