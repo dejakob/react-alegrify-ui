@@ -117,8 +117,8 @@ function StatusInputView(props) {
         _react2.default.createElement('textarea', {
             className: 'alegrify-status-input__textarea',
             placeholder: props.placeholder,
-            name: 'alegrify-status-input1',
-            id: 'alegrify-status-input1',
+            name: props.name,
+            id: props.id,
             rows: amountOfLines,
             onInput: props.handleValueChange,
             onFocus: props.handleFocus,
@@ -187,6 +187,8 @@ function StatusInputAction(props) {
 StatusInput.propTypes = {
     className: _propTypes2.default.string,
     placeholder: _propTypes2.default.string,
+    name: _propTypes2.default.string.isRequired,
+    id: _propTypes2.default.string.isRequired,
 
     onValueChange: _propTypes2.default.func,
     onFocus: _propTypes2.default.func,
