@@ -49,7 +49,8 @@ function Button(props) {
         {
             className: classNames.join(' '),
             type: props.type || 'submit',
-            disabled: props.disabled
+            disabled: props.disabled,
+            onClick: props.onClick
         },
         props.children
     );
@@ -90,7 +91,12 @@ Button.propTypes = {
     /**
      * Disabled?
      */
-    disabled: _propTypes2.default.bool
+    disabled: _propTypes2.default.bool,
+
+    /**
+     * Click action
+     */
+    onClick: _propTypes2.default.func
 };
 Button.defaultProps = {
     primary: false,
