@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _moment = require('moment');
+
+var _moment2 = _interopRequireDefault(_moment);
+
 var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
@@ -91,6 +95,11 @@ var WeekSchedule = function (_Component) {
                 selectedRangeIndex: rangeIndex
             });
             this.mouseDownOffset = { x: clientX, y: clientY };
+            this.gridBoundaries = this.tableRef.getBoundingClientRect();
+
+            var startDate = new Date(this.state.ranges[rangeIndex].from);
+            startDate.setDay(1);
+            this.startTime = startDate.getTime();
         }
     }, {
         key: 'handleGenericMouseMove',
@@ -102,11 +111,14 @@ var WeekSchedule = function (_Component) {
                     clientY = eventData.clientY;
 
 
-                var xDiff = clientX - this.mouseDownOffset.x;
-                var yDiff = clientY - this.mouseDownOffset.y;
+                var xDiff = clientX - this.gridBoundaries.left;
+                var yDiff = clientY - this.gridBoundaries.top;
 
                 var moveDownCells = Math.round(yDiff / SELECTION_PIXEL_VALUES.cell);
-                var moveRightCells = Math.round(xDiff / SELECTION_PIXEL_VALUES.cell);
+                var moveRightCells = Math.floor(xDiff / SELECTION_PIXEL_VALUES.cell);
+
+                console.log('move', moveRightCells);
+                console.log('start time', this.startTime);
 
                 // @Todo resize
                 if (moveDownCells !== 0 || moveRightCells !== 0) {
@@ -120,7 +132,7 @@ var WeekSchedule = function (_Component) {
 
                     // @Todo what about days that are not 86400s
                     updatedRanges[this.state.selectedRangeIndex].from = updatedRanges[this.state.selectedRangeIndex].from + moveRightDays * 86400000;
-                    updatedRanges[this.state.selectedRangeIndex].till = updatedRanges[this.state.selectedRangeIndex].till + moveRightDays * 86400000;
+                    updatedRanges[this.state.selectedRangeIndex].till = updatedRanges[this.state.selectedRangeIndex].from + moveRightDays * 86400000;
 
                     this.setState({
                         ranges: updatedRanges
@@ -128,8 +140,8 @@ var WeekSchedule = function (_Component) {
 
                     // @Todo: round at middle of cell
                     this.mouseDownOffset = { x: clientX, y: clientY };
-                    console.log('from', new Date(updatedRanges[this.state.selectedRangeIndex].from).toString());
-                    console.log('till', new Date(updatedRanges[this.state.selectedRangeIndex].till).toString());
+
+                    console.log('>>>');
                 }
             }
         }
@@ -141,9 +153,14 @@ var WeekSchedule = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var methods = {
                 onRangeMouseDown: this.handleRangeMouseDown,
-                onGenericMouseMove: this.handleGenericMouseMove
+                onGenericMouseMove: this.handleGenericMouseMove,
+                tableRef: function tableRef(table) {
+                    return _this2.tableRef = table;
+                }
             };
 
             return WeekScheduleView(Object.assign({}, this.props, this.state, methods));
@@ -166,7 +183,9 @@ function WeekScheduleView(props) {
             className: classNames.join(' '),
             onMouseMove: props.onGenericMouseMove
         },
-        _react2.default.createElement(WeekScheduleViewWeekGrid, null),
+        _react2.default.createElement(WeekScheduleViewWeekGrid, {
+            tableRef: props.tableRef
+        }),
         _react2.default.createElement(
             'ul',
             {
@@ -188,7 +207,8 @@ function WeekScheduleViewWeekGrid(props) {
     return _react2.default.createElement(
         'table',
         {
-            className: 'alegrify-week-schedule__table'
+            className: 'alegrify-week-schedule__table',
+            ref: props.tableRef
         },
         _react2.default.createElement(WeekScheduleViewDays, null),
         _react2.default.createElement(WeekScheduleViewWeekGridBody, null)
@@ -270,7 +290,7 @@ function WeekScheduleViewRange(props) {
     var hoursFrom = dateFrom.getHours();
     var minutesFrom = dateFrom.getMinutes();
 
-    var offsetTop = hoursFrom * SELECTION_PIXEL_VALUES.hour + minutesFrom / 60 * SELECTION_PIXEL_VALUES.hour - SELECTION_PIXEL_VALUES.cell;
+    var offsetTop = calculateOffsetTop(hoursFrom, minutesFrom);
 
     var dateTill = new Date(props.range.till);
     var hoursTill = dateTill.getHours();
@@ -322,6 +342,10 @@ function formatToXDigits(number, digits) {
     }
 
     return (start + number).substr(-1 * digits, digits);
+}
+
+function calculateOffsetTop(hours, minutes) {
+    return hours * SELECTION_PIXEL_VALUES.hour + minutes / 60 * SELECTION_PIXEL_VALUES.hour - SELECTION_PIXEL_VALUES.cell;
 }
 
 WeekSchedule.propTypes = {
