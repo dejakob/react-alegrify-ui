@@ -33,11 +33,12 @@ var WEEKDAYS = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
 
 var SELECTION_PIXEL_VALUES = {
     startOffset: 64,
-    cellHeight: 32,
+    cellHeight: 16,
     cellWidth: 64,
     hour: 64,
-    hoursPerCell: 0.5
+    cellsPerTimeLabel: 4
 };
+SELECTION_PIXEL_VALUES.hoursPerCell = SELECTION_PIXEL_VALUES.cellHeight / SELECTION_PIXEL_VALUES.hour;
 
 // @Todo multitouch resize
 
@@ -303,14 +304,14 @@ function WeekScheduleViewWeekGridBody(props) {
     return _react2.default.createElement(
         'tbody',
         null,
-        times.map(function (time) {
+        times.map(function (time, index) {
             return _react2.default.createElement(
                 'tr',
                 null,
                 _react2.default.createElement(
                     WeekScheduleViewTime,
                     null,
-                    time
+                    index % SELECTION_PIXEL_VALUES.cellsPerTimeLabel === 0 ? time : ''
                 ),
                 WEEKDAYS.map(function () {
                     return _react2.default.createElement(WeekScheduleViewEmptyCell, null);
@@ -332,7 +333,8 @@ function WeekScheduleViewTime(props) {
 
 function WeekScheduleViewEmptyCell(props) {
     return _react2.default.createElement('td', {
-        className: 'alegrify-week-schedule__cell'
+        className: 'alegrify-week-schedule__cell',
+        style: heightCss(SELECTION_PIXEL_VALUES.cellHeight)
     });
 }
 
@@ -403,6 +405,14 @@ function formatToXDigits(number, digits) {
 
 function calculateOffsetTop(hours, minutes) {
     return hours * SELECTION_PIXEL_VALUES.hour + minutes / 60 * SELECTION_PIXEL_VALUES.hour - SELECTION_PIXEL_VALUES.hour;
+}
+
+function heightCss(height) {
+    return {
+        height: height + 'px',
+        minHeight: height + 'px',
+        maxHeight: height + 'px'
+    };
 }
 
 WeekSchedule.propTypes = {
