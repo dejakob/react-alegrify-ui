@@ -18,6 +18,12 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _view = require('./view');
+
+var _view2 = _interopRequireDefault(_view);
+
+var _constants = require('./constants.json');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -26,23 +32,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var CELL_WIDTH = 64;
-
-// @Todo multitouch resize
-
-// @Todo important: resize gesture
-
-/**
- * <WeekSchedule />
- */
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   TODOS
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   =============
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * Multitouch resize gesture
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * Test in other timezones
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * Button to add range
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * Caniuse clientX/clientY?
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * what about days that are not 86400s
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * Test RTL
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               */
 
 var WeekSchedule = function (_Component) {
     _inherits(WeekSchedule, _Component);
-
-    // @Todo test in other timezones
-    // @Todo add button to add range
 
     function WeekSchedule() {
         _classCallCheck(this, WeekSchedule);
@@ -57,11 +62,6 @@ var WeekSchedule = function (_Component) {
     }
 
     _createClass(WeekSchedule, [{
-        key: 'getDefaultProps',
-        value: function getDefaultProps() {
-            return WeekSchedule.defaultProps;
-        }
-    }, {
         key: 'componentWillMount',
         value: function componentWillMount() {
             this.setState({
@@ -91,7 +91,6 @@ var WeekSchedule = function (_Component) {
             eventData.preventDefault();
             eventData.stopPropagation();
 
-            //@Todo Caniuse clientX?
             var clientX = void 0;
             var clientY = void 0;
 
@@ -117,7 +116,6 @@ var WeekSchedule = function (_Component) {
                 eventData.preventDefault();
                 eventData.stopPropagation();
 
-                //@Todo Caniuse clientX?
                 var clientX = void 0;
                 var clientY = void 0;
 
@@ -133,9 +131,8 @@ var WeekSchedule = function (_Component) {
                 var yDiff = clientY - this.gridBoundaries.top;
 
                 var moveDownCells = Math.round(yDiff / this.props.cellHeight);
-                var moveRightCells = Math.floor(xDiff / CELL_WIDTH);
+                var moveRightCells = Math.floor(xDiff / _constants.DEFAULT_CELL_WIDTH);
 
-                // @Todo resize
                 if (moveDownCells !== 0 || moveRightCells !== 0) {
                     var updatedRanges = [].concat(_toConsumableArray(this.state.ranges));
 
@@ -183,7 +180,6 @@ var WeekSchedule = function (_Component) {
                         ranges: updatedRanges
                     });
 
-                    // @Todo: round at middle of cell
                     this.mouseDownOffset = { x: clientX, y: clientY };
                 }
             }
@@ -213,12 +209,11 @@ var WeekSchedule = function (_Component) {
                     clientY = eventData.clientY;
                 }
 
-                // @Todo: test RTL
                 var xDiff = clientX - this.gridBoundaries.left;
                 var yDiff = clientY - this.gridBoundaries.top;
 
                 var moveDownCells = Math.floor(yDiff / this.props.cellHeight);
-                var moveRightCells = Math.floor(xDiff / CELL_WIDTH);
+                var moveRightCells = Math.floor(xDiff / _constants.DEFAULT_CELL_WIDTH);
                 var newWeekDayValue = moveRightCells;
 
                 var newHourValue = moveDownCells * this.props.hoursPerCell;
@@ -249,7 +244,7 @@ var WeekSchedule = function (_Component) {
                 }
             };
 
-            return WeekScheduleView(Object.assign({}, this.props, this.state, methods));
+            return (0, _view2.default)(Object.assign({}, this.props, this.state, methods));
         }
     }]);
 
@@ -267,16 +262,19 @@ WeekSchedule.propTypes = {
     cellsPerTimeLabel: _propTypes2.default.number
 };
 WeekSchedule.defaultProps = {
-    cellHeight: 16,
-    hoursPerCell: 0.5,
-    cellsPerTimeLabel: 4
+    cellHeight: _constants.DEFAULT_CELL_HEIGHT,
+    hoursPerCell: _constants.DEFAULT_HOURS_PER_CELL,
+    cellsPerTimeLabel: _constants.DEFAULT_CELLS_PER_TIME_LABEL
 };
 WeekSchedule.propExamples = {
     className: '',
-    ranges: [{ from: 1539795815257, till: 1539803034873 }],
-    cellHeight: 16,
-    hoursPerCell: 0.5,
-    cellsPerTimeLabel: 4
+    ranges: [{
+        from: new Date('2018-10-20T08:00:00').getTime(),
+        till: new Date('2018-10-20T17:00:00').getTime()
+    }],
+    cellHeight: _constants.DEFAULT_CELL_HEIGHT,
+    hoursPerCell: _constants.DEFAULT_HOURS_PER_CELL,
+    cellsPerTimeLabel: _constants.DEFAULT_CELLS_PER_TIME_LABEL
 };
 
 exports.default = WeekSchedule;
