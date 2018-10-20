@@ -24,6 +24,8 @@ var _view2 = _interopRequireDefault(_view);
 
 var _constants = require('./constants.json');
 
+var _helpers = require('./helpers');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -91,16 +93,9 @@ var WeekSchedule = function (_Component) {
             eventData.preventDefault();
             eventData.stopPropagation();
 
-            var clientX = void 0;
-            var clientY = void 0;
-
-            if (eventData.touches && eventData.touches.length) {
-                clientX = eventData.touches[0].clientX;
-                clientY = eventData.touches[0].clientY;
-            } else {
-                clientX = eventData.clientX;
-                clientY = eventData.clientY;
-            }
+            var _getCursorOrTouchPosi = (0, _helpers.getCursorOrTouchPosition)(eventData),
+                clientX = _getCursorOrTouchPosi.clientX,
+                clientY = _getCursorOrTouchPosi.clientY;
 
             this.setState({
                 selectedRangeIndex: rangeIndex
@@ -116,16 +111,9 @@ var WeekSchedule = function (_Component) {
                 eventData.preventDefault();
                 eventData.stopPropagation();
 
-                var clientX = void 0;
-                var clientY = void 0;
-
-                if (eventData.touches && eventData.touches.length) {
-                    clientX = eventData.touches[0].clientX;
-                    clientY = eventData.touches[0].clientY;
-                } else {
-                    clientX = eventData.clientX;
-                    clientY = eventData.clientY;
-                }
+                var _getCursorOrTouchPosi2 = (0, _helpers.getCursorOrTouchPosition)(eventData),
+                    clientX = _getCursorOrTouchPosi2.clientX,
+                    clientY = _getCursorOrTouchPosi2.clientY;
 
                 var xDiff = clientX - this.gridBoundaries.left;
                 var yDiff = clientY - this.gridBoundaries.top;
@@ -198,16 +186,9 @@ var WeekSchedule = function (_Component) {
             if (eventData.target.localName === 'td') {
                 this.gridBoundaries = this.tableRef.getBoundingClientRect();
 
-                var clientX = void 0;
-                var clientY = void 0;
-
-                if (eventData.touches && eventData.touches.length) {
-                    clientX = eventData.touches[0].clientX;
-                    clientY = eventData.touches[0].clientY;
-                } else {
-                    clientX = eventData.clientX;
-                    clientY = eventData.clientY;
-                }
+                var _getCursorOrTouchPosi3 = (0, _helpers.getCursorOrTouchPosition)(eventData),
+                    clientX = _getCursorOrTouchPosi3.clientX,
+                    clientY = _getCursorOrTouchPosi3.clientY;
 
                 var xDiff = clientX - this.gridBoundaries.left;
                 var yDiff = clientY - this.gridBoundaries.top;
