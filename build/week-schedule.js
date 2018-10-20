@@ -35,6 +35,8 @@ var CELL_WIDTH = 64;
 
 // @Todo multitouch resize
 
+// @Todo important: resize gesture
+
 /**
  * <WeekSchedule />
  */
