@@ -153,7 +153,7 @@ var WeekSchedule = function (_Component) {
                     var fromTime = updatedRanges[this.state.selectedRangeIndex].from;
                     var tillTime = updatedRanges[this.state.selectedRangeIndex].till;
 
-                    if (tillTime - fromTime < 0 || fromTime < startOfDay || tillTime > endOfDay) {
+                    if (tillTime < fromTime || fromTime < startOfDay && moveRightCells === 0 || tillTime > endOfDay && moveRightCells === 0) {
                         updatedRanges.splice(this.state.selectedRangeIndex, 1);
 
                         return this.setState({
