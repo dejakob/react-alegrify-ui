@@ -33,10 +33,13 @@ var WEEKDAYS = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
 
 var SELECTION_PIXEL_VALUES = {
     startOffset: 64,
-    cell: 64,
-    hour: 128,
+    cellHeight: 32,
+    cellWidth: 64,
+    hour: 64,
     hoursPerCell: 0.5
 };
+
+// @Todo multitouch resize
 
 /**
  * <WeekSchedule />
@@ -56,6 +59,7 @@ var WeekSchedule = function (_Component) {
         _this.handleRangeMouseDown = _this.handleRangeMouseDown.bind(_this);
         _this.handleGenericMouseMove = _this.handleGenericMouseMove.bind(_this);
         _this.handleBodyMouseUp = _this.handleBodyMouseUp.bind(_this);
+        _this.handleTableClick = _this.handleTableClick.bind(_this);
         return _this;
     }
 
@@ -82,24 +86,22 @@ var WeekSchedule = function (_Component) {
     }, {
         key: 'handleRangeMouseDown',
         value: function handleRangeMouseDown(eventData, rangeIndex) {
+            var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+            eventData.preventDefault();
+            eventData.stopPropagation();
 
             //@Todo Caniuse clientX?
             var clientX = eventData.clientX,
                 clientY = eventData.clientY;
 
 
-            eventData.preventDefault();
-            eventData.stopPropagation();
-
             this.setState({
                 selectedRangeIndex: rangeIndex
             });
             this.mouseDownOffset = { x: clientX, y: clientY };
             this.gridBoundaries = this.tableRef.getBoundingClientRect();
-
-            var startDate = new Date(this.state.ranges[rangeIndex].from);
-            startDate.setDay(1);
-            this.startTime = startDate.getTime();
+            this.resizeMode = options.resize;
         }
     }, {
         key: 'handleGenericMouseMove',
@@ -114,25 +116,37 @@ var WeekSchedule = function (_Component) {
                 var xDiff = clientX - this.gridBoundaries.left;
                 var yDiff = clientY - this.gridBoundaries.top;
 
-                var moveDownCells = Math.round(yDiff / SELECTION_PIXEL_VALUES.cell);
-                var moveRightCells = Math.floor(xDiff / SELECTION_PIXEL_VALUES.cell);
-
-                console.log('move', moveRightCells);
-                console.log('start time', this.startTime);
+                var moveDownCells = Math.round(yDiff / SELECTION_PIXEL_VALUES.cellHeight);
+                var moveRightCells = Math.floor(xDiff / SELECTION_PIXEL_VALUES.cellWidth);
 
                 // @Todo resize
                 if (moveDownCells !== 0 || moveRightCells !== 0) {
                     var updatedRanges = [].concat(_toConsumableArray(this.state.ranges));
 
-                    var moveDownHours = moveDownCells * SELECTION_PIXEL_VALUES.hoursPerCell;
-                    var moveRightDays = moveRightCells;
+                    var newHourValue = moveDownCells * SELECTION_PIXEL_VALUES.hoursPerCell;
+                    var newWeekDayValue = moveRightCells;
 
-                    updatedRanges[this.state.selectedRangeIndex].from = updatedRanges[this.state.selectedRangeIndex].from + moveDownHours * 3600000;
-                    updatedRanges[this.state.selectedRangeIndex].till = updatedRanges[this.state.selectedRangeIndex].till + moveDownHours * 3600000;
+                    var fromMoment = (0, _moment2.default)(updatedRanges[this.state.selectedRangeIndex].from);
+                    var tillMoment = (0, _moment2.default)(updatedRanges[this.state.selectedRangeIndex].till);
 
-                    // @Todo what about days that are not 86400s
-                    updatedRanges[this.state.selectedRangeIndex].from = updatedRanges[this.state.selectedRangeIndex].from + moveRightDays * 86400000;
-                    updatedRanges[this.state.selectedRangeIndex].till = updatedRanges[this.state.selectedRangeIndex].from + moveRightDays * 86400000;
+                    updatedRanges[this.state.selectedRangeIndex].from = fromMoment.isoWeekday(newWeekDayValue).toDate().getTime();
+                    updatedRanges[this.state.selectedRangeIndex].till = tillMoment.isoWeekday(newWeekDayValue).toDate().getTime();
+
+                    if (this.resizeMode === 'TOP') {
+                        updatedRanges[this.state.selectedRangeIndex].from = fromMoment.hour(newHourValue).minute((newHourValue - Math.floor(newHourValue)) * 60).toDate().getTime();
+                    }
+
+                    if (this.resizeMode === 'BOTTOM') {
+                        updatedRanges[this.state.selectedRangeIndex].till = tillMoment.hour(newHourValue).minute((newHourValue - Math.floor(newHourValue)) * 60).toDate().getTime();
+                    }
+
+                    if (!this.resizeMode) {
+                        // @Todo what about days that are not 86400s
+                        var length = updatedRanges[this.state.selectedRangeIndex].till - updatedRanges[this.state.selectedRangeIndex].from;
+                        updatedRanges[this.state.selectedRangeIndex].from = fromMoment.hour(newHourValue).minute((newHourValue - Math.floor(newHourValue)) * 60).subtract(length / 2000, 's').toDate().getTime();
+
+                        updatedRanges[this.state.selectedRangeIndex].till = fromMoment.add(length / 1000, 's').toDate().getTime();
+                    }
 
                     this.setState({
                         ranges: updatedRanges
@@ -140,8 +154,6 @@ var WeekSchedule = function (_Component) {
 
                     // @Todo: round at middle of cell
                     this.mouseDownOffset = { x: clientX, y: clientY };
-
-                    console.log('>>>');
                 }
             }
         }
@@ -151,6 +163,41 @@ var WeekSchedule = function (_Component) {
             this.setState({ selectedRangeIndex: null });
         }
     }, {
+        key: 'handleTableClick',
+        value: function handleTableClick(eventData) {
+            eventData.preventDefault();
+            eventData.stopPropagation();
+
+            if (eventData.target.localName === 'td') {
+                this.gridBoundaries = this.tableRef.getBoundingClientRect();
+
+                var clientX = eventData.clientX,
+                    clientY = eventData.clientY;
+
+                // @Todo: test RTL
+
+                var xDiff = clientX - this.gridBoundaries.left;
+                var yDiff = clientY - this.gridBoundaries.top;
+
+                var moveDownCells = Math.floor(yDiff / SELECTION_PIXEL_VALUES.cellHeight);
+                var moveRightCells = Math.floor(xDiff / SELECTION_PIXEL_VALUES.cellWidth);
+                var newWeekDayValue = moveRightCells;
+
+                var newHourValue = moveDownCells * SELECTION_PIXEL_VALUES.hoursPerCell;
+
+                var fromMoment = (0, _moment2.default)(this.state.ranges.length ? this.state.ranges[0].from : Date.now());
+
+                var newRange = {
+                    from: fromMoment.isoWeekday(newWeekDayValue).hour(newHourValue).minute((newHourValue - Math.floor(newHourValue)) * 60).toDate().getTime(),
+                    till: fromMoment.add(3, 'hour').toDate().getTime()
+                };
+
+                this.setState({
+                    ranges: [].concat(_toConsumableArray(this.state.ranges), [newRange])
+                });
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _this2 = this;
@@ -158,6 +205,7 @@ var WeekSchedule = function (_Component) {
             var methods = {
                 onRangeMouseDown: this.handleRangeMouseDown,
                 onGenericMouseMove: this.handleGenericMouseMove,
+                onDoubleClick: this.handleTableClick,
                 tableRef: function tableRef(table) {
                     return _this2.tableRef = table;
                 }
@@ -184,7 +232,8 @@ function WeekScheduleView(props) {
             onMouseMove: props.onGenericMouseMove
         },
         _react2.default.createElement(WeekScheduleViewWeekGrid, {
-            tableRef: props.tableRef
+            tableRef: props.tableRef,
+            onDoubleClick: props.onDoubleClick
         }),
         _react2.default.createElement(
             'ul',
@@ -195,7 +244,8 @@ function WeekScheduleView(props) {
                 return _react2.default.createElement(WeekScheduleViewRange, {
                     range: range,
                     onMouseDown: function onMouseDown(eventData) {
-                        return props.onRangeMouseDown(eventData, rangeIndex);
+                        var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+                        return props.onRangeMouseDown(eventData, rangeIndex, options);
                     }
                 });
             })
@@ -208,6 +258,7 @@ function WeekScheduleViewWeekGrid(props) {
         'table',
         {
             className: 'alegrify-week-schedule__table',
+            onDoubleClick: props.onDoubleClick,
             ref: props.tableRef
         },
         _react2.default.createElement(WeekScheduleViewDays, null),
@@ -245,7 +296,7 @@ function WeekScheduleViewDay(props) {
 }
 
 function WeekScheduleViewWeekGridBody(props) {
-    var times = new Array(47).fill(null).map(function (nothing, index) {
+    var times = new Array(48).fill(null).map(function (nothing, index) {
         return formatTimeLabel(index);
     });
 
@@ -302,13 +353,13 @@ function WeekScheduleViewRange(props) {
 
     // @Todo what about days that are not 86400
     var weekDayIndexFrom = (dateFrom.getDay() + 6) % 7;
-    var offsetLeft = weekDayIndexFrom * SELECTION_PIXEL_VALUES.cell;
+    var offsetLeft = weekDayIndexFrom * SELECTION_PIXEL_VALUES.cellWidth;
 
     return _react2.default.createElement(
         'li',
         {
             className: 'alegrify-week-schedule__selection',
-            style: { top: offsetTop + 'px', height: height + 'px', minHeight: height + 'px', maxHeight: height + 'px', left: offsetLeft + 'px' },
+            style: { top: offsetTop + 'px', minHeight: height + 'px', maxHeight: height + 'px', left: offsetLeft + 'px' },
             onMouseDown: props.onMouseDown
         },
         _react2.default.createElement(
@@ -317,10 +368,16 @@ function WeekScheduleViewRange(props) {
                 className: 'alegrify-week-schedule__selection-content'
             },
             _react2.default.createElement('button', {
-                className: 'alegrify-week-schedule__selection-resize-up'
+                className: 'alegrify-week-schedule__selection-resize-up',
+                onMouseDown: function onMouseDown(e) {
+                    return props.onMouseDown(e, { resize: 'TOP' });
+                }
             }),
             _react2.default.createElement('button', {
-                className: 'alegrify-week-schedule__selection-resize-down'
+                className: 'alegrify-week-schedule__selection-resize-down',
+                onMouseDown: function onMouseDown(e) {
+                    return props.onMouseDown(e, { resize: 'BOTTOM' });
+                }
             })
         )
     );
@@ -328,8 +385,8 @@ function WeekScheduleViewRange(props) {
 
 // Helpers, pure methods
 function formatTimeLabel(index) {
-    var hour = formatToXDigits(Math.round(index / 2), 2);
-    var min = formatToXDigits((index + 1) % 2 * 30, 2);
+    var hour = formatToXDigits(Math.floor(index / 2), 2);
+    var min = formatToXDigits(index % 2 * 30, 2);
 
     return hour + ':' + min;
 }
@@ -345,7 +402,7 @@ function formatToXDigits(number, digits) {
 }
 
 function calculateOffsetTop(hours, minutes) {
-    return hours * SELECTION_PIXEL_VALUES.hour + minutes / 60 * SELECTION_PIXEL_VALUES.hour - SELECTION_PIXEL_VALUES.cell;
+    return hours * SELECTION_PIXEL_VALUES.hour + minutes / 60 * SELECTION_PIXEL_VALUES.hour - SELECTION_PIXEL_VALUES.hour;
 }
 
 WeekSchedule.propTypes = {
