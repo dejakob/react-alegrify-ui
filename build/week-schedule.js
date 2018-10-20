@@ -128,6 +128,9 @@ var WeekSchedule = function (_Component) {
                     var fromMoment = (0, _moment2.default)(updatedRanges[this.state.selectedRangeIndex].from);
                     var tillMoment = (0, _moment2.default)(updatedRanges[this.state.selectedRangeIndex].till);
 
+                    var startOfDay = fromMoment.clone().startOf('day').toDate().getTime();
+                    var endOfDay = fromMoment.clone().endOf('day').toDate().getTime();
+
                     updatedRanges[this.state.selectedRangeIndex].from = fromMoment.isoWeekday(newWeekDayValue).toDate().getTime();
                     updatedRanges[this.state.selectedRangeIndex].till = tillMoment.isoWeekday(newWeekDayValue).toDate().getTime();
 
@@ -147,13 +150,21 @@ var WeekSchedule = function (_Component) {
                         updatedRanges[this.state.selectedRangeIndex].till = fromMoment.add(length / 1000, 's').toDate().getTime();
                     }
 
-                    var MIN_SIZE_IN_HOUR = 1;
+                    var fromTime = updatedRanges[this.state.selectedRangeIndex].from;
+                    var tillTime = updatedRanges[this.state.selectedRangeIndex].till;
 
-                    if (updatedRanges[this.state.selectedRangeIndex].till - updatedRanges[this.state.selectedRangeIndex].from >= MIN_SIZE_IN_HOUR * 3600000) {
-                        this.setState({
-                            ranges: updatedRanges
+                    if (tillTime - fromTime < 0 || fromTime < startOfDay || tillTime > endOfDay) {
+                        updatedRanges.splice(this.state.selectedRangeIndex, 1);
+
+                        return this.setState({
+                            ranges: updatedRanges,
+                            selectedRangeIndex: null
                         });
                     }
+
+                    this.setState({
+                        ranges: updatedRanges
+                    });
 
                     // @Todo: round at middle of cell
                     this.mouseDownOffset = { x: clientX, y: clientY };
