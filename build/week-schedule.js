@@ -73,6 +73,7 @@ var WeekSchedule = function (_Component) {
 
             if (typeof document !== 'undefined' && typeof document.body !== 'undefined' && typeof document.body.addEventListener === 'function') {
                 document.addEventListener('mouseup', this.handleBodyMouseUp);
+                document.addEventListener('touchend', this.handleBodyMouseUp);
             }
         }
     }, {
@@ -80,6 +81,7 @@ var WeekSchedule = function (_Component) {
         value: function componentWillUnmount() {
             if (typeof document !== 'undefined' && typeof document.body !== 'undefined' && typeof document.body.removeEventListener === 'function') {
                 document.removeEventListener('mouseup', this.handleBodyMouseUp);
+                document.addEventListener('touchend', this.handleBodyMouseUp);
             }
         }
     }, {
@@ -91,9 +93,16 @@ var WeekSchedule = function (_Component) {
             eventData.stopPropagation();
 
             //@Todo Caniuse clientX?
-            var clientX = eventData.clientX,
-                clientY = eventData.clientY;
+            var clientX = void 0;
+            var clientY = void 0;
 
+            if (eventData.touches && eventData.touches.length) {
+                clientX = eventData.touches[0].clientX;
+                clientY = eventData.touches[0].clientY;
+            } else {
+                clientX = eventData.clientX;
+                clientY = eventData.clientY;
+            }
 
             this.setState({
                 selectedRangeIndex: rangeIndex
@@ -106,11 +115,20 @@ var WeekSchedule = function (_Component) {
         key: 'handleGenericMouseMove',
         value: function handleGenericMouseMove(eventData) {
             if (typeof this.state.selectedRangeIndex === 'number') {
+                eventData.preventDefault();
+                eventData.stopPropagation();
 
                 //@Todo Caniuse clientX?
-                var clientX = eventData.clientX,
-                    clientY = eventData.clientY;
+                var clientX = void 0;
+                var clientY = void 0;
 
+                if (eventData.touches && eventData.touches.length) {
+                    clientX = eventData.touches[0].clientX;
+                    clientY = eventData.touches[0].clientY;
+                } else {
+                    clientX = eventData.clientX;
+                    clientY = eventData.clientY;
+                }
 
                 var xDiff = clientX - this.gridBoundaries.left;
                 var yDiff = clientY - this.gridBoundaries.top;
@@ -185,11 +203,18 @@ var WeekSchedule = function (_Component) {
             if (eventData.target.localName === 'td') {
                 this.gridBoundaries = this.tableRef.getBoundingClientRect();
 
-                var clientX = eventData.clientX,
+                var clientX = void 0;
+                var clientY = void 0;
+
+                if (eventData.touches && eventData.touches.length) {
+                    clientX = eventData.touches[0].clientX;
+                    clientY = eventData.touches[0].clientY;
+                } else {
+                    clientX = eventData.clientX;
                     clientY = eventData.clientY;
+                }
 
                 // @Todo: test RTL
-
                 var xDiff = clientX - this.gridBoundaries.left;
                 var yDiff = clientY - this.gridBoundaries.top;
 
@@ -243,7 +268,8 @@ function WeekScheduleView(props) {
         'div',
         {
             className: classNames.join(' '),
-            onMouseMove: props.onGenericMouseMove
+            onMouseMove: props.onGenericMouseMove,
+            onTouchMove: props.onGenericMouseMove
         },
         _react2.default.createElement(WeekScheduleViewWeekGrid, {
             tableRef: props.tableRef,
@@ -278,6 +304,7 @@ function WeekScheduleViewWeekGrid(props) {
         {
             className: 'alegrify-week-schedule__table',
             onDoubleClick: props.onDoubleClick,
+            onTouchStart: props.onDoubleClick,
             ref: props.tableRef
         },
         _react2.default.createElement(WeekScheduleViewDays, null),
@@ -391,7 +418,8 @@ function WeekScheduleViewRange(props) {
         {
             className: 'alegrify-week-schedule__selection',
             style: style,
-            onMouseDown: props.onMouseDown
+            onMouseDown: props.onMouseDown,
+            onTouchStart: props.onMouseDown
         },
         _react2.default.createElement(
             'div',
