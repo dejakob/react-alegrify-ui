@@ -147,9 +147,13 @@ var WeekSchedule = function (_Component) {
                         updatedRanges[this.state.selectedRangeIndex].till = fromMoment.add(length / 1000, 's').toDate().getTime();
                     }
 
-                    this.setState({
-                        ranges: updatedRanges
-                    });
+                    var MIN_SIZE_IN_HOUR = 1;
+
+                    if (updatedRanges[this.state.selectedRangeIndex].till - updatedRanges[this.state.selectedRangeIndex].from >= MIN_SIZE_IN_HOUR * 3600000) {
+                        this.setState({
+                            ranges: updatedRanges
+                        });
+                    }
 
                     // @Todo: round at middle of cell
                     this.mouseDownOffset = { x: clientX, y: clientY };
@@ -209,8 +213,6 @@ var WeekSchedule = function (_Component) {
                     return _this2.tableRef = table;
                 }
             };
-
-            console.log('props', this.props);
 
             return WeekScheduleView(Object.assign({}, this.props, this.state, methods));
         }
