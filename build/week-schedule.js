@@ -31,14 +31,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // Todo: custom translations
 var WEEKDAYS = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
 
-var SELECTION_PIXEL_VALUES = {
-    startOffset: 64,
-    cellHeight: 16,
-    cellWidth: 64,
-    hour: 64,
-    cellsPerTimeLabel: 4
-};
-SELECTION_PIXEL_VALUES.hoursPerCell = SELECTION_PIXEL_VALUES.cellHeight / SELECTION_PIXEL_VALUES.hour;
+var CELL_WIDTH = 64;
 
 // @Todo multitouch resize
 
@@ -65,6 +58,11 @@ var WeekSchedule = function (_Component) {
     }
 
     _createClass(WeekSchedule, [{
+        key: 'getDefaultProps',
+        value: function getDefaultProps() {
+            return WeekSchedule.defaultProps;
+        }
+    }, {
         key: 'componentWillMount',
         value: function componentWillMount() {
             this.setState({
@@ -117,14 +115,14 @@ var WeekSchedule = function (_Component) {
                 var xDiff = clientX - this.gridBoundaries.left;
                 var yDiff = clientY - this.gridBoundaries.top;
 
-                var moveDownCells = Math.round(yDiff / SELECTION_PIXEL_VALUES.cellHeight);
-                var moveRightCells = Math.floor(xDiff / SELECTION_PIXEL_VALUES.cellWidth);
+                var moveDownCells = Math.round(yDiff / this.props.cellHeight);
+                var moveRightCells = Math.floor(xDiff / CELL_WIDTH);
 
                 // @Todo resize
                 if (moveDownCells !== 0 || moveRightCells !== 0) {
                     var updatedRanges = [].concat(_toConsumableArray(this.state.ranges));
 
-                    var newHourValue = moveDownCells * SELECTION_PIXEL_VALUES.hoursPerCell;
+                    var newHourValue = moveDownCells * this.props.hoursPerCell;
                     var newWeekDayValue = moveRightCells;
 
                     var fromMoment = (0, _moment2.default)(updatedRanges[this.state.selectedRangeIndex].from);
@@ -180,11 +178,11 @@ var WeekSchedule = function (_Component) {
                 var xDiff = clientX - this.gridBoundaries.left;
                 var yDiff = clientY - this.gridBoundaries.top;
 
-                var moveDownCells = Math.floor(yDiff / SELECTION_PIXEL_VALUES.cellHeight);
-                var moveRightCells = Math.floor(xDiff / SELECTION_PIXEL_VALUES.cellWidth);
+                var moveDownCells = Math.floor(yDiff / this.props.cellHeight);
+                var moveRightCells = Math.floor(xDiff / CELL_WIDTH);
                 var newWeekDayValue = moveRightCells;
 
-                var newHourValue = moveDownCells * SELECTION_PIXEL_VALUES.hoursPerCell;
+                var newHourValue = moveDownCells * this.props.hoursPerCell;
 
                 var fromMoment = (0, _moment2.default)(this.state.ranges.length ? this.state.ranges[0].from : Date.now());
 
@@ -212,6 +210,8 @@ var WeekSchedule = function (_Component) {
                 }
             };
 
+            console.log('props', this.props);
+
             return WeekScheduleView(Object.assign({}, this.props, this.state, methods));
         }
     }]);
@@ -234,7 +234,10 @@ function WeekScheduleView(props) {
         },
         _react2.default.createElement(WeekScheduleViewWeekGrid, {
             tableRef: props.tableRef,
-            onDoubleClick: props.onDoubleClick
+            onDoubleClick: props.onDoubleClick,
+            cellHeight: props.cellHeight,
+            hoursPerCell: props.hoursPerCell,
+            cellsPerTimeLabel: props.cellsPerTimeLabel
         }),
         _react2.default.createElement(
             'ul',
@@ -247,7 +250,9 @@ function WeekScheduleView(props) {
                     onMouseDown: function onMouseDown(eventData) {
                         var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
                         return props.onRangeMouseDown(eventData, rangeIndex, options);
-                    }
+                    },
+                    cellHeight: props.cellHeight,
+                    hoursPerCell: props.hoursPerCell
                 });
             })
         )
@@ -263,7 +268,10 @@ function WeekScheduleViewWeekGrid(props) {
             ref: props.tableRef
         },
         _react2.default.createElement(WeekScheduleViewDays, null),
-        _react2.default.createElement(WeekScheduleViewWeekGridBody, null)
+        _react2.default.createElement(WeekScheduleViewWeekGridBody, {
+            cellsPerTimeLabel: props.cellsPerTimeLabel,
+            cellHeight: props.cellHeight
+        })
     );
 }
 
@@ -311,10 +319,12 @@ function WeekScheduleViewWeekGridBody(props) {
                 _react2.default.createElement(
                     WeekScheduleViewTime,
                     null,
-                    index % SELECTION_PIXEL_VALUES.cellsPerTimeLabel === 0 ? time : ''
+                    index % props.cellsPerTimeLabel === 0 ? time : ''
                 ),
                 WEEKDAYS.map(function () {
-                    return _react2.default.createElement(WeekScheduleViewEmptyCell, null);
+                    return _react2.default.createElement(WeekScheduleViewEmptyCell, {
+                        cellHeight: props.cellHeight
+                    });
                 })
             );
         })
@@ -334,16 +344,18 @@ function WeekScheduleViewTime(props) {
 function WeekScheduleViewEmptyCell(props) {
     return _react2.default.createElement('td', {
         className: 'alegrify-week-schedule__cell',
-        style: heightCss(SELECTION_PIXEL_VALUES.cellHeight)
+        style: heightCss(props.cellHeight)
     });
 }
 
 function WeekScheduleViewRange(props) {
+    var hourHeight = props.cellHeight / props.hoursPerCell;
+
     var dateFrom = new Date(props.range.from);
     var hoursFrom = dateFrom.getHours();
     var minutesFrom = dateFrom.getMinutes();
 
-    var offsetTop = calculateOffsetTop(hoursFrom, minutesFrom);
+    var offsetTop = calculateOffsetTop(hoursFrom, minutesFrom, hourHeight);
 
     var dateTill = new Date(props.range.till);
     var hoursTill = dateTill.getHours();
@@ -351,17 +363,21 @@ function WeekScheduleViewRange(props) {
 
     // @Todo: What about cross day ranges?
     var timeDiffInMinutes = hoursTill * 60 + minutesTill - (hoursFrom * 60 + minutesFrom);
-    var height = timeDiffInMinutes / 60 * SELECTION_PIXEL_VALUES.hour;
+    var height = timeDiffInMinutes / 60 * hourHeight;
 
     // @Todo what about days that are not 86400
     var weekDayIndexFrom = (dateFrom.getDay() + 6) % 7;
-    var offsetLeft = weekDayIndexFrom * SELECTION_PIXEL_VALUES.cellWidth;
+    var offsetLeft = weekDayIndexFrom * CELL_WIDTH;
+
+    var style = heightCss(height);
+    style.top = offsetTop + 'px';
+    style.left = offsetLeft + 'px';
 
     return _react2.default.createElement(
         'li',
         {
             className: 'alegrify-week-schedule__selection',
-            style: { top: offsetTop + 'px', minHeight: height + 'px', maxHeight: height + 'px', left: offsetLeft + 'px' },
+            style: style,
             onMouseDown: props.onMouseDown
         },
         _react2.default.createElement(
@@ -403,8 +419,8 @@ function formatToXDigits(number, digits) {
     return (start + number).substr(-1 * digits, digits);
 }
 
-function calculateOffsetTop(hours, minutes) {
-    return hours * SELECTION_PIXEL_VALUES.hour + minutes / 60 * SELECTION_PIXEL_VALUES.hour - SELECTION_PIXEL_VALUES.hour;
+function calculateOffsetTop(hours, minutes, hourHeight) {
+    return hours * hourHeight + minutes / 60 * hourHeight - hourHeight;
 }
 
 function heightCss(height) {
@@ -420,11 +436,22 @@ WeekSchedule.propTypes = {
     ranges: _propTypes2.default.arrayOf(_propTypes2.default.shape({
         from: _propTypes2.default.number,
         till: _propTypes2.default.number
-    }))
+    })),
+    cellHeight: _propTypes2.default.number,
+    hoursPerCell: _propTypes2.default.number,
+    cellsPerTimeLabel: _propTypes2.default.number
+};
+WeekSchedule.defaultProps = {
+    cellHeight: 16,
+    hoursPerCell: 0.5,
+    cellsPerTimeLabel: 4
 };
 WeekSchedule.propExamples = {
     className: '',
-    ranges: [{ from: 1539795815257, till: 1539803034873 }]
+    ranges: [{ from: 1539795815257, till: 1539803034873 }],
+    cellHeight: 16,
+    hoursPerCell: 0.5,
+    cellsPerTimeLabel: 4
 };
 
 exports.default = WeekSchedule;
