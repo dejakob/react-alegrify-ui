@@ -22,7 +22,7 @@ var _view = require('./view');
 
 var _view2 = _interopRequireDefault(_view);
 
-var _constants = require('./constants.json');
+var _constants = require('./constants');
 
 var _helpers = require('./helpers');
 
@@ -90,11 +90,12 @@ var WeekSchedule = function (_Component) {
         value: function handleRangeMouseDown(eventData, rangeIndex) {
             var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
-            eventData.preventDefault();
-            eventData.stopPropagation();
 
             // Avoid issues on multitouch
             if (!this.state.selectedRangeIndex) {
+                eventData.preventDefault();
+                eventData.stopPropagation();
+
                 var _getCursorOrTouchPosi = (0, _helpers.getCursorOrTouchPosition)(eventData),
                     clientX = _getCursorOrTouchPosi.clientX,
                     clientY = _getCursorOrTouchPosi.clientY;
@@ -115,9 +116,6 @@ var WeekSchedule = function (_Component) {
         key: 'handleGenericMouseMove',
         value: function handleGenericMouseMove(eventData) {
             if (typeof this.state.selectedRangeIndex === 'number') {
-                eventData.preventDefault();
-                eventData.stopPropagation();
-
                 var _getCursorOrTouchPosi2 = (0, _helpers.getCursorOrTouchPosition)(eventData),
                     clientX = _getCursorOrTouchPosi2.clientX,
                     clientY = _getCursorOrTouchPosi2.clientY;
@@ -143,6 +141,9 @@ var WeekSchedule = function (_Component) {
 
                         updatedRanges[this.state.selectedRangeIndex].from = fromMoment.subtract(additionInMinutes / 2, 'minute').toDate().getTime();
                         updatedRanges[this.state.selectedRangeIndex].till = tillMoment.add(additionInMinutes / 2, 'minute').toDate().getTime();
+
+                        eventData.preventDefault();
+                        eventData.stopPropagation();
 
                         this.setState({
                             ranges: updatedRanges
@@ -193,6 +194,9 @@ var WeekSchedule = function (_Component) {
                         });
                     }
 
+                    eventData.preventDefault();
+                    eventData.stopPropagation();
+
                     this.setState({
                         ranges: _updatedRanges
                     });
@@ -209,10 +213,10 @@ var WeekSchedule = function (_Component) {
     }, {
         key: 'handleTableClick',
         value: function handleTableClick(eventData) {
-            eventData.preventDefault();
-            eventData.stopPropagation();
-
             if (eventData.target.localName === 'td') {
+                eventData.preventDefault();
+                eventData.stopPropagation();
+
                 this.gridBoundaries = this.tableRef.getBoundingClientRect();
 
                 var _getCursorOrTouchPosi3 = (0, _helpers.getCursorOrTouchPosition)(eventData),

@@ -77,9 +77,9 @@ var _section = require('./section');
 
 var _section2 = _interopRequireDefault(_section);
 
-var _weekSchedule = require('./week-schedule');
+var _index = require('./week-schedule/index');
 
-var _weekSchedule2 = _interopRequireDefault(_weekSchedule);
+var _index2 = _interopRequireDefault(_index);
 
 var _typography = require('./typography');
 
@@ -103,7 +103,7 @@ exports.Radio = _radio2.default;
 exports.RangeInput = _rangeInput2.default;
 exports.StatusInput = _statusInput2.default;
 exports.Section = _section2.default;
-exports.WeekSchedule = _weekSchedule2.default;
+exports.WeekSchedule = _index2.default;
 exports.H1 = _typography.H1;
 exports.H2 = _typography.H2;
 exports.H3 = _typography.H3;

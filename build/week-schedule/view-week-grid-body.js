@@ -12,7 +12,7 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _constants = require('./constants.json');
+var _constants = require('./constants');
 
 var _viewTime = require('./view-time');
 
