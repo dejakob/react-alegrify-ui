@@ -34,8 +34,6 @@ function WeekScheduleViewRange(props) {
     var hoursTill = dateTill.getHours();
     var minutesTill = dateTill.getMinutes();
 
-    console.log('range', dateFrom, dateTill);
-
     // @Todo: What about cross day ranges?
     var timeDiffInMinutes = hoursTill * 60 + minutesTill - (hoursFrom * 60 + minutesFrom);
     var height = timeDiffInMinutes / 60 * hourHeight;

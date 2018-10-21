@@ -123,7 +123,8 @@ var WeekSchedule = function (_Component) {
                     clientY = _getCursorOrTouchPosi2.clientY;
 
                 var xDiff = clientX - this.gridBoundaries.left;
-                var yDiff = clientY - this.gridBoundaries.top;
+                // Todo constant
+                var yDiff = clientY - this.gridBoundaries.top - 64;
 
                 var moveDownCells = Math.round(yDiff / this.props.cellHeight);
                 var moveRightCells = Math.floor(xDiff / _constants.DEFAULT_CELL_WIDTH);
