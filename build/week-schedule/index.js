@@ -93,16 +93,23 @@ var WeekSchedule = function (_Component) {
             eventData.preventDefault();
             eventData.stopPropagation();
 
-            var _getCursorOrTouchPosi = (0, _helpers.getCursorOrTouchPosition)(eventData),
-                clientX = _getCursorOrTouchPosi.clientX,
-                clientY = _getCursorOrTouchPosi.clientY;
+            // Avoid issues on multitouch
+            if (!this.state.selectedRangeIndex) {
+                var _getCursorOrTouchPosi = (0, _helpers.getCursorOrTouchPosition)(eventData),
+                    clientX = _getCursorOrTouchPosi.clientX,
+                    clientY = _getCursorOrTouchPosi.clientY;
 
-            this.setState({
-                selectedRangeIndex: rangeIndex
-            });
-            this.mouseDownOffset = { x: clientX, y: clientY };
-            this.gridBoundaries = this.tableRef.getBoundingClientRect();
-            this.resizeMode = options.resize;
+                this.setState({
+                    selectedRangeIndex: rangeIndex
+                });
+                this.mouseDownOffset = { x: clientX, y: clientY };
+                this.gridBoundaries = this.tableRef.getBoundingClientRect();
+                this.resizeMode = options.resize;
+
+                if (eventData.touches && eventData.touches.length === 2) {
+                    this.touchDistanceY = Math.abs(eventData.touches[1].clientY - eventData.touches[0].clientY);
+                }
+            }
         }
     }, {
         key: 'handleGenericMouseMove',
@@ -121,51 +128,72 @@ var WeekSchedule = function (_Component) {
                 var moveDownCells = Math.round(yDiff / this.props.cellHeight);
                 var moveRightCells = Math.floor(xDiff / _constants.DEFAULT_CELL_WIDTH);
 
-                if (moveDownCells !== 0 || moveRightCells !== 0) {
-                    var updatedRanges = [].concat(_toConsumableArray(this.state.ranges));
+                if (eventData.touches && eventData.touches.length === 2) {
+                    var newTouchDistanceY = Math.abs(eventData.touches[1].clientY - eventData.touches[0].clientY);
+
+                    if (this.touchDistanceY) {
+                        var updatedRanges = [].concat(_toConsumableArray(this.state.ranges));
+                        var increaseFactor = newTouchDistanceY / this.touchDistanceY;
+
+                        var fromMoment = (0, _moment2.default)(updatedRanges[this.state.selectedRangeIndex].from);
+                        var tillMoment = (0, _moment2.default)(updatedRanges[this.state.selectedRangeIndex].till);
+
+                        var additionInMinutes = fromMoment.hour() * increaseFactor * 60;
+
+                        updatedRanges[this.state.selectedRangeIndex].from = fromMoment.subtract(additionInMinutes / 2, 'minute').toDate().getTime();
+                        updatedRanges[this.state.selectedRangeIndex].till = tillMoment.add(additionInMinutes / 2, 'minute').toDate().getTime();
+
+                        this.setState({
+                            ranges: updatedRanges
+                        });
+                    }
+
+                    this.touchDistanceY = newTouchDistanceY;
+                } else if (moveDownCells !== 0 || moveRightCells !== 0) {
+                    var _updatedRanges = [].concat(_toConsumableArray(this.state.ranges));
 
                     var newHourValue = moveDownCells * this.props.hoursPerCell;
                     var newWeekDayValue = moveRightCells;
 
-                    var fromMoment = (0, _moment2.default)(updatedRanges[this.state.selectedRangeIndex].from);
-                    var tillMoment = (0, _moment2.default)(updatedRanges[this.state.selectedRangeIndex].till);
+                    var _fromMoment = (0, _moment2.default)(_updatedRanges[this.state.selectedRangeIndex].from);
+                    var _tillMoment = (0, _moment2.default)(_updatedRanges[this.state.selectedRangeIndex].till);
 
-                    var startOfDay = fromMoment.clone().startOf('day').toDate().getTime();
-                    var endOfDay = fromMoment.clone().endOf('day').toDate().getTime();
+                    var startOfDay = _fromMoment.clone().startOf('day').toDate().getTime();
+                    var endOfDay = _fromMoment.clone().endOf('day').toDate().getTime();
 
-                    updatedRanges[this.state.selectedRangeIndex].from = fromMoment.isoWeekday(newWeekDayValue).toDate().getTime();
-                    updatedRanges[this.state.selectedRangeIndex].till = tillMoment.isoWeekday(newWeekDayValue).toDate().getTime();
+                    _updatedRanges[this.state.selectedRangeIndex].from = _fromMoment.isoWeekday(newWeekDayValue).toDate().getTime();
+                    _updatedRanges[this.state.selectedRangeIndex].till = _tillMoment.isoWeekday(newWeekDayValue).toDate().getTime();
 
                     if (this.resizeMode === 'TOP') {
-                        updatedRanges[this.state.selectedRangeIndex].from = fromMoment.hour(newHourValue).minute((newHourValue - Math.floor(newHourValue)) * 60).toDate().getTime();
+                        _updatedRanges[this.state.selectedRangeIndex].from = _fromMoment.hour(newHourValue).minute((newHourValue - Math.floor(newHourValue)) * 60).toDate().getTime();
                     }
 
                     if (this.resizeMode === 'BOTTOM') {
-                        updatedRanges[this.state.selectedRangeIndex].till = tillMoment.hour(newHourValue).minute((newHourValue - Math.floor(newHourValue)) * 60).toDate().getTime();
+                        _updatedRanges[this.state.selectedRangeIndex].till = _tillMoment.hour(newHourValue).minute((newHourValue - Math.floor(newHourValue)) * 60).toDate().getTime();
                     }
 
                     if (!this.resizeMode) {
                         // @Todo what about days that are not 86400s
-                        var length = updatedRanges[this.state.selectedRangeIndex].till - updatedRanges[this.state.selectedRangeIndex].from;
-                        updatedRanges[this.state.selectedRangeIndex].from = fromMoment.hour(newHourValue).minute((newHourValue - Math.floor(newHourValue)) * 60).subtract(length / 2000, 's').toDate().getTime();
+                        var length = _updatedRanges[this.state.selectedRangeIndex].till - _updatedRanges[this.state.selectedRangeIndex].from;
+                        _updatedRanges[this.state.selectedRangeIndex].from = _fromMoment.hour(newHourValue).minute((newHourValue - Math.floor(newHourValue)) * 60).subtract(length / 2000, 's').toDate().getTime();
 
-                        updatedRanges[this.state.selectedRangeIndex].till = fromMoment.add(length / 1000, 's').toDate().getTime();
+                        _updatedRanges[this.state.selectedRangeIndex].till = _fromMoment.add(length / 1000, 's').toDate().getTime();
                     }
 
-                    var fromTime = updatedRanges[this.state.selectedRangeIndex].from;
-                    var tillTime = updatedRanges[this.state.selectedRangeIndex].till;
+                    var fromTime = _updatedRanges[this.state.selectedRangeIndex].from;
+                    var tillTime = _updatedRanges[this.state.selectedRangeIndex].till;
 
                     if (tillTime < fromTime || fromTime < startOfDay && moveRightCells === 0 || tillTime > endOfDay && moveRightCells === 0) {
-                        updatedRanges.splice(this.state.selectedRangeIndex, 1);
+                        _updatedRanges.splice(this.state.selectedRangeIndex, 1);
 
                         return this.setState({
-                            ranges: updatedRanges,
+                            ranges: _updatedRanges,
                             selectedRangeIndex: null
                         });
                     }
 
                     this.setState({
-                        ranges: updatedRanges
+                        ranges: _updatedRanges
                     });
 
                     this.mouseDownOffset = { x: clientX, y: clientY };
