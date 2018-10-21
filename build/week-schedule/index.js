@@ -138,7 +138,7 @@ var WeekSchedule = function (_Component) {
                         var fromMoment = (0, _moment2.default)(updatedRanges[this.state.selectedRangeIndex].from);
                         var tillMoment = (0, _moment2.default)(updatedRanges[this.state.selectedRangeIndex].till);
 
-                        var additionInMinutes = fromMoment.hour() * increaseFactor * 60;
+                        var additionInMinutes = fromMoment.hour() * increaseFactor * 60 - fromMoment.hour() * 60;
 
                         updatedRanges[this.state.selectedRangeIndex].from = fromMoment.subtract(additionInMinutes / 2, 'minute').toDate().getTime();
                         updatedRanges[this.state.selectedRangeIndex].till = tillMoment.add(additionInMinutes / 2, 'minute').toDate().getTime();
