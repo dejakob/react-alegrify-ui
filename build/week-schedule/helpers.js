@@ -39,7 +39,7 @@ function formatToXDigits(number, digits) {
 }
 
 function calculateOffsetTop(hours, minutes, hourHeight) {
-    return hours * hourHeight + minutes / 60 * hourHeight - hourHeight;
+    return hours * hourHeight + minutes / 60 * hourHeight;
 }
 
 function heightCss(height) {
