@@ -388,11 +388,9 @@ onFocus|func|no||
 onBlur|func|no||
 actions|arrayOf|no||
 -----
-**lib/week-schedule.js**
+**lib/week-schedule/index.js**
 
 ### 1. WeekSchedule
-
-<WeekSchedule />   
 
 
 
@@ -400,6 +398,123 @@ actions|arrayOf|no||
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 className|string|no||
+ranges|arrayOf|no||
+cellHeight|number|no|DEFAULT_CELL_HEIGHT|
+hoursPerCell|number|no|DEFAULT_HOURS_PER_CELL|
+cellsPerTimeLabel|number|no|DEFAULT_CELLS_PER_TIME_LABEL|
+-----
+**lib/week-schedule/view-day.js**
+
+### 1. WeekScheduleViewDay
+
+<WeekScheduleViewDay />   
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+children|union|no||
+-----
+**lib/week-schedule/view-days.js**
+
+### 1. WeekScheduleViewDays
+
+<WeekScheduleViewDays />   
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+weekdayLabels|arrayOf|no|DEFAULT_WEEKDAY_LABELS|
+-----
+**lib/week-schedule/view-empty-cell.js**
+
+### 1. WeekScheduleViewEmptyCell
+
+<WeekScheduleViewEmptyCell />   
+
+
+
+
+-----
+**lib/week-schedule/view-range.js**
+
+### 1. WeekScheduleViewRange
+
+<WeekScheduleViewRange />   
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+onMouseDown|func|no||
+cellHeight|number|no||
+hoursPerCell|number|no||
+range|object|no||
+-----
+**lib/week-schedule/view-time.js**
+
+### 1. WeekScheduleViewTime
+
+<WeekScheduleViewTime />   
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+children|union|no||
+-----
+**lib/week-schedule/view-week-grid-body.js**
+
+### 1. WeekScheduleViewWeekGridBody
+
+<WeekScheduleViewWeekGridBody />   
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+cellsPerTimeLabel|number|no||
+cellHeight|number|no||
+-----
+**lib/week-schedule/view-week-grid.js**
+
+### 1. WeekScheduleViewWeekGrid
+
+<WeekScheduleViewWeekGrid />   
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+onDoubleClick|func|no||
+cellsPerTimeLabel|number|no||
+cellHeight|number|no||
+tableRef|func|no||
+-----
+**lib/week-schedule/view.js**
+
+### 1. WeekScheduleView
+
+<WeekScheduleView />   
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+onGenericMouseMove|func|no||
+onDoubleClick|func|no||
+tableRef|func|no||
+cellHeight|number|no||
+hoursPerCell|number|no||
+cellsPerTimeLabel|number|no||
 ranges|arrayOf|no||
 -----
 
