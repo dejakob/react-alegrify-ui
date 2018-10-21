@@ -51,7 +51,7 @@ function WeekScheduleView(props) {
             {
                 className: 'alegrify-week-schedule__selections'
             },
-            props.ranges.map(function (range, rangeIndex) {
+            props.ranges ? props.ranges.map(function (range, rangeIndex) {
                 return _react2.default.createElement(_viewRange2.default, {
                     range: range,
                     onMouseDown: function onMouseDown(eventData) {
@@ -61,7 +61,7 @@ function WeekScheduleView(props) {
                     cellHeight: props.cellHeight,
                     hoursPerCell: props.hoursPerCell
                 });
-            })
+            }) : null
         )
     );
 }
