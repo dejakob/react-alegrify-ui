@@ -299,7 +299,7 @@ WeekSchedule.propTypes = {
     cellHeight: _propTypes2.default.number,
     hoursPerCell: _propTypes2.default.number,
     cellsPerTimeLabel: _propTypes2.default.number,
-    onChange: _propTypes2.default.func
+    onChange: _propTypes2.default.func.isRequired
 };
 WeekSchedule.defaultProps = {
     cellHeight: _constants.DEFAULT_CELL_HEIGHT,
