@@ -48,6 +48,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
+// Equals method, fallback for Object.is
+var equals = function equals(x, y) {
+    if (x === y) {
+        return x !== 0 || 1 / x === 1 / y;
+    }
+
+    return x !== x && y !== y;
+};
+
 var WeekSchedule = function (_Component) {
     _inherits(WeekSchedule, _Component);
 
@@ -75,6 +84,16 @@ var WeekSchedule = function (_Component) {
             if (typeof document !== 'undefined' && typeof document.body !== 'undefined' && typeof document.body.addEventListener === 'function') {
                 document.addEventListener('mouseup', this.handleBodyMouseUp);
                 document.addEventListener('touchend', this.handleBodyMouseUp);
+            }
+        }
+    }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(newProps) {
+            if (equals(newProps.ranges, this.props.ranges)) {
+                this.setState({
+                    selectedRangeIndex: null,
+                    ranges: this.props.ranges || []
+                });
             }
         }
     }, {
@@ -145,6 +164,7 @@ var WeekSchedule = function (_Component) {
                         eventData.preventDefault();
                         eventData.stopPropagation();
 
+                        this.props.onChange(updatedRanges);
                         this.setState({
                             ranges: updatedRanges
                         });
@@ -188,6 +208,7 @@ var WeekSchedule = function (_Component) {
                     if (tillTime < fromTime || fromTime < startOfDay && moveRightCells === 0 || tillTime > endOfDay && moveRightCells === 0) {
                         _updatedRanges.splice(this.state.selectedRangeIndex, 1);
 
+                        this.props.onChange(_updatedRanges);
                         return this.setState({
                             ranges: _updatedRanges,
                             selectedRangeIndex: null
@@ -197,6 +218,7 @@ var WeekSchedule = function (_Component) {
                     eventData.preventDefault();
                     eventData.stopPropagation();
 
+                    this.props.onChange(_updatedRanges);
                     this.setState({
                         ranges: _updatedRanges
                     });
@@ -239,8 +261,11 @@ var WeekSchedule = function (_Component) {
                     till: fromMoment.add(3, 'hour').toDate().getTime()
                 };
 
+                var ranges = [].concat(_toConsumableArray(this.state.ranges), [newRange]);
+
+                this.props.onChange(ranges);
                 this.setState({
-                    ranges: [].concat(_toConsumableArray(this.state.ranges), [newRange])
+                    ranges: ranges
                 });
             }
         }
@@ -273,7 +298,8 @@ WeekSchedule.propTypes = {
     })),
     cellHeight: _propTypes2.default.number,
     hoursPerCell: _propTypes2.default.number,
-    cellsPerTimeLabel: _propTypes2.default.number
+    cellsPerTimeLabel: _propTypes2.default.number,
+    onChange: _propTypes2.default.func
 };
 WeekSchedule.defaultProps = {
     cellHeight: _constants.DEFAULT_CELL_HEIGHT,
