@@ -26,10 +26,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function WeekScheduleViewDays(props) {
     return _react2.default.createElement(
         'thead',
-        null,
+        {
+            className: 'alegrify-week-schedule__table-head'
+        },
         _react2.default.createElement(
             'tr',
-            null,
+            {
+                className: 'alegrify-week-schedule__table-row'
+            },
             _react2.default.createElement(_viewDay2.default, null),
             _constants.DEFAULT_WEEKDAY_LABELS.map(function (weekDay) {
                 return _react2.default.createElement(

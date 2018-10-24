@@ -20,6 +20,8 @@ var _viewWeekGridBody = require('./view-week-grid-body');
 
 var _viewWeekGridBody2 = _interopRequireDefault(_viewWeekGridBody);
 
+var _device = require('../helpers/device');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
@@ -31,7 +33,7 @@ function WeekScheduleViewWeekGrid(props) {
         {
             className: 'alegrify-week-schedule__table',
             onDoubleClick: props.onDoubleClick,
-            onTouchStart: props.onDoubleClick,
+            onClick: (0, _device.isTouchDevice)() ? props.onDoubleClick : null,
             ref: props.tableRef
         },
         _react2.default.createElement(_viewDays2.default, null),

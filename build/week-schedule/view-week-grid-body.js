@@ -36,11 +36,15 @@ function WeekScheduleViewWeekGridBody(props) {
 
     return _react2.default.createElement(
         'tbody',
-        null,
+        {
+            className: 'alegrify-week-schedule__table-body'
+        },
         times.map(function (time, index) {
             return _react2.default.createElement(
                 'tr',
-                null,
+                {
+                    className: 'alegrify-week-schedule__table-row'
+                },
                 _react2.default.createElement(
                     _viewTime2.default,
                     null,
