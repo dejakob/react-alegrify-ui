@@ -10,7 +10,7 @@ Object.defineProperty(exports, "__esModule", {
  */
 function isTouchDevice() {
     if (typeof window === 'undefined') {
-        return null;
+        return false;
     }
 
     var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
