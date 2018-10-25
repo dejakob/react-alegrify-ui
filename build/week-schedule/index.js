@@ -48,13 +48,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
-// Equals method, fallback for Object.is
-var equals = function equals(x, y) {
-    if (x === y) {
-        return x !== 0 || 1 / x === 1 / y;
-    }
+var rangeEquals = function rangeEquals(rangeA, rangeB) {
+    var strA = (rangeA || []).map(function (range) {
+        return range.from + '-' + range.till;
+    }).join('|');
+    var strB = (rangeB || []).map(function (range) {
+        return range.from + '-' + range.till;
+    }).join('|');
 
-    return x !== x && y !== y;
+    return strA === strB;
 };
 
 var WeekSchedule = function (_Component) {
@@ -89,7 +91,7 @@ var WeekSchedule = function (_Component) {
     }, {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(newProps) {
-            if (!equals(newProps.ranges, this.props.ranges)) {
+            if (!rangeEquals(newProps.ranges, this.props.ranges)) {
                 this.setState({
                     selectedRangeIndex: null,
                     ranges: this.props.ranges || []
