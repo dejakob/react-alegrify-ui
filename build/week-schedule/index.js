@@ -89,7 +89,7 @@ var WeekSchedule = function (_Component) {
     }, {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(newProps) {
-            if (equals(newProps.ranges, this.props.ranges)) {
+            if (!equals(newProps.ranges, this.props.ranges)) {
                 this.setState({
                     selectedRangeIndex: null,
                     ranges: this.props.ranges || []
