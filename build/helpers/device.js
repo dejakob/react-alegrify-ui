@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 /**
  * Does the current device support touch events?
@@ -9,18 +9,22 @@ Object.defineProperty(exports, "__esModule", {
  * @returns {Boolean}
  */
 function isTouchDevice() {
-  var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
-  var mq = function mq(query) {
-    return window.matchMedia(query).matches;
-  };
+    if (typeof window === 'undefined') {
+        return null;
+    }
 
-  if ('ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch) {
-    return true;
-  }
+    var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
+    var mq = function mq(query) {
+        return window.matchMedia(query).matches;
+    };
 
-  var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+    if ('ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch) {
+        return true;
+    }
 
-  return mq(query);
+    var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+
+    return mq(query);
 }
 
 exports.isTouchDevice = isTouchDevice;
