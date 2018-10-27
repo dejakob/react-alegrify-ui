@@ -76,13 +76,13 @@ function Card(props) {
             },
             props.children
         ),
-        _react2.default.createElement(
+        props.footer ? _react2.default.createElement(
             'div',
             {
                 className: 'alegrify-card__footer'
             },
             props.footer
-        )
+        ) : null
     );
 }
 
@@ -96,7 +96,7 @@ Card.propTypes = {
     /**
      * Footer component
      */
-    footer: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+    footer: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]),
 
     /**
      * Additional classnames
