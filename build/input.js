@@ -40,6 +40,8 @@ function Input(props) {
   }
 
   if (props.multiline) {
+    var amountOfLines = ((props.value || '').match(/\n/gi) || []).length + 1;
+
     return _react2.default.createElement(
       'textarea',
       {
@@ -51,7 +53,8 @@ function Input(props) {
         onKeyUp: props.onKeyUp,
         onKeyDown: props.onKeyDown,
         onFocus: props.onFocus,
-        onBlur: props.onBlur
+        onBlur: props.onBlur,
+        rows: amountOfLines
       },
       props.value
     );
