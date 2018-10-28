@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Strong = exports.Em = exports.P = exports.H3 = exports.H2 = exports.H1 = exports.WeekSchedule = exports.Section = exports.StatusInput = exports.RangeInput = exports.Radio = exports.NumberInput = exports.Main = exports.Label = exports.Input = exports.Dd = exports.Dt = exports.Dl = exports.Dialog = exports.Checkbox = exports.Card = exports.Button = exports.Aside = exports.Article = exports.Alert = exports.SPACING = exports.MEDIA = exports.COLORS = undefined;
+exports.Strong = exports.Em = exports.P = exports.H3 = exports.H2 = exports.H1 = exports.WeekSchedule = exports.Section = exports.StatusInput = exports.RangeInput = exports.Radio = exports.NumberInput = exports.Main = exports.Label = exports.Input = exports.Dd = exports.Dt = exports.Dl = exports.Dialog = exports.DateIndicator = exports.Checkbox = exports.Card = exports.Button = exports.Aside = exports.Article = exports.Alert = exports.SPACING = exports.MEDIA = exports.COLORS = undefined;
 
 var _colors = require('./colors');
 
@@ -40,6 +40,10 @@ var _card2 = _interopRequireDefault(_card);
 var _checkbox = require('./checkbox');
 
 var _checkbox2 = _interopRequireDefault(_checkbox);
+
+var _dateIndicator = require('./date-indicator');
+
+var _dateIndicator2 = _interopRequireDefault(_dateIndicator);
 
 var _dialog = require('./dialog');
 
@@ -98,6 +102,7 @@ exports.Aside = _aside2.default;
 exports.Button = _button2.default;
 exports.Card = _card2.default;
 exports.Checkbox = _checkbox2.default;
+exports.DateIndicator = _dateIndicator2.default;
 exports.Dialog = _dialog2.default;
 exports.Dl = _dl2.default;
 exports.Dt = _dl.Dt;
