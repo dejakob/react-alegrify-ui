@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Strong = exports.Em = exports.P = exports.H3 = exports.H2 = exports.H1 = exports.WeekSchedule = exports.Section = exports.StatusInput = exports.RangeInput = exports.Radio = exports.NumberInput = exports.Main = exports.Label = exports.Input = exports.Dialog = exports.Checkbox = exports.Card = exports.Button = exports.Aside = exports.Article = exports.Alert = exports.SPACING = exports.MEDIA = exports.COLORS = undefined;
+exports.Strong = exports.Em = exports.P = exports.H3 = exports.H2 = exports.H1 = exports.WeekSchedule = exports.Section = exports.StatusInput = exports.RangeInput = exports.Radio = exports.NumberInput = exports.Main = exports.Label = exports.Input = exports.Dd = exports.Dt = exports.Dl = exports.Dialog = exports.Checkbox = exports.Card = exports.Button = exports.Aside = exports.Article = exports.Alert = exports.SPACING = exports.MEDIA = exports.COLORS = undefined;
 
 var _colors = require('./colors');
 
@@ -44,6 +44,10 @@ var _checkbox2 = _interopRequireDefault(_checkbox);
 var _dialog = require('./dialog');
 
 var _dialog2 = _interopRequireDefault(_dialog);
+
+var _dl = require('./dl');
+
+var _dl2 = _interopRequireDefault(_dl);
 
 var _input = require('./input');
 
@@ -95,6 +99,9 @@ exports.Button = _button2.default;
 exports.Card = _card2.default;
 exports.Checkbox = _checkbox2.default;
 exports.Dialog = _dialog2.default;
+exports.Dl = _dl2.default;
+exports.Dt = _dl.Dt;
+exports.Dd = _dl.Dd;
 exports.Input = _input2.default;
 exports.Label = _label2.default;
 exports.Main = _main2.default;
