@@ -71,5 +71,10 @@ DateIndicator.propTypes = {
      */
     className: _propTypes2.default.string
 };
+DateIndicator.defaultProps = {
+    date: new Date().toString(),
+    className: ''
+};
+DateIndicator.propExamples = DateIndicator.defaultProps;
 
 exports.default = DateIndicator;
