@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Strong = exports.Em = exports.P = exports.H3 = exports.H2 = exports.H1 = exports.WeekSchedule = exports.Section = exports.StatusInput = exports.RangeInput = exports.Radio = exports.NumberInput = exports.Main = exports.Label = exports.Input = exports.Dd = exports.Dt = exports.Dl = exports.Dialog = exports.DateIndicator = exports.Checkbox = exports.Card = exports.Button = exports.Aside = exports.Article = exports.Alert = exports.SPACING = exports.MEDIA = exports.COLORS = undefined;
+exports.Strong = exports.Em = exports.P = exports.H3 = exports.H2 = exports.H1 = exports.WeekSchedule = exports.Section = exports.StatusInput = exports.RangeInput = exports.Radio = exports.NumberInput = exports.Main = exports.Label = exports.Input = exports.HistoricItem = exports.Dd = exports.Dt = exports.Dl = exports.Dialog = exports.DateIndicator = exports.Checkbox = exports.Card = exports.Button = exports.Aside = exports.Article = exports.Alert = exports.SPACING = exports.MEDIA = exports.COLORS = undefined;
 
 var _colors = require('./colors');
 
@@ -52,6 +52,10 @@ var _dialog2 = _interopRequireDefault(_dialog);
 var _dl = require('./dl');
 
 var _dl2 = _interopRequireDefault(_dl);
+
+var _historicItem = require('./historic-item');
+
+var _historicItem2 = _interopRequireDefault(_historicItem);
 
 var _input = require('./input');
 
@@ -107,6 +111,7 @@ exports.Dialog = _dialog2.default;
 exports.Dl = _dl2.default;
 exports.Dt = _dl.Dt;
 exports.Dd = _dl.Dd;
+exports.HistoricItem = _historicItem2.default;
 exports.Input = _input2.default;
 exports.Label = _label2.default;
 exports.Main = _main2.default;
