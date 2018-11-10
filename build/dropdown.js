@@ -100,7 +100,7 @@ var Dropdown = function (_Component) {
     }, {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(newProps) {
-            if (newProps.value !== this.state.value) {
+            if (newProps.value !== this.state.value && newProps.value !== this.props.value) {
                 var childrenAsArray = typeof newProps.children.map === 'function' ? newProps.children : _react2.default.Children.toArray(newProps.children);
 
                 var value = childrenAsArray.find(function (child) {
@@ -115,8 +115,8 @@ var Dropdown = function (_Component) {
     }, {
         key: 'componentWillUpdate',
         value: function componentWillUpdate(newProps, newState) {
-            if (this.state.value && newState.value && newState.value.props.value !== this.state.value.props.value) {
-                if (typeof this.props.onValueChange === 'function') {
+            if ((newState.value && newState.value.props.value) !== (this.state.value && this.state.value.props.value)) {
+                if (typeof this.props.onValueChange === 'function' && newState.value) {
                     this.props.onValueChange(newState.value.props.value);
                 }
             }
