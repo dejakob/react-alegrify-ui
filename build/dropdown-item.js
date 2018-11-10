@@ -32,16 +32,17 @@ function DropdownItem(props) {
         _react2.default.createElement('input', {
             className: 'alegrify-dropdown__option',
             name: props.name,
-            type: props.multiSelect ? 'checkbox' : 'radio',
+            type: 'radio',
             value: props.value,
             id: props.id,
-            onChange: props.onSelect
+            onChange: props.onSelect,
+            checked: props.checked
         }),
         _react2.default.createElement(
             'label',
             {
                 className: 'alegrify-dropdown__option-label',
-                htmlFor: 'my-select-BE'
+                htmlFor: props.id
             },
             props.children
         )

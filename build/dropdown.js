@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
 var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
@@ -21,6 +25,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var KEY_CODES = {
+    UP: 38,
+    DOWN: 40,
+    ENTER: 13,
+    ESCAPE: 27,
+    TAB: 9
+};
 
 /**
  * ```jsx
@@ -38,6 +50,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * </Dropdown>
  * ```
  */
+
 var Dropdown = function (_Component) {
     _inherits(Dropdown, _Component);
 
@@ -46,8 +59,13 @@ var Dropdown = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).call(this));
 
+        _this.changeSelectedIndex = _this.changeSelectedIndex.bind(_this);
+        _this.handleBodyClick = _this.handleBodyClick.bind(_this);
+
         _this.actions = {
-            handleSelectOption: _this.handleSelectOption.bind(_this)
+            handleSelectOption: _this.handleSelectOption.bind(_this),
+            handleOpenDropdown: _this.handleOpenDropdown.bind(_this),
+            handleKeyDown: _this.handleKeyDown.bind(_this)
         };
         return _this;
     }
@@ -55,22 +73,138 @@ var Dropdown = function (_Component) {
     _createClass(Dropdown, [{
         key: 'componentWillMount',
         value: function componentWillMount() {
-            this.setState({
-                value: this.props.value || null
+            var _this2 = this;
+
+            var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react2.default.Children.toArray(this.props.children);
+
+            var value = childrenAsArray.find(function (child) {
+                return _this2.props.value === child.props.value;
             });
+
+            this.setState({
+                value: value || null,
+                open: false
+            });
+
+            if (typeof window !== 'undefined') {
+                document.body.addEventListener('click', this.handleBodyClick);
+            }
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            if (typeof window !== 'undefined') {
+                document.body.removeEventListener('click', this.handleBodyClick);
+            }
         }
     }, {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(newProps) {
             if (newProps.value !== this.state.value) {
+                var childrenAsArray = typeof newProps.children.map === 'function' ? newProps.children : _react2.default.Children.toArray(newProps.children);
+
+                var value = childrenAsArray.find(function (child) {
+                    return newProps.value === child.props.value;
+                });
+
                 this.setState({
-                    value: newProps.value || null
+                    value: value || null
                 });
             }
         }
     }, {
+        key: 'componentWillUpdate',
+        value: function componentWillUpdate(newProps, newState) {
+            if (this.state.value && newState.value && newState.value.props.value !== this.state.value.props.value) {
+                if (typeof this.props.onValueChange === 'function') {
+                    this.props.onValueChange(newState.value.props.value);
+                }
+            }
+        }
+    }, {
         key: 'handleSelectOption',
-        value: function handleSelectOption(eventData) {}
+        value: function handleSelectOption(index) {
+            var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react2.default.Children.toArray(this.props.children);
+
+            this.setState({
+                value: childrenAsArray[index],
+                open: false
+            });
+        }
+    }, {
+        key: 'handleKeyDown',
+        value: function handleKeyDown(eventData) {
+            var keyCode = eventData.keyCode;
+
+
+            switch (keyCode) {
+                case KEY_CODES.UP:
+                    eventData.preventDefault();
+                    this.changeSelectedIndex(-1);
+                    break;
+
+                case KEY_CODES.DOWN:
+                    eventData.preventDefault();
+                    this.changeSelectedIndex(1);
+                    break;
+
+                case KEY_CODES.ENTER:
+                    eventData.preventDefault();
+                    this.setState({ open: !this.state.open });
+                    break;
+
+                case KEY_CODES.ESCAPE:
+                    eventData.preventDefault();
+                    this.setState({ open: false });
+                    break;
+
+                default:
+                    var query = String.fromCharCode(eventData.which || eventData.charCode);
+                    var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react2.default.Children.toArray(this.props.children);
+                    var index = Math.max(childrenAsArray.findIndex(function (child) {
+                        return child.props.value.toLowerCase().indexOf(query.toLowerCase()) > -1;
+                    }), 0);
+
+                    this.setState({
+                        value: childrenAsArray[index]
+                    });
+            }
+        }
+    }, {
+        key: 'handleOpenDropdown',
+        value: function handleOpenDropdown(eventData) {
+            this.setState({ open: eventData.target.checked });
+        }
+    }, {
+        key: 'changeSelectedIndex',
+        value: function changeSelectedIndex(increment) {
+            var _this3 = this;
+
+            var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react2.default.Children.toArray(this.props.children);
+            var currentIndex = Math.max(childrenAsArray.findIndex(function (child) {
+                return _this3.state.value && _this3.state.value.props.value === child.props.value;
+            }), 0);
+            var newIndex = (currentIndex + childrenAsArray.length + increment) % childrenAsArray.length;
+
+            this.setState({
+                value: childrenAsArray[newIndex]
+            });
+        }
+    }, {
+        key: 'handleBodyClick',
+        value: function handleBodyClick(eventData) {
+            var target = eventData.target;
+
+            var node = target;
+
+            while (node !== document.body && node !== _reactDom2.default.findDOMNode(this)) {
+                node = node.parentNode;
+            }
+
+            if (node === document.body) {
+                this.setState({ open: false });
+            }
+        }
     }, {
         key: 'render',
         value: function render() {
@@ -88,6 +222,8 @@ var Dropdown = function (_Component) {
 
 function DropdownView(props) {
     var classNames = ['alegrify-dropdown__container'];
+    var value = props.value;
+
 
     if (typeof props.className === 'string' && props.className.trim() !== '') {
         classNames.push(props.className);
@@ -96,19 +232,24 @@ function DropdownView(props) {
     return _react2.default.createElement(
         'div',
         {
-            className: classNames.join(' ')
+            className: classNames.join(' '),
+            onKeyDown: props.handleKeyDown
         },
         _react2.default.createElement('input', {
-            className: 'alegrify-dropdown__trigger'
+            className: 'alegrify-dropdown__trigger',
+            type: 'checkbox',
+            id: props.id,
+            onChange: props.handleOpenDropdown,
+            checked: props.open
         }),
         _react2.default.createElement(
             'label',
             {
                 className: 'alegrify-dropdown__label',
-                htmlFor: 'my-dropdown',
+                htmlFor: props.id,
                 'aria-controls': ''
             },
-            props.placeholder || '...'
+            value ? value.props.children : props.placeholder || '...'
         ),
         _react2.default.createElement(
             'fieldset',
@@ -125,8 +266,12 @@ function DropdownView(props) {
      * (Can either be an array of children or React.children)
      */
     function renderChildren() {
+        if (!props.open) {
+            return null;
+        }
+
         if (typeof props.children.map === 'function') {
-            return children.map(renderChild);
+            return props.children.map(renderChild);
         } else {
             return _react2.default.Children.map(props.children, renderChild);
         }
@@ -141,8 +286,11 @@ function DropdownView(props) {
         var index = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
         return _react2.default.cloneElement(child, {
-            onSelect: props.handleSelectOption,
+            onSelect: function onSelect() {
+                return props.handleSelectOption(index);
+            },
             multiSelect: props.multiSelect,
+            checked: props.value && props.value.props.value === child.props.value,
             name: props.name,
             key: index
         });
@@ -150,7 +298,6 @@ function DropdownView(props) {
 }
 
 // Todo: disabled
-// Todo: multiselect
 // Todo: keyboard input
 
 Dropdown.propTypes = {
@@ -191,9 +338,10 @@ Dropdown.propTypes = {
     disabled: _propTypes2.default.bool,
 
     /**
-     * Can multiple items be selected?
+     * Gets triggered when value changes
+     * Passes value string as argument
      */
-    multiSelect: _propTypes2.default.bool
+    onValueChange: _propTypes2.default.func
 };
 Dropdown.defaultProps = {
     value: null,
