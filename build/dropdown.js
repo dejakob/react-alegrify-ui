@@ -229,6 +229,10 @@ function DropdownView(props) {
         classNames.push(props.className);
     }
 
+    if (props.disabled) {
+        classNames.push('alegrify-dropdown--disabled');
+    }
+
     return _react2.default.createElement(
         'div',
         {
@@ -240,7 +244,8 @@ function DropdownView(props) {
             type: 'checkbox',
             id: props.id,
             onChange: props.handleOpenDropdown,
-            checked: props.open
+            checked: props.open,
+            disabled: props.disabled
         }),
         _react2.default.createElement(
             'label',
@@ -298,7 +303,6 @@ function DropdownView(props) {
 }
 
 // Todo: disabled
-// Todo: keyboard input
 
 Dropdown.propTypes = {
 
