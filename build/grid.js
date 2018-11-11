@@ -1,12 +1,20 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var VARIANTS = ['left', 'center', 'right', 'top', 'middle', 'bottom', 'outline', 'even', 'reverse'];
+var VARIANTS = ['left', 'center', 'right', 'top', 'middle', 'bottom', 'outline', 'even', 'reverse', 'all'];
 
 /**
  * <Grid />
@@ -16,10 +24,10 @@ var VARIANTS = ['left', 'center', 'right', 'top', 'middle', 'bottom', 'outline',
  *   reversed
  * >
  *   <Article
- *      className="alegrify-grid--8"
+ *      className="alegrify-grid__cell alegrify-grid__cell--8"
  *   />
  *   <Aside
- *      className="alegrify-grid--4"
+ *      className="alegrify-grid__cell alegrify-grid__cell--4"
  *   />
  * </Grid>
  * ```
@@ -51,16 +59,18 @@ Grid.propTypes = {
     /**
      * Content
      */
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+    children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
 
     /**
      * Additional classnames
      */
-    className: PropTypes.string
+    className: _propTypes2.default.string
 };
 Grid.defaultProps = {};
 Grid.propExamples = {};
 
 VARIANTS.forEach(function (variant) {
-    Grid.propTypes[variant] = PropTypes.bool;
+    Grid.propTypes[variant] = _propTypes2.default.bool;
 });
+
+exports.default = Grid;

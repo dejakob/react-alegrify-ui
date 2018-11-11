@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Strong = exports.Em = exports.P = exports.H3 = exports.H2 = exports.H1 = exports.WeekSchedule = exports.Section = exports.StatusInput = exports.RangeInput = exports.Radio = exports.NumberInput = exports.Main = exports.Label = exports.Input = exports.HistoricItem = exports.DropdownItem = exports.Dropdown = exports.Dd = exports.Dt = exports.Dl = exports.Dialog = exports.DateIndicator = exports.Checkbox = exports.Card = exports.Button = exports.Aside = exports.Article = exports.Alert = exports.SPACING = exports.MEDIA = exports.COLORS = undefined;
+exports.Strong = exports.Em = exports.P = exports.H3 = exports.H2 = exports.H1 = exports.WeekSchedule = exports.Section = exports.StatusInput = exports.RangeInput = exports.Radio = exports.NumberInput = exports.Main = exports.Label = exports.Input = exports.HistoricItem = exports.Grid = exports.DropdownItem = exports.Dropdown = exports.Dd = exports.Dt = exports.Dl = exports.Dialog = exports.DateIndicator = exports.Checkbox = exports.Card = exports.Button = exports.Aside = exports.Article = exports.Alert = exports.SPACING = exports.MEDIA = exports.COLORS = undefined;
 
 var _colors = require('./colors');
 
@@ -60,6 +60,10 @@ var _dropdown2 = _interopRequireDefault(_dropdown);
 var _dropdownItem = require('./dropdown-item');
 
 var _dropdownItem2 = _interopRequireDefault(_dropdownItem);
+
+var _grid = require('./grid');
+
+var _grid2 = _interopRequireDefault(_grid);
 
 var _historicItem = require('./historic-item');
 
@@ -121,6 +125,7 @@ exports.Dt = _dl.Dt;
 exports.Dd = _dl.Dd;
 exports.Dropdown = _dropdown2.default;
 exports.DropdownItem = _dropdownItem2.default;
+exports.Grid = _grid2.default;
 exports.HistoricItem = _historicItem2.default;
 exports.Input = _input2.default;
 exports.Label = _label2.default;
