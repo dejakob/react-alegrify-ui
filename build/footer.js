@@ -101,6 +101,14 @@ function FooterLink(props) {
         var Link = reactRouterDom.Link;
 
 
+        var EXTERNAL_LINK_START = ['http://', 'https://', '//'];
+
+        if (typeof props.href === 'string' && EXTERNAL_LINK_START.some(function (linkStart) {
+            return props.href.indexOf(linkStart) === 0;
+        })) {
+            throw new Error('External link');
+        }
+
         return _react2.default.createElement(
             Link,
             {
