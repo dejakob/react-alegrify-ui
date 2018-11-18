@@ -18,6 +18,12 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var reactRouterDom = void 0;
+
+try {
+    reactRouterDom = require('react-router-dom');
+} catch (ex) {}
+
 /**
  * ```jsx
  *  <Footer
@@ -96,29 +102,16 @@ function Footer(props) {
 }
 
 function FooterLink(props) {
-    try {
-        var reactRouterDom = require('react-router-dom');
-        var Link = reactRouterDom.Link;
+    var EXTERNAL_LINK_START = ['http://', 'https://', '//'];
 
+    var _reactRouterDom = reactRouterDom,
+        Link = _reactRouterDom.Link;
 
-        var EXTERNAL_LINK_START = ['http://', 'https://', '//'];
+    var isExternalLink = typeof props.href === 'string' && EXTERNAL_LINK_START.some(function (linkStart) {
+        return props.href.indexOf(linkStart) === 0;
+    });
 
-        if (typeof props.href === 'string' && EXTERNAL_LINK_START.some(function (linkStart) {
-            return props.href.indexOf(linkStart) === 0;
-        })) {
-            throw new Error('External link');
-        }
-
-        return _react2.default.createElement(
-            Link,
-            {
-                to: props.href,
-                title: props.title,
-                className: 'alegrify-footer__link'
-            },
-            props.children
-        );
-    } catch (ex) {
+    if (isExternalLink || !reactRouterDom) {
         return _react2.default.createElement(
             'a',
             {
@@ -129,6 +122,16 @@ function FooterLink(props) {
             props.chilren
         );
     }
+
+    return _react2.default.createElement(
+        Link,
+        {
+            to: props.href,
+            title: props.title,
+            className: 'alegrify-footer__link'
+        },
+        props.children
+    );
 }
 
 Footer.propTypes = {
