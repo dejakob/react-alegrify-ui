@@ -50,6 +50,7 @@ function Footer(props) {
             _react2.default.createElement(
                 _grid2.default,
                 {
+                    all: true,
                     outline: true,
                     middle: true
                 },
@@ -119,7 +120,7 @@ function FooterLink(props) {
                 title: props.title,
                 className: 'alegrify-footer__link'
             },
-            props.chilren
+            props.children
         );
     }
 
