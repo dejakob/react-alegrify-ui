@@ -47,7 +47,7 @@ function HistoricItem(props) {
         _react2.default.createElement(
             'div',
             {
-                'class': 'alegrify-historic-item__content'
+                className: 'alegrify-historic-item__content'
             },
             props.children
         )

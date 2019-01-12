@@ -40,7 +40,7 @@ function DateIndicator(props) {
         'time',
         {
             className: classNames.join(' '),
-            datetime: momentDate.format()
+            dateTime: momentDate.format()
         },
         _react2.default.createElement(
             'span',

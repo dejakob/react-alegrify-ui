@@ -42,22 +42,19 @@ function Input(props) {
   if (props.multiline) {
     var amountOfLines = ((props.value || '').match(/\n/gi) || []).length + 1;
 
-    return _react2.default.createElement(
-      'textarea',
-      {
-        id: props.id,
-        name: props.name,
-        className: classNames.join(' '),
-        placeholder: props.placeholder || '',
-        onInput: onInput,
-        onKeyUp: props.onKeyUp,
-        onKeyDown: props.onKeyDown,
-        onFocus: props.onFocus,
-        onBlur: props.onBlur,
-        rows: amountOfLines
-      },
-      props.value
-    );
+    return _react2.default.createElement('textarea', {
+      id: props.id,
+      name: props.name,
+      className: classNames.join(' '),
+      placeholder: props.placeholder || '',
+      onInput: onInput,
+      onKeyUp: props.onKeyUp,
+      onKeyDown: props.onKeyDown,
+      onFocus: props.onFocus,
+      onBlur: props.onBlur,
+      rows: amountOfLines,
+      value: props.value
+    });
   }
 
   return _react2.default.createElement('input', {

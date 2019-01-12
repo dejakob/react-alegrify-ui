@@ -8,7 +8,8 @@ var COLORS = {
     SECONDARY: "#953495",
     BODY: "#000000",
     ACTION: "#ffffff",
-    ERROR: "#900505"
+    ERROR: "#900505",
+    NAV: "#333333"
 };
 
 exports.default = COLORS;

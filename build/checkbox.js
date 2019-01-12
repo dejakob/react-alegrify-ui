@@ -45,7 +45,7 @@ function Checkbox(props) {
             type: 'checkbox',
             id: props.id,
             name: props.name,
-            'class': 'alegrify-checkbox__trigger',
+            className: 'alegrify-checkbox__trigger',
             disabled: props.disabled,
             checked: props.checked,
             onChange: props.onChange
@@ -54,12 +54,12 @@ function Checkbox(props) {
             'label',
             {
                 htmlFor: props.id,
-                'class': 'alegrify-checkbox__check'
+                className: 'alegrify-checkbox__check'
             },
             _react2.default.createElement(
                 'span',
                 {
-                    'class': 'alegrify-checkbox__label'
+                    className: 'alegrify-checkbox__label'
                 },
                 props.children
             )
