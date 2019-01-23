@@ -133,7 +133,7 @@ Consists out of a header, content and footer
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 children|union|yes||Card content
-footer|union|yes||Footer component
+footer|union|no||Footer component
 className|string|no||Additional classnames
 small|bool|no|false|Small card variant
 title|string|no||Card title
@@ -167,6 +167,26 @@ disabled|bool|no||Is checkbox disabled?
 checked|bool|no||Is checkbox checked?
 className|string|no||Additional classnames
 -----
+**lib/date-indicator.js**
+
+### 1. DateIndicator
+
+<DateIndicator />
+
+```jsx
+<DateIndicator
+  date={'2018-10-28T00:00:00'}
+/>
+```   
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+date|union|no|&lt;See the source code&gt;|Content
+className|string|no|&lt;See the source code&gt;|Additional classnames
+-----
 **lib/dialog.js**
 
 ### 1. Dialog
@@ -189,6 +209,138 @@ Property | Type | Required | Default value | Description
 children|union|yes||Content
 className|string|no||Additional classnames
 open|bool|no|false|Should the dialog be shown?
+-----
+**lib/dropdown-item.js**
+
+### 1. DropdownItem
+
+```jsx
+<DropdownItem
+ id="cookies"
+ name="cookies"
+ value="cookies"
+>
+     cookies
+</DropdownItem>
+```   
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+value|string|yes||Value of the item
+id|string|yes||Id of the item
+children|union|yes||Content for item
+-----
+**lib/dropdown.js**
+
+### 1. Dropdown
+
+```jsx
+<Dropdown>
+     <DropdownItem
+         value="cookies"
+     >
+         Cookies
+     </DropdownItem>
+     <DropdownItem
+         value="apples"
+     >
+         Apples
+     </DropdownItem>
+</Dropdown>
+```   
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+id|string|yes||Id of the dropdown
+name|string|yes||Name of the dropdown
+children|union|yes||Items for the dropdown
+className|string|no||Additional classnames
+value|string|no|null|Selected value of the dropdown
+placeholder|string|no|&lt;See the source code&gt;|Placeholder message for dropdown label
+disabled|bool|no|false|Should the dropdown be disabled?
+onValueChange|func|no||Gets triggered when value changes
+Passes value string as argument
+multiSelect||no|false|
+-----
+**lib/footer.js**
+
+### 1. Footer
+
+```jsx
+ <Footer
+     links={[
+         { href: '/', title: 'Home', label: 'Home' },
+         { href: '/info', title: 'Info', label: 'Info' },
+     ]}
+ >
+     <Logo />
+ </Footer>
+```   
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+children|union|yes||Children to add on the end of the footer
+className|string|no||Additional classnames
+links|arrayOf|no||List of links to show in the footer
+logo|node|no||Logo component
+-----
+**lib/grid.js**
+
+### 1. Grid
+
+<Grid />
+
+```jsx
+<Grid
+  reversed
+>
+  <Article
+     className="alegrify-grid__cell alegrify-grid__cell--8"
+  />
+  <Aside
+     className="alegrify-grid__cell alegrify-grid__cell--4"
+  />
+</Grid>
+```   
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+children|union|yes||Content
+className|string|no||Additional classnames
+-----
+**lib/historic-item.js**
+
+### 1. HistoricItem
+
+```jsx
+<HistoricItem
+  date="2018-10-28T09:00:00"
+>
+    <H2>Something interesting happened</H2>
+    <P>Lorem ipsum...</P>
+</HistoricItem>
+```   
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+children|union|no|null|Content for the historic item
+className|string|no|&lt;See the source code&gt;|Additional classnames
+date|union|no|&lt;See the source code&gt;|Date to show / When did this occur?
 -----
 **lib/input.js**
 
@@ -402,6 +554,7 @@ ranges|arrayOf|no||
 cellHeight|number|no|DEFAULT_CELL_HEIGHT|
 hoursPerCell|number|no|DEFAULT_HOURS_PER_CELL|
 cellsPerTimeLabel|number|no|DEFAULT_CELLS_PER_TIME_LABEL|
+onChange|func|yes||
 -----
 **lib/week-schedule/view-day.js**
 
