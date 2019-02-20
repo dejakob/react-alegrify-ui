@@ -44,6 +44,10 @@ function Button(props) {
         classNames.push('alegrify-button--small');
     }
 
+    if (props.large) {
+        classNames.push('alegrify-button--large');
+    }
+
     return _react2.default.createElement(
         'button',
         {
@@ -84,6 +88,11 @@ Button.propTypes = {
     small: _propTypes2.default.bool,
 
     /**
+     * Is this a large variant button?
+     */
+    large: _propTypes2.default.bool,
+
+    /**
      * button|submit
      */
     type: _propTypes2.default.string,
@@ -102,6 +111,7 @@ Button.defaultProps = {
     primary: false,
     full: false,
     small: false,
+    large: false,
     type: 'submit',
     disabled: false
 };
@@ -110,6 +120,7 @@ Button.propExamples = {
     primary: false,
     full: false,
     small: false,
+    large: false,
     type: 'submit',
     disabled: false
 };

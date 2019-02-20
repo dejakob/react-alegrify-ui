@@ -22,7 +22,7 @@
     "storybook-addon-jsx": "^5.4.0"
   },
   "dependencies": {
-    "alegrify-ui": "0.0.4",
+    "alegrify-ui": "0.0.5",
     "moment": "^2.22.2"
   },
   "scripts": {
@@ -30,7 +30,6 @@
     "deploy-storybook": "storybook-to-ghpages",
     "build": "babel lib -d build",
     "build:watch": "babel lib -w -d build",
-    "docs": "react-doc-generator ./lib -o COMPONENTS.md -i abstract -t 'Alegrify UI Components'",
-    "prepublish": "npm run docs && npm run build && npm run deploy-storybook"
+    "docs": "react-doc-generator ./lib -o COMPONENTS.md -i abstract -t 'Alegrify UI Components'"
   }
 }
