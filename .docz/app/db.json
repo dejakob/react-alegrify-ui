@@ -301,43 +301,6 @@
         }
       ]
     },
-    "docs/dropdown.mdx": {
-      "name": "Dropdown",
-      "id": "c17addf315a0fd0a8f0abcb3f4bbbb42",
-      "filepath": "docs/dropdown.mdx",
-      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/dropdown.mdx",
-      "slug": "docs-dropdown",
-      "route": "/docs-dropdown",
-      "order": 0,
-      "menu": null,
-      "headings": [
-        {
-          "depth": 1,
-          "slug": "dropdown",
-          "value": "Dropdown"
-        },
-        {
-          "depth": 2,
-          "slug": "example",
-          "value": "Example"
-        },
-        {
-          "depth": 2,
-          "slug": "properties",
-          "value": "Properties"
-        },
-        {
-          "depth": 3,
-          "slug": "dropdown-1",
-          "value": "Dropdown"
-        },
-        {
-          "depth": 3,
-          "slug": "dropdownitem",
-          "value": "DropdownItem"
-        }
-      ]
-    },
     "docs/footer.mdx": {
       "name": "Footer",
       "id": "064d89e8066365edb7f4d000a42e2874",
@@ -384,6 +347,43 @@
           "depth": 2,
           "slug": "example",
           "value": "Example"
+        }
+      ]
+    },
+    "docs/dropdown.mdx": {
+      "name": "Dropdown",
+      "id": "c17addf315a0fd0a8f0abcb3f4bbbb42",
+      "filepath": "docs/dropdown.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/dropdown.mdx",
+      "slug": "docs-dropdown",
+      "route": "/docs-dropdown",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "dropdown",
+          "value": "Dropdown"
+        },
+        {
+          "depth": 2,
+          "slug": "example",
+          "value": "Example"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        },
+        {
+          "depth": 3,
+          "slug": "dropdown-1",
+          "value": "Dropdown"
+        },
+        {
+          "depth": 3,
+          "slug": "dropdownitem",
+          "value": "DropdownItem"
         }
       ]
     }
