@@ -18,6 +18,28 @@
     }
   },
   "entries": {
+    "docs/alert.mdx": {
+      "name": "Alert",
+      "id": "b9a849cefd8b4e25cf0523e78396d557",
+      "filepath": "docs/alert.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/alert.mdx",
+      "slug": "docs-alert",
+      "route": "/docs-alert",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "alert",
+          "value": "Alert"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
     "docs/article.mdx": {
       "name": "Article",
       "id": "3e92a145f0873a312616f36413ac8d99",
@@ -37,28 +59,6 @@
           "depth": 2,
           "slug": "example",
           "value": "Example"
-        },
-        {
-          "depth": 2,
-          "slug": "properties",
-          "value": "Properties"
-        }
-      ]
-    },
-    "docs/alert.mdx": {
-      "name": "Alert",
-      "id": "b9a849cefd8b4e25cf0523e78396d557",
-      "filepath": "docs/alert.mdx",
-      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/alert.mdx",
-      "slug": "docs-alert",
-      "route": "/docs-alert",
-      "order": 0,
-      "menu": null,
-      "headings": [
-        {
-          "depth": 1,
-          "slug": "alert",
-          "value": "Alert"
         },
         {
           "depth": 2,
