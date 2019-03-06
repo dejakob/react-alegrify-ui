@@ -15,5 +15,6 @@ export default {
     },
     themeConfig: {
         showPlaygroundEditor: true
-    }
+    },
+    hashRouter: true
 };
