@@ -1,0 +1,59 @@
+---
+name: Dropdown
+---
+
+# Dropdown
+
+import { Playground, PropsTable } from 'docz';
+import Dropdown from '../lib/dropdown';
+import DropdownItem from '../lib/dropdown-item';
+
+## Example
+
+<Playground>
+    {() => {
+        class Example extends React.Component {
+            componentWillMount() {
+                this.setState({ value: '' });
+            }
+
+            render() {
+                return (
+                    <Dropdown
+                        placeholder="Select language..."
+                        id="language"
+                        value={this.state.value}
+                        onValueChange={value => this.setState({ value })}
+                    >
+                        <DropdownItem
+                            id="language_nl"
+                            name="nl"
+                            value="nl"
+                        >
+                            Dutch
+                        </DropdownItem>
+                        <DropdownItem
+                            id="language_en"
+                            name="en"
+                            value="en"
+                        >
+                            English
+                        </DropdownItem>
+                    </Dropdown>
+                );
+            }
+        }
+
+        return <Example />;
+    }}
+</Playground>
+
+## Properties
+
+### Dropdown
+
+<PropsTable of={Dropdown} />
+
+### DropdownItem
+
+<PropsTable of={DropdownItem} />
