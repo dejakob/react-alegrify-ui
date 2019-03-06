@@ -1,0 +1,26 @@
+---
+name: Date Indicator
+---
+
+# Date Indicator
+
+import { Playground, PropsTable } from 'docz';
+import DateIndicator from '../lib/date-indicator';
+
+## Variants
+
+### Default
+
+<Playground>
+    <DateIndicator
+        date={Date.now()}
+    />
+
+    <DateIndicator
+        date="1992-12-16"
+    />
+</Playground>
+
+## Properties
+
+<PropsTable of={DateIndicator} />

@@ -11,4 +11,8 @@ export const imports = {
     import(/* webpackPrefetch: true, webpackChunkName: "docs-card" */ 'docs/card.mdx'),
   'docs/checkbox.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-checkbox" */ 'docs/checkbox.mdx'),
+  'docs/date-indicator.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-date-indicator" */ 'docs/date-indicator.mdx'),
+  'docs/dialog.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-dialog" */ 'docs/dialog.mdx'),
 }
