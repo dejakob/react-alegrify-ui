@@ -1,0 +1,26 @@
+---
+name: Footer
+---
+
+# Footer
+
+import { Playground, PropsTable } from 'docz';
+import Footer from '../lib/footer';
+
+## Example
+
+<Playground>
+    <Footer
+        links={[
+            { href: 'https://alegrify.com', title: 'Alegrify', label: 'Alegrify' },
+            { href: 'https://google.com', title: 'Google', label: 'Google' },
+        ]}
+        logo={<span>😍</span>}
+    >
+        Some more content
+    </Footer>
+</Playground>
+
+## Properties
+
+<PropsTable of={Footer} />

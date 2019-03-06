@@ -18,28 +18,6 @@
     }
   },
   "entries": {
-    "docs/alert.mdx": {
-      "name": "Alert",
-      "id": "b9a849cefd8b4e25cf0523e78396d557",
-      "filepath": "docs/alert.mdx",
-      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/alert.mdx",
-      "slug": "docs-alert",
-      "route": "/docs-alert",
-      "order": 0,
-      "menu": null,
-      "headings": [
-        {
-          "depth": 1,
-          "slug": "alert",
-          "value": "Alert"
-        },
-        {
-          "depth": 2,
-          "slug": "properties",
-          "value": "Properties"
-        }
-      ]
-    },
     "docs/article.mdx": {
       "name": "Article",
       "id": "3e92a145f0873a312616f36413ac8d99",
@@ -59,6 +37,28 @@
           "depth": 2,
           "slug": "example",
           "value": "Example"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
+    "docs/alert.mdx": {
+      "name": "Alert",
+      "id": "b9a849cefd8b4e25cf0523e78396d557",
+      "filepath": "docs/alert.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/alert.mdx",
+      "slug": "docs-alert",
+      "route": "/docs-alert",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "alert",
+          "value": "Alert"
         },
         {
           "depth": 2,
@@ -335,6 +335,55 @@
           "depth": 3,
           "slug": "dropdownitem",
           "value": "DropdownItem"
+        }
+      ]
+    },
+    "docs/footer.mdx": {
+      "name": "Footer",
+      "id": "064d89e8066365edb7f4d000a42e2874",
+      "filepath": "docs/footer.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/footer.mdx",
+      "slug": "docs-footer",
+      "route": "/docs-footer",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "footer",
+          "value": "Footer"
+        },
+        {
+          "depth": 2,
+          "slug": "example",
+          "value": "Example"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
+    "docs/grid.mdx": {
+      "name": "Grid",
+      "id": "ab97bbbd102d71b9e385e7403085465d",
+      "filepath": "docs/grid.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/grid.mdx",
+      "slug": "docs-grid",
+      "route": "/docs-grid",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "grid",
+          "value": "Grid"
+        },
+        {
+          "depth": 2,
+          "slug": "example",
+          "value": "Example"
         }
       ]
     }
