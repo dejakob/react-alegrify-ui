@@ -8,7 +8,9 @@ export default {
                 process.cwd() + "/node_modules/alegrify-ui/alegrify-ui.css"
             )}
                 .react-live-preview { background-color: #ddd; }
-            </style>`
+            </style>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+            `
         }
     },
     themeConfig: {
