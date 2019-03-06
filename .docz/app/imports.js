@@ -7,4 +7,6 @@ export const imports = {
     import(/* webpackPrefetch: true, webpackChunkName: "docs-aside" */ 'docs/aside.mdx'),
   'docs/button.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-button" */ 'docs/button.mdx'),
+  'docs/card.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-card" */ 'docs/card.mdx'),
 }

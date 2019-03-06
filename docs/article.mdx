@@ -4,8 +4,17 @@ name: Article
 
 # Article
 
-import { Article } from '..';
+import { Playground, PropsTable } from 'docz';
+import Article from '../lib/article';
 
-<Article>
-    Some content
-</Article>
+## Example
+
+<Playground>
+    <Article>
+        Some content
+    </Article>
+</Playground>
+
+## Properties
+
+<PropsTable of={Article} />
