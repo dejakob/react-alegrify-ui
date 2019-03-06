@@ -22,7 +22,7 @@
     "storybook-addon-jsx": "^5.4.0"
   },
   "dependencies": {
-    "alegrify-ui": "0.0.7",
+    "alegrify-ui": "0.0.8",
     "moment": "^2.22.2"
   },
   "scripts": {
