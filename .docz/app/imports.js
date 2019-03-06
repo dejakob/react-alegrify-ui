@@ -15,4 +15,8 @@ export const imports = {
     import(/* webpackPrefetch: true, webpackChunkName: "docs-date-indicator" */ 'docs/date-indicator.mdx'),
   'docs/dialog.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-dialog" */ 'docs/dialog.mdx'),
+  'docs/dl.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-dl" */ 'docs/dl.mdx'),
+  'docs/dropdown.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-dropdown" */ 'docs/dropdown.mdx'),
 }
