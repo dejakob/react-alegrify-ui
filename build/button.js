@@ -36,6 +36,10 @@ function Button(props) {
         classNames.push('alegrify-button--primary');
     }
 
+    if (props.destructive) {
+        classNames.push('alegrify-button--destructive');
+    }
+
     if (props.full) {
         classNames.push('alegrify-button--full');
     }
@@ -76,6 +80,11 @@ Button.propTypes = {
      * Is this a primary button?
      */
     primary: _propTypes2.default.bool,
+
+    /**
+     * Is this a destructive button?
+     */
+    destructive: _propTypes2.default.bool,
 
     /**
      * Is this a full width button?

@@ -352,10 +352,10 @@ ajv@^6.1.0:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alegrify-ui@0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/alegrify-ui/-/alegrify-ui-0.0.6.tgz#3624a22fdf9d029ff3e8adeeccd089afd5fedb9c"
-  integrity sha512-htx+71tIEB//7v+Sjm12fWc/tO8Qv6gMoDS05vQ6GG4AnJOdL1ITDIA4eWiDPsswYLA1pBnGExYWE765OIvOuA==
+alegrify-ui@0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/alegrify-ui/-/alegrify-ui-0.0.7.tgz#e21a2859c82d7e28701633c2638687b11d889d87"
+  integrity sha512-qa99CdUGrZ45aluDwK74CfgK9H7S4UsU9p2qYz0Gq5xfKp7qpw6XRo0msTHjbhde6YYluIomBSG82OSHXm/L2g==
 
 align-text@^0.1.1, align-text@^0.1.3:
   version "0.1.4"

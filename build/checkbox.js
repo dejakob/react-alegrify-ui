@@ -39,7 +39,7 @@ function Checkbox(props) {
     return _react2.default.createElement(
         'div',
         {
-            'class': classNames.join(' ')
+            className: classNames.join(' ')
         },
         _react2.default.createElement('input', {
             type: 'checkbox',
