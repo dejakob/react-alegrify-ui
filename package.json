@@ -29,6 +29,7 @@
     "build:watch": "babel lib -w -d build",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
+    "docz:publish": "docz publish",
     "docz:deploy": "./deploy-docs.sh"
   }
 }
