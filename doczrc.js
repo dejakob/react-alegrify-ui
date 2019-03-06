@@ -10,7 +10,6 @@ export default {
                 .react-live-preview { background-color: #ddd; }
             </style>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-            <base href="https://dejakob.github.io/react-alegrify-ui" />
             `
         }
     },
