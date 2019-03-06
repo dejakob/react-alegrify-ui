@@ -13,7 +13,6 @@
     "@material-ui/core": "^3.9.2",
     "docz": "^0.13.7",
     "docz-theme-default": "^0.13.7",
-    "gh-pages-deploy": "^0.5.1",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
@@ -30,6 +29,6 @@
     "build:watch": "babel lib -w -d build",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
-    "docz:deploy": "gh-pages-deploy"
+    "docz:deploy": "./deploy-docs.sh"
   }
 }
