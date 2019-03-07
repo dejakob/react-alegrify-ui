@@ -1,6 +1,6 @@
 {
   "config": {
-    "title": "React Alegrify Ui",
+    "title": "Alegrify UI (React)",
     "description": "React implementation of Alegrify UI",
     "menu": [],
     "ordering": "descending",
@@ -9,7 +9,17 @@
     "native": false,
     "codeSandbox": true,
     "themeConfig": {
-      "showPlaygroundEditor": true
+      "showPlaygroundEditor": true,
+      "colors": {
+        "primary": "#4e4cc1",
+        "secondary": "#953495",
+        "action": "#ffffff",
+        "error": "#900505",
+        "nav": "#333333"
+      },
+      "styles": {
+        "h1": {}
+      }
     },
     "htmlContext": {
       "head": {
@@ -17,173 +27,28 @@
       }
     },
     "hashRouter": true,
-    "files": "**/*.{md,markdown,mdx}"
+    "base": "/react-alegrify-ui"
   },
   "entries": {
-    "COMPONENTS.md": {
-      "id": "1295d38d6af1998e7f7f9654d90c62f5",
-      "filepath": "COMPONENTS.md",
-      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/COMPONENTS.md",
-      "slug": "components",
-      "route": "/components",
-      "name": "Components",
+    "index.mdx": {
+      "name": "Intro",
+      "route": "/",
+      "id": "91149a4106ab27ef746308b41227aca8",
+      "filepath": "index.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/index.mdx",
+      "slug": "index",
       "order": 0,
       "menu": null,
       "headings": [
         {
-          "depth": 2,
-          "slug": "alegrify-ui-components",
-          "value": "Alegrify UI Components"
-        },
-        {
-          "depth": 3,
-          "slug": "1-alert",
-          "value": "1. Alert"
-        },
-        {
-          "depth": 3,
-          "slug": "1-article",
-          "value": "1. Article"
-        },
-        {
-          "depth": 3,
-          "slug": "1-aside",
-          "value": "1. Aside"
-        },
-        {
-          "depth": 3,
-          "slug": "1-button",
-          "value": "1. Button"
-        },
-        {
-          "depth": 3,
-          "slug": "1-card",
-          "value": "1. Card"
-        },
-        {
-          "depth": 3,
-          "slug": "1-checkbox",
-          "value": "1. Checkbox"
-        },
-        {
-          "depth": 3,
-          "slug": "1-dateindicator",
-          "value": "1. DateIndicator"
-        },
-        {
-          "depth": 3,
-          "slug": "1-dialog",
-          "value": "1. Dialog"
-        },
-        {
-          "depth": 3,
-          "slug": "1-dropdownitem",
-          "value": "1. DropdownItem"
-        },
-        {
-          "depth": 3,
-          "slug": "1-dropdown",
-          "value": "1. Dropdown"
+          "depth": 1,
+          "slug": "react-alegrify-ui",
+          "value": "React Alegrify UI"
         },
         {
           "depth": 2,
-          "slug": "multiselectnofalse",
-          "value": "multiSelect||no|false|"
-        },
-        {
-          "depth": 3,
-          "slug": "1-footer",
-          "value": "1. Footer"
-        },
-        {
-          "depth": 3,
-          "slug": "1-grid",
-          "value": "1. Grid"
-        },
-        {
-          "depth": 3,
-          "slug": "1-historicitem",
-          "value": "1. HistoricItem"
-        },
-        {
-          "depth": 3,
-          "slug": "1-input",
-          "value": "1. Input"
-        },
-        {
-          "depth": 3,
-          "slug": "1-label",
-          "value": "1. Label"
-        },
-        {
-          "depth": 3,
-          "slug": "1-main",
-          "value": "1. Main"
-        },
-        {
-          "depth": 3,
-          "slug": "1-numberinput",
-          "value": "1. NumberInput"
-        },
-        {
-          "depth": 3,
-          "slug": "1-radio",
-          "value": "1. Radio"
-        },
-        {
-          "depth": 3,
-          "slug": "1-rangeinput",
-          "value": "1. RangeInput"
-        },
-        {
-          "depth": 3,
-          "slug": "1-statusinput",
-          "value": "1. StatusInput"
-        },
-        {
-          "depth": 3,
-          "slug": "1-weekschedule",
-          "value": "1. WeekSchedule"
-        },
-        {
-          "depth": 3,
-          "slug": "1-weekscheduleviewday",
-          "value": "1. WeekScheduleViewDay"
-        },
-        {
-          "depth": 3,
-          "slug": "1-weekscheduleviewdays",
-          "value": "1. WeekScheduleViewDays"
-        },
-        {
-          "depth": 3,
-          "slug": "1-weekscheduleviewemptycell",
-          "value": "1. WeekScheduleViewEmptyCell"
-        },
-        {
-          "depth": 3,
-          "slug": "1-weekscheduleviewrange",
-          "value": "1. WeekScheduleViewRange"
-        },
-        {
-          "depth": 3,
-          "slug": "1-weekscheduleviewtime",
-          "value": "1. WeekScheduleViewTime"
-        },
-        {
-          "depth": 3,
-          "slug": "1-weekscheduleviewweekgridbody",
-          "value": "1. WeekScheduleViewWeekGridBody"
-        },
-        {
-          "depth": 3,
-          "slug": "1-weekscheduleviewweekgrid",
-          "value": "1. WeekScheduleViewWeekGrid"
-        },
-        {
-          "depth": 3,
-          "slug": "1-weekscheduleview",
-          "value": "1. WeekScheduleView"
+          "slug": "how-to-use",
+          "value": "How to use"
         }
       ]
     },

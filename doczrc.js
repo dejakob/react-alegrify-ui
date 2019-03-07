@@ -14,9 +14,19 @@ export default {
         }
     },
     themeConfig: {
-        showPlaygroundEditor: true
+        showPlaygroundEditor: true,
+        colors: {
+            primary: '#4e4cc1',
+            secondary: '#953495',
+            action: '#ffffff',
+            error: '#900505',
+            nav: '#333333'
+        },
+        styles: {
+            h1: {},
+        },
     },
     hashRouter: true,
-    files: '**/*.{md,markdown,mdx}',
-    base: '/react-alegrify-ui'
+    base: '/react-alegrify-ui',
+    title: 'Alegrify UI (React)'
 };
