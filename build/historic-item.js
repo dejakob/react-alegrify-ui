@@ -1,20 +1,15 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
 
-var _react = require('react');
+var _react = _interopRequireDefault(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _dateIndicator = require('./date-indicator');
-
-var _dateIndicator2 = _interopRequireDefault(_dateIndicator);
+var _dateIndicator = _interopRequireDefault(require("./date-indicator"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29,53 +24,43 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * ```
  */
 function HistoricItem(props) {
-    var classNames = ['alegrify-historic-item'];
+  var classNames = ['alegrify-historic-item'];
 
-    if (typeof props.className === 'string' && props.className.trim() !== '') {
-        classNames.push(props.className);
-    }
+  if (typeof props.className === 'string' && props.className.trim() !== '') {
+    classNames.push(props.className);
+  }
 
-    return _react2.default.createElement(
-        'section',
-        {
-            className: classNames.join(' ')
-        },
-        _react2.default.createElement(_dateIndicator2.default, {
-            className: 'alegrify-historic-item__date',
-            date: props.date
-        }),
-        _react2.default.createElement(
-            'div',
-            {
-                className: 'alegrify-historic-item__content'
-            },
-            props.children
-        )
-    );
+  return _react.default.createElement("section", {
+    className: classNames.join(' ')
+  }, _react.default.createElement(_dateIndicator.default, {
+    className: "alegrify-historic-item__date",
+    date: props.date
+  }), _react.default.createElement("div", {
+    className: "alegrify-historic-item__content"
+  }, props.children));
 }
 
 HistoricItem.propTypes = {
+  /**
+   * Content for the historic item
+   */
+  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
 
-    /**
-     * Content for the historic item
-     */
-    children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+  /**
+   * Additional classnames
+   */
+  className: _propTypes.default.string,
 
-    /**
-     * Additional classnames
-     */
-    className: _propTypes2.default.string,
-
-    /**
-     * Date to show / When did this occur?
-     */
-    date: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]).isRequired
+  /**
+   * Date to show / When did this occur?
+   */
+  date: _propTypes.default.oneOfType([_propTypes.default.number, _propTypes.default.string]).isRequired
 };
 HistoricItem.defaultProps = {
-    children: null,
-    date: new Date().toString(),
-    className: ''
+  children: null,
+  date: new Date().toString(),
+  className: ''
 };
-_dateIndicator2.default.propExamples = _dateIndicator2.default.defaultProps;
-
-exports.default = HistoricItem;
+HistoricItem.propExamples = HistoricItem.defaultProps;
+var _default = HistoricItem;
+exports.default = _default;

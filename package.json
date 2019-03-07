@@ -7,10 +7,10 @@
   "author": "dejakob",
   "license": "MPL",
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
-    "@material-ui/core": "^3.9.2",
     "docz": "^0.13.7",
     "docz-theme-default": "^0.13.7",
     "prop-types": "^15.6.2",
@@ -20,9 +20,6 @@
   "dependencies": {
     "alegrify-ui": "0.0.10",
     "moment": "^2.22.2"
-  },
-  "gh-pages-deploy": {
-    "staticpath": ".docz/dist"
   },
   "scripts": {
     "build": "babel lib -d build",

@@ -1,20 +1,15 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
 
-var _react = require('react');
+var _react = _interopRequireDefault(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
+var _moment = _interopRequireDefault(require("moment"));
 
-var _moment = require('moment');
-
-var _moment2 = _interopRequireDefault(_moment);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28,53 +23,38 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * ```
  */
 function DateIndicator(props) {
-    var classNames = ['alegrify-date-indicator'];
+  var classNames = ['alegrify-date-indicator'];
 
-    if (typeof props.className === 'string' && props.className.trim() !== '') {
-        classNames.push(props.className);
-    }
+  if (typeof props.className === 'string' && props.className.trim() !== '') {
+    classNames.push(props.className);
+  }
 
-    var momentDate = (0, _moment2.default)(props.date);
-
-    return _react2.default.createElement(
-        'time',
-        {
-            className: classNames.join(' '),
-            dateTime: momentDate.format()
-        },
-        _react2.default.createElement(
-            'span',
-            {
-                className: 'alegrify-date-indicator__month'
-            },
-            momentDate.format('MMM')
-        ),
-        _react2.default.createElement(
-            'span',
-            {
-                className: 'alegrify-date-indicator__day'
-            },
-            momentDate.format('D')
-        )
-    );
+  var momentDate = (0, _moment.default)(props.date);
+  return _react.default.createElement("time", {
+    className: classNames.join(' '),
+    dateTime: momentDate.format()
+  }, _react.default.createElement("span", {
+    className: "alegrify-date-indicator__month"
+  }, momentDate.format('MMM')), _react.default.createElement("span", {
+    className: "alegrify-date-indicator__day"
+  }, momentDate.format('D')));
 }
 
 DateIndicator.propTypes = {
+  /**
+   * Content
+   */
+  date: _propTypes.default.oneOfType([_propTypes.default.number, _propTypes.default.string]).isRequired,
 
-    /**
-     * Content
-     */
-    date: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]).isRequired,
-
-    /**
-     * Additional classnames
-     */
-    className: _propTypes2.default.string
+  /**
+   * Additional classnames
+   */
+  className: _propTypes.default.string
 };
 DateIndicator.defaultProps = {
-    date: new Date().toString(),
-    className: ''
+  date: new Date().toString(),
+  className: ''
 };
 DateIndicator.propExamples = DateIndicator.defaultProps;
-
-exports.default = DateIndicator;
+var _default = DateIndicator;
+exports.default = _default;

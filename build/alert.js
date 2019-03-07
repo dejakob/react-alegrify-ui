@@ -1,16 +1,13 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
 
-var _react = require('react');
+var _react = _interopRequireDefault(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28,41 +25,34 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * ```
  */
 function Alert(props) {
-    var classNames = ['alegrify-alert'];
-
-    classNames.push(props.className);
-
-    return _react2.default.createElement(
-        'dialog',
-        {
-            className: classNames.join(' '),
-            open: props.open
-        },
-        props.children
-    );
+  var classNames = ['alegrify-alert'];
+  classNames.push(props.className);
+  return _react.default.createElement("dialog", {
+    className: classNames.join(' '),
+    open: props.open
+  }, props.children);
 }
 
 Alert.propTypes = {
+  /**
+   * Content of the alert
+   */
+  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
 
-    /**
-     * Content of the alert
-     */
-    children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+  /**
+   * Additional classnames
+   */
+  className: _propTypes.default.string,
 
-    /**
-     * Additional classnames
-     */
-    className: _propTypes2.default.string,
-
-    /**
-     * Show the alert?
-     */
-    open: _propTypes2.default.bool
+  /**
+   * Show the alert?
+   */
+  open: _propTypes.default.bool
 };
 Alert.propExamples = {
-    children: 'Alert content',
-    className: '',
-    open: true
+  children: 'Alert content',
+  className: '',
+  open: true
 };
-
-exports.default = Alert;
+var _default = Alert;
+exports.default = _default;

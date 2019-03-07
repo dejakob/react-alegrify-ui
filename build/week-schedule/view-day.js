@@ -1,16 +1,13 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
 
-var _react = require('react');
+var _react = _interopRequireDefault(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -18,17 +15,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * <WeekScheduleViewDay />
  */
 function WeekScheduleViewDay(props) {
-    return _react2.default.createElement(
-        'th',
-        {
-            className: 'alegrify-week-schedule__day'
-        },
-        props.children
-    );
+  return _react.default.createElement("th", {
+    className: "alegrify-week-schedule__day"
+  }, props.children);
 }
 
 WeekScheduleViewDay.propTypes = {
-    children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node])
+  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node])
 };
-
-exports.default = WeekScheduleViewDay;
+var _default = WeekScheduleViewDay;
+exports.default = _default;

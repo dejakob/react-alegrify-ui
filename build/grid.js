@@ -1,21 +1,17 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
 
-var _react = require('react');
+var _react = _interopRequireDefault(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var VARIANTS = ['left', 'center', 'right', 'top', 'middle', 'bottom', 'outline', 'even', 'reverse', 'all'];
-
 /**
  * <Grid />
  * 
@@ -32,45 +28,86 @@ var VARIANTS = ['left', 'center', 'right', 'top', 'middle', 'bottom', 'outline',
  * </Grid>
  * ```
  */
+
 function Grid(props) {
-    var classNames = ['alegrify-grid'];
+  var classNames = ['alegrify-grid'];
 
-    if (props.className) {
-        classNames.push(props.className);
+  if (props.className) {
+    classNames.push(props.className);
+  }
+
+  VARIANTS.forEach(function (variant) {
+    if (props[variant]) {
+      classNames.push("alegrify-grid--".concat(variant));
     }
-
-    VARIANTS.forEach(function (variant) {
-        if (props[variant]) {
-            classNames.push('alegrify-grid--' + variant);
-        }
-    });
-
-    return _react2.default.createElement(
-        'div',
-        {
-            className: classNames.join(' ')
-        },
-        props.children
-    );
+  });
+  return _react.default.createElement("div", {
+    className: classNames.join(' ')
+  }, props.children);
 }
 
 Grid.propTypes = {
+  /**
+   * Content
+   */
+  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
 
-    /**
-     * Content
-     */
-    children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+  /**
+   * Additional classnames
+   */
+  className: _propTypes.default.string,
 
-    /**
-     * Additional classnames
-     */
-    className: _propTypes2.default.string
+  /**
+   * Align cells left
+   */
+  left: _propTypes.default.bool,
+
+  /**
+   * Align cells center
+   */
+  center: _propTypes.default.bool,
+
+  /**
+   * Align cells right
+   */
+  right: _propTypes.default.bool,
+
+  /**
+   * Align cells on top
+   */
+  top: _propTypes.default.bool,
+
+  /**
+   * Align cells in the middle (vertically)
+   */
+  middle: _propTypes.default.bool,
+
+  /**
+   * Align cells at the bottom
+   */
+  bottom: _propTypes.default.bool,
+
+  /**
+   * Align cells outline
+   */
+  outline: _propTypes.default.bool,
+
+  /**
+   * Align cells evenly (space-around)
+   */
+  even: _propTypes.default.bool,
+
+  /**
+   * Reverse the order
+   */
+  reverse: _propTypes.default.bool,
+
+  /**
+   * Also show grid on smaller screens
+   */
+  all: _propTypes.default.bool
 };
 Grid.defaultProps = {};
 Grid.propExamples = {};
-
-VARIANTS.forEach(function (variant) {
-    Grid.propTypes[variant] = _propTypes2.default.bool;
-});
-
-exports.default = Grid;
+var _default = Grid;
+exports.default = _default;

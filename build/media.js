@@ -1,12 +1,13 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
 var MEDIA = {
-    SMALL: 600,
-    MEDIUM: 960,
-    LARGE: 1200
+  SMALL: 600,
+  MEDIUM: 960,
+  LARGE: 1200
 };
-
-exports.default = MEDIA;
+var _default = MEDIA;
+exports.default = _default;

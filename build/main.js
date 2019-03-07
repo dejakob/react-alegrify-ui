@@ -1,16 +1,13 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
 
-var _react = require('react');
+var _react = _interopRequireDefault(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24,36 +21,31 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * ```
  */
 function Main(props) {
-    var classNames = ['alegrify-main'];
+  var classNames = ['alegrify-main'];
 
-    if (props.className) {
-        classNames.push(props.className);
-    }
+  if (props.className) {
+    classNames.push(props.className);
+  }
 
-    return _react2.default.createElement(
-        'main',
-        {
-            className: classNames.join(' ')
-        },
-        props.children
-    );
+  return _react.default.createElement("main", {
+    className: classNames.join(' ')
+  }, props.children);
 }
 
 Main.propTypes = {
+  /**
+   * Main content
+   */
+  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
 
-    /**
-     * Main content
-     */
-    children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
-
-    /**
-     * Additional classnames
-     */
-    className: _propTypes2.default.string
+  /**
+   * Additional classnames
+   */
+  className: _propTypes.default.string
 };
 Main.propExamples = {
-    children: 'Main content',
-    className: ''
+  children: 'Main content',
+  className: ''
 };
-
-exports.default = Main;
+var _default = Main;
+exports.default = _default;

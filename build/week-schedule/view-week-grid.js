@@ -1,26 +1,19 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
 
-var _react = require('react');
+var _react = _interopRequireDefault(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _propTypes = require('prop-types');
+var _viewDays = _interopRequireDefault(require("./view-days"));
 
-var _propTypes2 = _interopRequireDefault(_propTypes);
+var _viewWeekGridBody = _interopRequireDefault(require("./view-week-grid-body"));
 
-var _viewDays = require('./view-days');
-
-var _viewDays2 = _interopRequireDefault(_viewDays);
-
-var _viewWeekGridBody = require('./view-week-grid-body');
-
-var _viewWeekGridBody2 = _interopRequireDefault(_viewWeekGridBody);
-
-var _device = require('../helpers/device');
+var _device = require("../helpers/device");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28,27 +21,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * <WeekScheduleViewWeekGrid />
  */
 function WeekScheduleViewWeekGrid(props) {
-    return _react2.default.createElement(
-        'table',
-        {
-            className: 'alegrify-week-schedule__table',
-            onDoubleClick: props.onDoubleClick,
-            onClick: (0, _device.isTouchDevice)() ? props.onDoubleClick : null,
-            ref: props.tableRef
-        },
-        _react2.default.createElement(_viewDays2.default, null),
-        _react2.default.createElement(_viewWeekGridBody2.default, {
-            cellsPerTimeLabel: props.cellsPerTimeLabel,
-            cellHeight: props.cellHeight
-        })
-    );
+  return _react.default.createElement("table", {
+    className: "alegrify-week-schedule__table",
+    onDoubleClick: props.onDoubleClick,
+    onClick: (0, _device.isTouchDevice)() ? props.onDoubleClick : null,
+    ref: props.tableRef
+  }, _react.default.createElement(_viewDays.default, null), _react.default.createElement(_viewWeekGridBody.default, {
+    cellsPerTimeLabel: props.cellsPerTimeLabel,
+    cellHeight: props.cellHeight
+  }));
 }
 
 WeekScheduleViewWeekGrid.propTypes = {
-    onDoubleClick: _propTypes2.default.func,
-    cellsPerTimeLabel: _propTypes2.default.number,
-    cellHeight: _propTypes2.default.number,
-    tableRef: _propTypes2.default.func
+  onDoubleClick: _propTypes.default.func,
+  cellsPerTimeLabel: _propTypes.default.number,
+  cellHeight: _propTypes.default.number,
+  tableRef: _propTypes.default.func
 };
-
-exports.default = WeekScheduleViewWeekGrid;
+var _default = WeekScheduleViewWeekGrid;
+exports.default = _default;

@@ -1,16 +1,13 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
 
-var _react = require('react');
+var _react = _interopRequireDefault(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26,58 +23,45 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * ```
  */
 function Dialog(props) {
-    var classNames = ['alegrify-dialog'];
+  var classNames = ['alegrify-dialog'];
 
-    if (props.className) {
-        classNames.push(props.className);
-    }
+  if (props.className) {
+    classNames.push(props.className);
+  }
 
-    return _react2.default.createElement(
-        'div',
-        {
-            className: 'alegrify-dialog__wrapper',
-            open: props.open
-        },
-        _react2.default.createElement(
-            'dialog',
-            {
-                className: classNames.join(' ')
-            },
-            _react2.default.createElement(
-                'div',
-                {
-                    className: 'alegrify-dialog__content'
-                },
-                props.children
-            )
-        )
-    );
+  return _react.default.createElement("div", {
+    className: "alegrify-dialog__wrapper",
+    open: props.open
+  }, _react.default.createElement("dialog", {
+    className: classNames.join(' ')
+  }, _react.default.createElement("div", {
+    className: "alegrify-dialog__content"
+  }, props.children)));
 }
 
 Dialog.propTypes = {
+  /**
+   * Content
+   */
+  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
 
-    /**
-     * Content
-     */
-    children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
+  /**
+   * Additional classnames
+   */
+  className: _propTypes.default.string,
 
-    /**
-     * Additional classnames
-     */
-    className: _propTypes2.default.string,
-
-    /**
-     * Should the dialog be shown?
-     */
-    open: _propTypes2.default.bool
+  /**
+   * Should the dialog be shown?
+   */
+  open: _propTypes.default.bool
 };
 Dialog.defaultProps = {
-    open: false
+  open: false
 };
 Dialog.propExamples = {
-    children: 'Add some content here',
-    className: '',
-    open: true
+  children: 'Add some content here',
+  className: '',
+  open: true
 };
-
-exports.default = Dialog;
+var _default = Dialog;
+exports.default = _default;

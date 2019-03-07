@@ -1,18 +1,15 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _react = require('react');
+var _react = _interopRequireDefault(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _inputWithState = require('./abstract/input-with-state');
+var _inputWithState = require("./abstract/input-with-state");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30,14 +27,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * ```
  */
 function RangeInput(props) {
+  var Component = (0, _inputWithState.wrapWithInputState)(RangeInputView);
+  return _react.default.createElement(Component, props);
+}
+
+function RangeInputView(props) {
   var classNames = ['alegrify-range-input'];
 
   if (props.className) {
     classNames.push(props.className);
   }
 
-  return _react2.default.createElement('input', {
-    type: 'range',
+  return _react.default.createElement("input", {
+    type: "range",
     id: props.id,
     name: props.name,
     className: classNames.join(' '),
@@ -46,8 +48,8 @@ function RangeInput(props) {
       return props.changeValue(e.target.value);
     },
     value: props.value,
-    'data-low-indicator': props.lowIndicator,
-    'data-high-indicator': props.highIndicator,
+    "data-low-indicator": props.lowIndicator,
+    "data-high-indicator": props.highIndicator,
     min: props.min || 1,
     max: props.max || 10,
     step: props.step || 1
@@ -55,61 +57,60 @@ function RangeInput(props) {
 }
 
 RangeInput.propTypes = {
-
   /**
    * Additional classnames
    */
-  className: _propTypes2.default.string,
+  className: _propTypes.default.string,
 
   /**
    * Input id
    */
-  id: _propTypes2.default.string.isRequired,
+  id: _propTypes.default.string.isRequired,
 
   /**
    * Input name
    */
-  name: _propTypes2.default.string.isRequired,
+  name: _propTypes.default.string.isRequired,
 
   /**
    * Input value
    */
-  value: _propTypes2.default.number,
+  value: _propTypes.default.number,
 
   /**
    * Is range input disabled?
    */
-  disabled: _propTypes2.default.bool,
+  disabled: _propTypes.default.bool,
 
   /**
    * Indicator at the start of the range input
    */
-  lowIndicator: _propTypes2.default.string,
+  lowIndicator: _propTypes.default.string,
 
   /**
    * Indicator at the end of the range input
    */
-  highIndicator: _propTypes2.default.string,
+  highIndicator: _propTypes.default.string,
 
   /**
    * Start of the range
    */
-  min: _propTypes2.default.number,
+  min: _propTypes.default.number,
 
   /**
    * End of the range
    */
-  max: _propTypes2.default.number,
+  max: _propTypes.default.number,
 
   /**
    * Range step
    */
-  step: _propTypes2.default.number,
+  step: _propTypes.default.number,
 
   /**
    * On value change, param: number
    */
-  onValueChange: _propTypes2.default.func
+  onValueChange: _propTypes.default.func
 };
 RangeInput.defaultProps = {
   min: 1,
@@ -128,5 +129,5 @@ RangeInput.propExamples = {
   max: 10,
   step: 1
 };
-
-exports.default = (0, _inputWithState.wrapWithInputState)(RangeInput);
+var _default = RangeInput;
+exports.default = _default;

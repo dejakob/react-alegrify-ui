@@ -1,10 +1,10 @@
 export const imports = {
-  'docs/alert.mdx': () =>
-    import(/* webpackPrefetch: true, webpackChunkName: "docs-alert" */ 'docs/alert.mdx'),
   'docs/article.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-article" */ 'docs/article.mdx'),
   'docs/aside.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-aside" */ 'docs/aside.mdx'),
+  'docs/alert.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-alert" */ 'docs/alert.mdx'),
   'docs/button.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-button" */ 'docs/button.mdx'),
   'docs/card.mdx': () =>

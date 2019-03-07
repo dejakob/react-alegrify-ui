@@ -1,40 +1,40 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-exports.SimpleUiComponentPropTypes = undefined;
+exports.SimpleUiComponentPropTypes = exports.default = void 0;
 
-var _react = require('react');
+var _react = _interopRequireDefault(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SimpleUiComponentPropTypes = {
-    children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]).isRequired,
-    className: _propTypes2.default.string
+  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
+  className: _propTypes.default.string
 };
-
 /**
  * Simple component that passes props and attaches the className
  * @param {React.Component} el 
  * @param {String} className 
  * @param {Object} props 
  */
+
+exports.SimpleUiComponentPropTypes = SimpleUiComponentPropTypes;
+
 function SimpleUiComponent(el, className, props) {
-    var classNames = [className];
+  var classNames = [className];
 
-    if (typeof props.className === 'string') {
-        classNames.push(props.className);
-    }
+  if (typeof props.className === 'string') {
+    classNames.push(props.className);
+  }
 
-    return _react2.default.cloneElement(el, Object.assign({}, props, { className: classNames.join(' ') }));
+  return _react.default.cloneElement(el, Object.assign({}, props, {
+    className: classNames.join(' ')
+  }));
 }
 
-exports.default = SimpleUiComponent;
-exports.SimpleUiComponentPropTypes = SimpleUiComponentPropTypes;
+var _default = SimpleUiComponent;
+exports.default = _default;

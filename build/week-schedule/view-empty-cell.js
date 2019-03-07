@@ -1,14 +1,13 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
 
-var _react = require('react');
+var _react = _interopRequireDefault(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
-
-var _helpers = require('./helpers');
+var _helpers = require("./helpers");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -16,12 +15,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * <WeekScheduleViewEmptyCell />
  */
 function WeekScheduleViewEmptyCell(props) {
-    return _react2.default.createElement('td', {
-        className: 'alegrify-week-schedule__cell',
-        style: (0, _helpers.heightCss)(props.cellHeight)
-    });
+  return _react.default.createElement("td", {
+    className: "alegrify-week-schedule__cell",
+    style: (0, _helpers.heightCss)(props.cellHeight)
+  });
 }
 
 WeekScheduleViewEmptyCell.propTypes = {};
-
-exports.default = WeekScheduleViewEmptyCell;
+var _default = WeekScheduleViewEmptyCell;
+exports.default = _default;
