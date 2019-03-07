@@ -35,4 +35,8 @@ export const imports = {
     import(/* webpackPrefetch: true, webpackChunkName: "docs-number-input" */ 'docs/number-input.mdx'),
   'docs/radio.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-radio" */ 'docs/radio.mdx'),
+  'docs/range-input.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-range-input" */ 'docs/range-input.mdx'),
+  'docs/section.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-section" */ 'docs/section.mdx'),
 }
