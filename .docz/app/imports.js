@@ -27,16 +27,18 @@ export const imports = {
     import(/* webpackPrefetch: true, webpackChunkName: "docs-historic-item" */ 'docs/historic-item.mdx'),
   'docs/input.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-input" */ 'docs/input.mdx'),
-  'docs/label.mdx': () =>
-    import(/* webpackPrefetch: true, webpackChunkName: "docs-label" */ 'docs/label.mdx'),
   'docs/main.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-main" */ 'docs/main.mdx'),
   'docs/number-input.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-number-input" */ 'docs/number-input.mdx'),
+  'docs/label.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-label" */ 'docs/label.mdx'),
   'docs/radio.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-radio" */ 'docs/radio.mdx'),
-  'docs/range-input.mdx': () =>
-    import(/* webpackPrefetch: true, webpackChunkName: "docs-range-input" */ 'docs/range-input.mdx'),
   'docs/section.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-section" */ 'docs/section.mdx'),
+  'docs/range-input.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-range-input" */ 'docs/range-input.mdx'),
+  'docs/status-input.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-status-input" */ 'docs/status-input.mdx'),
 }

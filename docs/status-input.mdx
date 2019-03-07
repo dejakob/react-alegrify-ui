@@ -1,0 +1,28 @@
+---
+name: Status Input
+---
+
+# Status Input
+
+import { Playground, PropsTable } from 'docz';
+import StatusInput from '../lib/status-input';
+
+## Example
+
+<Playground>
+    <StatusInput
+        name="status_input"
+        id="status_input"
+        actions={[
+            { label: 'picture', icon: 'camera_alt' },
+            { label: 'music', icon: 'audiotrack' },
+            { label: 'file', icon: 'attach_file' }
+        ]}
+    >
+
+    </StatusInput>
+</Playground>
+
+## Properties
+
+<PropsTable of={StatusInput} />
