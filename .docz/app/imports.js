@@ -17,10 +17,10 @@ export const imports = {
     import(/* webpackPrefetch: true, webpackChunkName: "docs-dialog" */ 'docs/dialog.mdx'),
   'docs/dl.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-dl" */ 'docs/dl.mdx'),
+  'docs/dropdown.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-dropdown" */ 'docs/dropdown.mdx'),
   'docs/footer.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-footer" */ 'docs/footer.mdx'),
   'docs/grid.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-grid" */ 'docs/grid.mdx'),
-  'docs/dropdown.mdx': () =>
-    import(/* webpackPrefetch: true, webpackChunkName: "docs-dropdown" */ 'docs/dropdown.mdx'),
 }

@@ -6,11 +6,38 @@ name: Grid
 
 import { Playground, PropsTable } from 'docz';
 import Grid from '../lib/grid';
+import GridCell from '../lib/grid-cell';
 
 ## Example
 
 <Playground>
-    <Grid>
-        
+    <Grid
+        all
+    >
+        <GridCell
+            six
+        >
+            Cell A
+        </GridCell>
+        <GridCell
+            six
+        >
+            Cell B
+        </GridCell>
+        <GridCell
+            six
+        >
+            Cell C
+        </GridCell>
     </Grid>
 </Playground>
+
+## Properties
+
+### Grid
+
+<PropsTable of={Grid} />
+
+### GridCell
+
+<PropsTable of={GridCell} />
