@@ -1,5 +1,7 @@
 # React Alegrify UI
 
+[![NPM](https://nodei.co/npm/react-alegrify-ui.png)](https://npmjs.org/package/react-alegrify-ui)
+
 ## How to use
 
 First, install the dependency with yarn, npm or any alternative:
