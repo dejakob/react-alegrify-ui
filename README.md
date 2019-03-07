@@ -18,7 +18,7 @@ In those cases, this should do the trick:
 import '../node_modules/alegrify-ui/alegrify-ui.min.css';
 ```
 
-In any other case manually include the [alegrify-ui.min.css](https://github.com/dejakob/alegrify-ui/alegrify-ui.min.css) file into your html file:
+In any other case manually include the [alegrify-ui.min.css](https://raw.githubusercontent.com/dejakob/alegrify-ui/master/alegrify-ui.min.css) file into your html file:
 
 ```
 <link rel="stylesheet" href="<PATH>/alegrify-ui.min.css" />
