@@ -7,6 +7,10 @@ name: Grid
 import { Playground, PropsTable } from 'docz';
 import Grid from '../lib/grid';
 import GridCell from '../lib/grid-cell';
+import Section from '../lib/section';
+
+Based on a 12 column grid system.
+Adding `six` will give a 50% width, because 6/12 = 50%.
 
 ## Example
 
@@ -17,17 +21,49 @@ import GridCell from '../lib/grid-cell';
         <GridCell
             six
         >
-            Cell A
+            <Section>Cell 1</Section>
         </GridCell>
         <GridCell
             six
         >
-            Cell B
+            <Section>Cell 2</Section>
+        </GridCell>
+
+        <GridCell
+            four
+        >
+            <Section>Cell 3</Section>
         </GridCell>
         <GridCell
-            six
+            four
         >
-            Cell C
+            <Section>Cell 4</Section>
+        </GridCell>
+        <GridCell
+            four
+        >
+            <Section>Cell 5</Section>
+        </GridCell>
+
+        <GridCell
+            three
+        >
+            <Section>Cell 6</Section>
+        </GridCell>
+        <GridCell
+            three
+        >
+            <Section>Cell 7</Section>
+        </GridCell>
+        <GridCell
+            three
+        >
+            <Section>Cell 8</Section>
+        </GridCell>
+        <GridCell
+            three
+        >
+            <Section>Cell 9</Section>
         </GridCell>
     </Grid>
 </Playground>
