@@ -397,6 +397,208 @@
           "value": "GridCell"
         }
       ]
+    },
+    "docs/historic-item.mdx": {
+      "name": "Historic Item",
+      "id": "a1afd2046ec1aecf14caacd831201665",
+      "filepath": "docs/historic-item.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/historic-item.mdx",
+      "slug": "docs-historic-item",
+      "route": "/docs-historic-item",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "historic-item",
+          "value": "Historic Item"
+        },
+        {
+          "depth": 2,
+          "slug": "example",
+          "value": "Example"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
+    "docs/input.mdx": {
+      "name": "Input",
+      "id": "fd76a7eaedefd892b85fdc3a91af8a0d",
+      "filepath": "docs/input.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/input.mdx",
+      "slug": "docs-input",
+      "route": "/docs-input",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "input",
+          "value": "Input"
+        },
+        {
+          "depth": 2,
+          "slug": "variants",
+          "value": "Variants"
+        },
+        {
+          "depth": 3,
+          "slug": "default",
+          "value": "Default"
+        },
+        {
+          "depth": 3,
+          "slug": "full",
+          "value": "Full"
+        },
+        {
+          "depth": 3,
+          "slug": "multiline",
+          "value": "Multiline"
+        },
+        {
+          "depth": 3,
+          "slug": "email",
+          "value": "Email"
+        },
+        {
+          "depth": 3,
+          "slug": "disabled",
+          "value": "Disabled"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
+    "docs/label.mdx": {
+      "name": "Label",
+      "id": "a60746656c688c6927103806824599eb",
+      "filepath": "docs/label.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/label.mdx",
+      "slug": "docs-label",
+      "route": "/docs-label",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "label",
+          "value": "Label"
+        },
+        {
+          "depth": 2,
+          "slug": "example",
+          "value": "Example"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
+    "docs/main.mdx": {
+      "name": "Main",
+      "id": "02abb9f622b2dc3bec429314b54da8a1",
+      "filepath": "docs/main.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/main.mdx",
+      "slug": "docs-main",
+      "route": "/docs-main",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "main",
+          "value": "Main"
+        },
+        {
+          "depth": 2,
+          "slug": "example",
+          "value": "Example"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
+    "docs/number-input.mdx": {
+      "name": "Number Input",
+      "id": "4ae791a5532faf627019fb44502fddb8",
+      "filepath": "docs/number-input.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/number-input.mdx",
+      "slug": "docs-number-input",
+      "route": "/docs-number-input",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "number-input",
+          "value": "Number Input"
+        },
+        {
+          "depth": 2,
+          "slug": "example",
+          "value": "Example"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
+    "docs/radio.mdx": {
+      "name": "Radio",
+      "id": "5b99ebe8e0a3e1541366f72d49a919e3",
+      "filepath": "docs/radio.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/radio.mdx",
+      "slug": "docs-radio",
+      "route": "/docs-radio",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "radio",
+          "value": "Radio"
+        },
+        {
+          "depth": 2,
+          "slug": "variants",
+          "value": "Variants"
+        },
+        {
+          "depth": 3,
+          "slug": "default",
+          "value": "Default"
+        },
+        {
+          "depth": 3,
+          "slug": "checked",
+          "value": "Checked"
+        },
+        {
+          "depth": 3,
+          "slug": "disabled",
+          "value": "Disabled"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
     }
   }
 }

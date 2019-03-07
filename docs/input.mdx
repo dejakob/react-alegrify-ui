@@ -1,0 +1,67 @@
+---
+name: Input
+---
+
+# Input
+
+import { Playground, PropsTable } from 'docz';
+import Input from '../lib/input';
+
+## Variants
+
+### Default
+
+<Playground>
+    <Input
+        id="name"
+        name="name"
+        placeholder="Enter your name..."
+    />
+</Playground>
+
+### Full
+
+<Playground>
+    <Input
+        id="name"
+        name="name"
+        placeholder="Enter your name..."
+        full
+    />
+</Playground>
+
+### Multiline
+
+<Playground>
+    <Input
+        id="description"
+        name="desription"
+        placeholder="Enter your descrition..."
+        multiline
+    />
+</Playground>
+
+### Email
+
+<Playground>
+    <Input
+        id="email"
+        name="email"
+        placeholder="abc@gmail.com"
+        type="email"
+    />
+</Playground>
+
+### Disabled
+
+<Playground>
+    <Input
+        id="anotherinput"
+        name="anotherinput"
+        disabled
+    />
+</Playground>
+
+## Properties
+
+<PropsTable of={Input} />

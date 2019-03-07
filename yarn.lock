@@ -1477,10 +1477,10 @@ ajv@^6.1.0:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alegrify-ui@0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/alegrify-ui/-/alegrify-ui-0.0.9.tgz#9e22997d16a3edfe7bc8cc5fe313fc7d7556d85b"
-  integrity sha512-yJp0IIYoMfN0BwHRW22uHSquiz/uSfxHPnoIUmEeWMGXVh7Rgh4t7rG9JgVyhZGlVhFCwoYOAsRSxhr3joibVg==
+alegrify-ui@0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/alegrify-ui/-/alegrify-ui-0.0.10.tgz#bedd6c518e30ad1380d8919927a79f1be0c67798"
+  integrity sha512-8pmrywAKIqEApsZAgdZAfNWyPTz65VGlDJsjTlvPzsDrOykMMG6I4fIOmjAxXROB3LU5RlYUmkWJs5choy5cJw==
 
 ansi-colors@^3.0.0:
   version "3.2.4"

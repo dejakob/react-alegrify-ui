@@ -1,0 +1,24 @@
+---
+name: Historic Item
+---
+
+# Historic Item
+
+import { Playground, PropsTable } from 'docz';
+import HistoricItem from '../lib/historic-item';
+import { H2, P } from '../lib/typography';
+
+## Example
+
+<Playground>
+    <HistoricItem
+        date="2018-10-28T09:00:00"
+    >
+        <H2>Something interesting happened</H2>
+        <P>Lorem ipsum...</P>
+    </HistoricItem>
+</Playground>
+
+## Properties
+
+<PropsTable of={HistoricItem} />

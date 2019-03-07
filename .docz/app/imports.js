@@ -23,4 +23,16 @@ export const imports = {
     import(/* webpackPrefetch: true, webpackChunkName: "docs-footer" */ 'docs/footer.mdx'),
   'docs/grid.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-grid" */ 'docs/grid.mdx'),
+  'docs/historic-item.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-historic-item" */ 'docs/historic-item.mdx'),
+  'docs/input.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-input" */ 'docs/input.mdx'),
+  'docs/label.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-label" */ 'docs/label.mdx'),
+  'docs/main.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-main" */ 'docs/main.mdx'),
+  'docs/number-input.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-number-input" */ 'docs/number-input.mdx'),
+  'docs/radio.mdx': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "docs-radio" */ 'docs/radio.mdx'),
 }
