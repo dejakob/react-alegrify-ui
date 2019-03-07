@@ -19,28 +19,6 @@
     "hashRouter": true
   },
   "entries": {
-    "docs/alert.mdx": {
-      "name": "Alert",
-      "id": "b9a849cefd8b4e25cf0523e78396d557",
-      "filepath": "docs/alert.mdx",
-      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/alert.mdx",
-      "slug": "docs-alert",
-      "route": "/docs-alert",
-      "order": 0,
-      "menu": null,
-      "headings": [
-        {
-          "depth": 1,
-          "slug": "alert",
-          "value": "Alert"
-        },
-        {
-          "depth": 2,
-          "slug": "properties",
-          "value": "Properties"
-        }
-      ]
-    },
     "docs/article.mdx": {
       "name": "Article",
       "id": "3e92a145f0873a312616f36413ac8d99",
@@ -144,6 +122,28 @@
           "depth": 3,
           "slug": "large",
           "value": "Large"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
+    "docs/alert.mdx": {
+      "name": "Alert",
+      "id": "b9a849cefd8b4e25cf0523e78396d557",
+      "filepath": "docs/alert.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/alert.mdx",
+      "slug": "docs-alert",
+      "route": "/docs-alert",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "alert",
+          "value": "Alert"
         },
         {
           "depth": 2,
@@ -477,6 +477,33 @@
         }
       ]
     },
+    "docs/label.mdx": {
+      "name": "Label",
+      "id": "a60746656c688c6927103806824599eb",
+      "filepath": "docs/label.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/label.mdx",
+      "slug": "docs-label",
+      "route": "/docs-label",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "label",
+          "value": "Label"
+        },
+        {
+          "depth": 2,
+          "slug": "example",
+          "value": "Example"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
     "docs/main.mdx": {
       "name": "Main",
       "id": "02abb9f622b2dc3bec429314b54da8a1",
@@ -518,33 +545,6 @@
           "depth": 1,
           "slug": "number-input",
           "value": "Number Input"
-        },
-        {
-          "depth": 2,
-          "slug": "example",
-          "value": "Example"
-        },
-        {
-          "depth": 2,
-          "slug": "properties",
-          "value": "Properties"
-        }
-      ]
-    },
-    "docs/label.mdx": {
-      "name": "Label",
-      "id": "a60746656c688c6927103806824599eb",
-      "filepath": "docs/label.mdx",
-      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/label.mdx",
-      "slug": "docs-label",
-      "route": "/docs-label",
-      "order": 0,
-      "menu": null,
-      "headings": [
-        {
-          "depth": 1,
-          "slug": "label",
-          "value": "Label"
         },
         {
           "depth": 2,
@@ -600,20 +600,20 @@
         }
       ]
     },
-    "docs/section.mdx": {
-      "name": "Section",
-      "id": "fc23f87a95e963dbb1489d10bacb2738",
-      "filepath": "docs/section.mdx",
-      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/section.mdx",
-      "slug": "docs-section",
-      "route": "/docs-section",
+    "docs/range-input.mdx": {
+      "name": "Range Input",
+      "id": "bb36513a3a8a4af44e2cc2047fed887d",
+      "filepath": "docs/range-input.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/range-input.mdx",
+      "slug": "docs-range-input",
+      "route": "/docs-range-input",
       "order": 0,
       "menu": null,
       "headings": [
         {
           "depth": 1,
-          "slug": "section",
-          "value": "Section"
+          "slug": "range-input",
+          "value": "Range Input"
         },
         {
           "depth": 2,
@@ -632,20 +632,20 @@
         }
       ]
     },
-    "docs/range-input.mdx": {
-      "name": "Range Input",
-      "id": "bb36513a3a8a4af44e2cc2047fed887d",
-      "filepath": "docs/range-input.mdx",
-      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/range-input.mdx",
-      "slug": "docs-range-input",
-      "route": "/docs-range-input",
+    "docs/section.mdx": {
+      "name": "Section",
+      "id": "fc23f87a95e963dbb1489d10bacb2738",
+      "filepath": "docs/section.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/section.mdx",
+      "slug": "docs-section",
+      "route": "/docs-section",
       "order": 0,
       "menu": null,
       "headings": [
         {
           "depth": 1,
-          "slug": "range-input",
-          "value": "Range Input"
+          "slug": "section",
+          "value": "Section"
         },
         {
           "depth": 2,
@@ -688,6 +688,48 @@
           "depth": 2,
           "slug": "properties",
           "value": "Properties"
+        }
+      ]
+    },
+    "docs/typography.mdx": {
+      "name": "Typography",
+      "id": "c49e5b83f2ed1230ba7e0f7197c3cae5",
+      "filepath": "docs/typography.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/typography.mdx",
+      "slug": "docs-typography",
+      "route": "/docs-typography",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "typography",
+          "value": "Typography"
+        },
+        {
+          "depth": 2,
+          "slug": "h1",
+          "value": "H1"
+        },
+        {
+          "depth": 2,
+          "slug": "h2",
+          "value": "H2"
+        },
+        {
+          "depth": 2,
+          "slug": "h3",
+          "value": "H3"
+        },
+        {
+          "depth": 2,
+          "slug": "p",
+          "value": "P"
+        },
+        {
+          "depth": 2,
+          "slug": "el",
+          "value": "El"
         }
       ]
     }
