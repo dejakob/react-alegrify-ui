@@ -1,4 +1,6 @@
 export const imports = {
+  'COMPONENTS.md': () =>
+    import(/* webpackPrefetch: true, webpackChunkName: "components" */ 'COMPONENTS.md'),
   'docs/alert.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "docs-alert" */ 'docs/alert.mdx'),
   'docs/article.mdx': () =>

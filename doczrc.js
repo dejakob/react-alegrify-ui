@@ -16,5 +16,7 @@ export default {
     themeConfig: {
         showPlaygroundEditor: true
     },
-    hashRouter: true
+    hashRouter: true,
+    files: '**/*.{md,markdown,mdx}',
+    base: '/react-alegrify-ui'
 };
