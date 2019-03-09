@@ -2,6 +2,15 @@
 
 [![NPM](https://nodei.co/npm/react-alegrify-ui.png)](https://npmjs.org/package/react-alegrify-ui)
 
+## What is React Alegrify UI?
+
+[Alegrify](https://alegrify.com) is an innovative solution to track your mental health and to become happier.
+
+As we believe human knowledge should be shared, we made some of our User Interface Elements available 
+for everyone who wants to use it.
+
+This repo is a React implementation of the available elements.
+
 ## How to use
 
 First, install the dependency with yarn, npm or any alternative:
