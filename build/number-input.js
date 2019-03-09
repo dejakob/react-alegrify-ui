@@ -27,8 +27,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * ```
  */
 function NumberInput(props) {
-  var Component = (0, _inputWithState.wrapWithInputState)(NumberInputView);
-  return _react.default.createElement(Component, props);
+  return (0, _inputWithState.wrapWithInputState)(NumberInputView)(props);
 }
 
 function NumberInputView(props) {

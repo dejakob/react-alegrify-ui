@@ -27,8 +27,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * ```
  */
 function RangeInput(props) {
-  var Component = (0, _inputWithState.wrapWithInputState)(RangeInputView);
-  return _react.default.createElement(Component, props);
+  return (0, _inputWithState.wrapWithInputState)(RangeInputView)(props);
 }
 
 function RangeInputView(props) {
