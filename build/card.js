@@ -52,7 +52,7 @@ function Card(props) {
   }, typeof props.title === 'string' && props.title.trim().length > 0 ? _react.default.createElement("div", {
     className: headerClassNames.join(' '),
     style: headerAdditionalStyle
-  }, _react.default.createElement("h2", {
+  }, props.headerChildren, _react.default.createElement("h2", {
     className: "alegrify-card__title"
   }, props.title)) : null, _react.default.createElement("div", {
     className: "alegrify-card__content"
