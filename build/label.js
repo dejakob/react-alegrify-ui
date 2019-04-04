@@ -31,7 +31,7 @@ function Label(props) {
   }
 
   if (props.error) {
-    classNames.push('alegrify-error');
+    classNames.push('alegrify-label--error');
   }
 
   return _react.default.createElement("label", {
