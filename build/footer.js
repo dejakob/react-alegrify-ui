@@ -74,8 +74,12 @@ function FooterLink(props) {
     }, props.children);
   }
 
-  var _reactRouterDom = reactRouterDom,
-      Link = _reactRouterDom.Link;
+  var Link;
+
+  if (reactRouterDom) {
+    Link = reactRouterDom.Link;
+  }
+
   return _react.default.createElement(Link, {
     to: props.href,
     title: props.title,
