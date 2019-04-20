@@ -62,8 +62,6 @@ function Footer(props) {
 
 function FooterLink(props) {
   var EXTERNAL_LINK_START = ['http://', 'https://', '//'];
-  var _reactRouterDom = reactRouterDom,
-      Link = _reactRouterDom.Link;
   var isExternalLink = typeof props.href === 'string' && EXTERNAL_LINK_START.some(function (linkStart) {
     return props.href.indexOf(linkStart) === 0;
   });
@@ -76,6 +74,8 @@ function FooterLink(props) {
     }, props.children);
   }
 
+  var _reactRouterDom = reactRouterDom,
+      Link = _reactRouterDom.Link;
   return _react.default.createElement(Link, {
     to: props.href,
     title: props.title,
