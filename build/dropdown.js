@@ -165,14 +165,19 @@ function (_Component) {
           break;
 
         default:
-          var query = String.fromCharCode(eventData.which || eventData.charCode);
-          var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react.default.Children.toArray(this.props.children);
-          var index = Math.max(childrenAsArray.findIndex(function (child) {
-            return child.props.value.toLowerCase().indexOf(query.toLowerCase()) > -1;
-          }), 0);
-          this.setState({
-            value: childrenAsArray[index]
-          });
+          var char = eventData.which || eventData.charCode;
+
+          if (char >= 32) {
+            var query = String.fromCharCode(char);
+            var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react.default.Children.toArray(this.props.children);
+            var index = Math.max(childrenAsArray.findIndex(function (child) {
+              return child.props.value.toLowerCase().indexOf(query.toLowerCase()) > -1;
+            }), 0);
+            this.setState({
+              value: childrenAsArray[index]
+            });
+          }
+
       }
     }
   }, {
