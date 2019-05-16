@@ -124,7 +124,10 @@ function StatusInputView(props) {
 
   var amountOfLines = (props.value.match(/\n/gi) || []).length + 1;
   return _react.default.createElement("form", {
-    className: classNames.join(' ')
+    className: classNames.join(' '),
+    onSubmit: function onSubmit() {
+      return props.onSubmit(props.value);
+    }
   }, _react.default.createElement("textarea", {
     className: "alegrify-status-input__textarea",
     placeholder: props.placeholder,
@@ -138,6 +141,7 @@ function StatusInputView(props) {
     className: "alegrify-status-input__submit"
   }, _react.default.createElement(_button.default, {
     primary: true,
+    type: "submit",
     small: true
   }, props.submitLabel || 'Submit')), _react.default.createElement("ul", {
     className: "alegrify-status-input__actions"
@@ -178,6 +182,7 @@ StatusInput.propTypes = {
   onValueChange: _propTypes.default.func,
   onFocus: _propTypes.default.func,
   onBlur: _propTypes.default.func,
+  onSubmit: _propTypes.default.func,
   actions: _propTypes.default.arrayOf(_propTypes.default.shape({
     icon: _propTypes.default.string.isRequired,
     label: _propTypes.default.string.isRequired,
