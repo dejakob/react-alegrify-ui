@@ -125,8 +125,9 @@ function StatusInputView(props) {
   var amountOfLines = (props.value.match(/\n/gi) || []).length + 1;
   return _react.default.createElement("form", {
     className: classNames.join(' '),
-    onSubmit: function onSubmit() {
-      return props.onSubmit(props.value);
+    onSubmit: function onSubmit(eventData) {
+      eventData.preventDefault();
+      props.onSubmit(props.value);
     }
   }, _react.default.createElement("textarea", {
     className: "alegrify-status-input__textarea",
