@@ -4,7 +4,7 @@ name: Number Input
 
 # Number Input
 
-import { Playground, PropsTable } from 'docz';
+import { Playground } from 'docz';
 import NumberInput from '../lib/number-input';
 
 ## Example
@@ -21,5 +21,19 @@ import NumberInput from '../lib/number-input';
 
 ## Properties
 
-<PropsTable of={NumberInput} />
-
+| Property    | Type           | Required? | Default |
+|-------------|----------------|-----------|---------|
+|id           |String          |Yes        |         |
+|name         |String          |Yes        |         |
+|className    |String          |No         |''       |
+|value        |String          |No         |0        |
+|disabled     |Boolean         |No         |false    |
+|full         |Boolean         |No         |false    |
+|wide         |Boolean         |No         |false    |
+|min          |Number          |No         |0        |
+|max          |Number          |No         |10       |
+|onValueChange|Function        |No         |         |
+|onKeyUp      |Function        |No         |         |
+|onKeyDown    |Function        |No         |         |
+|onFocus      |Function        |No         |         |
+|onBlur       |Function        |No         |         |

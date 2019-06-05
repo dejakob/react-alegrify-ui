@@ -4,7 +4,7 @@ name: Label
 
 # Label
 
-import { Playground, PropsTable } from 'docz';
+import { Playground } from 'docz';
 import Label from '../lib/label';
 import Input from '../lib/Input';
 
@@ -24,5 +24,9 @@ import Input from '../lib/Input';
 
 ## Properties
 
-<PropsTable of={Label} />
+| Property    | Type           | Required? | Default |
+|-------------|----------------|-----------|---------|
+|className    |String          |No         |''       |
+|error        |Boolean         |No         |false    |
+|htmlFor      |String          |Recommended|         |
 
