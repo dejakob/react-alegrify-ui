@@ -4,7 +4,7 @@ name: Range Input
 
 # Range Input
 
-import { Playground, PropsTable } from 'docz';
+import { Playground } from 'docz';
 import RangeInput from '../lib/range-input';
 
 ## Variants
@@ -25,4 +25,14 @@ import RangeInput from '../lib/range-input';
 
 ## Properties
 
-<PropsTable of={RangeInput} />
+| Property    | Type           | Required? | Default |
+|-------------|----------------|-----------|---------|
+|id           |String          |Yes        |         |
+|name         |String          |Yes        |         |
+|value        |Number          |No         |         |
+|min          |Number          |No         |1        |
+|max          |Number          |No         |10       |
+|step         |Number          |No         |1        |
+|className    |String          |No         |''       |
+|disabled     |Boolean         |No         |false    |
+|onValueChange|Function        |No         |         |

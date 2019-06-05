@@ -79,33 +79,6 @@
         }
       ]
     },
-    "docs/article.mdx": {
-      "name": "Article",
-      "id": "3e92a145f0873a312616f36413ac8d99",
-      "filepath": "docs/article.mdx",
-      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/article.mdx",
-      "slug": "docs-article",
-      "route": "/docs-article",
-      "order": 0,
-      "menu": null,
-      "headings": [
-        {
-          "depth": 1,
-          "slug": "article",
-          "value": "Article"
-        },
-        {
-          "depth": 2,
-          "slug": "example",
-          "value": "Example"
-        },
-        {
-          "depth": 2,
-          "slug": "properties",
-          "value": "Properties"
-        }
-      ]
-    },
     "docs/aside.mdx": {
       "name": "Aside",
       "id": "c66bcc005d1a3377db679cd570e51c34",
@@ -217,6 +190,33 @@
         }
       ]
     },
+    "docs/article.mdx": {
+      "name": "Article",
+      "id": "3e92a145f0873a312616f36413ac8d99",
+      "filepath": "docs/article.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/article.mdx",
+      "slug": "docs-article",
+      "route": "/docs-article",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "article",
+          "value": "Article"
+        },
+        {
+          "depth": 2,
+          "slug": "example",
+          "value": "Example"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
     "docs/checkbox.mdx": {
       "name": "Checkbox",
       "id": "5626f01ccc21b8600d80a91a538a2bba",
@@ -259,6 +259,33 @@
         }
       ]
     },
+    "docs/dialog.mdx": {
+      "name": "Dialog",
+      "id": "b1cc56d4217911b9ba9d303a1a80572f",
+      "filepath": "docs/dialog.mdx",
+      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/dialog.mdx",
+      "slug": "docs-dialog",
+      "route": "/docs-dialog",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "dialog",
+          "value": "Dialog"
+        },
+        {
+          "depth": 2,
+          "slug": "example",
+          "value": "Example"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
     "docs/date-indicator.mdx": {
       "name": "Date Indicator",
       "id": "0c4d2161ac0bea791e1c80f7dcb4724f",
@@ -283,33 +310,6 @@
           "depth": 3,
           "slug": "default",
           "value": "Default"
-        },
-        {
-          "depth": 2,
-          "slug": "properties",
-          "value": "Properties"
-        }
-      ]
-    },
-    "docs/dialog.mdx": {
-      "name": "Dialog",
-      "id": "b1cc56d4217911b9ba9d303a1a80572f",
-      "filepath": "docs/dialog.mdx",
-      "link": "https://github.com/dejakob/react-alegrify-ui/edit/master/docs/dialog.mdx",
-      "slug": "docs-dialog",
-      "route": "/docs-dialog",
-      "order": 0,
-      "menu": null,
-      "headings": [
-        {
-          "depth": 1,
-          "slug": "dialog",
-          "value": "Dialog"
-        },
-        {
-          "depth": 2,
-          "slug": "example",
-          "value": "Example"
         },
         {
           "depth": 2,
