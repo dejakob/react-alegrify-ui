@@ -4,7 +4,7 @@ name: Input
 
 # Input
 
-import { Playground, PropsTable } from 'docz';
+import { Playground } from 'docz';
 import Input from '../lib/input';
 
 ## Variants
@@ -64,4 +64,19 @@ import Input from '../lib/input';
 
 ## Properties
 
-<PropsTable of={Input} />
+| Property    | Type           | Required? | Default |
+|-------------|----------------|-----------|---------|
+|id           |String          |Yes        |         |
+|name         |String          |Yes        |         |
+|className    |String          |No         |''       |
+|value        |String          |No         |         |
+|type         |String          |No         |'text'   |
+|placeholder  |String          |No         |'text'   |
+|multiline    |Boolean         |No         |false    |
+|disabled     |Boolean         |No         |false    |
+|full         |Boolean         |No         |false    |
+|onValueChange|Function        |No         |         |
+|onKeyUp      |Function        |No         |         |
+|onKeyDown    |Function        |No         |         |
+|onFocus      |Function        |No         |         |
+|onBlur       |Function        |No         |         |

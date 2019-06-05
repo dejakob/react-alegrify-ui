@@ -418,21 +418,6 @@
           "depth": 2,
           "slug": "example",
           "value": "Example"
-        },
-        {
-          "depth": 2,
-          "slug": "properties",
-          "value": "Properties"
-        },
-        {
-          "depth": 3,
-          "slug": "grid-1",
-          "value": "Grid"
-        },
-        {
-          "depth": 3,
-          "slug": "gridcell",
-          "value": "GridCell"
         }
       ]
     },
