@@ -4,7 +4,7 @@ name: Card
 
 # Card
 
-import { Playground, PropsTable } from 'docz';
+import { Playground } from 'docz';
 import Card from '../lib/card';
 
 ## Example
@@ -21,4 +21,10 @@ import Card from '../lib/card';
 
 ## Properties
 
-<PropsTable of={Card} />
+| Property  | Type    | Required? | Default |
+|-----------|---------|-----------|---------|
+|className  |String   |No         |''       |
+|footer     |Component|No         |null     |
+|small      |Boolean  |No         |false    |
+|title      |String   |No         |''       |
+|headerImage|String   |No         |''       |

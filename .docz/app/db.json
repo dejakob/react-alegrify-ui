@@ -4,7 +4,7 @@
     "description": "React implementation of Alegrify UI",
     "menu": [],
     "ordering": "descending",
-    "version": "0.2.20",
+    "version": "0.2.21",
     "repository": "https://github.com/dejakob/react-alegrify-ui",
     "native": false,
     "codeSandbox": true,

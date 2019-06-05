@@ -4,7 +4,7 @@ name: Button
 
 # Button
 
-import { Playground, PropsTable } from 'docz';
+import { Playground } from 'docz';
 import Button from '../lib/button';
 
 ## Variants
@@ -69,6 +69,14 @@ import Button from '../lib/button';
 
 ## Properties
 
-<PropsTable of={Button} />
-
-
+| Property  | Type    | Required? | Default |
+|-----------|---------|-----------|---------|
+|className  |String   |No         |''       |
+|primary    |Boolean  |No         |false    |
+|full       |Boolean  |No         |false    |
+|small      |Boolean  |No         |false    |
+|large      |Boolean  |No         |false    |
+|destructive|Boolean  |No         |false    |
+|disabled   |Boolean  |No         |false    |
+|type       |String   |No         |'submit' |
+|onClick    |Function |No         |         |
