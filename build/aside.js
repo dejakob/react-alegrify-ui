@@ -3,13 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _universalProps = require("./helpers/universal-props");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
  * <Aside />
@@ -33,7 +35,7 @@ function Aside(props) {
     classNames.push(props.className);
   }
 
-  return _react.default.createElement("aside", {
+  return _react["default"].createElement("aside", {
     className: classNames.join(' ')
   }, props.children);
 }
@@ -42,15 +44,17 @@ Aside.propTypes = {
   /**
    * Content of the aside
    */
-  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
+  children: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].node), _propTypes["default"].node]).isRequired,
 
   /**
    * Additional classnames
    */
-  className: _propTypes.default.string
+  className: _propTypes["default"].string
 };
 Aside.propExamples = {
   children: 'Aside content'
 };
-var _default = Aside;
-exports.default = _default;
+
+var _default = (0, _universalProps.attachUniversalProps)(Aside);
+
+exports["default"] = _default;

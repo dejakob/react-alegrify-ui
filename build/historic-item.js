@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -11,7 +11,9 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _dateIndicator = _interopRequireDefault(require("./date-indicator"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _universalProps = require("./helpers/universal-props");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
  * ```jsx
@@ -30,12 +32,12 @@ function HistoricItem(props) {
     classNames.push(props.className);
   }
 
-  return _react.default.createElement("section", {
+  return _react["default"].createElement("section", {
     className: classNames.join(' ')
-  }, _react.default.createElement(_dateIndicator.default, {
+  }, _react["default"].createElement(_dateIndicator["default"], {
     className: "alegrify-historic-item__date",
     date: props.date
-  }), _react.default.createElement("div", {
+  }), _react["default"].createElement("div", {
     className: "alegrify-historic-item__content"
   }, props.children));
 }
@@ -44,17 +46,17 @@ HistoricItem.propTypes = {
   /**
    * Content for the historic item
    */
-  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
+  children: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].node), _propTypes["default"].node]).isRequired,
 
   /**
    * Additional classnames
    */
-  className: _propTypes.default.string,
+  className: _propTypes["default"].string,
 
   /**
    * Date to show / When did this occur?
    */
-  date: _propTypes.default.oneOfType([_propTypes.default.number, _propTypes.default.string]).isRequired
+  date: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string]).isRequired
 };
 HistoricItem.defaultProps = {
   children: null,
@@ -62,5 +64,7 @@ HistoricItem.defaultProps = {
   className: ''
 };
 HistoricItem.propExamples = HistoricItem.defaultProps;
-var _default = HistoricItem;
-exports.default = _default;
+
+var _default = (0, _universalProps.attachUniversalProps)(HistoricItem);
+
+exports["default"] = _default;

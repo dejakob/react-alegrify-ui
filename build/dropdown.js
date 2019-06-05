@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -11,9 +11,11 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _universalProps = require("./helpers/universal-props");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -83,7 +85,7 @@ function (_Component) {
     value: function componentWillMount() {
       var _this2 = this;
 
-      var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react.default.Children.toArray(this.props.children);
+      var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react["default"].Children.toArray(this.props.children);
       var value = childrenAsArray.find(function (child) {
         return _this2.props.value === child.props.value;
       });
@@ -107,7 +109,7 @@ function (_Component) {
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(newProps) {
       if (newProps.value !== this.state.value && newProps.value !== this.props.value) {
-        var childrenAsArray = typeof newProps.children.map === 'function' ? newProps.children : _react.default.Children.toArray(newProps.children);
+        var childrenAsArray = typeof newProps.children.map === 'function' ? newProps.children : _react["default"].Children.toArray(newProps.children);
         var value = childrenAsArray.find(function (child) {
           return newProps.value === child.props.value;
         });
@@ -128,7 +130,7 @@ function (_Component) {
   }, {
     key: "handleSelectOption",
     value: function handleSelectOption(index) {
-      var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react.default.Children.toArray(this.props.children);
+      var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react["default"].Children.toArray(this.props.children);
       this.setState({
         value: childrenAsArray[index],
         open: false
@@ -165,11 +167,11 @@ function (_Component) {
           break;
 
         default:
-          var char = eventData.which || eventData.charCode;
+          var _char = eventData.which || eventData.charCode;
 
-          if (char >= 32) {
-            var query = String.fromCharCode(char);
-            var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react.default.Children.toArray(this.props.children);
+          if (_char >= 32) {
+            var query = String.fromCharCode(_char);
+            var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react["default"].Children.toArray(this.props.children);
             var index = Math.max(childrenAsArray.findIndex(function (child) {
               return child.props.value.toLowerCase().indexOf(query.toLowerCase()) > -1;
             }), 0);
@@ -192,7 +194,7 @@ function (_Component) {
     value: function changeSelectedIndex(increment) {
       var _this3 = this;
 
-      var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react.default.Children.toArray(this.props.children);
+      var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react["default"].Children.toArray(this.props.children);
       var currentIndex = Math.max(childrenAsArray.findIndex(function (child) {
         return _this3.state.value && _this3.state.value.props.value === child.props.value;
       }), 0);
@@ -207,7 +209,7 @@ function (_Component) {
       var target = eventData.target;
       var node = target;
 
-      while (node !== document.body && node !== _reactDom.default.findDOMNode(this)) {
+      while (node !== document.body && node !== _reactDom["default"].findDOMNode(this)) {
         node = node.parentNode;
       }
 
@@ -243,21 +245,21 @@ function DropdownView(props) {
     classNames.push('alegrify-dropdown--disabled');
   }
 
-  return _react.default.createElement("div", {
+  return _react["default"].createElement("div", {
     className: classNames.join(' '),
     onKeyDown: props.handleKeyDown
-  }, _react.default.createElement("input", {
+  }, _react["default"].createElement("input", {
     className: "alegrify-dropdown__trigger",
     type: "checkbox",
     id: props.id,
     onChange: props.handleOpenDropdown,
     checked: props.open,
     disabled: props.disabled
-  }), _react.default.createElement("label", {
+  }), _react["default"].createElement("label", {
     className: "alegrify-dropdown__label",
     htmlFor: props.id,
     "aria-controls": ""
-  }, value ? value.props.children : props.placeholder || '...'), _react.default.createElement("fieldset", {
+  }, value ? value.props.children : props.placeholder || '...'), _react["default"].createElement("fieldset", {
     className: "alegrify-dropdown",
     role: "menu"
   }, renderChildren()));
@@ -274,7 +276,7 @@ function DropdownView(props) {
     if (typeof props.children.map === 'function') {
       return props.children.map(renderChild);
     } else {
-      return _react.default.Children.map(props.children, renderChild);
+      return _react["default"].Children.map(props.children, renderChild);
     }
   }
   /**
@@ -286,7 +288,7 @@ function DropdownView(props) {
 
   function renderChild(child) {
     var index = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-    return _react.default.cloneElement(child, {
+    return _react["default"].cloneElement(child, {
       onSelect: function onSelect() {
         return props.handleSelectOption(index);
       },
@@ -303,43 +305,43 @@ Dropdown.propTypes = {
   /**
    * Id of the dropdown
    */
-  id: _propTypes.default.string.isRequired,
+  id: _propTypes["default"].string.isRequired,
 
   /**
    * Name of the dropdown
    */
-  name: _propTypes.default.string.isRequired,
+  name: _propTypes["default"].string.isRequired,
 
   /**
    * Items for the dropdown
    */
-  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
+  children: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].node), _propTypes["default"].node]).isRequired,
 
   /**
    * Additional classnames
    */
-  className: _propTypes.default.string,
+  className: _propTypes["default"].string,
 
   /**
    * Selected value of the dropdown
    */
-  value: _propTypes.default.string,
+  value: _propTypes["default"].string,
 
   /**
    * Placeholder message for dropdown label
    */
-  placeholder: _propTypes.default.string,
+  placeholder: _propTypes["default"].string,
 
   /**
    * Should the dropdown be disabled?
    */
-  disabled: _propTypes.default.bool,
+  disabled: _propTypes["default"].bool,
 
   /**
    * Gets triggered when value changes
    * Passes value string as argument
    */
-  onValueChange: _propTypes.default.func
+  onValueChange: _propTypes["default"].func
 };
 Dropdown.defaultProps = {
   value: null,
@@ -348,5 +350,7 @@ Dropdown.defaultProps = {
   multiSelect: false
 };
 Dropdown.propExamples = Dropdown.defaultProps;
-var _default = Dropdown;
-exports.default = _default;
+
+var _default = (0, _universalProps.attachUniversalProps)(Dropdown);
+
+exports["default"] = _default;

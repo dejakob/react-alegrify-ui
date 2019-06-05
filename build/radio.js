@@ -3,13 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _universalProps = require("./helpers/universal-props");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
  * <Radio />
@@ -35,9 +37,9 @@ function Radio(props) {
     classNames.push('alegrify-radio--disabled');
   }
 
-  return _react.default.createElement("div", {
+  return _react["default"].createElement("div", {
     className: classNames.join(' ')
-  }, _react.default.createElement("input", {
+  }, _react["default"].createElement("input", {
     type: "radio",
     id: props.id,
     name: props.name,
@@ -45,10 +47,10 @@ function Radio(props) {
     disabled: props.disabled,
     checked: props.checked,
     onChange: props.onChange
-  }), _react.default.createElement("label", {
+  }), _react["default"].createElement("label", {
     htmlFor: props.id,
     className: "alegrify-radio__check"
-  }, _react.default.createElement("span", {
+  }, _react["default"].createElement("span", {
     className: "alegrify-radio__label"
   }, props.children)));
 }
@@ -57,32 +59,32 @@ Radio.propTypes = {
   /**
    * Input id
    */
-  id: _propTypes.default.string.isRequired,
+  id: _propTypes["default"].string.isRequired,
 
   /**
    * Input value
    */
-  name: _propTypes.default.string.isRequired,
+  name: _propTypes["default"].string.isRequired,
 
   /**
    * Radio label content
    */
-  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
+  children: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].node), _propTypes["default"].node]).isRequired,
 
   /**
    * Is radio disabled?
    */
-  disabled: _propTypes.default.bool,
+  disabled: _propTypes["default"].bool,
 
   /**
    * Is radio checked?
    */
-  checked: _propTypes.default.bool,
+  checked: _propTypes["default"].bool,
 
   /**
    * Additional classnames
    */
-  className: _propTypes.default.string
+  className: _propTypes["default"].string
 };
 Radio.propExamples = {
   id: 'radio',
@@ -92,5 +94,7 @@ Radio.propExamples = {
   checked: false,
   className: ''
 };
-var _default = Radio;
-exports.default = _default;
+
+var _default = (0, _universalProps.attachUniversalProps)(Radio);
+
+exports["default"] = _default;

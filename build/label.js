@@ -3,13 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _universalProps = require("./helpers/universal-props");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
  * <Label />
@@ -34,7 +36,7 @@ function Label(props) {
     classNames.push('alegrify-label--error');
   }
 
-  return _react.default.createElement("label", {
+  return _react["default"].createElement("label", {
     htmlFor: props.htmlFor,
     className: classNames.join(' ')
   }, props.children);
@@ -44,22 +46,22 @@ Label.propTypes = {
   /**
    * Label content
    */
-  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
+  children: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].node), _propTypes["default"].node]).isRequired,
 
   /**
    * Additional classnames
    */
-  className: _propTypes.default.string,
+  className: _propTypes["default"].string,
 
   /**
    * for attribute referring to a form element
    */
-  htmlFor: _propTypes.default.string,
+  htmlFor: _propTypes["default"].string,
 
   /**
    * Is this an error label?
    */
-  error: _propTypes.default.bool
+  error: _propTypes["default"].bool
 };
 Label.defaultProps = {
   error: false
@@ -70,5 +72,7 @@ Label.propExamples = {
   htmlFor: 'input_id',
   error: false
 };
-var _default = Label;
-exports.default = _default;
+
+var _default = (0, _universalProps.attachUniversalProps)(Label);
+
+exports["default"] = _default;

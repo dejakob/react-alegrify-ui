@@ -6,103 +6,73 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "COLORS", {
   enumerable: true,
   get: function get() {
-    return _colors.default;
+    return _colors["default"];
   }
 });
 Object.defineProperty(exports, "MEDIA", {
   enumerable: true,
   get: function get() {
-    return _media.default;
+    return _media["default"];
   }
 });
 Object.defineProperty(exports, "SPACING", {
   enumerable: true,
   get: function get() {
-    return _spacing.default;
-  }
-});
-Object.defineProperty(exports, "SpaceXS", {
-  enumerable: true,
-  get: function get() {
-    return _spacing.SpaceXS;
-  }
-});
-Object.defineProperty(exports, "SpaceS", {
-  enumerable: true,
-  get: function get() {
-    return _spacing.SpaceS;
-  }
-});
-Object.defineProperty(exports, "SpaceM", {
-  enumerable: true,
-  get: function get() {
-    return _spacing.SpaceM;
-  }
-});
-Object.defineProperty(exports, "SpaceL", {
-  enumerable: true,
-  get: function get() {
-    return _spacing.SpaceL;
-  }
-});
-Object.defineProperty(exports, "SpaceXL", {
-  enumerable: true,
-  get: function get() {
-    return _spacing.SpaceXL;
+    return _spacing["default"];
   }
 });
 Object.defineProperty(exports, "Alert", {
   enumerable: true,
   get: function get() {
-    return _alert.default;
+    return _alert["default"];
   }
 });
 Object.defineProperty(exports, "Article", {
   enumerable: true,
   get: function get() {
-    return _article.default;
+    return _article["default"];
   }
 });
 Object.defineProperty(exports, "Aside", {
   enumerable: true,
   get: function get() {
-    return _aside.default;
+    return _aside["default"];
   }
 });
 Object.defineProperty(exports, "Button", {
   enumerable: true,
   get: function get() {
-    return _button.default;
+    return _button["default"];
   }
 });
 Object.defineProperty(exports, "Card", {
   enumerable: true,
   get: function get() {
-    return _card.default;
+    return _card["default"];
   }
 });
 Object.defineProperty(exports, "Checkbox", {
   enumerable: true,
   get: function get() {
-    return _checkbox.default;
+    return _checkbox["default"];
   }
 });
 Object.defineProperty(exports, "DateIndicator", {
   enumerable: true,
   get: function get() {
-    return _dateIndicator.default;
+    return _dateIndicator["default"];
   }
 });
 Object.defineProperty(exports, "Dialog", {
   enumerable: true,
   get: function get() {
-    return _dialog.default;
+    return _dialog["default"];
   }
 });
 Object.defineProperty(exports, "Dl", {
   enumerable: true,
   get: function get() {
-    return _dl.default;
+    return _dl["default"];
   }
 });
 Object.defineProperty(exports, "Dt", {
@@ -120,91 +90,85 @@ Object.defineProperty(exports, "Dd", {
 Object.defineProperty(exports, "Dropdown", {
   enumerable: true,
   get: function get() {
-    return _dropdown.default;
+    return _dropdown["default"];
   }
 });
 Object.defineProperty(exports, "DropdownItem", {
   enumerable: true,
   get: function get() {
-    return _dropdownItem.default;
+    return _dropdownItem["default"];
   }
 });
 Object.defineProperty(exports, "Footer", {
   enumerable: true,
   get: function get() {
-    return _footer.default;
+    return _footer["default"];
   }
 });
 Object.defineProperty(exports, "Grid", {
   enumerable: true,
   get: function get() {
-    return _grid.default;
+    return _grid["default"];
   }
 });
 Object.defineProperty(exports, "GridCell", {
   enumerable: true,
   get: function get() {
-    return _gridCell.default;
+    return _gridCell["default"];
   }
 });
 Object.defineProperty(exports, "HistoricItem", {
   enumerable: true,
   get: function get() {
-    return _historicItem.default;
+    return _historicItem["default"];
   }
 });
 Object.defineProperty(exports, "Input", {
   enumerable: true,
   get: function get() {
-    return _input.default;
+    return _input["default"];
   }
 });
 Object.defineProperty(exports, "Label", {
   enumerable: true,
   get: function get() {
-    return _label.default;
+    return _label["default"];
   }
 });
 Object.defineProperty(exports, "Main", {
   enumerable: true,
   get: function get() {
-    return _main.default;
+    return _main["default"];
   }
 });
 Object.defineProperty(exports, "NumberInput", {
   enumerable: true,
   get: function get() {
-    return _numberInput.default;
+    return _numberInput["default"];
   }
 });
 Object.defineProperty(exports, "Radio", {
   enumerable: true,
   get: function get() {
-    return _radio.default;
+    return _radio["default"];
   }
 });
 Object.defineProperty(exports, "RangeInput", {
   enumerable: true,
   get: function get() {
-    return _rangeInput.default;
+    return _rangeInput["default"];
   }
 });
 Object.defineProperty(exports, "StatusInput", {
   enumerable: true,
   get: function get() {
-    return _statusInput.default;
+    return _statusInput["default"];
   }
 });
 Object.defineProperty(exports, "Section", {
   enumerable: true,
   get: function get() {
-    return _section.default;
-  }
-});
-Object.defineProperty(exports, "WeekSchedule", {
-  enumerable: true,
-  get: function get() {
-    return _index.default;
+    return _section["default"];
   }
 });
 Object.defineProperty(exports, "H1", {
@@ -248,7 +212,7 @@ var _colors = _interopRequireDefault(require("./colors"));
 
 var _media = _interopRequireDefault(require("./media"));
 
-var _spacing = _interopRequireWildcard(require("./spacing"));
+var _spacing = _interopRequireDefault(require("./spacing"));
 
 var _alert = _interopRequireDefault(require("./alert"));
 
@@ -296,10 +260,8 @@ var _statusInput = _interopRequireDefault(require("./status-input"));
 
 var _section = _interopRequireDefault(require("./section"));
 
-var _index = _interopRequireDefault(require("./week-schedule/index"));
-
 var _typography = require("./typography");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

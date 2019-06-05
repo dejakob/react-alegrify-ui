@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -11,9 +11,11 @@ var _button = _interopRequireDefault(require("./button"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _universalProps = require("./helpers/universal-props");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -123,13 +125,13 @@ function StatusInputView(props) {
   }
 
   var amountOfLines = (props.value.match(/\n/gi) || []).length + 1;
-  return _react.default.createElement("form", {
+  return _react["default"].createElement("form", {
     className: classNames.join(' '),
     onSubmit: function onSubmit(eventData) {
       eventData.preventDefault();
       props.onSubmit(props.value);
     }
-  }, _react.default.createElement("textarea", {
+  }, _react["default"].createElement("textarea", {
     className: "alegrify-status-input__textarea",
     placeholder: props.placeholder,
     name: props.name,
@@ -138,16 +140,16 @@ function StatusInputView(props) {
     onInput: props.handleValueChange,
     onFocus: props.handleFocus,
     onBlur: props.handleBlur
-  }), _react.default.createElement("div", {
+  }), _react["default"].createElement("div", {
     className: "alegrify-status-input__submit"
-  }, _react.default.createElement(_button.default, {
+  }, _react["default"].createElement(_button["default"], {
     primary: true,
     type: "submit",
     small: true
-  }, props.submitLabel || 'Submit')), _react.default.createElement("ul", {
+  }, props.submitLabel || 'Submit')), _react["default"].createElement("ul", {
     className: "alegrify-status-input__actions"
   }, props.actions && props.actions.map(function (action, index) {
-    return _react.default.createElement(StatusInputAction, {
+    return _react["default"].createElement(StatusInputAction, {
       key: index,
       icon: action.icon,
       label: action.label,
@@ -162,32 +164,32 @@ function StatusInputView(props) {
 
 
 function StatusInputAction(props) {
-  return _react.default.createElement("li", {
+  return _react["default"].createElement("li", {
     className: "alegrify-status-input__action"
-  }, _react.default.createElement("button", {
+  }, _react["default"].createElement("button", {
     className: "alegrify-status-input__action-button",
     "data-icon": props.icon,
     type: "button",
     onClick: props.onClick
-  }, _react.default.createElement("span", {
+  }, _react["default"].createElement("span", {
     className: "alegrify-status-input__action-button-label"
   }, props.label)));
 }
 
 StatusInput.propTypes = {
-  className: _propTypes.default.string,
-  placeholder: _propTypes.default.string,
-  name: _propTypes.default.string.isRequired,
-  id: _propTypes.default.string.isRequired,
-  submitLabel: _propTypes.default.string,
-  onValueChange: _propTypes.default.func,
-  onFocus: _propTypes.default.func,
-  onBlur: _propTypes.default.func,
-  onSubmit: _propTypes.default.func,
-  actions: _propTypes.default.arrayOf(_propTypes.default.shape({
-    icon: _propTypes.default.string.isRequired,
-    label: _propTypes.default.string.isRequired,
-    onClick: _propTypes.default.func
+  className: _propTypes["default"].string,
+  placeholder: _propTypes["default"].string,
+  name: _propTypes["default"].string.isRequired,
+  id: _propTypes["default"].string.isRequired,
+  submitLabel: _propTypes["default"].string,
+  onValueChange: _propTypes["default"].func,
+  onFocus: _propTypes["default"].func,
+  onBlur: _propTypes["default"].func,
+  onSubmit: _propTypes["default"].func,
+  actions: _propTypes["default"].arrayOf(_propTypes["default"].shape({
+    icon: _propTypes["default"].string.isRequired,
+    label: _propTypes["default"].string.isRequired,
+    onClick: _propTypes["default"].func
   }))
 };
 StatusInput.propExamples = {
@@ -204,5 +206,7 @@ StatusInput.propExamples = {
     icon: 'attach_file'
   }]
 };
-var _default = StatusInput;
-exports.default = _default;
+
+var _default = (0, _universalProps.attachUniversalProps)(StatusInput);
+
+exports["default"] = _default;

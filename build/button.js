@@ -3,13 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _universalProps = require("./helpers/universal-props");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
  * <Button />
@@ -48,7 +50,7 @@ function Button(props) {
     classNames.push('alegrify-button--large');
   }
 
-  return _react.default.createElement("button", {
+  return _react["default"].createElement("button", {
     className: classNames.join(' '),
     type: props.type || 'submit',
     disabled: props.disabled,
@@ -60,52 +62,52 @@ Button.propTypes = {
   /**
    * Button text / button content
    */
-  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
+  children: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].node), _propTypes["default"].node]).isRequired,
 
   /**
    * Additional classnames
    */
-  className: _propTypes.default.string,
+  className: _propTypes["default"].string,
 
   /**
    * Is this a primary button?
    */
-  primary: _propTypes.default.bool,
+  primary: _propTypes["default"].bool,
 
   /**
    * Is this a destructive button?
    */
-  destructive: _propTypes.default.bool,
+  destructive: _propTypes["default"].bool,
 
   /**
    * Is this a full width button?
    */
-  full: _propTypes.default.bool,
+  full: _propTypes["default"].bool,
 
   /**
    * Is this a small variant button?
    */
-  small: _propTypes.default.bool,
+  small: _propTypes["default"].bool,
 
   /**
    * Is this a large variant button?
    */
-  large: _propTypes.default.bool,
+  large: _propTypes["default"].bool,
 
   /**
    * button|submit
    */
-  type: _propTypes.default.string,
+  type: _propTypes["default"].string,
 
   /**
    * Disabled?
    */
-  disabled: _propTypes.default.bool,
+  disabled: _propTypes["default"].bool,
 
   /**
    * Click action
    */
-  onClick: _propTypes.default.func
+  onClick: _propTypes["default"].func
 };
 Button.defaultProps = {
   primary: false,
@@ -124,5 +126,7 @@ Button.propExamples = {
   type: 'submit',
   disabled: false
 };
-var _default = Button;
-exports.default = _default;
+
+var _default = (0, _universalProps.attachUniversalProps)(Button);
+
+exports["default"] = _default;

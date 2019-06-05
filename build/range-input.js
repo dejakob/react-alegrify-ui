@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -11,7 +11,9 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _inputWithState = require("./abstract/input-with-state");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _universalProps = require("./helpers/universal-props");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
  * <RangeInput />
@@ -37,7 +39,7 @@ function RangeInputView(props) {
     classNames.push(props.className);
   }
 
-  return _react.default.createElement("input", {
+  return _react["default"].createElement("input", {
     type: "range",
     id: props.id,
     name: props.name,
@@ -59,57 +61,57 @@ RangeInput.propTypes = {
   /**
    * Additional classnames
    */
-  className: _propTypes.default.string,
+  className: _propTypes["default"].string,
 
   /**
    * Input id
    */
-  id: _propTypes.default.string.isRequired,
+  id: _propTypes["default"].string.isRequired,
 
   /**
    * Input name
    */
-  name: _propTypes.default.string.isRequired,
+  name: _propTypes["default"].string.isRequired,
 
   /**
    * Input value
    */
-  value: _propTypes.default.number,
+  value: _propTypes["default"].number,
 
   /**
    * Is range input disabled?
    */
-  disabled: _propTypes.default.bool,
+  disabled: _propTypes["default"].bool,
 
   /**
    * Indicator at the start of the range input
    */
-  lowIndicator: _propTypes.default.string,
+  lowIndicator: _propTypes["default"].string,
 
   /**
    * Indicator at the end of the range input
    */
-  highIndicator: _propTypes.default.string,
+  highIndicator: _propTypes["default"].string,
 
   /**
    * Start of the range
    */
-  min: _propTypes.default.number,
+  min: _propTypes["default"].number,
 
   /**
    * End of the range
    */
-  max: _propTypes.default.number,
+  max: _propTypes["default"].number,
 
   /**
    * Range step
    */
-  step: _propTypes.default.number,
+  step: _propTypes["default"].number,
 
   /**
    * On value change, param: number
    */
-  onValueChange: _propTypes.default.func
+  onValueChange: _propTypes["default"].func
 };
 RangeInput.defaultProps = {
   min: 1,
@@ -128,5 +130,7 @@ RangeInput.propExamples = {
   max: 10,
   step: 1
 };
-var _default = RangeInput;
-exports.default = _default;
+
+var _default = (0, _universalProps.attachUniversalProps)(RangeInput);
+
+exports["default"] = _default;

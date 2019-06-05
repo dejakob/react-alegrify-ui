@@ -3,13 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _universalProps = require("./helpers/universal-props");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
  * <Dialog />
@@ -29,12 +31,12 @@ function Dialog(props) {
     classNames.push(props.className);
   }
 
-  return _react.default.createElement("div", {
+  return _react["default"].createElement("div", {
     className: "alegrify-dialog__wrapper",
     open: props.open
-  }, _react.default.createElement("dialog", {
+  }, _react["default"].createElement("dialog", {
     className: classNames.join(' ')
-  }, _react.default.createElement("div", {
+  }, _react["default"].createElement("div", {
     className: "alegrify-dialog__content"
   }, props.children)));
 }
@@ -43,17 +45,17 @@ Dialog.propTypes = {
   /**
    * Content
    */
-  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
+  children: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].node), _propTypes["default"].node]).isRequired,
 
   /**
    * Additional classnames
    */
-  className: _propTypes.default.string,
+  className: _propTypes["default"].string,
 
   /**
    * Should the dialog be shown?
    */
-  open: _propTypes.default.bool
+  open: _propTypes["default"].bool
 };
 Dialog.defaultProps = {
   open: false
@@ -63,5 +65,7 @@ Dialog.propExamples = {
   className: '',
   open: true
 };
-var _default = Dialog;
-exports.default = _default;
+
+var _default = (0, _universalProps.attachUniversalProps)(Dialog);
+
+exports["default"] = _default;

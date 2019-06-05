@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -11,7 +11,9 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _inputWithState = require("./abstract/input-with-state");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _universalProps = require("./helpers/universal-props");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
  * <NumberInput />
@@ -48,14 +50,14 @@ function NumberInputView(props) {
     classNames.push('alegrify-number-input--full');
   }
 
-  return _react.default.createElement("label", {
+  return _react["default"].createElement("label", {
     htmlFor: props.id,
     className: classNames.join(' ')
-  }, _react.default.createElement("button", {
+  }, _react["default"].createElement("button", {
     className: "alegrify-number-input__add",
     tabIndex: "-1",
     onClick: up
-  }, _react.default.createElement("span", null, "+")), _react.default.createElement("input", {
+  }, _react["default"].createElement("span", null, "+")), _react["default"].createElement("input", {
     type: "text",
     id: props.id,
     name: props.name,
@@ -68,11 +70,11 @@ function NumberInputView(props) {
     onFocus: props.onFocus,
     onBlur: props.onBlur,
     autoComplete: "off"
-  }), _react.default.createElement("button", {
+  }), _react["default"].createElement("button", {
     className: "alegrify-number-input__subtract",
     tabIndex: "-1",
     onClick: down
-  }, _react.default.createElement("span", null, "-")));
+  }, _react["default"].createElement("span", null, "-")));
 
   function onInput(eventData) {
     var value = eventData.target.value;
@@ -120,52 +122,52 @@ NumberInput.propTypes = {
   /**
    * Additional classnames
    */
-  className: _propTypes.default.string,
+  className: _propTypes["default"].string,
 
   /**
    * Input id
    */
-  id: _propTypes.default.string.isRequired,
+  id: _propTypes["default"].string.isRequired,
 
   /**
    * Input name
    */
-  name: _propTypes.default.string.isRequired,
+  name: _propTypes["default"].string.isRequired,
 
   /**
    * Input value, must be a number
    */
-  value: _propTypes.default.number,
+  value: _propTypes["default"].number,
 
   /**
    * Is input disabled?
    */
-  disabled: _propTypes.default.bool,
+  disabled: _propTypes["default"].bool,
 
   /**
    * Is this a wide variant?
    */
-  wide: _propTypes.default.bool,
+  wide: _propTypes["default"].bool,
 
   /**
    * 100% width?
    */
-  full: _propTypes.default.bool,
+  full: _propTypes["default"].bool,
 
   /**
    * Min value
    */
-  min: _propTypes.default.number,
+  min: _propTypes["default"].number,
 
   /**
    * Max value
    */
-  max: _propTypes.default.number,
+  max: _propTypes["default"].number,
 
   /**
    * On value change, param: number value
    */
-  onValueChange: _propTypes.default.func
+  onValueChange: _propTypes["default"].func
 };
 NumberInput.defaultProps = {
   min: 0,
@@ -186,5 +188,7 @@ NumberInput.propExamples = {
   min: 1,
   max: 10
 };
-var _default = NumberInput;
-exports.default = _default;
+
+var _default = (0, _universalProps.attachUniversalProps)(NumberInput);
+
+exports["default"] = _default;

@@ -3,13 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _universalProps = require("./helpers/universal-props");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var VARIANTS = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven'];
 var VARIANT_TO_CSS_VARIANT = {
@@ -49,7 +51,7 @@ function GridCell(props) {
       classNames.push("alegrify-grid__cell--".concat(VARIANT_TO_CSS_VARIANT[variant]));
     }
   });
-  return _react.default.createElement("div", {
+  return _react["default"].createElement("div", {
     className: classNames.join(' ')
   }, props.children);
 }
@@ -58,25 +60,27 @@ GridCell.propTypes = {
   /**
    * Content
    */
-  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
+  children: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].node), _propTypes["default"].node]).isRequired,
 
   /**
    * Additional classnames
    */
-  className: _propTypes.default.string,
-  one: _propTypes.default.bool,
-  two: _propTypes.default.bool,
-  three: _propTypes.default.bool,
-  four: _propTypes.default.bool,
-  five: _propTypes.default.bool,
-  six: _propTypes.default.bool,
-  seven: _propTypes.default.bool,
-  eight: _propTypes.default.bool,
-  nine: _propTypes.default.bool,
-  ten: _propTypes.default.bool,
-  eleven: _propTypes.default.bool
+  className: _propTypes["default"].string,
+  one: _propTypes["default"].bool,
+  two: _propTypes["default"].bool,
+  three: _propTypes["default"].bool,
+  four: _propTypes["default"].bool,
+  five: _propTypes["default"].bool,
+  six: _propTypes["default"].bool,
+  seven: _propTypes["default"].bool,
+  eight: _propTypes["default"].bool,
+  nine: _propTypes["default"].bool,
+  ten: _propTypes["default"].bool,
+  eleven: _propTypes["default"].bool
 };
 GridCell.defaultProps = {};
 GridCell.propExamples = {};
-var _default = GridCell;
-exports.default = _default;
+
+var _default = (0, _universalProps.attachUniversalProps)(GridCell);
+
+exports["default"] = _default;

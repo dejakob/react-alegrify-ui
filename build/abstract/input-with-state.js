@@ -117,7 +117,7 @@ function (_Component) {
 
 var wrapWithInputState = function wrapWithInputState(renderMethod) {
   return function (props) {
-    return _react.default.createElement(InputWithState, _extends({}, props, {
+    return _react["default"].createElement(InputWithState, _extends({}, props, {
       renderMethod: renderMethod
     }));
   };

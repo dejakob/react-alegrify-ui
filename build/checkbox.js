@@ -3,13 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _universalProps = require("./helpers/universal-props");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
  * <Checkbox />
@@ -32,9 +34,9 @@ function Checkbox(props) {
     classNames.push('alegrify-checkbox--disabled');
   }
 
-  return _react.default.createElement("div", {
+  return _react["default"].createElement("div", {
     className: classNames.join(' ')
-  }, _react.default.createElement("input", {
+  }, _react["default"].createElement("input", {
     type: "checkbox",
     id: props.id,
     name: props.name,
@@ -42,10 +44,10 @@ function Checkbox(props) {
     disabled: props.disabled,
     checked: props.checked,
     onChange: props.onChange
-  }), _react.default.createElement("label", {
+  }), _react["default"].createElement("label", {
     htmlFor: props.id,
     className: "alegrify-checkbox__check"
-  }, _react.default.createElement("span", {
+  }, _react["default"].createElement("span", {
     className: "alegrify-checkbox__label"
   }, props.children)));
 }
@@ -54,32 +56,32 @@ Checkbox.propTypes = {
   /**
    * input id
    */
-  id: _propTypes.default.string.isRequired,
+  id: _propTypes["default"].string.isRequired,
 
   /**
    * input name
    */
-  name: _propTypes.default.string.isRequired,
+  name: _propTypes["default"].string.isRequired,
 
   /**
    * Label content checkbox
    */
-  children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]).isRequired,
+  children: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].node), _propTypes["default"].node]).isRequired,
 
   /**
    * Is checkbox disabled?
    */
-  disabled: _propTypes.default.bool,
+  disabled: _propTypes["default"].bool,
 
   /**
    * Is checkbox checked?
    */
-  checked: _propTypes.default.bool,
+  checked: _propTypes["default"].bool,
 
   /**
    * Additional classnames
    */
-  className: _propTypes.default.string
+  className: _propTypes["default"].string
 };
 Checkbox.propExamples = {
   id: 'checkbox',
@@ -89,5 +91,7 @@ Checkbox.propExamples = {
   checked: false,
   className: ''
 };
-var _default = Checkbox;
-exports.default = _default;
+
+var _default = (0, _universalProps.attachUniversalProps)(Checkbox);
+
+exports["default"] = _default;
