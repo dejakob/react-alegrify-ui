@@ -4,7 +4,7 @@ name: Footer
 
 # Footer
 
-import { Playground, PropsTable } from 'docz';
+import { Playground } from 'docz';
 import Footer from '../lib/footer';
 
     <Footer
@@ -19,4 +19,8 @@ import Footer from '../lib/footer';
 
 ## Properties
 
-<PropsTable of={Footer} />
+| Property    | Type                         | Required? | Default |
+|-------------|------------------------------|-----------|---------|
+|className    |String                        |No         |''       |
+|links        |Array.<{ title, href, label }>|No         |[]       |
+|logo         |Component                     |No         |null     |
