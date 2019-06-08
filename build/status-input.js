@@ -192,19 +192,9 @@ StatusInput.propTypes = {
     onClick: _propTypes["default"].func
   }))
 };
-StatusInput.propExamples = {
+StatusInput.defaultProps = {
   className: '',
-  placeholder: 'Share your thoughts',
-  actions: [{
-    label: 'picture',
-    icon: 'camera_alt'
-  }, {
-    label: 'music',
-    icon: 'audiotrack'
-  }, {
-    label: 'file',
-    icon: 'attach_file'
-  }]
+  submitLabel: 'Submit'
 };
 
 var _default = (0, _universalProps.attachUniversalProps)(StatusInput);

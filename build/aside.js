@@ -51,8 +51,8 @@ Aside.propTypes = {
    */
   className: _propTypes["default"].string
 };
-Aside.propExamples = {
-  children: 'Aside content'
+Aside.defaultProps = {
+  className: ''
 };
 
 var _default = (0, _universalProps.attachUniversalProps)(Aside);

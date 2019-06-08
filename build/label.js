@@ -64,12 +64,7 @@ Label.propTypes = {
   error: _propTypes["default"].bool
 };
 Label.defaultProps = {
-  error: false
-};
-Label.propExamples = {
-  children: 'Label content',
   className: '',
-  htmlFor: 'input_id',
   error: false
 };
 

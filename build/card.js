@@ -95,17 +95,11 @@ Card.propTypes = {
   headerImage: _propTypes["default"].string
 };
 Card.defaultProps = {
-  small: false
-};
-Card.propExamples = {
-  children: _react["default"].createElement("p", {
-    className: "alegrify-p"
-  }, "Here's some card content"),
-  footer: 'Footer content',
   className: '',
+  footer: null,
   small: false,
-  title: 'Card title',
-  headerImage: 'https://source.unsplash.com/800x200'
+  title: '',
+  headerImage: ''
 };
 
 var _default = (0, _universalProps.attachUniversalProps)(Card);

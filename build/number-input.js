@@ -167,26 +167,36 @@ NumberInput.propTypes = {
   /**
    * On value change, param: number value
    */
-  onValueChange: _propTypes["default"].func
+  onValueChange: _propTypes["default"].func,
+
+  /**
+   * Native onKeyUp event
+   */
+  onKeyUp: _propTypes["default"].func,
+
+  /**
+   * Native onKeyDown event
+   */
+  onKeyDown: _propTypes["default"].func,
+
+  /**
+   * Native onFocus event
+   */
+  onFocus: _propTypes["default"].func,
+
+  /**
+   * Native onBlur event
+   */
+  onBlur: _propTypes["default"].func
 };
 NumberInput.defaultProps = {
+  className: '',
   min: 0,
   max: 10,
   value: 0,
   wide: false,
   full: false,
   disabled: false
-};
-NumberInput.propExamples = {
-  className: '',
-  id: 'number_input',
-  name: 'number_input',
-  value: 6,
-  disabled: false,
-  wide: false,
-  full: false,
-  min: 1,
-  max: 10
 };
 
 var _default = (0, _universalProps.attachUniversalProps)(NumberInput);

@@ -116,19 +116,9 @@ RangeInput.propTypes = {
 RangeInput.defaultProps = {
   min: 1,
   max: 10,
-  step: 1
-};
-RangeInput.propExamples = {
-  className: '',
-  id: 'rangeinput',
-  name: 'rangeinput',
-  value: 8,
+  step: 1,
   disabled: false,
-  lowIndicator: '😥',
-  highIndicator: '😍',
-  min: 1,
-  max: 10,
-  step: 1
+  className: ''
 };
 
 var _default = (0, _universalProps.attachUniversalProps)(RangeInput);

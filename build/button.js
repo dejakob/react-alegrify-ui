@@ -117,15 +117,6 @@ Button.defaultProps = {
   type: 'submit',
   disabled: false
 };
-Button.propExamples = {
-  children: 'Yaay, I\'m a button 👋',
-  primary: false,
-  full: false,
-  small: false,
-  large: false,
-  type: 'submit',
-  disabled: false
-};
 
 var _default = (0, _universalProps.attachUniversalProps)(Button);
 

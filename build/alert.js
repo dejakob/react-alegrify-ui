@@ -51,10 +51,9 @@ Alert.propTypes = {
    */
   open: _propTypes["default"].bool
 };
-Alert.propExamples = {
-  children: 'Alert content',
-  className: '',
-  open: true
+Alert.defaultProps = {
+  open: false,
+  className: ''
 };
 
 var _default = (0, _universalProps.attachUniversalProps)(Alert);

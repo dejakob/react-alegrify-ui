@@ -83,10 +83,7 @@ Checkbox.propTypes = {
    */
   className: _propTypes["default"].string
 };
-Checkbox.propExamples = {
-  id: 'checkbox',
-  name: 'checkbox',
-  children: 'Look at this checkbox',
+Checkbox.defaultProps = {
   disabled: false,
   checked: false,
   className: ''

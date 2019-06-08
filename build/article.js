@@ -49,8 +49,8 @@ Article.propTypes = {
    */
   className: _propTypes["default"].string
 };
-Article.propExamples = {
-  children: 'Article content'
+Article.defaultProps = {
+  className: ''
 };
 
 var _default = (0, _universalProps.attachUniversalProps)(Article);

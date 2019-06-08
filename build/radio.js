@@ -86,10 +86,7 @@ Radio.propTypes = {
    */
   className: _propTypes["default"].string
 };
-Radio.propExamples = {
-  id: 'radio',
-  name: 'radio',
-  children: 'Radio label',
+Radio.defaultProps = {
   disabled: false,
   checked: false,
   className: ''

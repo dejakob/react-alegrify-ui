@@ -104,7 +104,7 @@ Footer.propTypes = {
    * List of links to show in the footer
    */
   links: _propTypes["default"].arrayOf(_propTypes["default"].shape({
-    title: _propTypes["default"].string.isReauired,
+    title: _propTypes["default"].string.isRequired,
     href: _propTypes["default"].string.isRequired,
     label: _propTypes["default"].string.isRequired
   })),
@@ -113,6 +113,9 @@ Footer.propTypes = {
    * Logo component
    */
   logo: _propTypes["default"].node
+};
+Footer.defaultProps = {
+  logo: null
 };
 
 var _default = (0, _universalProps.attachUniversalProps)(Footer);

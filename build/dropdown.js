@@ -349,7 +349,6 @@ Dropdown.defaultProps = {
   disabled: false,
   multiSelect: false
 };
-Dropdown.propExamples = Dropdown.defaultProps;
 
 var _default = (0, _universalProps.attachUniversalProps)(Dropdown);
 

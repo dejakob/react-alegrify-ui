@@ -153,17 +153,10 @@ Input.propTypes = {
   onBlur: _propTypes["default"].func
 };
 Input.defaultProps = {
-  type: 'text'
-};
-Input.propExamples = {
-  value: 'default value',
-  className: '',
   type: 'text',
-  placeholder: 'Placeholder text',
-  full: false,
-  multiline: false,
-  id: 'input',
-  name: 'input'
+  placeholder: '',
+  disabled: false,
+  multiline: false
 };
 
 var _default = (0, _universalProps.attachUniversalProps)(Input);
