@@ -7,27 +7,20 @@
   "author": "dejakob",
   "license": "MPL",
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
-    "@babel/preset-react": "^7.0.0",
-    "@emotion/core": "^10.0.6",
-    "docz": "^0.13.7",
-    "docz-theme-default": "^0.13.7",
-    "emotion-theming": "^10.0.6",
-    "prop-types": "^15.6.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4"
   },
   "dependencies": {
-    "alegrify-ui": "0.0.18",
-    "moment": "^2.22.2"
+    "alegrify-ui": "1.0.1"
   },
   "scripts": {
     "build": "babel lib -d build",
-    "build:watch": "babel lib -w -d build",
-    "docz:dev": "docz dev",
-    "docz:build": "docz build",
-    "docz:deploy": "./deploy-docs.sh"
+    "build:watch": "babel lib -w -d build"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
