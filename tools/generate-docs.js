@@ -35,6 +35,7 @@ const renderWithReact = async code => {
     a: ({children, ...props}) => React.createElement('a', { className: 'alegrify-a', ...props }, children),
     ul: ({children, ...props}) => React.createElement('ul', { className: 'alegrify-ul', ...props }, children),
     li: ({children, ...props}) => React.createElement('li', { className: 'alegrify-ul__li', ...props }, children),
+    pre: ({children, ...props}) => React.createElement('pre', { className: 'alegrify-space--large', ...props }, children),
   }
   const elementWithProvider = React.createElement(
     MDXProvider,
@@ -48,17 +49,20 @@ const renderWithReact = async code => {
   <head>
     <title>React Alegrify UI</title>
     <link rel="stylesheet" href="https://dejakob.com/alegrify-ui/alegrify-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css" />
   </head>
   <body class="alegrify-body">
     <main class="alegrify-main">
-      <h1 class="alegrify-h1">React Alegrify UI</h1>
+      <h1 class="alegrify-h1 alegrify-h1--thin">React Alegrify UI</h1>
       <section class="alegrify-section">      
         ${renderToStaticMarkup(elementWithProvider)}
       </section>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/prism.min.js"></script>
   </body>
 </html>
   `.trim();
 }
 
 generateIndex('index');
+generateIndex('button');
