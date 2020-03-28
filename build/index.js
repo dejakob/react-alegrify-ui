@@ -23,12 +23,6 @@ Object.defineProperty(exports, "SPACING", {
     return _spacing["default"];
   }
 });
-Object.defineProperty(exports, "Alert", {
-  enumerable: true,
-  get: function get() {
-    return _alert["default"];
-  }
-});
 Object.defineProperty(exports, "Article", {
   enumerable: true,
   get: function get() {
@@ -215,8 +209,6 @@ var _colors = _interopRequireDefault(require("./colors"));
 var _media = _interopRequireDefault(require("./media"));
 
 var _spacing = _interopRequireDefault(require("./spacing"));
-
-var _alert = _interopRequireDefault(require("./alert"));
 
 var _article = _interopRequireDefault(require("./article"));
 

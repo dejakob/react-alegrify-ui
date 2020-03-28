@@ -13,7 +13,7 @@ var _universalProps = require("./helpers/universal-props");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var VARIANTS = ['left', 'center', 'right', 'top', 'middle', 'bottom', 'outline', 'even', 'reverse', 'all'];
+var VARIANTS = ['left', 'center', 'right', 'outline', 'even', 'top', 'middle', 'bottom', 'stretch', 'bleed', 'reverse', 'all'];
 /**
  * <Grid />
  * 

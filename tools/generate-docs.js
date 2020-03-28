@@ -14,7 +14,6 @@ const DOMAINS = [
   'localhost',
   'dejakob.com'
 ];
-const PROJECT_ROOT = 'https://dejakob.com/react-alegrify-ui';
 
 async function generateIndex(file, options = {}) {
   const importPath = options.importPath || `../docs/${file}.mdx`
@@ -67,6 +66,19 @@ async function renderWithReact(code) {
     <title>React Alegrify UI</title>
     <link rel="stylesheet" href="https://dejakob.com/alegrify-ui/alegrify-ui.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css" />
+    <style>
+      .preview {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(78, 75, 193, 0.1);
+        height: 100%;
+        width: 100%;
+      }
+      pre[class*=language-].preview__pre {
+        margin: 0;
+      }
+    </style>
   </head>
   <body class="alegrify-body">
     <main class="alegrify-main">
@@ -78,6 +90,7 @@ async function renderWithReact(code) {
       </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-jsx.min.js"></script>
   </body>
 </html>
   `.trim();
