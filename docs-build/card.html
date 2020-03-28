@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css" />
     <style>
       .preview {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: block;
         background-color: rgba(78, 75, 193, 0.1);
         height: 100%;
         width: 100%;
+      }
+      .preview > div {
+        padding: 16px;
       }
       pre[class*=language-].preview__pre {
         margin: 0;
@@ -24,7 +25,7 @@
         React Alegrify UI
       </h1>
       <section class="alegrify-section" data-component>      
-        <h1 class="alegrify-h1">Card</h1><h2 class="alegrify-h2">Variants</h2><h3 class="alegrify-h3">Default</h3><div class="alegrify-grid alegrify-grid--stretch alegrify-grid--bleed"><div class="alegrify-grid__cell alegrify-grid__cell--6"><div class="preview"><div><input type="checkbox" class="alegrify-card__trigger" id="alegrify-card--1"/><label class="alegrify-card" for="alegrify-card--1"><figure class="alegrify-card__figure" style="height:300px;width:300px"><img class="alegrify-card__image" src="https://source.unsplash.com/400x400/?nature,color" alt="Card preview" height="300"/></figure><div class="alegrify-card__title-overlay"><h2 class="alegrify-card__title">Card preview</h2></div><div class="alegrify-card__content" data-title="Card preview">Some content...</div></label></div></div></div><div class="alegrify-grid__cell alegrify-grid__cell--6"><pre class="preview__pre"><code class="language-html">&lt;Card
+        <h1 class="alegrify-h1">Card</h1><h2 class="alegrify-h2">Variants</h2><h3 class="alegrify-h3">Default</h3><div class="alegrify-grid alegrify-grid--stretch alegrify-grid--bleed"><div class="alegrify-grid__cell alegrify-grid__cell--6"><div class="preview"><div><input type="checkbox" class="alegrify-card__trigger" id="alegrify-card--1"/><label class="alegrify-card" for="alegrify-card--1" style="height:300px;width:300px"><figure class="alegrify-card__figure" style="height:300px;width:300px"><img class="alegrify-card__image" src="https://source.unsplash.com/400x400/?nature,color" alt="Card preview" height="300" width="300"/></figure><div class="alegrify-card__title-overlay"><h2 class="alegrify-card__title">Card preview</h2></div><div class="alegrify-card__content" data-title="Card preview">Some content...</div></label></div></div></div><div class="alegrify-grid__cell alegrify-grid__cell--6"><pre class="preview__pre"><code class="language-html">&lt;Card
             image=&quot;https://source.unsplash.com/400x400/?nature,color&quot;
             alt=&quot;Card preview&quot;
             height={300}
