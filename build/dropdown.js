@@ -19,7 +19,21 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -48,6 +62,7 @@ var KEY_CODES = {
   ESCAPE: 27,
   TAB: 9
 };
+var noonce = 0;
 /**
  * ```jsx
  * <Dropdown>
@@ -228,7 +243,7 @@ var Dropdown = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return DropdownView(Object.assign({}, this.props, this.state, this.actions));
+      return /*#__PURE__*/_react["default"].createElement(DropdownView, _extends({}, this.props, this.state, this.actions));
     }
   }]);
 
@@ -240,15 +255,15 @@ var Dropdown = /*#__PURE__*/function (_Component) {
 
 
 function DropdownView(props) {
-  var classNames = ['alegrify-dropdown__container'];
+  var _useState = (0, _react.useState)(typeof props.id === 'string' && props.id.trim() !== '' ? props.id : "alegrify-dropdown--".concat(++noonce)),
+      _useState2 = _slicedToArray(_useState, 1),
+      id = _useState2[0];
+
+  var classNames = ['alegrify-dropdown'];
   var value = props.value;
 
   if (typeof props.className === 'string' && props.className.trim() !== '') {
     classNames.push(props.className);
-  }
-
-  if (props.disabled) {
-    classNames.push('alegrify-dropdown--disabled');
   }
 
   return /*#__PURE__*/_react["default"].createElement("div", {
@@ -257,17 +272,16 @@ function DropdownView(props) {
   }, /*#__PURE__*/_react["default"].createElement("input", {
     className: "alegrify-dropdown__trigger",
     type: "checkbox",
-    id: props.id,
+    id: id,
     onChange: props.handleOpenDropdown,
     checked: props.open,
     disabled: props.disabled
   }), /*#__PURE__*/_react["default"].createElement("label", {
     className: "alegrify-dropdown__label",
-    htmlFor: props.id,
-    "aria-controls": ""
-  }, value ? value.props.children : props.placeholder || '...'), /*#__PURE__*/_react["default"].createElement("fieldset", {
-    className: "alegrify-dropdown",
-    role: "menu"
+    htmlFor: id,
+    "aria-controls": id
+  }, value ? value.props.children : props.placeholder || '...'), /*#__PURE__*/_react["default"].createElement("ul", {
+    className: "alegrify-dropdown__list"
   }, renderChildren()));
   /**
    * Render dropdown items
@@ -275,7 +289,8 @@ function DropdownView(props) {
    */
 
   function renderChildren() {
-    if (!props.open) {
+    // Render all items server side for SEO
+    if (typeof window !== 'undefined' && !props.open) {
       return null;
     }
 
@@ -304,19 +319,18 @@ function DropdownView(props) {
       key: index
     });
   }
-} // Todo: disabled
-
+}
 
 Dropdown.propTypes = {
   /**
    * Id of the dropdown
    */
-  id: _propTypes["default"].string.isRequired,
+  id: _propTypes["default"].string,
 
   /**
    * Name of the dropdown
    */
-  name: _propTypes["default"].string.isRequired,
+  name: _propTypes["default"].string,
 
   /**
    * Items for the dropdown

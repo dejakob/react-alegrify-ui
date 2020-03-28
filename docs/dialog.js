@@ -20,7 +20,6 @@ const DefaultExample = () => {
 };
 
 const dialogDefault = document.getElementById('dialog--default');
-console.log('dialog default', dialogDefault);
 
 if (dialogDefault) {
     ReactDOM.render(<DefaultExample />, dialogDefault);

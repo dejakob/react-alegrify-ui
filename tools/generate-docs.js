@@ -116,3 +116,5 @@ generateIndex('button');
 generateIndex('card');
 generateIndex('checkbox');
 generateIndex('dialog');
+generateIndex('dl');
+generateIndex('dropdown');

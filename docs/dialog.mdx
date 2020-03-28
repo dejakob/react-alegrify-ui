@@ -21,10 +21,9 @@ import Dialog from '../build/dialog';
         </Dialog>
     `}
 >
-    <Button onClick={() => { setOpen(true) }}>Open dialog</Button>
+    <Button>Open dialog</Button>
     <Dialog
-        open={open}
-        actions={<Button full onClick={() => { setOpen(false) }}>OK</Button>}
+        actions={<Button full>OK</Button>}
         title="Hello there"
     >
         Some content
