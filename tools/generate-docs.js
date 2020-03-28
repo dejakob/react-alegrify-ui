@@ -16,13 +16,14 @@ const DOMAINS = [
 ];
 
 async function generateIndex(file, options = {}) {
-  const importPath = options.importPath || `../docs/${file}.mdx`
+  const importPath = options.importPath || `../docs/${file}.mdx`;
+  const exportPath = options.exportPath || `../docs-build/${file}.html`;
   const fileName = path.join(__dirname, importPath);
   const mdxContent = (await readFile(fileName)).toString();
   const jsx = await mdx(mdxContent);
   const { code } = babel.transform(jsx, { presets: ["@babel/preset-env", "@babel/preset-react"] });
 
-  await writeFile(path.join(__dirname, `../docs-build/${file}.html`), await renderWithReact(code));
+  await writeFile(path.join(__dirname, exportPath), await renderWithReact(code));
 }
 
 async function renderWithReact(code) {
@@ -109,6 +110,7 @@ function isExternalPath(url) {
   return DOMAINS.indexOf(domain) === -1;
 }
 
-generateIndex('index', { importPath: '../README.md' });
+generateIndex('index', { importPath: '../README.md', exportPath: '../index.html' });
 generateIndex('button');
 generateIndex('card');
+generateIndex('checkbox');

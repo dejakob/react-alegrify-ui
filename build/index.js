@@ -53,12 +53,6 @@ Object.defineProperty(exports, "Checkbox", {
     return _checkbox["default"];
   }
 });
-Object.defineProperty(exports, "DateIndicator", {
-  enumerable: true,
-  get: function get() {
-    return _dateIndicator["default"];
-  }
-});
 Object.defineProperty(exports, "Dialog", {
   enumerable: true,
   get: function get() {
@@ -219,8 +213,6 @@ var _button = _interopRequireDefault(require("./button"));
 var _card = _interopRequireDefault(require("./card"));
 
 var _checkbox = _interopRequireDefault(require("./checkbox"));
-
-var _dateIndicator = _interopRequireDefault(require("./date-indicator"));
 
 var _dialog = _interopRequireDefault(require("./dialog"));
 
