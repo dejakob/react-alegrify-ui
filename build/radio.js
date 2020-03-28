@@ -37,9 +37,9 @@ function Radio(props) {
     classNames.push('alegrify-radio--disabled');
   }
 
-  return _react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement("div", {
     className: classNames.join(' ')
-  }, _react["default"].createElement("input", {
+  }, /*#__PURE__*/_react["default"].createElement("input", {
     type: "radio",
     id: props.id,
     name: props.name,
@@ -47,10 +47,10 @@ function Radio(props) {
     disabled: props.disabled,
     checked: props.checked,
     onChange: props.onChange
-  }), _react["default"].createElement("label", {
+  }), /*#__PURE__*/_react["default"].createElement("label", {
     htmlFor: props.id,
     className: "alegrify-radio__check"
-  }, _react["default"].createElement("span", {
+  }, /*#__PURE__*/_react["default"].createElement("span", {
     className: "alegrify-radio__label"
   }, props.children)));
 }

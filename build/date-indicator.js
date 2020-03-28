@@ -32,12 +32,12 @@ function DateIndicator(props) {
   }
 
   var momentDate = (0, _moment["default"])(props.date);
-  return _react["default"].createElement("time", {
+  return /*#__PURE__*/_react["default"].createElement("time", {
     className: classNames.join(' '),
     dateTime: momentDate.format()
-  }, _react["default"].createElement("span", {
+  }, /*#__PURE__*/_react["default"].createElement("span", {
     className: "alegrify-date-indicator__month"
-  }, momentDate.format('MMM')), _react["default"].createElement("span", {
+  }, momentDate.format('MMM')), /*#__PURE__*/_react["default"].createElement("span", {
     className: "alegrify-date-indicator__day"
   }, momentDate.format('D')));
 }

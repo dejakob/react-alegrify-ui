@@ -25,7 +25,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * ```
  */
 function DropdownItem(props) {
-  return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("input", {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("input", {
     className: "alegrify-dropdown__option",
     name: props.name,
     type: "radio",
@@ -33,7 +33,7 @@ function DropdownItem(props) {
     id: props.id,
     onChange: props.onSelect,
     checked: props.checked
-  }), _react["default"].createElement("label", {
+  }), /*#__PURE__*/_react["default"].createElement("label", {
     className: "alegrify-dropdown__option-label",
     htmlFor: props.id
   }, props.children));

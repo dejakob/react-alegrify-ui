@@ -49,16 +49,16 @@ function Card(props) {
     headerAdditionalStyle.backgroundImage = "url(".concat(props.headerImage, ")");
   }
 
-  return _react["default"].createElement("section", {
+  return /*#__PURE__*/_react["default"].createElement("section", {
     className: classNames.join(' ')
-  }, typeof props.title === 'string' && props.title.trim().length > 0 ? _react["default"].createElement("div", {
+  }, typeof props.title === 'string' && props.title.trim().length > 0 ? /*#__PURE__*/_react["default"].createElement("div", {
     className: headerClassNames.join(' '),
     style: headerAdditionalStyle
-  }, props.headerChildren, _react["default"].createElement("h2", {
+  }, props.headerChildren, /*#__PURE__*/_react["default"].createElement("h2", {
     className: "alegrify-card__title"
-  }, props.title)) : null, _react["default"].createElement("div", {
+  }, props.title)) : null, /*#__PURE__*/_react["default"].createElement("div", {
     className: "alegrify-card__content"
-  }, props.children), props.footer ? _react["default"].createElement("div", {
+  }, props.children), props.footer ? /*#__PURE__*/_react["default"].createElement("div", {
     className: "alegrify-card__footer"
   }, props.footer) : null);
 }

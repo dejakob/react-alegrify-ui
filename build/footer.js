@@ -35,29 +35,29 @@ try {
 
 
 function Footer(props) {
-  return _react["default"].createElement("footer", {
+  return /*#__PURE__*/_react["default"].createElement("footer", {
     className: "alegrify-footer"
-  }, _react["default"].createElement("div", {
+  }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "alegrify-footer__content"
-  }, _react["default"].createElement(_grid["default"], {
+  }, /*#__PURE__*/_react["default"].createElement(_grid["default"], {
     all: true,
     outline: true,
     middle: true
-  }, _react["default"].createElement("nav", {
+  }, /*#__PURE__*/_react["default"].createElement("nav", {
     className: "alegrify-footer__nav alegrify-grid__cell--4"
-  }, _react["default"].createElement("ul", {
+  }, /*#__PURE__*/_react["default"].createElement("ul", {
     className: "alegrify-footer__nav-list"
   }, props.links.map(function (link, index) {
-    return _react["default"].createElement("li", {
+    return /*#__PURE__*/_react["default"].createElement("li", {
       key: index,
       className: "alegrify-footer__nav-list-item"
-    }, _react["default"].createElement(FooterLink, {
+    }, /*#__PURE__*/_react["default"].createElement(FooterLink, {
       href: link.href,
       title: link.title
     }, link.label));
-  }))), _react["default"].createElement("div", {
+  }))), /*#__PURE__*/_react["default"].createElement("div", {
     className: "alegrify-grid__cell--4 alegrify-footer__logo"
-  }, props.logo), _react["default"].createElement("div", {
+  }, props.logo), /*#__PURE__*/_react["default"].createElement("div", {
     className: "alegrify-grid__cell--4 alegrify-footer__trademark"
   }, props.children))));
 }
@@ -69,7 +69,7 @@ function FooterLink(props) {
   });
 
   if (isExternalLink || !reactRouterDom) {
-    return _react["default"].createElement("a", {
+    return /*#__PURE__*/_react["default"].createElement("a", {
       href: props.href,
       title: props.title,
       className: "alegrify-footer__link"
@@ -82,7 +82,7 @@ function FooterLink(props) {
     Link = reactRouterDom.Link;
   }
 
-  return _react["default"].createElement(Link, {
+  return /*#__PURE__*/_react["default"].createElement(Link, {
     to: props.href,
     title: props.title,
     className: "alegrify-footer__link"

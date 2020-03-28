@@ -44,7 +44,7 @@ function InputView(props) {
 
   if (props.multiline) {
     var amountOfLines = ((props.value || '').match(/\n/gi) || []).length + 1;
-    return _react["default"].createElement("textarea", {
+    return /*#__PURE__*/_react["default"].createElement("textarea", {
       id: props.id,
       name: props.name,
       className: classNames.join(' '),
@@ -60,7 +60,7 @@ function InputView(props) {
     });
   }
 
-  return _react["default"].createElement("input", {
+  return /*#__PURE__*/_react["default"].createElement("input", {
     id: props.id,
     name: props.name,
     type: props.type || 'text',

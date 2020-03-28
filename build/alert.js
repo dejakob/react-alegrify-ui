@@ -29,7 +29,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 function Alert(props) {
   var classNames = ['alegrify-alert'];
   classNames.push(props.className);
-  return _react["default"].createElement("dialog", {
+  return /*#__PURE__*/_react["default"].createElement("dialog", {
     className: classNames.join(' '),
     open: props.open
   }, props.children);

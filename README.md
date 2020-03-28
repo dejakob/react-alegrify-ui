@@ -29,7 +29,7 @@ import '../node_modules/alegrify-ui/alegrify-ui.min.css';
 
 In any other case manually include the [alegrify-ui.min.css](https://raw.githubusercontent.com/dejakob/alegrify-ui/master/alegrify-ui.min.css) file into your html file:
 
-```
+```html
 <link rel="stylesheet" href="<PATH>/alegrify-ui.min.css" />
 ```
 
@@ -41,8 +41,8 @@ import { Button } from 'react-alegrify-ui';
 
 ## Components
 
-Check out the docs [here](https://dejakob.github.io/react-alegrify-ui)!
+Check out the docs [here](https://dejakob.com/react-alegrify-ui)!
 
 ## "I only want CSS"
 
-If you only want to use CSS, take a look here: [Alegrify UI](https://github.com/dejakob/alegrify-ui).
+If you only want to use CSS, take a look here: [Alegrify UI](https://dejakob.com/alegrify-ui).

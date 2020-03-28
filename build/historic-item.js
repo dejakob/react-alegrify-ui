@@ -32,12 +32,12 @@ function HistoricItem(props) {
     classNames.push(props.className);
   }
 
-  return _react["default"].createElement("section", {
+  return /*#__PURE__*/_react["default"].createElement("section", {
     className: classNames.join(' ')
-  }, _react["default"].createElement(_dateIndicator["default"], {
+  }, /*#__PURE__*/_react["default"].createElement(_dateIndicator["default"], {
     className: "alegrify-historic-item__date",
     date: props.date
-  }), _react["default"].createElement("div", {
+  }), /*#__PURE__*/_react["default"].createElement("div", {
     className: "alegrify-historic-item__content"
   }, props.children));
 }

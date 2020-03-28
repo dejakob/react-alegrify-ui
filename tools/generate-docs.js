@@ -10,8 +10,15 @@ const mdx = require('@mdx-js/mdx');
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
-async function generateIndex(file) {
-  const fileName = path.join(__dirname, `../docs/${file}.mdx`);
+const DOMAINS = [
+  'localhost',
+  'dejakob.com'
+];
+const PROJECT_ROOT = 'https://dejakob.com/react-alegrify-ui';
+
+async function generateIndex(file, options = {}) {
+  const importPath = options.importPath || `../docs/${file}.mdx`
+  const fileName = path.join(__dirname, importPath);
   const mdxContent = (await readFile(fileName)).toString();
   const jsx = await mdx(mdxContent);
   const { code } = babel.transform(jsx, { presets: ["@babel/preset-env", "@babel/preset-react"] });
@@ -19,8 +26,11 @@ async function generateIndex(file) {
   await writeFile(path.join(__dirname, `../docs-build/${file}.html`), await renderWithReact(code));
 }
 
-const renderWithReact = async code => {
-  const scope = { mdx: createElement };
+async function renderWithReact(code) {
+  const scope = {
+    mdx: createElement,
+    require: mdRequire
+  };
   const fn = new Function(
     'React',
     ...Object.keys(scope),
@@ -32,7 +42,14 @@ const renderWithReact = async code => {
     h2: ({children, ...props}) => React.createElement('h2', { className: 'alegrify-h2', ...props }, children),
     h3: ({children, ...props}) => React.createElement('h3', { className: 'alegrify-h3', ...props }, children),
     p: ({children, ...props}) => React.createElement('p', { className: 'alegrify-p', ...props }, children),
-    a: ({children, ...props}) => React.createElement('a', { className: 'alegrify-a', ...props }, children),
+    a: ({children, ...props}) => React.createElement('a', {
+      className: 'alegrify-a',
+      ...(isExternalPath(props.href) ? {
+        target: '_blank',
+        rel: 'noreferrer noopener'
+      }: {}),
+      ...props
+    }, children),
     ul: ({children, ...props}) => React.createElement('ul', { className: 'alegrify-ul', ...props }, children),
     li: ({children, ...props}) => React.createElement('li', { className: 'alegrify-ul__li', ...props }, children),
     pre: ({children, ...props}) => React.createElement('pre', { className: 'alegrify-space--large', ...props }, children),
@@ -53,7 +70,9 @@ const renderWithReact = async code => {
   </head>
   <body class="alegrify-body">
     <main class="alegrify-main">
-      <h1 class="alegrify-h1 alegrify-h1--thin">React Alegrify UI</h1>
+      <h1 class="alegrify-h1 alegrify-h1--thin">
+        React Alegrify UI
+      </h1>
       <section class="alegrify-section">      
         ${renderToStaticMarkup(elementWithProvider)}
       </section>
@@ -64,5 +83,18 @@ const renderWithReact = async code => {
   `.trim();
 }
 
-generateIndex('index');
+function mdRequire(module) {
+  return require(module);
+}
+
+function isExternalPath(url) {
+  if (!['http://', 'https://', '//'].some(prefix => url.indexOf(prefix) === 0)) {
+    return false;
+  }
+
+  const domain = url.replace('http://','').replace('https://','').split('/')[0];
+  return DOMAINS.indexOf(domain) === -1;
+}
+
+generateIndex('index', { importPath: '../README.md' });
 generateIndex('button');

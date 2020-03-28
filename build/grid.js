@@ -43,7 +43,7 @@ function Grid(props) {
       classNames.push("alegrify-grid--".concat(variant));
     }
   });
-  return _react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement("div", {
     className: classNames.join(' ')
   }, props.children);
 }

@@ -34,9 +34,9 @@ function Checkbox(props) {
     classNames.push('alegrify-checkbox--disabled');
   }
 
-  return _react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement("div", {
     className: classNames.join(' ')
-  }, _react["default"].createElement("input", {
+  }, /*#__PURE__*/_react["default"].createElement("input", {
     type: "checkbox",
     id: props.id,
     name: props.name,
@@ -44,10 +44,10 @@ function Checkbox(props) {
     disabled: props.disabled,
     checked: props.checked,
     onChange: props.onChange
-  }), _react["default"].createElement("label", {
+  }), /*#__PURE__*/_react["default"].createElement("label", {
     htmlFor: props.id,
     className: "alegrify-checkbox__check"
-  }, _react["default"].createElement("span", {
+  }, /*#__PURE__*/_react["default"].createElement("span", {
     className: "alegrify-checkbox__label"
   }, props.children)));
 }

@@ -31,12 +31,12 @@ function Dialog(props) {
     classNames.push(props.className);
   }
 
-  return _react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement("div", {
     className: "alegrify-dialog__wrapper",
     open: props.open
-  }, _react["default"].createElement("dialog", {
+  }, /*#__PURE__*/_react["default"].createElement("dialog", {
     className: classNames.join(' ')
-  }, _react["default"].createElement("div", {
+  }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "alegrify-dialog__content"
   }, props.children)));
 }

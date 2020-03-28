@@ -39,7 +39,7 @@ function RangeInputView(props) {
     classNames.push(props.className);
   }
 
-  return _react["default"].createElement("input", {
+  return /*#__PURE__*/_react["default"].createElement("input", {
     type: "range",
     id: props.id,
     name: props.name,

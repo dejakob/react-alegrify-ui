@@ -50,14 +50,14 @@ function NumberInputView(props) {
     classNames.push('alegrify-number-input--full');
   }
 
-  return _react["default"].createElement("label", {
+  return /*#__PURE__*/_react["default"].createElement("label", {
     htmlFor: props.id,
     className: classNames.join(' ')
-  }, _react["default"].createElement("button", {
+  }, /*#__PURE__*/_react["default"].createElement("button", {
     className: "alegrify-number-input__add",
     tabIndex: "-1",
     onClick: up
-  }, _react["default"].createElement("span", null, "+")), _react["default"].createElement("input", {
+  }, /*#__PURE__*/_react["default"].createElement("span", null, "+")), /*#__PURE__*/_react["default"].createElement("input", {
     type: "text",
     id: props.id,
     name: props.name,
@@ -70,11 +70,11 @@ function NumberInputView(props) {
     onFocus: props.onFocus,
     onBlur: props.onBlur,
     autoComplete: "off"
-  }), _react["default"].createElement("button", {
+  }), /*#__PURE__*/_react["default"].createElement("button", {
     className: "alegrify-number-input__subtract",
     tabIndex: "-1",
     onClick: down
-  }, _react["default"].createElement("span", null, "-")));
+  }, /*#__PURE__*/_react["default"].createElement("span", null, "-")));
 
   function onInput(eventData) {
     var value = eventData.target.value;

@@ -15,9 +15,11 @@ var _universalProps = require("./helpers/universal-props");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -25,11 +27,15 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -44,17 +50,17 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
  * />
  * ```
  */
-var StatusInput =
-/*#__PURE__*/
-function (_Component) {
+var StatusInput = /*#__PURE__*/function (_Component) {
   _inherits(StatusInput, _Component);
+
+  var _super = _createSuper(StatusInput);
 
   function StatusInput() {
     var _this;
 
     _classCallCheck(this, StatusInput);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(StatusInput).call(this));
+    _this = _super.call(this);
     _this.handleValueChange = _this.handleValueChange.bind(_assertThisInitialized(_this));
     _this.handleFocus = _this.handleFocus.bind(_assertThisInitialized(_this));
     _this.handleBlur = _this.handleBlur.bind(_assertThisInitialized(_this));
@@ -125,13 +131,13 @@ function StatusInputView(props) {
   }
 
   var amountOfLines = (props.value.match(/\n/gi) || []).length + 1;
-  return _react["default"].createElement("form", {
+  return /*#__PURE__*/_react["default"].createElement("form", {
     className: classNames.join(' '),
     onSubmit: function onSubmit(eventData) {
       eventData.preventDefault();
       props.onSubmit(props.value);
     }
-  }, _react["default"].createElement("textarea", {
+  }, /*#__PURE__*/_react["default"].createElement("textarea", {
     className: "alegrify-status-input__textarea",
     placeholder: props.placeholder,
     name: props.name,
@@ -140,16 +146,16 @@ function StatusInputView(props) {
     onInput: props.handleValueChange,
     onFocus: props.handleFocus,
     onBlur: props.handleBlur
-  }), _react["default"].createElement("div", {
+  }), /*#__PURE__*/_react["default"].createElement("div", {
     className: "alegrify-status-input__submit"
-  }, _react["default"].createElement(_button["default"], {
+  }, /*#__PURE__*/_react["default"].createElement(_button["default"], {
     primary: true,
     type: "submit",
     small: true
-  }, props.submitLabel || 'Submit')), _react["default"].createElement("ul", {
+  }, props.submitLabel || 'Submit')), /*#__PURE__*/_react["default"].createElement("ul", {
     className: "alegrify-status-input__actions"
   }, props.actions && props.actions.map(function (action, index) {
-    return _react["default"].createElement(StatusInputAction, {
+    return /*#__PURE__*/_react["default"].createElement(StatusInputAction, {
       key: index,
       icon: action.icon,
       label: action.label,
@@ -164,14 +170,14 @@ function StatusInputView(props) {
 
 
 function StatusInputAction(props) {
-  return _react["default"].createElement("li", {
+  return /*#__PURE__*/_react["default"].createElement("li", {
     className: "alegrify-status-input__action"
-  }, _react["default"].createElement("button", {
+  }, /*#__PURE__*/_react["default"].createElement("button", {
     className: "alegrify-status-input__action-button",
     "data-icon": props.icon,
     type: "button",
     onClick: props.onClick
-  }, _react["default"].createElement("span", {
+  }, /*#__PURE__*/_react["default"].createElement("span", {
     className: "alegrify-status-input__action-button-label"
   }, props.label)));
 }

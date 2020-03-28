@@ -1,25 +1,25 @@
----
-name: Button
----
-
 # Button
 
-import Button from '../lib/button';
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Button from '../build/button';
 
 ## Variants
 
 ### Default
 
-<Button>
-    Yay! I'm a button
-</Button>
+<div>
+    <Button>
+        Yay! I'm a button
+    </Button>
+</div>
 
 ### Primary
 
 <Button
     primary
 >
-    Yay! I'm a primary button
+    primary button
 </Button>
 
 ### Destructive
@@ -27,7 +27,7 @@ import Button from '../lib/button';
 <Button
     destructive
 >
-    Destroy
+    destructive button
 </Button>
 
 ### Full
@@ -35,35 +35,37 @@ import Button from '../lib/button';
 <Button
     full
 >
-    Full sized button
+    full button
 </Button>
 
-### Small
+### link
 
 <Button
-    small
+    link
 >
-    Small variant
+    link button
 </Button>
 
-### Large
+### Loading
 
 <Button
-    large
+    loading
 >
-    Large variant
+    loading button
+</Button>
+
+### Disabled
+
+<Button
+    disabled
+>
+    disabled button
 </Button>
 
 ## Properties
 
-| Property  | Type    | Required? | Default |
-|-----------|---------|-----------|---------|
-|className  |String   |No         |''       |
-|primary    |Boolean  |No         |false    |
-|full       |Boolean  |No         |false    |
-|small      |Boolean  |No         |false    |
-|large      |Boolean  |No         |false    |
-|destructive|Boolean  |No         |false    |
-|disabled   |Boolean  |No         |false    |
-|type       |String   |No         |'submit' |
-|onClick    |Function |No         |         |
+<PropsTable
+    Component={Button}
+/>
+
+## Playground

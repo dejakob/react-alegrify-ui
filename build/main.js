@@ -29,7 +29,7 @@ function Main(props) {
     classNames.push(props.className);
   }
 
-  return _react["default"].createElement("main", {
+  return /*#__PURE__*/_react["default"].createElement("main", {
     className: classNames.join(' ')
   }, props.children);
 }
