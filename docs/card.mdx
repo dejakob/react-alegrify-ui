@@ -1,30 +1,39 @@
----
-name: Card
----
-
 # Card
 
-import { Playground } from 'docz';
-import Card from '../lib/card';
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Card from '../build/card';
 
-## Example
+## Variants
 
-<Playground>
+### Default
+
+<Preview
+    code={`
+        <Card
+            image="https://source.unsplash.com/400x400/?nature,color"
+            alt="Card preview"
+            height={300}
+            width={300}
+            title="Card preview"
+        >
+            Some content...
+        </Card>
+    `}
+>
     <Card
-        title="Some thoughts"
-        footer={<span>Just posted</span>}
-        headerImage="https://source.unsplash.com/random"
+        image="https://source.unsplash.com/400x400/?nature,color"
+        alt="Card preview"
+        height={300}
+        width={300}
+        title="Card preview"
     >
-        Lorem ipsum...
+        Some content...
     </Card>
-</Playground>
+</Preview>
 
 ## Properties
 
-| Property  | Type    | Required? | Default |
-|-----------|---------|-----------|---------|
-|className  |String   |No         |''       |
-|footer     |Component|No         |null     |
-|small      |Boolean  |No         |false    |
-|title      |String   |No         |''       |
-|headerImage|String   |No         |''       |
+<PropsTable
+    Component={Card}
+/>

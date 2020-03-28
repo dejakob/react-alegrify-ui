@@ -111,3 +111,4 @@ function isExternalPath(url) {
 
 generateIndex('index', { importPath: '../README.md' });
 generateIndex('button');
+generateIndex('card');
