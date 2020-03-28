@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Alegrify UI</title>
+    <link rel="stylesheet" href="https://dejakob.com/alegrify-ui/alegrify-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css" />
+    <style>
+      .preview {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(78, 75, 193, 0.1);
+        height: 100%;
+        width: 100%;
+      }
+      pre[class*=language-].preview__pre {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body class="alegrify-body">
+    <main class="alegrify-main">
+      <h1 class="alegrify-h1 alegrify-h1--thin">
+        React Alegrify UI
+      </h1>
+      <section class="alegrify-section" data-component>      
+        <h1 class="alegrify-h1">Dialog</h1><h2 class="alegrify-h2">Variants</h2><h3 class="alegrify-h3">Default</h3><div class="alegrify-grid alegrify-grid--stretch alegrify-grid--bleed"><div class="alegrify-grid__cell alegrify-grid__cell--6"><div class="preview"><div id="dialog--default"></div></div></div><div class="alegrify-grid__cell alegrify-grid__cell--6"><pre class="preview__pre"><code class="language-html">&lt;Dialog
+            open
+            actions={&lt;Button&gt;OK&lt;/Button&gt;}
+            title=&quot;Hello there&quot;
+        &gt;
+            Some content
+        &lt;/Dialog&gt;</code></pre></div></div><h2 class="alegrify-h2">Properties</h2><table><thead><tr><th>Property</th><th>Type</th><th>Default</th></tr></thead><tbody><tr><th>children<!-- -->*</th><td>node</td><td></td></tr><tr><th>className</th><td>string</td><td></td></tr><tr><th>open</th><td>bool</td><td></td></tr><tr><th>title</th><td>string</td><td></td></tr><tr><th>actions</th><td>node</td><td></td></tr></tbody></table>
+      </section>
+    </main>
+    <script src="../dist/docs.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-jsx.min.js"></script>
+  </body>
+</html>

@@ -17,12 +17,6 @@ Object.defineProperty(exports, "MEDIA", {
     return _media["default"];
   }
 });
-Object.defineProperty(exports, "SPACING", {
-  enumerable: true,
-  get: function get() {
-    return _spacing["default"];
-  }
-});
 Object.defineProperty(exports, "Article", {
   enumerable: true,
   get: function get() {
@@ -105,12 +99,6 @@ Object.defineProperty(exports, "GridCell", {
   enumerable: true,
   get: function get() {
     return _gridCell["default"];
-  }
-});
-Object.defineProperty(exports, "HistoricItem", {
-  enumerable: true,
-  get: function get() {
-    return _historicItem["default"];
   }
 });
 Object.defineProperty(exports, "Input", {
@@ -202,8 +190,6 @@ var _colors = _interopRequireDefault(require("./colors"));
 
 var _media = _interopRequireDefault(require("./media"));
 
-var _spacing = _interopRequireDefault(require("./spacing"));
-
 var _article = _interopRequireDefault(require("./article"));
 
 var _aside = _interopRequireDefault(require("./aside"));
@@ -227,8 +213,6 @@ var _footer = _interopRequireDefault(require("./footer"));
 var _grid = _interopRequireDefault(require("./grid"));
 
 var _gridCell = _interopRequireDefault(require("./grid-cell"));
-
-var _historicItem = _interopRequireDefault(require("./historic-item"));
 
 var _input = _interopRequireDefault(require("./input"));
 

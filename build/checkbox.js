@@ -53,17 +53,17 @@ function Checkbox(props) {
 
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("input", {
     type: "checkbox",
-    "class": "alegrify-checkbox__trigger".concat(props.loading ? ' alegrify-checkbox__trigger--loading' : ''),
+    className: "alegrify-checkbox__trigger".concat(props.loading ? ' alegrify-checkbox__trigger--loading' : ''),
     disabled: props.disabled,
     checked: props.checked,
     id: id,
     name: props.name
   }), /*#__PURE__*/_react["default"].createElement("label", {
-    "class": "alegrify-checkbox__check",
+    className: "alegrify-checkbox__check",
     htmlFor: id
   }), /*#__PURE__*/_react["default"].createElement("label", {
-    "class": "alegrify-checkbox__label",
-    "for": id
+    className: "alegrify-checkbox__label",
+    htmlFor: id
   }, props.children));
 }
 

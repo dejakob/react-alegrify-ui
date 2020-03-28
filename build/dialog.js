@@ -31,21 +31,23 @@ function Dialog(props) {
     classNames.push(props.className);
   }
 
-  return /*#__PURE__*/_react["default"].createElement("div", {
-    className: "alegrify-dialog__wrapper",
+  return /*#__PURE__*/_react["default"].createElement("dialog", {
+    className: "alegrify-dialog",
     open: props.open
-  }, /*#__PURE__*/_react["default"].createElement("dialog", {
-    className: classNames.join(' ')
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "alegrify-dialog__content"
-  }, props.children)));
+  }, props.title ? /*#__PURE__*/_react["default"].createElement("h2", {
+    className: "alegrify-dialog__title"
+  }, props.title) : null, props.children, props.actions ? /*#__PURE__*/_react["default"].createElement("div", {
+    className: "alegrify-dialog__actions"
+  }, props.actions) : null));
 }
 
 Dialog.propTypes = {
   /**
    * Content
    */
-  children: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].node), _propTypes["default"].node]).isRequired,
+  children: _propTypes["default"].node.isRequired,
 
   /**
    * Additional classnames
@@ -55,16 +57,19 @@ Dialog.propTypes = {
   /**
    * Should the dialog be shown?
    */
-  open: _propTypes["default"].bool
+  open: _propTypes["default"].bool,
+
+  /**
+   * Title to show inside the dialog
+   */
+  title: _propTypes["default"].string,
+
+  /**
+   * Actions to show inside the dialog
+   */
+  actions: _propTypes["default"].node
 };
-Dialog.defaultProps = {
-  open: false
-};
-Dialog.propExamples = {
-  children: 'Add some content here',
-  className: '',
-  open: true
-};
+Dialog.defaultProps = {};
 
 var _default = (0, _universalProps.attachUniversalProps)(Dialog);
 

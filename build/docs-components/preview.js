@@ -22,7 +22,9 @@ function Preview(props) {
     six: true
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "preview"
-  }, /*#__PURE__*/_react["default"].createElement("div", null, children))), /*#__PURE__*/_react["default"].createElement(_gridCell["default"], {
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    id: props.id
+  }, children))), /*#__PURE__*/_react["default"].createElement(_gridCell["default"], {
     six: true
   }, /*#__PURE__*/_react["default"].createElement("pre", {
     className: "preview__pre"

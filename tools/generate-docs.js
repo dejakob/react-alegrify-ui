@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { promisify } = require('util');
 const React = require('react');
-const { renderToStaticMarkup } = require('react-dom/server');
+const { renderToString } = require('react-dom/server');
 const { MDXProvider, mdx: createElement } = require('@mdx-js/react')
 const babel = require('@babel/core');
 const mdx = require('@mdx-js/mdx');
@@ -86,10 +86,11 @@ async function renderWithReact(code) {
       <h1 class="alegrify-h1 alegrify-h1--thin">
         React Alegrify UI
       </h1>
-      <section class="alegrify-section">      
-        ${renderToStaticMarkup(elementWithProvider)}
+      <section class="alegrify-section" data-component>      
+        ${renderToString(elementWithProvider)}
       </section>
     </main>
+    <script src="../dist/docs.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-jsx.min.js"></script>
   </body>
@@ -114,3 +115,4 @@ generateIndex('index', { importPath: '../README.md', exportPath: '../index.html'
 generateIndex('button');
 generateIndex('card');
 generateIndex('checkbox');
+generateIndex('dialog');

@@ -41,7 +41,10 @@ import { Button } from 'react-alegrify-ui';
 
 ## Components
 
-Check out the docs [here](https://dejakob.com/react-alegrify-ui)!
+* [Button](./docs-build/button.html)
+* [Card](./docs-build/card.html)
+* [Checkbox](./docs-build/checkbox.html)
+* [Dialog](./docs-build/dialog.html)
 
 ## "I only want CSS"
 

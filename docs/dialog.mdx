@@ -1,0 +1,38 @@
+# Dialog
+
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Button from '../build/button';
+import Dialog from '../build/dialog';
+
+## Variants
+
+### Default
+
+<Preview
+    id="dialog--default"
+    code={`
+        <Dialog
+            open
+            actions={<Button>OK</Button>}
+            title="Hello there"
+        >
+            Some content
+        </Dialog>
+    `}
+>
+    <Button onClick={() => { setOpen(true) }}>Open dialog</Button>
+    <Dialog
+        open={open}
+        actions={<Button full onClick={() => { setOpen(false) }}>OK</Button>}
+        title="Hello there"
+    >
+        Some content
+    </Dialog>
+</Preview>
+
+## Properties
+
+<PropsTable
+    Component={Dialog}
+/>
