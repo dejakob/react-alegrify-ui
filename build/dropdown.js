@@ -138,14 +138,19 @@ function Dropdown(props) {
       return setOpen(!open);
     },
     checked: open,
-    disabled: props.disabled
+    disabled: props.disabled,
+    "aria-hidden": "true"
   }), /*#__PURE__*/_react["default"].createElement("label", {
+    id: "".concat(id, "__label"),
     className: "alegrify-dropdown__label",
     htmlFor: id,
-    "aria-controls": id
+    "aria-role": "button",
+    "aria-haspopup": "listbox"
   }, value ? value : props.placeholder), /*#__PURE__*/_react["default"].createElement("ul", {
     className: "alegrify-dropdown__list",
-    "data-menu-for": id
+    "data-menu-for": id,
+    "aria-role": "listbox",
+    "aria-labelledby": "".concat(id, "__label")
   }, renderChildren()));
   /**
    * When pressing up, set active to item above

@@ -57,13 +57,17 @@ function Checkbox(props) {
     disabled: props.disabled,
     checked: props.checked,
     id: id,
-    name: props.name
+    name: props.name,
+    "aria-labelledby": "".concat(id, "__label")
   }), /*#__PURE__*/_react["default"].createElement("label", {
     className: "alegrify-checkbox__check",
-    htmlFor: id
+    htmlFor: id,
+    "aria-hidden": "true"
   }), /*#__PURE__*/_react["default"].createElement("label", {
+    id: "".concat(id, "__label"),
     className: "alegrify-checkbox__label",
-    htmlFor: id
+    htmlFor: id,
+    "aria-role": "checkbox"
   }, props.children));
 }
 

@@ -52,7 +52,8 @@ function DropdownItem(props) {
   return /*#__PURE__*/_react["default"].createElement("li", {
     className: "alegrify-dropdown__list-item",
     onMouseOver: props.onHover,
-    onClick: props.onSelect
+    onClick: props.onSelect,
+    "aria-role": "menuitemradio"
   }, /*#__PURE__*/_react["default"].createElement("input", {
     type: "radio",
     className: "alegrify-dropdown__list-item-trigger",
@@ -60,9 +61,11 @@ function DropdownItem(props) {
     value: props.value,
     id: id,
     checked: props.checked,
-    onChange: function onChange() {}
+    onChange: function onChange() {},
+    "aria-hidden": "true"
   }), /*#__PURE__*/_react["default"].createElement("label", {
     htmlFor: id,
+    "aria-role": "none",
     className: "alegrify-dropdown__list-item-label"
   }, props.children));
 }
