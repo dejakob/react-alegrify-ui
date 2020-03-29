@@ -10,6 +10,7 @@ const DefaultExample = () => {
             <Button onClick={() => { setOpen(true) }}>Open dialog</Button>
             <Dialog
                 open={open}
+                onClose={() => setOpen(false)}
                 actions={<Button full onClick={() => { setOpen(false) }}>OK</Button>}
                 title="Hello there"
             >
