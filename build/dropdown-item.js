@@ -50,15 +50,17 @@ function DropdownItem(props) {
       id = _useState2[0];
 
   return /*#__PURE__*/_react["default"].createElement("li", {
-    className: "alegrify-dropdown__list-item"
+    className: "alegrify-dropdown__list-item",
+    onMouseOver: props.onHover,
+    onClick: props.onSelect
   }, /*#__PURE__*/_react["default"].createElement("input", {
     type: "radio",
     className: "alegrify-dropdown__list-item-trigger",
     name: props.name,
     value: props.value,
     id: id,
-    onChange: props.onSelect,
-    checked: props.checked
+    checked: props.checked,
+    onChange: function onChange() {}
   }), /*#__PURE__*/_react["default"].createElement("label", {
     htmlFor: id,
     className: "alegrify-dropdown__list-item-label"
@@ -70,11 +72,6 @@ DropdownItem.propTypes = {
    * Value of the item
    */
   value: _propTypes["default"].string.isRequired,
-
-  /**
-   * Name of the item
-   */
-  name: _propTypes["default"].string.isRequired,
 
   /**
    * Id of the item

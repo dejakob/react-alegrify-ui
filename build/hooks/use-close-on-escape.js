@@ -37,6 +37,7 @@ function useCloseOnEscape(closeMethod) {
 
     if (keyCode === ESCAPE_KEY && typeof closeMethod === 'function') {
       keyUpEvent.preventDefault();
+      keyUpEvent.stopPropagation();
       closeMethod();
     }
   }
