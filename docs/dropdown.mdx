@@ -31,3 +31,30 @@ import DropdownItem from '../build/dropdown-item';
         <DropdownItem value="orange">Orange</DropdownItem>
     </Dropdown>
 </Preview>
+
+### Disabled
+
+<Preview
+    id="dropdown--default"
+    code={`
+        <Dropdown
+            name="fruit[]"
+            placeholder="Select a fruit..."
+            disabled
+        >
+            <DropdownItem value="apple">Apple</DropdownItem>
+            <DropdownItem value="pear">Pear</DropdownItem>
+            <DropdownItem value="orange">Orange</DropdownItem>
+        </Dropdown>
+    `}
+>
+    <Dropdown
+        name="fruit[]"
+        placeholder="Select a fruit..."
+        disabled
+    >
+        <DropdownItem value="apple">Apple</DropdownItem>
+        <DropdownItem value="pear">Pear</DropdownItem>
+        <DropdownItem value="orange">Orange</DropdownItem>
+    </Dropdown>
+</Preview>

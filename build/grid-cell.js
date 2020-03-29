@@ -52,7 +52,8 @@ function GridCell(props) {
     }
   });
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: classNames.join(' ')
+    className: classNames.join(' '),
+    "aria-role": "grid-cell"
   }, props.children);
 }
 

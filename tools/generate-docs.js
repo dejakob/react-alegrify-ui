@@ -118,5 +118,7 @@ generateIndex('card');
 generateIndex('checkbox');
 generateIndex('dialog');
 generateIndex('dl');
+generateIndex('drawer');
 generateIndex('dropdown');
 generateIndex('footer');
+generateIndex('grid');

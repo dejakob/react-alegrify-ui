@@ -46,8 +46,10 @@ import { Button } from 'react-alegrify-ui';
 * [Checkbox](./docs-build/checkbox.html)
 * [Dialog](./docs-build/dialog.html)
 * [Dl](./docs-build/dl.html)
+* [Drawer](./docs-build/drawer.html)
 * [Dropdown](./docs-build/dropdown.html)
 * [Footer](./docs-build/footer.html)
+* [Grid](./docs-build/grid.html)
 
 ## "I only want CSS"
 

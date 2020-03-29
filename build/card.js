@@ -56,6 +56,7 @@ function Card(props) {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("input", {
     type: "checkbox",
     className: "alegrify-card__trigger",
+    "aria-hidden": "true",
     id: id
   }), /*#__PURE__*/_react["default"].createElement("label", {
     className: containerClassNames.join(' '),
