@@ -56,7 +56,8 @@ function InputView(props) {
       onBlur: props.onBlur,
       rows: amountOfLines,
       value: props.value,
-      disabled: props.disabled
+      disabled: props.disabled,
+      error: props.error
     });
   }
 
@@ -72,7 +73,8 @@ function InputView(props) {
     onKeyUp: props.onKeyUp,
     onKeyDown: props.onKeyDown,
     onFocus: props.onFocus,
-    onBlur: props.onBlur
+    onBlur: props.onBlur,
+    error: props.error
   });
 
   function onInput(eventData) {

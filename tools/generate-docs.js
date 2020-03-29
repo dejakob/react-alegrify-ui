@@ -122,3 +122,4 @@ generateIndex('drawer');
 generateIndex('dropdown');
 generateIndex('footer');
 generateIndex('grid');
+generateIndex('input');

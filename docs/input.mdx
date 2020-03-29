@@ -1,0 +1,75 @@
+# Input
+
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Input from '../build/input';
+
+## Variants
+
+### Default
+
+<Preview
+  code={`
+    <Input
+      placeholder="Your name..."
+    />
+  `}
+>
+  <Input
+    placeholder="Your name..."
+  />
+</Preview>
+
+### Disabled
+
+<Preview
+  code={`
+    <Input
+      placeholder="Your name..."
+      disabled
+    />
+  `}
+>
+  <Input
+    placeholder="Your name..."
+    disabled
+  />
+</Preview>
+
+### Error
+
+<Preview
+  code={`
+    <Input
+      placeholder="Your name..."
+      error
+    />
+  `}
+>
+  <Input
+    placeholder="Your name..."
+    error="This field is required"
+  />
+</Preview>
+
+### Multiline
+
+<Preview
+  code={`
+    <Input
+      placeholder="Your name..."
+      multiline
+    />
+  `}
+>
+  <Input
+    placeholder="Your name..."
+    multiline
+  />
+</Preview>
+
+## Properties
+
+<PropsTable
+    Component={Input}
+/>
