@@ -119,12 +119,6 @@ Object.defineProperty(exports, "Main", {
     return _main["default"];
   }
 });
-Object.defineProperty(exports, "NumberInput", {
-  enumerable: true,
-  get: function get() {
-    return _numberInput["default"];
-  }
-});
 Object.defineProperty(exports, "Radio", {
   enumerable: true,
   get: function get() {
@@ -219,8 +213,6 @@ var _input = _interopRequireDefault(require("./input"));
 var _label = _interopRequireDefault(require("./label"));
 
 var _main = _interopRequireDefault(require("./main"));
-
-var _numberInput = _interopRequireDefault(require("./number-input"));
 
 var _radio = _interopRequireDefault(require("./radio"));
 
