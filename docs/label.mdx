@@ -1,0 +1,45 @@
+# Label
+
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Label from '../build/label';
+
+## Variants
+
+### Default
+
+<Preview
+  code={`
+    <Label>
+      Some label
+    </Label>
+  `}
+>
+  <Label>
+    Some label
+  </Label>
+</Preview>
+
+### Error
+
+<Preview
+  code={`
+    <Label
+      error
+    >
+      Some label
+    </Label>
+  `}
+>
+  <Label
+    error
+  >
+    Some label
+  </Label>
+</Preview>
+
+## Properties
+
+<PropsTable
+    Component={Label}
+/>

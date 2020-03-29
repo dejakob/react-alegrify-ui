@@ -51,6 +51,8 @@ import { Button } from 'react-alegrify-ui';
 * [Footer](./docs-build/footer.html)
 * [Grid](./docs-build/grid.html)
 * [Input](./docs-build/input.html)
+* [Label](./docs-build/label.html)
+* [Notification](./docs-build/notification.html)
 
 ## "I only want CSS"
 

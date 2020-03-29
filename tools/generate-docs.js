@@ -111,7 +111,7 @@ function isExternalPath(url) {
   const domain = url.replace('http://','').replace('https://','').split('/')[0];
   return DOMAINS.indexOf(domain) === -1;
 }
-
+  
 generateIndex('index', { importPath: '../README.md', exportPath: '../index.html' });
 generateIndex('button');
 generateIndex('card');
@@ -123,3 +123,5 @@ generateIndex('dropdown');
 generateIndex('footer');
 generateIndex('grid');
 generateIndex('input');
+generateIndex('label');
+generateIndex('notification');
