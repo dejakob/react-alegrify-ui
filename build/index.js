@@ -131,12 +131,6 @@ Object.defineProperty(exports, "RangeInput", {
     return _rangeInput["default"];
   }
 });
-Object.defineProperty(exports, "StatusInput", {
-  enumerable: true,
-  get: function get() {
-    return _statusInput["default"];
-  }
-});
 Object.defineProperty(exports, "Section", {
   enumerable: true,
   get: function get() {
@@ -217,8 +211,6 @@ var _main = _interopRequireDefault(require("./main"));
 var _radio = _interopRequireDefault(require("./radio"));
 
 var _rangeInput = _interopRequireDefault(require("./range-input"));
-
-var _statusInput = _interopRequireDefault(require("./status-input"));
 
 var _section = _interopRequireDefault(require("./section"));
 
