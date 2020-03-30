@@ -1,0 +1,59 @@
+# Range Input
+
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import RangeInput from '../build/range-input';
+
+## Variants
+
+### Default
+
+<Preview
+  code={`
+    <RangeInput
+      name="my_mood"
+      min={1}
+      max={10}
+      lowIndicator="-"
+      highIndicator="+"
+    />
+  `}
+>
+  <RangeInput
+    name="my_mood"
+    min={1}
+    max={10}
+    lowIndicator="-"
+    highIndicator="+"
+  />
+</Preview>
+
+### Disabled
+
+<Preview
+  code={`
+    <RangeInput
+      disabled
+      name="my_mood2"
+      min={1}
+      max={10}
+      lowIndicator="-"
+      highIndicator="+"
+    />
+  `}
+>
+  <RangeInput
+    disabled
+    name="my_mood2"
+    min={1}
+    max={10}
+    lowIndicator="-"
+    highIndicator="+"
+  />
+</Preview>
+
+## Properties
+
+<PropsTable
+    Component={RangeInput}
+/>

@@ -1,0 +1,55 @@
+# Radio
+
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Radio from '../build/radio';
+
+## Variants
+
+### Default
+
+<Preview
+  code={`
+    <Radio
+      name="fruit[]"
+      id="fruit__orange"
+    >
+      Orange
+    </Radio>
+  `}
+>
+  <Radio
+    name="fruit[]"
+    id="fruit__orange"
+  >
+    Orange
+  </Radio>
+</Preview>
+
+### Disabled
+
+<Preview
+  code={`
+    <Radio
+      name="fruit[]"
+      id="fruit__orange"
+      disabled
+    >
+      Orange
+    </Radio>
+  `}
+>
+  <Radio
+    name="fruit[]"
+    id="fruit__orange"
+    disabled
+  >
+    Pear
+  </Radio>
+</Preview>
+
+## Properties
+
+<PropsTable
+    Component={Radio}
+/>

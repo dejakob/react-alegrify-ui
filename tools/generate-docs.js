@@ -125,3 +125,5 @@ generateIndex('grid');
 generateIndex('input');
 generateIndex('label');
 generateIndex('notification');
+generateIndex('radio');
+generateIndex('range-input');
