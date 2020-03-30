@@ -58,6 +58,10 @@ import { Button } from 'react-alegrify-ui';
 * [Section](./docs-build/section.html)
 * [Typography](./docs-build/typography.html)
 
+## Helpers
+
+* [Spacing](./docs-build/spacing.html)
+
 ## "I only want CSS"
 
 If you only want to use CSS, take a look here: [Alegrify UI](https://dejakob.com/alegrify-ui).

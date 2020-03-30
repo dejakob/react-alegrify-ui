@@ -131,3 +131,5 @@ generateIndex('radio');
 generateIndex('range-input');
 generateIndex('section');
 generateIndex('typography');
+
+generateIndex('spacing');
