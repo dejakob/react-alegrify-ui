@@ -9,8 +9,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _inputWithState = require("./abstract/input-with-state");
-
 var _universalProps = require("./helpers/universal-props");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -28,10 +26,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * ```
  */
 function Input(props) {
-  return (0, _inputWithState.wrapWithInputState)(InputView)(props);
-}
-
-function InputView(props) {
   var classNames = ['alegrify-input'];
 
   if (props.className) {
@@ -49,7 +43,7 @@ function InputView(props) {
       name: props.name,
       className: classNames.join(' '),
       placeholder: props.placeholder || '',
-      onInput: onInput,
+      onChange: onChange,
       onKeyUp: props.onKeyUp,
       onKeyDown: props.onKeyDown,
       onFocus: props.onFocus,
@@ -69,7 +63,7 @@ function InputView(props) {
     placeholder: props.placeholder || '',
     value: props.value,
     disabled: props.disabled,
-    onInput: onInput,
+    onChange: onChange,
     onKeyUp: props.onKeyUp,
     onKeyDown: props.onKeyDown,
     onFocus: props.onFocus,
@@ -77,9 +71,9 @@ function InputView(props) {
     error: props.error
   });
 
-  function onInput(eventData) {
+  function onChange(eventData) {
     var value = eventData.target.value;
-    props.changeValue(value);
+    props.onValueChange(value);
   }
 }
 
@@ -88,6 +82,11 @@ Input.propTypes = {
    * Value to show in the input
    */
   value: _propTypes["default"].string.isRequired,
+
+  /**
+   * On value change method (passes value)
+   */
+  onValueChange: _propTypes["default"].func.isRequired,
 
   /**
    * Additional classnames
@@ -122,17 +121,12 @@ Input.propTypes = {
   /**
    * Input id
    */
-  id: _propTypes["default"].string.isRequired,
+  id: _propTypes["default"].string,
 
   /**
    * Input name
    */
-  name: _propTypes["default"].string.isRequired,
-
-  /**
-   * On value change method (passes value)
-   */
-  onValueChange: _propTypes["default"].func,
+  name: _propTypes["default"].string,
 
   /**
    * Native onKeyUp event
@@ -156,9 +150,7 @@ Input.propTypes = {
 };
 Input.defaultProps = {
   type: 'text',
-  placeholder: '',
-  disabled: false,
-  multiline: false
+  placeholder: ''
 };
 
 var _default = (0, _universalProps.attachUniversalProps)(Input);

@@ -12,11 +12,16 @@ import Input from '../build/input';
   code={`
     <Input
       placeholder="Your name..."
+      value=""
+      onValueChange={() => {}}
     />
   `}
 >
   <Input
+    id="input--default"
     placeholder="Your name..."
+    value=""
+    onValueChange={() => {}}
   />
 </Preview>
 
@@ -26,12 +31,16 @@ import Input from '../build/input';
   code={`
     <Input
       placeholder="Your name..."
+      value=""
+      onValueChange={() => {}}
       disabled
     />
   `}
 >
   <Input
     placeholder="Your name..."
+    value=""
+    onValueChange={() => {}}
     disabled
   />
 </Preview>
@@ -42,6 +51,8 @@ import Input from '../build/input';
   code={`
     <Input
       placeholder="Your name..."
+      value=""
+      onValueChange={() => {}}
       error
     />
   `}
@@ -49,6 +60,8 @@ import Input from '../build/input';
   <Input
     placeholder="Your name..."
     error="This field is required"
+    value=""
+    onValueChange={() => {}}
   />
 </Preview>
 
@@ -59,12 +72,16 @@ import Input from '../build/input';
     <Input
       placeholder="Your name..."
       multiline
+      value=""
+      onValueChange={() => {}}
     />
   `}
 >
   <Input
     placeholder="Your name..."
     multiline
+    value=""
+    onValueChange={() => {}}
   />
 </Preview>
 

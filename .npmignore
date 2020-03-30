@@ -1,3 +1,6 @@
 .babelrc
 lib
 stories
+docs-build
+tools
+dist
