@@ -29,7 +29,7 @@ import '../node_modules/alegrify-ui/alegrify-ui.min.css';
 
 In any other case manually include the [alegrify-ui.min.css](https://raw.githubusercontent.com/dejakob/alegrify-ui/master/alegrify-ui.min.css) file into your html file:
 
-```
+```html
 <link rel="stylesheet" href="<PATH>/alegrify-ui.min.css" />
 ```
 
@@ -41,8 +41,27 @@ import { Button } from 'react-alegrify-ui';
 
 ## Components
 
-Check out the docs [here](https://dejakob.github.io/react-alegrify-ui)!
+* [Button](./docs-build/button.html)
+* [Card](./docs-build/card.html)
+* [Checkbox](./docs-build/checkbox.html)
+* [Dialog](./docs-build/dialog.html)
+* [Dl](./docs-build/dl.html)
+* [Drawer](./docs-build/drawer.html)
+* [Dropdown](./docs-build/dropdown.html)
+* [Footer](./docs-build/footer.html)
+* [Grid](./docs-build/grid.html)
+* [Input](./docs-build/input.html)
+* [Label](./docs-build/label.html)
+* [Notification](./docs-build/notification.html)
+* [Radio](./docs-build/radio.html)
+* [Range Input](./docs-build/range-input.html)
+* [Section](./docs-build/section.html)
+* [Typography](./docs-build/typography.html)
+
+## Helpers
+
+* [Spacing](./docs-build/spacing.html)
 
 ## "I only want CSS"
 
-If you only want to use CSS, take a look here: [Alegrify UI](https://github.com/dejakob/alegrify-ui).
+If you only want to use CSS, take a look here: [Alegrify UI](https://dejakob.com/alegrify-ui).

@@ -1,32 +1,45 @@
----
-name: Label
----
-
 # Label
 
-import { Playground } from 'docz';
-import Label from '../lib/label';
-import Input from '../lib/Input';
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Label from '../build/label';
 
-## Example
+## Variants
 
-<Playground>
-    <Label
-        htmlFor="input_a"
-    >
-        About Input
+### Default
+
+<Preview
+  code={`
+    <Label>
+      Some label
     </Label>
-    <Input
-        name="input_a"
-        id="input_a"
-    />
-</Playground>
+  `}
+>
+  <Label>
+    Some label
+  </Label>
+</Preview>
+
+### Error
+
+<Preview
+  code={`
+    <Label
+      error
+    >
+      Some label
+    </Label>
+  `}
+>
+  <Label
+    error
+  >
+    Some label
+  </Label>
+</Preview>
 
 ## Properties
 
-| Property    | Type           | Required? | Default |
-|-------------|----------------|-----------|---------|
-|className    |String          |No         |''       |
-|error        |Boolean         |No         |false    |
-|htmlFor      |String          |Recommended|         |
-
+<PropsTable
+    Component={Label}
+/>

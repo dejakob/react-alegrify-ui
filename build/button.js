@@ -9,10 +9,30 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _universalProps = require("./helpers/universal-props");
+var _helpers = require("./helpers");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var CSS_CLASSNAME = 'alegrify-button';
+var VARIANTS = ['primary', 'destructive', 'full', 'link', 'loading'];
 /**
  * <Button />
  * 
@@ -26,74 +46,39 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * </Button>
  * ```
  */
+
 function Button(props) {
-  var classNames = ['alegrify-button'];
-  classNames.push(props.className);
+  var classNames = [CSS_CLASSNAME].concat(_toConsumableArray(VARIANTS.filter(function (variant) {
+    return props[variant];
+  }).map(function (variant) {
+    return "".concat(CSS_CLASSNAME, "--").concat(variant);
+  })));
 
-  if (props.primary) {
-    classNames.push('alegrify-button--primary');
+  if (props.className) {
+    classNames.push(props.className);
   }
 
-  if (props.destructive) {
-    classNames.push('alegrify-button--destructive');
-  }
-
-  if (props.full) {
-    classNames.push('alegrify-button--full');
-  }
-
-  if (props.small) {
-    classNames.push('alegrify-button--small');
-  }
-
-  if (props.large) {
-    classNames.push('alegrify-button--large');
-  }
-
-  return _react["default"].createElement("button", {
+  return /*#__PURE__*/_react["default"].createElement("button", {
     className: classNames.join(' '),
     type: props.type || 'submit',
     disabled: props.disabled,
     onClick: props.onClick
-  }, props.children);
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    className: "".concat(CSS_CLASSNAME, "__content")
+  }, props.children));
 }
 
-Button.propTypes = {
+Button.propTypes = _objectSpread({
   /**
    * Button text / button content
    */
-  children: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].node), _propTypes["default"].node]).isRequired,
+  children: _propTypes["default"].node.isRequired,
 
   /**
    * Additional classnames
    */
-  className: _propTypes["default"].string,
-
-  /**
-   * Is this a primary button?
-   */
-  primary: _propTypes["default"].bool,
-
-  /**
-   * Is this a destructive button?
-   */
-  destructive: _propTypes["default"].bool,
-
-  /**
-   * Is this a full width button?
-   */
-  full: _propTypes["default"].bool,
-
-  /**
-   * Is this a small variant button?
-   */
-  small: _propTypes["default"].bool,
-
-  /**
-   * Is this a large variant button?
-   */
-  large: _propTypes["default"].bool,
-
+  className: _propTypes["default"].string
+}, (0, _helpers.variantsToPropTypes)(VARIANTS), {
   /**
    * button|submit
    */
@@ -108,16 +93,11 @@ Button.propTypes = {
    * Click action
    */
   onClick: _propTypes["default"].func
-};
+});
 Button.defaultProps = {
-  primary: false,
-  full: false,
-  small: false,
-  large: false,
-  type: 'submit',
-  disabled: false
+  type: 'submit'
 };
 
-var _default = (0, _universalProps.attachUniversalProps)(Button);
+var _default = (0, _helpers.attachUniversalProps)(Button);
 
 exports["default"] = _default;

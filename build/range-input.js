@@ -9,8 +9,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _inputWithState = require("./abstract/input-with-state");
-
 var _universalProps = require("./helpers/universal-props");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -29,24 +27,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * ```
  */
 function RangeInput(props) {
-  return (0, _inputWithState.wrapWithInputState)(RangeInputView)(props);
-}
-
-function RangeInputView(props) {
   var classNames = ['alegrify-range-input'];
 
   if (props.className) {
     classNames.push(props.className);
   }
 
-  return _react["default"].createElement("input", {
+  return /*#__PURE__*/_react["default"].createElement("input", {
     type: "range",
     id: props.id,
     name: props.name,
     className: classNames.join(' '),
     disabled: props.disabled,
     onChange: function onChange(e) {
-      return props.changeValue(e.target.value);
+      return props.onValueChange(e.target.value);
     },
     value: props.value,
     "data-low-indicator": props.lowIndicator,

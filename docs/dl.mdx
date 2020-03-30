@@ -1,20 +1,27 @@
----
-name: Description list
----
+# Dl
 
-# Description list
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Dl, { Dt, Dd } from '../build/dl';
 
-import { Playground, PropsTable } from 'docz';
-import Dl, { Dt, Dd } from '../lib/dl';
+## Variants
 
-## Example
+### Default
 
-<Playground>
+<Preview
+    code={`
+        <Dl>
+          <Dt>When</Dt>
+          <Dd>End of 2020</Dd>
+          <Dt>Where</Dt>
+          <Dd>Planet Earth</Dd>
+        </Dl>
+    `}
+>
     <Dl>
-        <Dt>Term 1</Dt>
-        <Dd>Explanation 1</Dd>
-
-        <Dt>Term 2</Dt>
-        <Dd>Explanation 2</Dd>
+        <Dt>When</Dt>
+        <Dd>End of 2020</Dd>
+        <Dt>Where</Dt>
+        <Dd>Planet Earth</Dd>
     </Dl>
-</Playground>
+</Preview>

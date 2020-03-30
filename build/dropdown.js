@@ -1,5 +1,7 @@
 "use strict";
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7,42 +9,44 @@ exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactDom = _interopRequireDefault(require("react-dom"));
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _universalProps = require("./helpers/universal-props");
 
+var _useKeydown = _interopRequireDefault(require("./hooks/use-keydown"));
+
+var _useCloseOnEscape = _interopRequireDefault(require("./hooks/use-close-on-escape"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var KEY_CODES = {
   UP: 38,
   DOWN: 40,
   ENTER: 13,
+  SPACE: 32,
   ESCAPE: 27,
   TAB: 9
 };
+var noonce = 0;
 /**
+ * 
+ * Dropdown
  * ```jsx
  * <Dropdown>
  *      <DropdownItem
@@ -57,219 +61,222 @@ var KEY_CODES = {
  *      </DropdownItem>
  * </Dropdown>
  * ```
+ * 
+ * @TODO: search/filter or filter by key press
+ * 
  */
 
-var Dropdown =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Dropdown, _Component);
+function Dropdown(props) {
+  var _useState = (0, _react.useState)(findIndexOfSelectedOption()),
+      _useState2 = _slicedToArray(_useState, 2),
+      active = _useState2[0],
+      setActive = _useState2[1];
 
-  function Dropdown() {
-    var _this;
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      open = _useState4[0],
+      setOpen = _useState4[1];
 
-    _classCallCheck(this, Dropdown);
+  var _useState5 = (0, _react.useState)(typeof props.id === 'string' && props.id.trim() !== '' ? props.id : "alegrify-dropdown--".concat(++noonce)),
+      _useState6 = _slicedToArray(_useState5, 1),
+      id = _useState6[0];
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Dropdown).call(this));
-    _this.changeSelectedIndex = _this.changeSelectedIndex.bind(_assertThisInitialized(_this));
-    _this.handleBodyClick = _this.handleBodyClick.bind(_assertThisInitialized(_this));
-    _this.actions = {
-      handleSelectOption: _this.handleSelectOption.bind(_assertThisInitialized(_this)),
-      handleOpenDropdown: _this.handleOpenDropdown.bind(_assertThisInitialized(_this)),
-      handleKeyDown: _this.handleKeyDown.bind(_assertThisInitialized(_this))
+  var stateScope = (0, _react.useRef)({
+    active: active,
+    open: open
+  });
+
+  var _useKeyDown = (0, _useKeydown["default"])(KEY_CODES.UP, KEY_CODES.DOWN, KEY_CODES.ENTER, KEY_CODES.TAB, KEY_CODES.SPACE),
+      _useKeyDown2 = _slicedToArray(_useKeyDown, 5),
+      onUpArrow = _useKeyDown2[0],
+      onDownArrow = _useKeyDown2[1],
+      onEnter = _useKeyDown2[2],
+      onTab = _useKeyDown2[3],
+      onSpace = _useKeyDown2[4];
+
+  (0, _useCloseOnEscape["default"])(function () {
+    return setOpen(false);
+  });
+  (0, _react.useEffect)(function () {
+    onUpArrow(handleUpArrow);
+    onDownArrow(handleDownArrow);
+    onEnter(handleEnter);
+    onSpace(handleEnter);
+    onTab(handleTab);
+    document.body.addEventListener('click', handleBodyClick);
+    return function () {
+      document.body.removeEventListener('click', handleBodyClick);
     };
-    return _this;
-  }
+  }, []);
+  (0, _react.useEffect)(function () {
+    setActive(findIndexOfSelectedOption());
+  }, [props.value]);
+  (0, _react.useEffect)(function () {
+    stateScope.current.active = active;
+  }, [active]);
+  (0, _react.useEffect)(function () {
+    stateScope.current.open = open;
 
-  _createClass(Dropdown, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      var _this2 = this;
-
-      var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react["default"].Children.toArray(this.props.children);
-      var value = childrenAsArray.find(function (child) {
-        return _this2.props.value === child.props.value;
-      });
-      this.setState({
-        value: value || null,
-        open: false
-      });
-
-      if (typeof window !== 'undefined') {
-        document.body.addEventListener('click', this.handleBodyClick);
-      }
+    if (!open) {
+      stateScope.current.active = findIndexOfSelectedOption();
     }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      if (typeof window !== 'undefined') {
-        document.body.removeEventListener('click', this.handleBodyClick);
-      }
-    }
-  }, {
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(newProps) {
-      if (newProps.value !== this.state.value && newProps.value !== this.props.value) {
-        var childrenAsArray = typeof newProps.children.map === 'function' ? newProps.children : _react["default"].Children.toArray(newProps.children);
-        var value = childrenAsArray.find(function (child) {
-          return newProps.value === child.props.value;
-        });
-        this.setState({
-          value: value || null
-        });
-      }
-    }
-  }, {
-    key: "componentWillUpdate",
-    value: function componentWillUpdate(newProps, newState) {
-      if ((newState.value && newState.value.props.value) !== (this.state.value && this.state.value.props.value)) {
-        if (typeof this.props.onValueChange === 'function' && newState.value) {
-          this.props.onValueChange(newState.value.props.value);
-        }
-      }
-    }
-  }, {
-    key: "handleSelectOption",
-    value: function handleSelectOption(index) {
-      var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react["default"].Children.toArray(this.props.children);
-      this.setState({
-        value: childrenAsArray[index],
-        open: false
-      });
-    }
-  }, {
-    key: "handleKeyDown",
-    value: function handleKeyDown(eventData) {
-      var keyCode = eventData.keyCode;
-
-      switch (keyCode) {
-        case KEY_CODES.UP:
-          eventData.preventDefault();
-          this.changeSelectedIndex(-1);
-          break;
-
-        case KEY_CODES.DOWN:
-          eventData.preventDefault();
-          this.changeSelectedIndex(1);
-          break;
-
-        case KEY_CODES.ENTER:
-          eventData.preventDefault();
-          this.setState({
-            open: !this.state.open
-          });
-          break;
-
-        case KEY_CODES.ESCAPE:
-          eventData.preventDefault();
-          this.setState({
-            open: false
-          });
-          break;
-
-        default:
-          var _char = eventData.which || eventData.charCode;
-
-          if (_char >= 32) {
-            var query = String.fromCharCode(_char);
-            var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react["default"].Children.toArray(this.props.children);
-            var index = Math.max(childrenAsArray.findIndex(function (child) {
-              return child.props.value.toLowerCase().indexOf(query.toLowerCase()) > -1;
-            }), 0);
-            this.setState({
-              value: childrenAsArray[index]
-            });
-          }
-
-      }
-    }
-  }, {
-    key: "handleOpenDropdown",
-    value: function handleOpenDropdown(eventData) {
-      this.setState({
-        open: eventData.target.checked
-      });
-    }
-  }, {
-    key: "changeSelectedIndex",
-    value: function changeSelectedIndex(increment) {
-      var _this3 = this;
-
-      var childrenAsArray = typeof this.props.children.map === 'function' ? this.props.children : _react["default"].Children.toArray(this.props.children);
-      var currentIndex = Math.max(childrenAsArray.findIndex(function (child) {
-        return _this3.state.value && _this3.state.value.props.value === child.props.value;
-      }), 0);
-      var newIndex = (currentIndex + childrenAsArray.length + increment) % childrenAsArray.length;
-      this.setState({
-        value: childrenAsArray[newIndex]
-      });
-    }
-  }, {
-    key: "handleBodyClick",
-    value: function handleBodyClick(eventData) {
-      var target = eventData.target;
-      var node = target;
-
-      while (node !== document.body && node !== _reactDom["default"].findDOMNode(this)) {
-        node = node.parentNode;
-      }
-
-      if (node === document.body) {
-        this.setState({
-          open: false
-        });
-      }
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return DropdownView(Object.assign({}, this.props, this.state, this.actions));
-    }
-  }]);
-
-  return Dropdown;
-}(_react.Component);
-/**
- * View for Dropdown
- */
-
-
-function DropdownView(props) {
-  var classNames = ['alegrify-dropdown__container'];
+  }, [open]);
+  var classNames = ['alegrify-dropdown'];
   var value = props.value;
 
   if (typeof props.className === 'string' && props.className.trim() !== '') {
     classNames.push(props.className);
   }
 
-  if (props.disabled) {
-    classNames.push('alegrify-dropdown--disabled');
-  }
-
-  return _react["default"].createElement("div", {
-    className: classNames.join(' '),
-    onKeyDown: props.handleKeyDown
-  }, _react["default"].createElement("input", {
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    className: classNames.join(' ')
+  }, /*#__PURE__*/_react["default"].createElement("input", {
     className: "alegrify-dropdown__trigger",
     type: "checkbox",
-    id: props.id,
-    onChange: props.handleOpenDropdown,
-    checked: props.open,
-    disabled: props.disabled
-  }), _react["default"].createElement("label", {
+    id: id,
+    onChange: function onChange() {
+      return setOpen(!open);
+    },
+    checked: open,
+    disabled: props.disabled,
+    "aria-hidden": "true"
+  }), /*#__PURE__*/_react["default"].createElement("label", {
+    id: "".concat(id, "__label"),
     className: "alegrify-dropdown__label",
-    htmlFor: props.id,
-    "aria-controls": ""
-  }, value ? value.props.children : props.placeholder || '...'), _react["default"].createElement("fieldset", {
-    className: "alegrify-dropdown",
-    role: "menu"
+    htmlFor: id,
+    "aria-role": "button",
+    "aria-haspopup": "listbox"
+  }, value ? value : props.placeholder), /*#__PURE__*/_react["default"].createElement("ul", {
+    className: "alegrify-dropdown__list",
+    "data-menu-for": id,
+    "aria-role": "listbox",
+    "aria-labelledby": "".concat(id, "__label")
   }, renderChildren()));
+  /**
+   * When pressing up, set active to item above
+   * @param {KeyboardEvent} keydownEvent 
+   */
+
+  function handleUpArrow(keydownEvent) {
+    var _stateScope$current = stateScope.current,
+        active = _stateScope$current.active,
+        open = _stateScope$current.open;
+
+    if (open) {
+      keydownEvent.preventDefault();
+      setActive(Math.max(0, active - 1));
+    }
+  }
+  /**
+   * When pressing down, set active to item below
+   * @param {KeyboardEvent} keydownEvent 
+   */
+
+
+  function handleDownArrow(keydownEvent) {
+    var _stateScope$current2 = stateScope.current,
+        active = _stateScope$current2.active,
+        open = _stateScope$current2.open;
+
+    if (open) {
+      keydownEvent.preventDefault();
+      setActive(Math.min(getAmountOfChildren() - 1, active + 1));
+    }
+  }
+  /**
+   * When pressing enter, select active option
+   * @param {KeyboardEvent} keydownEvent 
+   */
+
+
+  function handleEnter(keydownEvent) {
+    var _stateScope$current3 = stateScope.current,
+        active = _stateScope$current3.active,
+        open = _stateScope$current3.open;
+
+    if (open) {
+      keydownEvent.preventDefault();
+      handleSelectOption(active);
+    }
+  }
+  /**
+   * When pressing tab, go close the dropdown
+   *  focus state will be on other element
+   */
+
+
+  function handleTab() {
+    var open = stateScope.current.open;
+
+    if (open) {
+      setOpen(false);
+    }
+  }
+  /**
+   * When clicking body (aka clicking outside the dropdown),
+   *  close the menu
+   */
+
+
+  function handleBodyClick(clickEvent) {
+    var target = clickEvent.target;
+    var open = stateScope.current.open;
+
+    if (open) {
+      var node = target;
+
+      while (node !== document.body) {
+        if (node.hasAttribute('data-menu-for') && node.getAttribute('data-menu-for') === "".concat(id)) {
+          return;
+        }
+
+        node = node.parentNode;
+      }
+
+      setOpen(false);
+    }
+  }
+
+  function findIndexOfSelectedOption() {
+    var arrayOfChildren = Array.isArray(props.children) ? props.children : _react["default"].Children.toArray(props.children);
+    return arrayOfChildren.findIndex(function (child) {
+      return child.props.value === props.value;
+    });
+  }
+  /**
+   * @returns {Number}
+   */
+
+
+  function getAmountOfChildren() {
+    return Array.isArray(props.children) ? props.children.length : _react["default"].Children.count(props.children);
+  }
+  /**
+   * Fire change event with selected value
+   *  and close the menu
+   * @param {Number} index 
+   */
+
+
+  function handleSelectOption(index) {
+    var arrayOfChildren = Array.isArray(props.children) ? props.children : _react["default"].Children.toArray(props.children);
+    setOpen(false);
+    setActive(index);
+
+    if (arrayOfChildren[index]) {
+      var selectedValue = arrayOfChildren[index].props.value;
+      props.onValueChange(selectedValue);
+    }
+  }
   /**
    * Render dropdown items
    * (Can either be an array of children or React.children)
    */
 
+
   function renderChildren() {
-    if (!props.open) {
+    // Render all items server side for SEO
+    if (typeof window !== 'undefined' && !open) {
       return null;
     }
 
@@ -290,27 +297,28 @@ function DropdownView(props) {
     var index = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     return _react["default"].cloneElement(child, {
       onSelect: function onSelect() {
-        return props.handleSelectOption(index);
+        return handleSelectOption(index);
       },
-      multiSelect: props.multiSelect,
-      checked: props.value && props.value.props.value === child.props.value,
+      onHover: function onHover() {
+        return setActive(index);
+      },
+      checked: active === index,
       name: props.name,
       key: index
     });
   }
-} // Todo: disabled
-
+}
 
 Dropdown.propTypes = {
   /**
    * Id of the dropdown
    */
-  id: _propTypes["default"].string.isRequired,
+  id: _propTypes["default"].string,
 
   /**
    * Name of the dropdown
    */
-  name: _propTypes["default"].string.isRequired,
+  name: _propTypes["default"].string,
 
   /**
    * Items for the dropdown
@@ -341,13 +349,11 @@ Dropdown.propTypes = {
    * Gets triggered when value changes
    * Passes value string as argument
    */
-  onValueChange: _propTypes["default"].func
+  onValueChange: _propTypes["default"].func.isRequired
 };
 Dropdown.defaultProps = {
   value: null,
-  placeholder: '...',
-  disabled: false,
-  multiSelect: false
+  placeholder: 'Please select...'
 };
 
 var _default = (0, _universalProps.attachUniversalProps)(Dropdown);

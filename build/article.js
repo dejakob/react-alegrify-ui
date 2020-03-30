@@ -33,7 +33,7 @@ function Article(props) {
     classNames.push(props.className);
   }
 
-  return _react["default"].createElement("article", {
+  return /*#__PURE__*/_react["default"].createElement("article", {
     className: classNames.join(' ')
   }, props.children);
 }

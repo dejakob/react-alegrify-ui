@@ -1,55 +1,55 @@
----
-name: Radio
----
-
 # Radio
 
-import { Playground } from 'docz';
-import Radio from '../lib/radio';
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Radio from '../build/radio';
 
 ## Variants
 
 ### Default
 
-<Playground>
+<Preview
+  code={`
     <Radio
-        id="light"
-        name="light"
+      name="fruit[]"
+      id="fruit__orange"
     >
-        Some label
+      Orange
     </Radio>
-</Playground>
-
-### Checked
-
-<Playground>
-    <Radio
-        id="light"
-        name="light"
-        checked
-    >
-        Some label
-    </Radio>
-</Playground>
+  `}
+>
+  <Radio
+    name="fruit[]"
+    id="fruit__orange"
+  >
+    Orange
+  </Radio>
+</Preview>
 
 ### Disabled
 
-<Playground>
+<Preview
+  code={`
     <Radio
-        id="light"
-        name="light"
-        disabled
+      name="fruit[]"
+      id="fruit__orange"
+      disabled
     >
-        Some label
+      Orange
     </Radio>
-</Playground>
+  `}
+>
+  <Radio
+    name="fruit[]"
+    id="fruit__orange"
+    disabled
+  >
+    Pear
+  </Radio>
+</Preview>
 
 ## Properties
 
-| Property    | Type           | Required? | Default |
-|-------------|----------------|-----------|---------|
-|id           |String          |Yes        |         |
-|name         |String          |Yes        |         |
-|className    |String          |No         |''       |
-|checked      |Boolean         |No         |false    |
-|disabled     |Boolean         |No         |false    |
+<PropsTable
+    Component={Radio}
+/>

@@ -33,10 +33,14 @@ function getAdditionalClassNames(props) {
 }
 
 function attachUniversalProps(Component) {
-  return function (props) {
+  var WrappedComponent = function WrappedComponent(props) {
     var classNames = getAdditionalClassNames(props);
-    return _react["default"].createElement(Component, _extends({}, props, {
+    return /*#__PURE__*/_react["default"].createElement(Component, _extends({}, props, {
       className: classNames.join(' ')
     }));
   };
+
+  WrappedComponent.propTypes = Component.propTypes;
+  WrappedComponent.defaultProps = Component.defaultProps;
+  return WrappedComponent;
 }

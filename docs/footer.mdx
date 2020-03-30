@@ -1,26 +1,21 @@
----
-name: Footer
----
-
 # Footer
 
-import { Playground } from 'docz';
-import Footer from '../lib/footer';
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Footer from '../build/footer';
 
-    <Footer
-        links={[
-            { href: 'https://alegrify.com', title: 'Alegrify', label: 'Alegrify' },
-            { href: 'https://google.com', title: 'Google', label: 'Google' },
-        ]}
-        logo={<span>😍</span>}
-    >
-        Some more content
+## Variants
+
+### Default
+
+<Preview
+    code={`
+        <Footer>
+            Alegrify UI
+        </Dropdown>
+    `}
+>
+    <Footer>
+        Alegrify UI
     </Footer>
-
-## Properties
-
-| Property    | Type                         | Required? | Default |
-|-------------|------------------------------|-----------|---------|
-|className    |String                        |No         |''       |
-|links        |Array.<{ title, href, label }>|No         |[]       |
-|logo         |Component                     |No         |null     |
+</Preview>

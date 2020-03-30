@@ -1,57 +1,83 @@
----
-name: Checkbox
----
-
 # Checkbox
 
-import { Playground, PropsTable } from 'docz';
-import Checkbox from '../lib/checkbox';
-
-Note: material icons are required for the checkbox
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Checkbox from '../build/checkbox';
 
 ## Variants
 
 ### Default
 
-<Playground>
-    <Checkbox
-        id="light"
-        name="light"
-    >
-        Some label
+<Preview
+    code={`
+        <Checkbox>
+            Check me!
+        </Checkbox>
+    `}
+>
+    <Checkbox>
+        Check me!
     </Checkbox>
-</Playground>
+</Preview>
 
 ### Checked
 
-<Playground>
+<Preview
+    code={`
+        <Checkbox
+            checked
+        >
+            Check me!
+        </Checkbox>
+    `}
+>
     <Checkbox
-        id="light"
-        name="light"
         checked
     >
-        Some label
+        Check me!
     </Checkbox>
-</Playground>
+</Preview>
 
 ### Disabled
 
-<Playground>
+<Preview
+    code={`
+        <Checkbox
+            disabled
+        >
+            Check me!
+        </Checkbox>
+    `}
+>
     <Checkbox
-        id="light"
-        name="light"
         disabled
     >
-        Some label
+        Check me!
     </Checkbox>
-</Playground>
+</Preview>
+
+### Loading
+
+<Preview
+    code={`
+        <Checkbox
+            checked
+            loading
+        >
+            Check me!
+        </Checkbox>
+    `}
+>
+    <Checkbox
+        checked
+        loading
+    >
+        Check me!
+    </Checkbox>
+</Preview>
 
 ## Properties
 
-| Property  | Type    | Required? | Default |
-|-----------|---------|-----------|---------|
-|id         |String   |Yes        |''       |
-|name       |String   |Yes        |''       |
-|className  |String   |No         |''       |
-|disabled   |Boolean  |No         |false    |
-|checked    |Boolean  |No         |false    |
+<PropsTable
+    Component={Checkbox}
+/>

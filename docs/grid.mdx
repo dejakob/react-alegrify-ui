@@ -1,69 +1,130 @@
----
-name: Grid
----
-
 # Grid
 
-import { Playground } from 'docz';
-import Grid from '../lib/grid';
-import GridCell from '../lib/grid-cell';
-import Section from '../lib/section';
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Grid from '../build/grid';
+import GridCell from '../build/grid-cell';
 
-Based on a 12 column grid system.
-Adding `six` will give a 50% width, because 6/12 = 50%.
+## Variants
 
-## Example
+### Default
 
-<Playground>
-    <Grid
-        all
-    >
-        <GridCell
-            six
-        >
-            <Section>Cell 1</Section>
-        </GridCell>
-        <GridCell
-            six
-        >
-            <Section>Cell 2</Section>
-        </GridCell>
-
-        <GridCell
-            four
-        >
-            <Section>Cell 3</Section>
-        </GridCell>
-        <GridCell
-            four
-        >
-            <Section>Cell 4</Section>
-        </GridCell>
-        <GridCell
-            four
-        >
-            <Section>Cell 5</Section>
-        </GridCell>
-
-        <GridCell
-            three
-        >
-            <Section>Cell 6</Section>
-        </GridCell>
-        <GridCell
-            three
-        >
-            <Section>Cell 7</Section>
-        </GridCell>
-        <GridCell
-            three
-        >
-            <Section>Cell 8</Section>
-        </GridCell>
-        <GridCell
-            three
-        >
-            <Section>Cell 9</Section>
-        </GridCell>
+<Preview
+    code={`
+        <Grid>
+            <GridCell three>A</GridCell>
+            <GridCell three>A</GridCell>
+            <GridCell three>A</GridCell>
+            <GridCell three>A</GridCell>
+            <GridCell four>A</GridCell>
+            <GridCell four>A</GridCell>
+            <GridCell four>A</GridCell>
+            <GridCell six>A</GridCell>
+            <GridCell six>A</GridCell>
+        </Grid>
+    `}
+>
+    <Grid>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>A</div></GridCell>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>A</div></GridCell>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>A</div></GridCell>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>A</div></GridCell>
+        <GridCell four><div style={{ backgroundColor: '#ccc' }}>A</div></GridCell>
+        <GridCell four><div style={{ backgroundColor: '#ccc' }}>A</div></GridCell>
+        <GridCell four><div style={{ backgroundColor: '#ccc' }}>A</div></GridCell>
+        <GridCell six><div style={{ backgroundColor: '#ccc' }}>A</div></GridCell>
+        <GridCell six><div style={{ backgroundColor: '#ccc' }}>A</div></GridCell>
     </Grid>
-</Playground>
+</Preview>
+
+### Reverse
+
+<Preview
+    code={`
+        <Grid reverse>
+            <GridCell three>A</GridCell>
+            <GridCell three>B</GridCell>
+            <GridCell three>C</GridCell>
+            <GridCell three>D</GridCell>
+        </Grid>
+    `}
+>
+    <Grid reverse>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>A</div></GridCell>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>B</div></GridCell>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>C</div></GridCell>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>D</div></GridCell>
+    </Grid>
+</Preview>
+
+### Bleed
+
+<Preview
+    code={`
+        <Grid bleed>
+            <GridCell three>A</GridCell>
+            <GridCell three>B</GridCell>
+            <GridCell three>C</GridCell>
+            <GridCell three>D</GridCell>
+        </Grid>
+    `}
+>
+    <Grid bleed>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>A</div></GridCell>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>B</div></GridCell>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>C</div></GridCell>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>D</div></GridCell>
+    </Grid>
+</Preview>
+
+### All viewports
+
+<Preview
+    code={`
+        <Grid all>
+            <GridCell three>A</GridCell>
+            <GridCell three>B</GridCell>
+            <GridCell three>C</GridCell>
+            <GridCell three>D</GridCell>
+        </Grid>
+    `}
+>
+    <Grid all>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>A</div></GridCell>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>B</div></GridCell>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>C</div></GridCell>
+        <GridCell three><div style={{ backgroundColor: '#ccc' }}>D</div></GridCell>
+    </Grid>
+</Preview>
+
+## Cell width properties (apply to GridCell)
+
+* one (1 / 12)
+* two (2 / 12)
+* three (3 / 12)
+* four (4 / 12)
+* five (5 / 12)
+* six (6 / 12)
+* seven (7 / 12)
+* eight (8 / 12)
+* nine (9 / 12)
+* ten (10 / 12)
+* eleven (11 / 12)
+
+## Align cells properties (apply to Grid)
+
+* left
+* center
+* right
+* outline
+* even
+* top
+* middle
+* bottom
+* stretch
+
+## Other Properties
+
+<PropsTable
+    Component={Grid}
+/>

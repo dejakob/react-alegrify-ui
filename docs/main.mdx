@@ -1,23 +1,9 @@
----
-name: Main
----
-
 # Main
 
-import { Playground } from 'docz';
-import Main from '../lib/main';
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Main from '../build/main';
 
-## Example
+The Main component can be used as a page container.
 
-<Playground>
-    <Main>
-        Page content...
-    </Main>
-</Playground>
-
-## Properties
-
-| Property    | Type           | Required? | Default |
-|-------------|----------------|-----------|---------|
-|className    |String          |No         |''       |
-
+It fills on smaller viewports and centers on larger viewports.

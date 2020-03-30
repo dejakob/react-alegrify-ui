@@ -35,7 +35,7 @@ function Aside(props) {
     classNames.push(props.className);
   }
 
-  return _react["default"].createElement("aside", {
+  return /*#__PURE__*/_react["default"].createElement("aside", {
     className: classNames.join(' ')
   }, props.children);
 }

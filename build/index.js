@@ -1,5 +1,7 @@
 "use strict";
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -13,18 +15,6 @@ Object.defineProperty(exports, "MEDIA", {
   enumerable: true,
   get: function get() {
     return _media["default"];
-  }
-});
-Object.defineProperty(exports, "SPACING", {
-  enumerable: true,
-  get: function get() {
-    return _spacing["default"];
-  }
-});
-Object.defineProperty(exports, "Alert", {
-  enumerable: true,
-  get: function get() {
-    return _alert["default"];
   }
 });
 Object.defineProperty(exports, "Article", {
@@ -55,12 +45,6 @@ Object.defineProperty(exports, "Checkbox", {
   enumerable: true,
   get: function get() {
     return _checkbox["default"];
-  }
-});
-Object.defineProperty(exports, "DateIndicator", {
-  enumerable: true,
-  get: function get() {
-    return _dateIndicator["default"];
   }
 });
 Object.defineProperty(exports, "Dialog", {
@@ -117,12 +101,6 @@ Object.defineProperty(exports, "GridCell", {
     return _gridCell["default"];
   }
 });
-Object.defineProperty(exports, "HistoricItem", {
-  enumerable: true,
-  get: function get() {
-    return _historicItem["default"];
-  }
-});
 Object.defineProperty(exports, "Input", {
   enumerable: true,
   get: function get() {
@@ -141,10 +119,10 @@ Object.defineProperty(exports, "Main", {
     return _main["default"];
   }
 });
-Object.defineProperty(exports, "NumberInput", {
+Object.defineProperty(exports, "Notification", {
   enumerable: true,
   get: function get() {
-    return _numberInput["default"];
+    return _notification["default"];
   }
 });
 Object.defineProperty(exports, "Radio", {
@@ -157,12 +135,6 @@ Object.defineProperty(exports, "RangeInput", {
   enumerable: true,
   get: function get() {
     return _rangeInput["default"];
-  }
-});
-Object.defineProperty(exports, "StatusInput", {
-  enumerable: true,
-  get: function get() {
-    return _statusInput["default"];
   }
 });
 Object.defineProperty(exports, "Section", {
@@ -212,10 +184,6 @@ var _colors = _interopRequireDefault(require("./colors"));
 
 var _media = _interopRequireDefault(require("./media"));
 
-var _spacing = _interopRequireDefault(require("./spacing"));
-
-var _alert = _interopRequireDefault(require("./alert"));
-
 var _article = _interopRequireDefault(require("./article"));
 
 var _aside = _interopRequireDefault(require("./aside"));
@@ -225,8 +193,6 @@ var _button = _interopRequireDefault(require("./button"));
 var _card = _interopRequireDefault(require("./card"));
 
 var _checkbox = _interopRequireDefault(require("./checkbox"));
-
-var _dateIndicator = _interopRequireDefault(require("./date-indicator"));
 
 var _dialog = _interopRequireDefault(require("./dialog"));
 
@@ -242,26 +208,24 @@ var _grid = _interopRequireDefault(require("./grid"));
 
 var _gridCell = _interopRequireDefault(require("./grid-cell"));
 
-var _historicItem = _interopRequireDefault(require("./historic-item"));
-
 var _input = _interopRequireDefault(require("./input"));
 
 var _label = _interopRequireDefault(require("./label"));
 
 var _main = _interopRequireDefault(require("./main"));
 
-var _numberInput = _interopRequireDefault(require("./number-input"));
+var _notification = _interopRequireDefault(require("./notification"));
 
 var _radio = _interopRequireDefault(require("./radio"));
 
 var _rangeInput = _interopRequireDefault(require("./range-input"));
 
-var _statusInput = _interopRequireDefault(require("./status-input"));
-
 var _section = _interopRequireDefault(require("./section"));
 
 var _typography = require("./typography");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

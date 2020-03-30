@@ -1,82 +1,111 @@
----
-name: Button
----
-
 # Button
 
-import { Playground } from 'docz';
-import Button from '../lib/button';
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Button from '../build/button';
 
 ## Variants
 
 ### Default
 
-<Playground>
+<Preview
+    code={`
+        <Button>
+            Yay! I'm a button
+        </Button>
+    `}
+>
     <Button>
         Yay! I'm a button
     </Button>
-</Playground>
+</Preview>
 
 ### Primary
 
-<Playground>
-    <Button
-        primary
-    >
+<Preview
+    code={`
+        <Button primary>
+            Yay! I'm a primary button
+        </Button>
+    `}
+>
+    <Button primary>
         Yay! I'm a primary button
     </Button>
-</Playground>
+</Preview>
 
 ### Destructive
 
-<Playground>
-    <Button
-        destructive
-    >
-        Destroy
+<Preview
+    code={`
+        <Button destructive>
+            Yay! I'm a destructive button
+        </Button>
+    `}
+>
+    <Button destructive>
+        Yay! I'm a destructive button
     </Button>
-</Playground>
+</Preview>
 
 ### Full
 
-<Playground>
-    <Button
-        full
-    >
-        Full sized button
+<Preview
+    code={`
+        <Button full>
+            Yay! I'm a full button
+        </Button>
+    `}
+>
+    <Button full>
+        Yay! I'm a full button
     </Button>
-</Playground>
+</Preview>
 
-### Small
+### link
 
-<Playground>
-    <Button
-        small
-    >
-        Small variant
+<Preview
+    code={`
+        <Button link>
+            Yay! I'm a link button
+        </Button>
+    `}
+>
+    <Button link>
+        Yay! I'm a link button
     </Button>
-</Playground>
+</Preview>
 
-### Large
+### Loading
 
-<Playground>
-    <Button
-        large
-    >
-        Large variant
+<Preview
+    code={`
+        <Button loading>
+            Yay! I'm a loading button
+        </Button>
+    `}
+>
+    <Button loading>
+        Yay! I'm a loading button
     </Button>
-</Playground>
+</Preview>
+
+### Disabled
+
+<Preview
+    code={`
+        <Button disabled>
+            Yay! I'm a disabled button
+        </Button>
+    `}
+>
+    <Button disabled>
+        Yay! I'm a disabled button
+    </Button>
+</Preview>
 
 ## Properties
 
-| Property  | Type    | Required? | Default |
-|-----------|---------|-----------|---------|
-|className  |String   |No         |''       |
-|primary    |Boolean  |No         |false    |
-|full       |Boolean  |No         |false    |
-|small      |Boolean  |No         |false    |
-|large      |Boolean  |No         |false    |
-|destructive|Boolean  |No         |false    |
-|disabled   |Boolean  |No         |false    |
-|type       |String   |No         |'submit' |
-|onClick    |Function |No         |         |
+<PropsTable
+    Component={Button}
+/>

@@ -1,38 +1,59 @@
----
-name: Range Input
----
-
 # Range Input
 
-import { Playground } from 'docz';
-import RangeInput from '../lib/range-input';
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import RangeInput from '../build/range-input';
 
 ## Variants
 
-### Example
+### Default
 
-<Playground>
+<Preview
+  code={`
     <RangeInput
-        id="my_range_input"
-        name="my_range_input"
-        min={1}
-        max={10}
-        value={6}
-        lowIndicator="-"
-        highIndicator="+"
+      name="my_mood"
+      min={1}
+      max={10}
+      lowIndicator="-"
+      highIndicator="+"
     />
-</Playground>
+  `}
+>
+  <RangeInput
+    name="my_mood"
+    min={1}
+    max={10}
+    lowIndicator="-"
+    highIndicator="+"
+  />
+</Preview>
+
+### Disabled
+
+<Preview
+  code={`
+    <RangeInput
+      disabled
+      name="my_mood2"
+      min={1}
+      max={10}
+      lowIndicator="-"
+      highIndicator="+"
+    />
+  `}
+>
+  <RangeInput
+    disabled
+    name="my_mood2"
+    min={1}
+    max={10}
+    lowIndicator="-"
+    highIndicator="+"
+  />
+</Preview>
 
 ## Properties
 
-| Property    | Type           | Required? | Default |
-|-------------|----------------|-----------|---------|
-|id           |String          |Yes        |         |
-|name         |String          |Yes        |         |
-|value        |Number          |No         |         |
-|min          |Number          |No         |1        |
-|max          |Number          |No         |10       |
-|step         |Number          |No         |1        |
-|className    |String          |No         |''       |
-|disabled     |Boolean         |No         |false    |
-|onValueChange|Function        |No         |         |
+<PropsTable
+    Component={RangeInput}
+/>

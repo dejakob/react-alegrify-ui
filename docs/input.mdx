@@ -1,82 +1,92 @@
----
-name: Input
----
-
 # Input
 
-import { Playground } from 'docz';
-import Input from '../lib/input';
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Input from '../build/input';
 
 ## Variants
 
 ### Default
 
-<Playground>
+<Preview
+  code={`
     <Input
-        id="name"
-        name="name"
-        placeholder="Enter your name..."
+      placeholder="Your name..."
+      value=""
+      onValueChange={() => {}}
     />
-</Playground>
-
-### Full
-
-<Playground>
-    <Input
-        id="name"
-        name="name"
-        placeholder="Enter your name..."
-        full
-    />
-</Playground>
-
-### Multiline
-
-<Playground>
-    <Input
-        id="description"
-        name="desription"
-        placeholder="Enter your descrition..."
-        multiline
-    />
-</Playground>
-
-### Email
-
-<Playground>
-    <Input
-        id="email"
-        name="email"
-        placeholder="abc@gmail.com"
-        type="email"
-    />
-</Playground>
+  `}
+>
+  <Input
+    id="input--default"
+    placeholder="Your name..."
+    value=""
+    onValueChange={() => {}}
+  />
+</Preview>
 
 ### Disabled
 
-<Playground>
+<Preview
+  code={`
     <Input
-        id="anotherinput"
-        name="anotherinput"
-        disabled
+      placeholder="Your name..."
+      value=""
+      onValueChange={() => {}}
+      disabled
     />
-</Playground>
+  `}
+>
+  <Input
+    placeholder="Your name..."
+    value=""
+    onValueChange={() => {}}
+    disabled
+  />
+</Preview>
+
+### Error
+
+<Preview
+  code={`
+    <Input
+      placeholder="Your name..."
+      value=""
+      onValueChange={() => {}}
+      error
+    />
+  `}
+>
+  <Input
+    placeholder="Your name..."
+    error="This field is required"
+    value=""
+    onValueChange={() => {}}
+  />
+</Preview>
+
+### Multiline
+
+<Preview
+  code={`
+    <Input
+      placeholder="Your name..."
+      multiline
+      value=""
+      onValueChange={() => {}}
+    />
+  `}
+>
+  <Input
+    placeholder="Your name..."
+    multiline
+    value=""
+    onValueChange={() => {}}
+  />
+</Preview>
 
 ## Properties
 
-| Property    | Type           | Required? | Default |
-|-------------|----------------|-----------|---------|
-|id           |String          |Yes        |         |
-|name         |String          |Yes        |         |
-|className    |String          |No         |''       |
-|value        |String          |No         |         |
-|type         |String          |No         |'text'   |
-|placeholder  |String          |No         |'text'   |
-|multiline    |Boolean         |No         |false    |
-|disabled     |Boolean         |No         |false    |
-|full         |Boolean         |No         |false    |
-|onValueChange|Function        |No         |         |
-|onKeyUp      |Function        |No         |         |
-|onKeyDown    |Function        |No         |         |
-|onFocus      |Function        |No         |         |
-|onBlur       |Function        |No         |         |
+<PropsTable
+    Component={Input}
+/>

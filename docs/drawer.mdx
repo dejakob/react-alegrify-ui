@@ -1,0 +1,35 @@
+# Dialog
+
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import Button from '../build/button';
+import Drawer from '../build/drawer';
+
+## Variants
+
+### Default
+
+<Preview
+    id="drawer--default"
+    code={`
+        <Drawer
+            open
+            title="Hello there"
+        >
+            Some content
+        </Drawer>
+    `}
+>
+    <Button>Open drawer</Button>
+    <Drawer
+        title="Hello there"
+    >
+        Some content
+    </Drawer>
+</Preview>
+
+## Properties
+
+<PropsTable
+    Component={Drawer}
+/>
