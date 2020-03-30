@@ -84,9 +84,11 @@ async function renderWithReact(code) {
   </head>
   <body class="alegrify-body">
     <main class="alegrify-main">
-      <h1 class="alegrify-h1 alegrify-h1--thin">
-        React Alegrify UI
-      </h1>
+      <a href="https://dejakob.com/react-alegrify-ui" style="color: #ffffff; display: block; text-align: center; text-decoration: none;" class="alegrify-a" title="React Alegrify UI">
+        <h1 class="alegrify-h1 alegrify-h1--thin">
+          React Alegrify UI
+        </h1>
+      </a>
       <section class="alegrify-section" data-component>      
         ${renderToString(elementWithProvider)}
       </section>
@@ -127,3 +129,5 @@ generateIndex('label');
 generateIndex('notification');
 generateIndex('radio');
 generateIndex('range-input');
+generateIndex('section');
+generateIndex('typography');

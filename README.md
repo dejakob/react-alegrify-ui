@@ -55,6 +55,8 @@ import { Button } from 'react-alegrify-ui';
 * [Notification](./docs-build/notification.html)
 * [Radio](./docs-build/radio.html)
 * [Range Input](./docs-build/range-input.html)
+* [Section](./docs-build/section.html)
+* [Typography](./docs-build/typography.html)
 
 ## "I only want CSS"
 
