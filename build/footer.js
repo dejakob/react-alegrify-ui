@@ -21,8 +21,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * ```
  */
 function Footer(props) {
+  var classNames = ['alegrify-footer'];
+
+  if (props.className) {
+    classNames.push(props.className);
+  }
+
   return /*#__PURE__*/_react["default"].createElement("footer", {
-    className: "alegrify-footer"
+    className: classNames.join(' ')
   }, props.children);
 }
 
@@ -30,7 +36,12 @@ Footer.propTypes = {
   /**
    * Children to add to the footer
    */
-  children: _propTypes["default"].node.isRequired
+  children: _propTypes["default"].node.isRequired,
+
+  /**
+   * Additional classNames
+   */
+  className: _propTypes["default"].string
 };
 Footer.defaultProps = {};
 
