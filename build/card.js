@@ -54,10 +54,12 @@ function Card(props) {
   }
 
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("input", {
-    type: "checkbox",
+    type: props.checkType || 'checkbox',
     className: "alegrify-card__trigger",
     "aria-hidden": "true",
-    id: id
+    id: id,
+    name: props.name,
+    value: props.value
   }), /*#__PURE__*/_react["default"].createElement("label", {
     className: containerClassNames.join(' '),
     htmlFor: id,
@@ -112,6 +114,21 @@ Card.propTypes = {
    * HTML id for the card trigger element
    */
   id: _propTypes["default"].string,
+
+  /**
+   * Either checkbox or radio
+   */
+  checkType: _propTypes["default"].string,
+
+  /**
+   * Name attr of the card
+   */
+  name: _propTypes["default"].string,
+
+  /**
+   * Value attr of the card
+   */
+  value: _propTypes["default"].string,
 
   /**
    * Height of the card
