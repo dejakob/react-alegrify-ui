@@ -47,7 +47,8 @@ function Dialog(props) {
   return /*#__PURE__*/_react["default"].createElement("dialog", {
     className: "alegrify-dialog",
     onClick: props.onClose,
-    open: props.open
+    open: props.open,
+    id: props.id
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "alegrify-dialog__content",
     onClick: function onClick(clickEvent) {
@@ -90,7 +91,12 @@ Dialog.propTypes = {
   /**
    * Actions to show inside the dialog
    */
-  actions: _propTypes["default"].node
+  actions: _propTypes["default"].node,
+
+  /**
+   * Id for dialog
+   */
+  id: _propTypes["default"].string
 };
 Dialog.defaultProps = {};
 
