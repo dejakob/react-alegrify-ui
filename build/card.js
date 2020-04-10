@@ -65,13 +65,15 @@ function Card(props) {
     htmlFor: id,
     style: {
       height: "".concat(height, "px"),
-      width: typeof width === 'number' ? "".concat(width, "px") : '100%'
+      width: typeof width === 'number' ? "".concat(width, "px") : '100%',
+      minWidth: typeof width === 'number' ? "".concat(width, "px") : 0
     }
   }, /*#__PURE__*/_react["default"].createElement("figure", {
     className: "alegrify-card__figure",
     style: {
       height: "".concat(height, "px"),
-      width: typeof width === 'number' ? "".concat(width, "px") : '100%'
+      width: typeof width === 'number' ? "".concat(width, "px") : '100%',
+      minWidth: typeof width === 'number' ? "".concat(width, "px") : 0
     }
   }, /*#__PURE__*/_react["default"].createElement("img", {
     className: "alegrify-card__image",
