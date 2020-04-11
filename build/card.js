@@ -59,7 +59,8 @@ function Card(props) {
     "aria-hidden": "true",
     id: id,
     name: props.name,
-    value: props.value
+    value: props.value,
+    required: props.required
   }), /*#__PURE__*/_react["default"].createElement("label", {
     className: containerClassNames.join(' '),
     htmlFor: id,
@@ -116,6 +117,7 @@ Card.propTypes = {
    * HTML id for the card trigger element
    */
   id: _propTypes["default"].string,
+  required: _propTypes["default"].bool,
 
   /**
    * Either checkbox or radio

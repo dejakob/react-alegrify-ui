@@ -37,7 +37,6 @@ function Input(props) {
   }
 
   if (props.multiline) {
-    var amountOfLines = ((props.value || '').match(/\n/gi) || []).length + 1;
     return /*#__PURE__*/_react["default"].createElement("textarea", {
       id: props.id,
       name: props.name,
@@ -48,10 +47,11 @@ function Input(props) {
       onKeyDown: props.onKeyDown,
       onFocus: props.onFocus,
       onBlur: props.onBlur,
-      rows: amountOfLines,
+      rows: props.rows,
       value: props.value,
       disabled: props.disabled,
-      error: props.error
+      error: props.error,
+      required: props.required
     });
   }
 
@@ -68,7 +68,8 @@ function Input(props) {
     onKeyDown: props.onKeyDown,
     onFocus: props.onFocus,
     onBlur: props.onBlur,
-    error: props.error
+    error: props.error,
+    required: props.required
   });
 
   function onChange(eventData) {
@@ -112,6 +113,16 @@ Input.propTypes = {
    * Use textarea instead of input
    */
   multiline: _propTypes["default"].bool,
+
+  /**
+   * Amount of rows (multiline)
+   */
+  rows: _propTypes["default"].number,
+
+  /**
+   * Is field required?
+   */
+  required: _propTypes["default"].bool,
 
   /**
    * Disable input
