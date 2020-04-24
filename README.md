@@ -56,6 +56,7 @@ import { Button } from 'react-alegrify-ui';
 * [Radio](./docs-build/radio.html)
 * [Range Input](./docs-build/range-input.html)
 * [Section](./docs-build/section.html)
+* [Stepper](./docs-build/stepper.html)
 * [Typography](./docs-build/typography.html)
 
 ## Helpers

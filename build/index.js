@@ -143,6 +143,12 @@ Object.defineProperty(exports, "Section", {
     return _section["default"];
   }
 });
+Object.defineProperty(exports, "Stepper", {
+  enumerable: true,
+  get: function get() {
+    return _stepper["default"];
+  }
+});
 Object.defineProperty(exports, "H1", {
   enumerable: true,
   get: function get() {
@@ -221,6 +227,8 @@ var _radio = _interopRequireDefault(require("./radio"));
 var _rangeInput = _interopRequireDefault(require("./range-input"));
 
 var _section = _interopRequireDefault(require("./section"));
+
+var _stepper = _interopRequireDefault(require("./stepper"));
 
 var _typography = require("./typography");
 
