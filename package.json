@@ -1,6 +1,6 @@
 {
   "name": "react-alegrify-ui",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "React implementation of Alegrify UI",
   "main": "build/index.js",
   "repository": "git@github.com:dejakob/react-alegrify-ui.git",
