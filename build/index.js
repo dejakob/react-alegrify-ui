@@ -29,6 +29,12 @@ Object.defineProperty(exports, "Aside", {
     return _aside["default"];
   }
 });
+Object.defineProperty(exports, "Body", {
+  enumerable: true,
+  get: function get() {
+    return _body["default"];
+  }
+});
 Object.defineProperty(exports, "Button", {
   enumerable: true,
   get: function get() {
@@ -193,6 +199,8 @@ var _media = _interopRequireDefault(require("./media"));
 var _article = _interopRequireDefault(require("./article"));
 
 var _aside = _interopRequireDefault(require("./aside"));
+
+var _body = _interopRequireDefault(require("./body"));
 
 var _button = _interopRequireDefault(require("./button"));
 
