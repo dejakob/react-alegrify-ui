@@ -19,6 +19,8 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -49,12 +51,12 @@ function DropdownItem(props) {
       _useState2 = _slicedToArray(_useState, 1),
       id = _useState2[0];
 
-  return /*#__PURE__*/_react["default"].createElement("li", {
+  return /*#__PURE__*/_react["default"].createElement("li", _extends({}, applyAdditionalProps(props), {
     className: "alegrify-dropdown__list-item",
     onMouseOver: props.onHover,
     onClick: props.onSelect,
     "aria-role": "menuitemradio"
-  }, /*#__PURE__*/_react["default"].createElement("input", {
+  }), /*#__PURE__*/_react["default"].createElement("input", {
     type: "radio",
     className: "alegrify-dropdown__list-item-trigger",
     name: props.name,

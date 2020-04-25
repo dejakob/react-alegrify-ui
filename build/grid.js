@@ -13,6 +13,8 @@ var _universalProps = require("./helpers/universal-props");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 var VARIANTS = ['left', 'center', 'right', 'outline', 'even', 'top', 'middle', 'bottom', 'stretch', 'bleed', 'reverse', 'all'];
 /**
  * <Grid />
@@ -43,10 +45,10 @@ function Grid(props) {
       classNames.push("alegrify-grid--".concat(variant));
     }
   });
-  return /*#__PURE__*/_react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement("div", _extends({}, (0, _universalProps.applyAdditionalProps)(props), {
     className: classNames.join(' '),
     "aria-role": "grid"
-  }, props.children);
+  }), props.children);
 }
 
 Grid.propTypes = {

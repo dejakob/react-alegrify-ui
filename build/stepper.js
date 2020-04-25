@@ -13,6 +13,8 @@ var _universalProps = require("./helpers/universal-props");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 var PROGRESS_MIN = 0;
 var PROGRESS_MAX = 100;
 /**
@@ -34,9 +36,9 @@ function Stepper(props) {
   }
 
   var currentStep = Math.min(Math.floor(props.progress / 100 * (props.steps.length - 1)), props.steps.length - 1);
-  return /*#__PURE__*/_react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement("div", _extends({}, (0, _universalProps.applyAdditionalProps)(props), {
     className: "alegrify-stepper"
-  }, /*#__PURE__*/_react["default"].createElement("progress", {
+  }), /*#__PURE__*/_react["default"].createElement("progress", {
     className: "alegrify-stepper__progress",
     min: PROGRESS_MIN,
     max: PROGRESS_MAX,
