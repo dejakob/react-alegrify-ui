@@ -38,8 +38,6 @@ var UNIVERSAL_CLASSES = {
   bottom: 'alegrify-align-child--bottom'
 };
 var ADDITIONAL_PROP_TYPES = {
-  id: _propTypes.PropTypes.string,
-  name: _propTypes.PropTypes.string,
   dataTest: _propTypes.PropTypes.string,
   dataTestId: _propTypes.PropTypes.string
 };
@@ -58,8 +56,6 @@ function getAdditionalClassNames(props) {
 
 function applyAdditionalProps(props) {
   return {
-    id: props.id,
-    name: props.name,
     // Anchors for testing
     'data-test': props.dataTest,
     'data-test-id': props.dataTestId
