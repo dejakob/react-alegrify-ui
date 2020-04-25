@@ -53,7 +53,8 @@ function Section(props) {
   }
 
   return /*#__PURE__*/_react["default"].createElement("section", _extends({}, (0, _universalProps.applyAdditionalProps)(props), {
-    className: classNames.join(' ')
+    className: classNames.join(' '),
+    id: props.id
   }), props.children);
 }
 
