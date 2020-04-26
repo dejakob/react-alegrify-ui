@@ -146,12 +146,12 @@ function Dropdown(props) {
     id: "".concat(id, "__label"),
     className: "alegrify-dropdown__label",
     htmlFor: id,
-    "aria-role": "button",
+    role: "button",
     "aria-haspopup": "listbox"
   }, value ? value : props.placeholder), /*#__PURE__*/_react["default"].createElement("ul", {
     className: "alegrify-dropdown__list",
     "data-menu-for": id,
-    "aria-role": "listbox",
+    role: "listbox",
     "aria-labelledby": "".concat(id, "__label")
   }, renderChildren()));
   /**

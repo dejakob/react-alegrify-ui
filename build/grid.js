@@ -47,7 +47,7 @@ function Grid(props) {
   });
   return /*#__PURE__*/_react["default"].createElement("div", _extends({}, (0, _universalProps.applyAdditionalProps)(props), {
     className: classNames.join(' '),
-    "aria-role": "grid"
+    role: "grid"
   }), props.children);
 }
 

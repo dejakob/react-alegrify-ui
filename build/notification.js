@@ -54,7 +54,7 @@ function Notification(props) {
 
   return /*#__PURE__*/_react["default"].createElement("dialog", _extends({}, (0, _universalProps.applyAdditionalProps)(props), {
     open: true,
-    "aria-role": "alert",
+    role: "alert",
     className: classNames.join(' ')
   }), /*#__PURE__*/_react["default"].createElement("h2", {
     className: "alegrify-notification__title"
