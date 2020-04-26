@@ -67,7 +67,8 @@ function MediaSelectorItem(props) {
     src: props.image,
     alt: props.alt,
     width: props.width || 300,
-    height: props.height || 300
+    height: props.height || 300,
+    loading: "lazy"
   })), /*#__PURE__*/_react["default"].createElement("label", {
     className: "alegrify-media-selector__label",
     htmlFor: id
