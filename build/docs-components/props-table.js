@@ -18,7 +18,7 @@ function PropsTable(props) {
   return /*#__PURE__*/_react["default"].createElement("table", null, /*#__PURE__*/_react["default"].createElement("thead", null, /*#__PURE__*/_react["default"].createElement("tr", null, /*#__PURE__*/_react["default"].createElement("th", null, "Property"), /*#__PURE__*/_react["default"].createElement("th", null, "Type"), /*#__PURE__*/_react["default"].createElement("th", null, "Default"))), /*#__PURE__*/_react["default"].createElement("tbody", null, Object.keys(propTypes).map(function (propName) {
     return /*#__PURE__*/_react["default"].createElement("tr", {
       key: propName
-    }, /*#__PURE__*/_react["default"].createElement("th", null, propName, isRequired(propTypes[propName]) ? '*' : ''), /*#__PURE__*/_react["default"].createElement("td", null, getCorrespondingPropType(propTypes[propName])), /*#__PURE__*/_react["default"].createElement("td", null, defaultProps[propName] || ''));
+    }, /*#__PURE__*/_react["default"].createElement("th", null, propName, isRequired(propTypes[propName]) ? '*' : ''), /*#__PURE__*/_react["default"].createElement("td", null, getCorrespondingPropType(propTypes[propName])), /*#__PURE__*/_react["default"].createElement("td", null, (defaultProps || {})[propName] || ''));
   })));
 }
 /**

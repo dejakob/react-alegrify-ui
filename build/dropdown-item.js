@@ -51,7 +51,7 @@ function DropdownItem(props) {
       _useState2 = _slicedToArray(_useState, 1),
       id = _useState2[0];
 
-  return /*#__PURE__*/_react["default"].createElement("li", _extends({}, applyAdditionalProps(props), {
+  return /*#__PURE__*/_react["default"].createElement("li", _extends({}, (0, _universalProps.applyAdditionalProps)(props), {
     className: "alegrify-dropdown__list-item",
     onMouseOver: props.onHover,
     onClick: props.onSelect,

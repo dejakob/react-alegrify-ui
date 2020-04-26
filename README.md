@@ -41,6 +41,7 @@ import { Button } from 'react-alegrify-ui';
 
 ## Components
 
+* [Avatar](./docs-build/avatar.html)
 * [Button](./docs-build/button.html)
 * [Card](./docs-build/card.html)
 * [Checkbox](./docs-build/checkbox.html)

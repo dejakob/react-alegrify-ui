@@ -115,6 +115,7 @@ function isExternalPath(url) {
 }
   
 generateIndex('index', { importPath: '../README.md', exportPath: '../index.html' });
+generateIndex('avatar');
 generateIndex('button');
 generateIndex('card');
 generateIndex('checkbox');
