@@ -62,15 +62,17 @@ function Checkbox(props) {
     name: props.name,
     "aria-labelledby": "".concat(id, "__label")
   })), /*#__PURE__*/_react["default"].createElement("label", {
-    className: "alegrify-checkbox__check",
-    htmlFor: id,
-    "aria-hidden": "true"
-  }), /*#__PURE__*/_react["default"].createElement("label", {
+    className: "alegrify-checkbox__view",
     id: "".concat(id, "__label"),
+    htmlFor: id
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    className: "alegrify-checkbox__check",
+    "aria-hidden": "true",
+    role: "presentation"
+  }), /*#__PURE__*/_react["default"].createElement("span", {
     className: "alegrify-checkbox__label",
-    htmlFor: id,
-    "aria-role": "checkbox"
-  }, props.children));
+    htmlFor: id
+  }, props.children)));
 }
 
 Checkbox.propTypes = {

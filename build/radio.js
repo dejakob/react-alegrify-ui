@@ -51,8 +51,13 @@ function Radio(props) {
     onChange: props.onChange
   }), /*#__PURE__*/_react["default"].createElement("label", {
     htmlFor: props.id,
-    className: "alegrify-radio__check"
+    id: "".concat(props.id, "__label"),
+    className: "alegrify-radio__view"
   }, /*#__PURE__*/_react["default"].createElement("span", {
+    className: "alegrify-radio__check",
+    role: "presentation",
+    "aria-hidden": "true"
+  }), /*#__PURE__*/_react["default"].createElement("span", {
     className: "alegrify-radio__label"
   }, props.children)));
 }
