@@ -21,7 +21,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "alegrify-ui": "1.0.21"
+    "alegrify-ui": "1.0.23"
   },
   "scripts": {
     "build": "yarn run build:lib && yarn run build:docs && yarn run build:bundle",

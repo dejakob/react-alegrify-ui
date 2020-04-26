@@ -27,7 +27,7 @@ function MediaSelector(props) {
     classNames.push(props.className);
   }
 
-  return /*#__PURE__*/_react["default"].createElement("div", _extends({}, (0, _universalProps.applyAdditionalProps)(props), {
+  return /*#__PURE__*/_react["default"].createElement("fieldset", _extends({}, (0, _universalProps.applyAdditionalProps)(props), {
     className: classNames.join(' ')
   }), /*#__PURE__*/_react["default"].createElement("ul", {
     className: "alegrify-media-selector__list"
