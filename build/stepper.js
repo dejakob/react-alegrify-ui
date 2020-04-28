@@ -35,7 +35,6 @@ function Stepper(props) {
     classNames.push(props.className);
   }
 
-  var currentStep = Math.min(Math.floor(props.progress / 100 * (props.steps.length - 1)), props.steps.length - 1);
   return /*#__PURE__*/_react["default"].createElement("div", _extends({}, (0, _universalProps.applyAdditionalProps)(props), {
     className: "alegrify-stepper"
   }), /*#__PURE__*/_react["default"].createElement("progress", {
@@ -45,10 +44,10 @@ function Stepper(props) {
     value: props.progress
   }), /*#__PURE__*/_react["default"].createElement("ol", {
     className: "alegrify-stepper__steps"
-  }, props.steps.map(function (step, index) {
+  }, props.steps.map(function (step) {
     return /*#__PURE__*/_react["default"].createElement("li", {
       key: step,
-      className: "alegrify-stepper__step".concat(index === currentStep ? ' alegrify-stepper__step--active' : ''),
+      className: "alegrify-stepper__step",
       style: {
         width: "".concat(100 / props.steps.length, "%")
       }
