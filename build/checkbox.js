@@ -70,8 +70,7 @@ function Checkbox(props) {
     "aria-hidden": "true",
     role: "presentation"
   }), /*#__PURE__*/_react["default"].createElement("span", {
-    className: "alegrify-checkbox__label",
-    htmlFor: id
+    className: "alegrify-checkbox__label"
   }, props.children)));
 }
 
