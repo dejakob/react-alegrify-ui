@@ -41,28 +41,28 @@ import { Button } from 'react-alegrify-ui';
 
 ## Components
 
-* [Avatar](./docs-build/avatar.html)
-* [Button](./docs-build/button.html)
-* [Card](./docs-build/card.html)
-* [Checkbox](./docs-build/checkbox.html)
-* [Dialog](./docs-build/dialog.html)
-* [Dl](./docs-build/dl.html)
-* [Drawer](./docs-build/drawer.html)
-* [Dropdown](./docs-build/dropdown.html)
-* [Footer](./docs-build/footer.html)
-* [Grid](./docs-build/grid.html)
-* [Input](./docs-build/input.html)
-* [Label](./docs-build/label.html)
-* [Notification](./docs-build/notification.html)
-* [Radio](./docs-build/radio.html)
-* [Range Input](./docs-build/range-input.html)
-* [Section](./docs-build/section.html)
-* [Stepper](./docs-build/stepper.html)
-* [Typography](./docs-build/typography.html)
+* [Avatar](https://dejakob.com/react-alegrify-ui/docs-build/avatar.html)
+* [Button](https://dejakob.com/react-alegrify-ui/docs-build/button.html)
+* [Card](https://dejakob.com/react-alegrify-ui/docs-build/card.html)
+* [Checkbox](https://dejakob.com/react-alegrify-ui/docs-build/checkbox.html)
+* [Dialog](https://dejakob.com/react-alegrify-ui/docs-build/dialog.html)
+* [Dl](https://dejakob.com/react-alegrify-ui/docs-build/dl.html)
+* [Drawer](https://dejakob.com/react-alegrify-ui/docs-build/drawer.html)
+* [Dropdown](https://dejakob.com/react-alegrify-ui/docs-build/dropdown.html)
+* [Footer](https://dejakob.com/react-alegrify-ui/docs-build/footer.html)
+* [Grid](https://dejakob.com/react-alegrify-ui/docs-build/grid.html)
+* [Input](https://dejakob.com/react-alegrify-ui/docs-build/input.html)
+* [Label](https://dejakob.com/react-alegrify-ui/docs-build/label.html)
+* [Notification](https://dejakob.com/react-alegrify-ui/docs-build/notification.html)
+* [Radio](https://dejakob.com/react-alegrify-ui/docs-build/radio.html)
+* [Range Input](https://dejakob.com/react-alegrify-ui/docs-build/range-input.html)
+* [Section](https://dejakob.com/react-alegrify-ui/docs-build/section.html)
+* [Stepper](https://dejakob.com/react-alegrify-ui/docs-build/stepper.html)
+* [Typography](https://dejakob.com/react-alegrify-ui/docs-build/typography.html)
 
 ## Helpers
 
-* [Spacing](./docs-build/spacing.html)
+* [Spacing](https://dejakob.com/react-alegrify-ui/docs-build/spacing.html)
 
 ## "I only want CSS"
 
