@@ -17,6 +17,12 @@ Object.defineProperty(exports, "MEDIA", {
     return _media["default"];
   }
 });
+Object.defineProperty(exports, "A", {
+  enumerable: true,
+  get: function get() {
+    return _a["default"];
+  }
+});
 Object.defineProperty(exports, "Article", {
   enumerable: true,
   get: function get() {
@@ -213,6 +219,8 @@ Object.defineProperty(exports, "Strong", {
 var _colors = _interopRequireDefault(require("./colors"));
 
 var _media = _interopRequireDefault(require("./media"));
+
+var _a = _interopRequireDefault(require("./a"));
 
 var _article = _interopRequireDefault(require("./article"));
 

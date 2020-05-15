@@ -1,0 +1,55 @@
+# A (link)
+
+import Preview from '../build/docs-components/preview';
+import PropsTable from '../build/docs-components/props-table';
+import A from '../build/a';
+
+## Variants
+
+### Default
+
+<Preview
+    code={`
+        <A
+            href="https://alegrify.com"
+            title="Your personal guide to a happier lifestyle"
+        >
+            Alegrify
+        </A>
+    `}
+>
+    <A
+        href="https://alegrify.com"
+        title="Your personal guide to a happier lifestyle"
+    >
+        Alegrify
+    </A>
+</Preview>
+
+### Primary
+
+<Preview
+    code={`
+        <A
+            href="https://alegrify.com"
+            title="Your personal guide to a happier lifestyle"
+            primary
+        >
+            Alegrify
+        </A>
+    `}
+>
+    <A
+        href="https://alegrify.com"
+        title="Your personal guide to a happier lifestyle"
+        primary
+    >
+        Alegrify
+    </A>
+</Preview>
+
+## Properties
+
+<PropsTable
+    Component={A}
+/>

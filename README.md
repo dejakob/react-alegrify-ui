@@ -4,7 +4,7 @@
 
 ## What is React Alegrify UI?
 
-[Alegrify](https://alegrify.com) is an innovative solution to track your mental health and to become happier.
+React Alegrify UI is a React wrapper around [Alegrify UI](https://dejakob.com/alegrify-ui).
 
 As we believe human knowledge should be shared, we made some of our User Interface Elements available 
 for everyone who wants to use it.
@@ -41,6 +41,7 @@ import { Button } from 'react-alegrify-ui';
 
 ## Components
 
+* [A (link)](https://dejakob.com/react-alegrify-ui/docs-build/a.html)
 * [Avatar](https://dejakob.com/react-alegrify-ui/docs-build/avatar.html)
 * [Button](https://dejakob.com/react-alegrify-ui/docs-build/button.html)
 * [Card](https://dejakob.com/react-alegrify-ui/docs-build/card.html)
@@ -63,7 +64,3 @@ import { Button } from 'react-alegrify-ui';
 ## Helpers
 
 * [Spacing](https://dejakob.com/react-alegrify-ui/docs-build/spacing.html)
-
-## "I only want CSS"
-
-If you only want to use CSS, take a look here: [Alegrify UI](https://dejakob.com/alegrify-ui).
