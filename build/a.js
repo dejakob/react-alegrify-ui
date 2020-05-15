@@ -56,7 +56,9 @@ function A(props) {
     className: classNames.join(' '),
     id: props.id,
     href: props.href,
-    title: props.title
+    title: props.title,
+    target: props.target,
+    rel: props.rel || (target === '_blank' ? 'noreferrer noopener' : undefined)
   }), props.children);
 }
 
@@ -79,7 +81,8 @@ A.propTypes = _objectSpread({
   /**
    * title: required
    */
-  title: _propTypes["default"].string.isRequired
+  title: _propTypes["default"].string.isRequired,
+  target: _propTypes["default"].string
 }, (0, _helpers.variantsToPropTypes)(VARIANTS));
 
 var _default = (0, _helpers.attachUniversalProps)(A);
