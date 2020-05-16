@@ -51,7 +51,9 @@ function Stepper(props) {
       style: {
         width: "".concat(100 / props.steps.length, "%")
       }
-    }, step);
+    }, /*#__PURE__*/_react["default"].createElement("span", {
+      "class": "alegrify-stepper__step-label"
+    }, step));
   })));
 }
 
