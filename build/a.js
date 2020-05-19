@@ -58,7 +58,7 @@ function A(props) {
     href: props.href,
     title: props.title,
     target: props.target,
-    rel: props.rel || (target === '_blank' ? 'noreferrer noopener' : undefined)
+    rel: props.rel || (props.target === '_blank' ? 'noreferrer noopener' : undefined)
   }), props.children);
 }
 
