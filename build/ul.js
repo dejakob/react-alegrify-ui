@@ -35,13 +35,13 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var CSS_CLASSNAME = 'alegrify-a';
+var CSS_CLASSNAME = 'alegrify-ul';
 var VARIANTS = [];
 /**
- * <A />
+ * <Ul />
  */
 
-function A(props) {
+function Ul(props) {
   var classNames = [CSS_CLASSNAME].concat(_toConsumableArray(VARIANTS.filter(function (variant) {
     return props[variant];
   }).map(function (variant) {
@@ -52,39 +52,15 @@ function A(props) {
     classNames.push(props.className);
   }
 
-  return /*#__PURE__*/_react["default"].createElement("a", _extends({}, (0, _universalProps.applyAdditionalProps)(props), {
-    className: classNames.join(' '),
-    id: props.id,
-    href: props.href,
-    title: props.title,
-    target: props.target,
-    rel: props.rel || (props.target === '_blank' ? 'noreferrer noopener' : undefined)
+  return /*#__PURE__*/_react["default"].createElement("ul", _extends({}, (0, _universalProps.applyAdditionalProps)(props), {
+    className: classNames.join(' ')
   }), props.children);
 }
 
-A.propTypes = _objectSpread({
-  /**
-   * Link text / content
-   */
-  children: _propTypes["default"].node.isRequired,
-
-  /**
-   * Additional classnames
-   */
-  className: _propTypes["default"].string,
-
-  /**
-   * href: required
-   */
-  href: _propTypes["default"].string.isRequired,
-
-  /**
-   * title: required
-   */
-  title: _propTypes["default"].string.isRequired,
-  target: _propTypes["default"].string
+Ul.propTypes = _objectSpread({
+  children: _propTypes["default"].node.isRequired
 }, (0, _helpers.variantsToPropTypes)(VARIANTS));
 
-var _default = (0, _helpers.attachUniversalProps)(A);
+var _default = (0, _helpers.attachUniversalProps)(Ul);
 
 exports["default"] = _default;

@@ -133,6 +133,7 @@ generateIndex('radio');
 generateIndex('range-input');
 generateIndex('section');
 generateIndex('stepper');
-generateIndex('typography');
+generateIndex('ul');
 
+generateIndex('typography');
 generateIndex('spacing');
