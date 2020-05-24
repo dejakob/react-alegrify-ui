@@ -43,7 +43,7 @@ var ADDITIONAL_PROP_TYPES = {
 };
 
 function getAdditionalClassNames(props) {
-  var classNames = (props.className || '').split(' ');
+  var classNames = Array.isArray(props.className) ? props.className : (typeof props.className === 'string' ? props.className : '').split(' ');
   Object.keys(UNIVERSAL_CLASSES).forEach(function (propName) {
     var className = UNIVERSAL_CLASSES[propName];
 
