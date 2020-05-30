@@ -70,9 +70,7 @@ function attachUniversalProps(Component) {
     }));
   };
 
-  WrappedComponent.propTypes = _objectSpread({}, Component.propTypes, {
-    ADDITIONAL_PROP_TYPES: ADDITIONAL_PROP_TYPES
-  });
+  WrappedComponent.propTypes = _objectSpread({}, Component.propTypes, {}, ADDITIONAL_PROP_TYPES);
   WrappedComponent.defaultProps = Component.defaultProps;
   return WrappedComponent;
 }
