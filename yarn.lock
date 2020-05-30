@@ -1128,10 +1128,10 @@ ajv@^6.1.0, ajv@^6.10.2, ajv@^6.12.0:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alegrify-ui@^1.0.27:
-  version "1.0.27"
-  resolved "https://registry.npmjs.org/alegrify-ui/-/alegrify-ui-1.0.27.tgz#2beca5eec716ae361865416d54770c4fd284cbc4"
-  integrity sha512-86dyuMvpIFLj8XjHTWN7kSvmoPkdKlflsDSK0Nqa4gsOK9dO5WXG/iq3QUfPRub9nQWl8onR35MuNzP6RmKVyw==
+alegrify-ui@^1.0.30:
+  version "1.0.30"
+  resolved "https://registry.npmjs.org/alegrify-ui/-/alegrify-ui-1.0.30.tgz#64c49164ff8b00e7e070a59c53bb92ea40477cb4"
+  integrity sha512-GKz4UR5iut5fTcLx8BaToBWoRZMk2IXob+igC8c8inlNuDc7J6jbaUuJP4dG8NERx6F+558mFidKoQC0vNdxNA==
 
 ansi-align@^2.0.0:
   version "2.0.0"
