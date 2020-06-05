@@ -64,7 +64,8 @@ function Card(props) {
     id: id,
     name: props.name,
     value: props.value,
-    required: props.required
+    required: props.required,
+    onChange: props.onChange
   })), /*#__PURE__*/_react["default"].createElement("label", {
     className: containerClassNames.join(' '),
     htmlFor: id,
@@ -151,7 +152,8 @@ Card.propTypes = {
   /**
    * Additional classnames
    */
-  className: _propTypes["default"].string
+  className: _propTypes["default"].string,
+  onChange: _propTypes["default"].func
 };
 Card.defaultProps = {
   height: DEFAULT_HEIGHT

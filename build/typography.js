@@ -93,7 +93,7 @@ H1.propTypes = _simpleUiComponent.SimpleUiComponentPropTypes;
 H2.propTypes = _simpleUiComponent.SimpleUiComponentPropTypes;
 H3.propTypes = _simpleUiComponent.SimpleUiComponentPropTypes;
 P.propTypes = _objectSpread({}, _simpleUiComponent.SimpleUiComponentPropTypes, {
-  welcome: _propTypes["default"]["boolean"]
+  welcome: _propTypes["default"].bool
 });
 Em.propTypes = _simpleUiComponent.SimpleUiComponentPropTypes;
 Strong.propTypes = _simpleUiComponent.SimpleUiComponentPropTypes;
