@@ -4,7 +4,7 @@
 
 ## What is React Alegrify UI?
 
-React Alegrify UI is a React wrapper around [Alegrify UI](https://dejakob.com/alegrify-ui).
+React Alegrify UI is a React wrapper around [Alegrify UI](https://dejakob.github.io/alegrify-ui).
 
 As we believe human knowledge should be shared, we made some of our User Interface Elements available 
 for everyone who wants to use it.
@@ -41,27 +41,27 @@ import { Button } from 'react-alegrify-ui';
 
 ## Components
 
-* [A (link)](https://dejakob.com/react-alegrify-ui/docs-build/a.html)
-* [Avatar](https://dejakob.com/react-alegrify-ui/docs-build/avatar.html)
-* [Button](https://dejakob.com/react-alegrify-ui/docs-build/button.html)
-* [Card](https://dejakob.com/react-alegrify-ui/docs-build/card.html)
-* [Checkbox](https://dejakob.com/react-alegrify-ui/docs-build/checkbox.html)
-* [Dialog](https://dejakob.com/react-alegrify-ui/docs-build/dialog.html)
-* [Dl](https://dejakob.com/react-alegrify-ui/docs-build/dl.html)
-* [Drawer](https://dejakob.com/react-alegrify-ui/docs-build/drawer.html)
-* [Dropdown](https://dejakob.com/react-alegrify-ui/docs-build/dropdown.html)
-* [Footer](https://dejakob.com/react-alegrify-ui/docs-build/footer.html)
-* [Grid](https://dejakob.com/react-alegrify-ui/docs-build/grid.html)
-* [Input](https://dejakob.com/react-alegrify-ui/docs-build/input.html)
-* [Label](https://dejakob.com/react-alegrify-ui/docs-build/label.html)
-* [Notification](https://dejakob.com/react-alegrify-ui/docs-build/notification.html)
-* [Radio](https://dejakob.com/react-alegrify-ui/docs-build/radio.html)
-* [Range Input](https://dejakob.com/react-alegrify-ui/docs-build/range-input.html)
-* [Section](https://dejakob.com/react-alegrify-ui/docs-build/section.html)
-* [Stepper](https://dejakob.com/react-alegrify-ui/docs-build/stepper.html)
-* [Typography](https://dejakob.com/react-alegrify-ui/docs-build/typography.html)
-* [Ul](https://dejakob.com/react-alegrify-ui/docs-build/ul.html)
+* [A (link)](https://dejakob.github.io/react-alegrify-ui/docs-build/a.html)
+* [Avatar](https://dejakob.github.io/react-alegrify-ui/docs-build/avatar.html)
+* [Button](https://dejakob.github.io/react-alegrify-ui/docs-build/button.html)
+* [Card](https://dejakob.github.io/react-alegrify-ui/docs-build/card.html)
+* [Checkbox](https://dejakob.github.io/react-alegrify-ui/docs-build/checkbox.html)
+* [Dialog](https://dejakob.github.io/react-alegrify-ui/docs-build/dialog.html)
+* [Dl](https://dejakob.github.io/react-alegrify-ui/docs-build/dl.html)
+* [Drawer](https://dejakob.github.io/react-alegrify-ui/docs-build/drawer.html)
+* [Dropdown](https://dejakob.github.io/react-alegrify-ui/docs-build/dropdown.html)
+* [Footer](https://dejakob.github.io/react-alegrify-ui/docs-build/footer.html)
+* [Grid](https://dejakob.github.io/react-alegrify-ui/docs-build/grid.html)
+* [Input](https://dejakob.github.io/react-alegrify-ui/docs-build/input.html)
+* [Label](https://dejakob.github.io/react-alegrify-ui/docs-build/label.html)
+* [Notification](https://dejakob.github.io/react-alegrify-ui/docs-build/notification.html)
+* [Radio](https://dejakob.github.io/react-alegrify-ui/docs-build/radio.html)
+* [Range Input](https://dejakob.github.io/react-alegrify-ui/docs-build/range-input.html)
+* [Section](https://dejakob.github.io/react-alegrify-ui/docs-build/section.html)
+* [Stepper](https://dejakob.github.io/react-alegrify-ui/docs-build/stepper.html)
+* [Typography](https://dejakob.github.io/react-alegrify-ui/docs-build/typography.html)
+* [Ul](https://dejakob.github.io/react-alegrify-ui/docs-build/ul.html)
 
 ## Helpers
 
-* [Spacing](https://dejakob.com/react-alegrify-ui/docs-build/spacing.html)
+* [Spacing](https://dejakob.github.io/react-alegrify-ui/docs-build/spacing.html)
