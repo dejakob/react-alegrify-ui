@@ -13,12 +13,12 @@
     "@babel/preset-react": "^7.9.4",
     "@mdx-js/mdx": "^1.5.7",
     "@mdx-js/react": "^1.5.7",
-    "babel-loader": "8.1.0",
+    "babel-loader": "8.3.0",
     "npm-watch": "^0.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "webpack": "4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack": "5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "alegrify-ui": "^1.0.30"
